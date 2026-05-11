@@ -1,0 +1,140 @@
+[
+  {
+    "source": "github",
+    "source_id": "68322456",
+    "name": "Yuan-Man",
+    "profile_url": "https://github.com/Yuan-ManX",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "Strong founder and product builder background with exceptional GitHub activity (651 repos) demonstrating deep coding DNA and shipping capability. However, lacks clear evidence of end-to-end 0->1 product success at scale, and China location may complicate collaboration for Conviva's US-based operations.",
+    "signals": {
+      "top_signal": "Prolific builder with founder DNA",
+      "followers": 533,
+      "public_repos": 651,
+      "company": null,
+      "location": "Shanghai, China"
+    },
+    "first_seen": "2026-05-11T06:02:44.119962+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "vrv",
+    "name": "vrv",
+    "profile_url": "https://news.ycombinator.com/user?id=vrv",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "Strong signals for LLM/AI systems expertise and 0->1 product building as a founding engineer at an agent governance startup. However, the profile lacks clear evidence of deep technical architecture experience, end-to-end shipping track record, or principal engineer/founder background beyond current role.",
+    "signals": {
+      "top_signal": "Founding engineer at AI/MCP startup"
+    },
+    "first_seen": "2026-05-11T06:03:52.386522+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "robertgardunia",
+    "name": "robertgardunia",
+    "profile_url": "https://news.ycombinator.com/user?id=robertgardunia",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "Strong technical breadth with modern full-stack capabilities (TypeScript, React, Node.js) and explicit LLM/AI orchestration experience across multiple providers plus agentic workflows. However, profile lacks clear evidence of 0->1 product ownership, architectural scale, or principal-level engineering/founder experience that would distinguish a 'Principal Product Builder' from a senior engineer.",
+    "signals": {
+      "top_signal": "Multi-LLM orchestration and agentic workflow experience"
+    },
+    "first_seen": "2026-05-11T06:04:06.497138+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "dredmond421",
+    "name": "dredmond421",
+    "profile_url": "https://news.ycombinator.com/user?id=dredmond421",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "Strong technical depth with PhD, 15+ years AI/ML experience, and deep LLM/agentic systems expertise that aligns well with modern product building. However, lacks explicit evidence of 0->1 product shipping, end-to-end architecture ownership, or startup founder/principal engineer title despite senior IC positioning.",
+    "signals": {
+      "top_signal": "Deep LLM/AI systems expertise with production experience"
+    },
+    "first_seen": "2026-05-11T06:04:28.155016+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "najmuzzaman",
+    "name": "najmuzzaman",
+    "profile_url": "https://news.ycombinator.com/user?id=najmuzzaman",
+    "role": "Principal Product Builder",
+    "score": 85,
+    "reasoning": "Strong founder DNA with AI-native product (backed by notable investor), technical execution shipping 0->1 products, and demonstrable comfort with LLM systems. Former HubSpot PM who willingly took pay cut to build in AI space shows conviction, though would need to validate depth of hands-on coding beyond PM background.",
+    "signals": {
+      "top_signal": "AI startup founder building LLM infrastructure products"
+    },
+    "first_seen": "2026-05-11T06:04:33.583541+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "jcarroll24",
+    "name": "jcarroll24",
+    "profile_url": "https://news.ycombinator.com/user?id=jcarroll24",
+    "role": "Principal Product Builder",
+    "score": 78,
+    "reasoning": "Strong product builder DNA evidenced by shipping a 0->1 product (RaptorCI) to solve a real pain point they experienced. Currently a principal engineer with clear technical depth and product thinking, though unclear if they have end-to-end full-stack shipping experience or direct LLM/AI implementation experience beyond using AI tools.",
+    "signals": {
+      "top_signal": "Principal engineer shipping 0->1 product to HN"
+    },
+    "first_seen": "2026-05-11T06:04:45.783146+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "alfg",
+    "name": "alfg",
+    "profile_url": "https://news.ycombinator.com/user?id=alfg",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "Strong technical breadth across multiple languages including Go/Rust/Python, explicit LLM experience, and active GitHub presence suggesting shipping capability. However, cannot verify 0->1 product experience, principal engineer level, or founder experience from the limited profile information provided.",
+    "signals": {
+      "top_signal": "Deep polyglot coding DNA with LLM experience"
+    },
+    "first_seen": "2026-05-11T06:04:50.328833+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "HorizonFlowLive",
+    "name": "HorizonFlowLive",
+    "profile_url": "https://news.ycombinator.com/user?id=HorizonFlowLive",
+    "role": "Principal Product Builder",
+    "score": 85,
+    "reasoning": "Strong technical match with deep full-stack coding skills (Python, Rust, TypeScript), explicit LLM/AI experience (LangGraph, CrewAI, OpenAI, Anthropic), and CTO/founding engineer background demonstrating 0->1 product building. Profile shows both architectural capability and hands-on shipping DNA, though would need to verify depth of principal-level engineering experience.",
+    "signals": {
+      "top_signal": "Founding CTO with modern AI stack"
+    },
+    "first_seen": "2026-05-11T06:05:09.082502+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "16798444",
+    "name": "Larry",
+    "profile_url": "https://github.com/xiaochus",
+    "role": "Senior MLE",
+    "score": 72,
+    "reasoning": "Larry has relevant ML engineering experience at Alibaba Cloud, a major tech company known for deploying ML systems at scale, including recommendation and ranking systems. However, without visibility into specific project details, tech stack alignment (PyTorch/Ray/vLLM), or production deployment experience verification, there's moderate uncertainty about the exact fit for senior MLE requirements.",
+    "signals": {
+      "top_signal": "Alibaba Cloud ML experience at scale",
+      "followers": 293,
+      "public_repos": 15,
+      "company": "Alibaba Cloud Intelligence",
+      "location": "Hangzhou, China"
+    },
+    "first_seen": "2026-05-11T06:05:22.027846+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "jonjoin",
+    "name": "jonjoin",
+    "profile_url": "https://news.ycombinator.com/user?id=jonjoin",
+    "role": "Frontend Architect",
+    "score": 72,
+    "reasoning": "Candidate is actively recruiting for architect-level frontend roles with React/TypeScript expertise, indicating they understand the profile deeply and likely possess similar skills themselves. However, there's no direct evidence of their personal technical background, micro-frontend architecture experience, or design system ownership - only what their company seeks.",
+    "signals": {
+      "top_signal": "Recruiting for React/TypeScript architect roles"
+    },
+    "first_seen": "2026-05-11T06:08:52.749842+00:00"
+  }
+]
