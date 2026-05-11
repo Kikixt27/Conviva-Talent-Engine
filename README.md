@@ -76,6 +76,8 @@ Edit `.github/workflows/source.yml` and adjust the `env:` block:
 - `SCORE_THRESHOLD` — minimum score (0–100) for a candidate to be saved. Default `70`.
 - `MAX_CANDIDATES_PER_QUERY` — search hits to enrich per query. Default `15`.
 - `AI_PROVIDER` — `claude`, `deepseek`, or `auto` (try Claude first, fall back to DeepSeek).
+- `CLAUDE_MODEL` — which Anthropic model to use. Default `claude-haiku-4-5` (cheapest, fastest). Other options: `claude-sonnet-4-5` (higher quality, ~5× cost), `claude-opus-4-5` (highest quality, ~25× cost).
+- `DEEPSEEK_MODEL` — which DeepSeek model to use. Default `deepseek-chat`. Other option: `deepseek-reasoner` (more thorough, slower).
 
 ### Reading results
 

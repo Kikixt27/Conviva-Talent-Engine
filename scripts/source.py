@@ -34,6 +34,8 @@ DEEPSEEK_API_KEY = os.environ.get("DS_API_KEY", "").strip()
 SLACK_WEBHOOK_URL = os.environ.get("SLACK_WEBHOOK_URL", "").strip()
 
 AI_PROVIDER = os.environ.get("AI_PROVIDER", "auto").strip().lower()
+CLAUDE_MODEL = os.environ.get("CLAUDE_MODEL", "claude-haiku-4-5").strip()
+DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-chat").strip()
 SCORE_THRESHOLD = int(os.environ.get("SCORE_THRESHOLD", "70"))
 MAX_CANDIDATES_PER_QUERY = int(os.environ.get("MAX_CANDIDATES_PER_QUERY", "15"))
 HTTP_TIMEOUT = 30
@@ -152,7 +154,7 @@ def score_with_claude(prompt: str) -> dict[str, Any] | None:
         "content-type": "application/json",
     }
     body = {
-        "model": "claude-sonnet-4-5",
+        "model": CLAUDE_MODEL,
         "max_tokens": 600,
         "messages": [{"role": "user", "content": prompt}],
     }
@@ -177,7 +179,7 @@ def score_with_deepseek(prompt: str) -> dict[str, Any] | None:
         "Content-Type": "application/json",
     }
     body = {
-        "model": "deepseek-chat",
+        "model": DEEPSEEK_MODEL,
         "messages": [{"role": "user", "content": prompt}],
         "temperature": 0.2,
     }
