@@ -1,0 +1,2229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Conviva Signal · Talent Intelligence v4</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+:root{
+  --bg:#f2f1ed;--surface:#fff;--s2:#f7f6f2;--s3:#eeecea;
+  --bd:#dedad4;--bd2:#c8c4bc;
+  --tx:#1a1a1a;--tx2:#4a4a4a;--tx3:#8a8a8a;
+  --g:#91C63E;--g2:#6FA02E;--gbg:rgba(145,198,62,.1);
+  --bl:#3b82f6;--blbg:rgba(59,130,246,.1);
+  --am:#d97706;--ambg:rgba(217,119,6,.1);
+  --pu:#7c3aed;--pubg:rgba(124,58,237,.1);
+  --tl:#0d9488;--tlbg:rgba(13,148,136,.1);
+  --co:#e11d48;--cobg:rgba(225,29,72,.1);
+  --ch:#2C2E2D;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--tx);font-size:13px;line-height:1.5;overflow-x:hidden;}
+::-webkit-scrollbar{width:4px;height:4px;}::-webkit-scrollbar-track{background:transparent;}::-webkit-scrollbar-thumb{background:var(--bd2);border-radius:99px;}
+
+/* NAV */
+.nav{background:#fff;border-bottom:1px solid var(--bd);height:52px;display:flex;align-items:center;padding:0 20px;gap:12px;position:sticky;top:0;z-index:200;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+.logo{display:flex;align-items:center;gap:9px;padding-right:16px;border-right:1px solid var(--bd);flex-shrink:0;}
+.logo-name{font-size:14px;font-weight:700;color:var(--ch);letter-spacing:.05em;}
+.logo-sub{font-size:10px;color:var(--tx3);}
+.nav-role{font-size:12px;color:var(--tx2);flex:1;}
+.nav-role strong{color:var(--g2);}
+.nav-btns{display:flex;gap:7px;}
+#showRolesBtn{background:var(--s2);border:1px solid var(--bd);border-radius:7px;padding:5px 12px;font-size:11px;font-weight:500;cursor:pointer;font-family:'Poppins',sans-serif;color:var(--tx2);transition:all .15s;}
+#showRolesBtn:hover{border-color:var(--g);color:var(--g2);}
+
+/* ROLE SELECTOR */
+#roleSelector{background:#fff;border-bottom:2px solid var(--bd);padding:14px 20px 16px;}
+.region-group{margin-bottom:12px;}
+.region-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:7px;display:flex;align-items:center;gap:6px;}
+.region-lbl::before{content:'';display:inline-block;width:3px;height:12px;border-radius:2px;}
+.rg-us .region-lbl{color:#185FA5;}.rg-us .region-lbl::before{background:#185FA5;}
+.rg-cn .region-lbl{color:#A32D2D;}.rg-cn .region-lbl::before{background:#A32D2D;}
+.rg-in .region-lbl{color:#854F0B;}.rg-in .region-lbl::before{background:#854F0B;}
+.role-cards{display:flex;flex-wrap:wrap;gap:6px;}
+.rc{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:7px;border:1px solid var(--bd);background:var(--surface);cursor:pointer;font-family:'Poppins',sans-serif;font-size:11px;font-weight:500;color:var(--tx2);transition:all .18s;white-space:nowrap;}
+.rc:hover{border-color:var(--g);background:var(--gbg);}
+.rc.active{border-color:var(--g);background:var(--gbg);color:var(--g2);font-weight:600;}
+.rc .dept-tag{font-size:9px;padding:1px 5px;border-radius:3px;font-weight:600;}
+.rc .days{font-size:10px;opacity:.6;margin-left:2px;}
+.dept-Eng{color:#534AB7;background:rgba(124,58,237,.12);}
+.dept-Prod{color:#3B6D11;background:rgba(145,198,62,.12);}
+.dept-Sales{color:#993C1D;background:rgba(234,88,12,.12);}
+.dept-HR{color:#085041;background:rgba(13,148,136,.12);}
+.dept-Fin{color:#085041;background:rgba(13,148,136,.12);}
+.dept-Mkt{color:#0C447C;background:rgba(59,130,246,.12);}
+.dept-Sup{color:#633806;background:rgba(217,119,6,.12);}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:256px 1fr;min-height:calc(100vh - 52px);}
+.sidebar{background:var(--ch);padding:18px 14px;display:flex;flex-direction:column;gap:0;overflow-y:auto;}
+.main{padding:20px 24px;background:var(--bg);overflow-y:auto;}
+
+/* SIDEBAR */
+.sb-sec{font-size:9px;font-weight:700;letter-spacing:.1em;color:rgba(255,255,255,.3);text-transform:uppercase;margin:14px 0 7px;}
+.sb-sec:first-child{margin-top:0;}
+.sb-inp label{font-size:10px;color:rgba(255,255,255,.4);display:block;margin-bottom:3px;}
+.sb-inp input{width:100%;padding:7px 10px;border:1px solid rgba(255,255,255,.1);border-radius:7px;font-size:12px;font-family:'Poppins',sans-serif;color:#fff;background:rgba(255,255,255,.07);outline:none;margin-bottom:7px;}
+.sb-inp input:focus{border-color:var(--g);}
+.sb-inp input::placeholder{color:rgba(255,255,255,.22);}
+.sb-divider{height:1px;background:rgba(255,255,255,.08);margin:12px 0;}
+.role-info{padding:10px 12px;background:rgba(255,255,255,.05);border-radius:8px;border:1px solid rgba(255,255,255,.09);margin-bottom:10px;}
+.role-info .ri-name{font-size:12px;font-weight:600;color:#fff;margin-bottom:2px;line-height:1.4;}
+.role-info .ri-meta{font-size:10px;color:rgba(255,255,255,.4);}
+.role-type-badge{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:99px;font-size:10px;font-weight:600;margin-top:5px;}
+.rt-rnd{background:var(--pubg);color:var(--pu);}
+.rt-gtm{background:var(--ambg);color:var(--am);}
+.rt-ga{background:var(--tlbg);color:var(--tl);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:8px 14px;border-radius:8px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid transparent;font-family:'Poppins',sans-serif;transition:all .15s;}
+.btn-g{background:var(--g);color:#fff;font-weight:600;}.btn-g:hover:not(:disabled){background:var(--g2);}
+.btn-g:disabled{opacity:.4;cursor:not-allowed;}
+.btn-sb{background:rgba(255,255,255,.07);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.1);}
+.btn-sb:hover:not(:disabled){background:rgba(255,255,255,.12);}
+.btn-sb:disabled{opacity:.3;cursor:not-allowed;}
+.btn-ghost{background:var(--surface);color:var(--tx2);border-color:var(--bd);}.btn-ghost:hover:not(:disabled){background:var(--s2);}
+.btn-ghost:disabled{opacity:.35;cursor:not-allowed;}
+.btn-sm{padding:5px 10px;font-size:11px;}
+.btn-f{width:100%;}
+.sb-stats{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:8px;}
+.sb-stat{padding:8px 10px;background:rgba(255,255,255,.05);border-radius:7px;border:1px solid rgba(255,255,255,.08);}
+.sb-stat .l{font-size:9px;color:rgba(255,255,255,.32);text-transform:uppercase;letter-spacing:.07em;margin-bottom:2px;}
+.sb-stat .n{font-size:18px;font-weight:700;color:#fff;}
+.sb-stat.s-pass .n{color:var(--g);}
+.sb-stat.s-high .n{color:#fbbf24;}
+.score-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.score-row input{width:52px;padding:6px 9px;border:1px solid rgba(255,255,255,.1);border-radius:7px;font-size:12px;color:#fff;background:rgba(255,255,255,.08);font-family:'Poppins',sans-serif;outline:none;}
+.score-row span{font-size:11px;color:rgba(255,255,255,.3);}
+
+/* PANELS */
+.panel{background:var(--surface);border:1px solid var(--bd);border-radius:11px;overflow:hidden;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.ph{padding:11px 16px;border-bottom:1px solid var(--bd);display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:var(--surface);}
+.ph-title{font-size:12px;font-weight:600;}
+.ph-sub{font-size:11px;color:var(--tx3);}
+.pb{padding:14px 16px;}
+
+/* INPUT SECTION */
+.input-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:14px 16px;}
+.input-col{display:flex;flex-direction:column;gap:8px;}
+.input-col-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);margin-bottom:2px;display:flex;align-items:center;gap:7px;}
+.input-col-label .dot{width:8px;height:8px;border-radius:50%;}
+textarea.ta{font-family:'DM Mono',monospace;font-size:11px;color:var(--tx);background:var(--surface);border:1px solid var(--bd);border-radius:8px;padding:9px;outline:none;resize:vertical;width:100%;line-height:1.6;}
+textarea.ta:focus{border-color:var(--g);}
+.upload-z{border:2px dashed var(--bd2);border-radius:9px;padding:16px;text-align:center;cursor:pointer;transition:all .2s;background:var(--s2);}
+.upload-z:hover,.upload-z.drag-over{border-color:var(--g);background:rgba(145,198,62,.04);}
+.upload-z.primary{border-color:var(--g);}
+.uz-icon{font-size:20px;margin-bottom:5px;}
+.uz-title{font-size:12px;font-weight:500;color:var(--tx2);margin-bottom:2px;}
+.uz-sub{font-size:11px;color:var(--tx3);}
+.uz-status{margin-top:6px;font-size:11px;font-weight:500;color:var(--g);display:none;}
+
+/* TAGS PROCESSOR */
+.tags-processor{background:linear-gradient(135deg,var(--s2) 0%,rgba(145,198,62,.05) 100%);border:1px solid var(--bd);border-radius:11px;padding:16px 20px;margin-bottom:14px;display:flex;align-items:center;gap:16px;}
+.tp-left{flex:1;}
+.tp-title{font-size:13px;font-weight:600;margin-bottom:3px;}
+.tp-desc{font-size:11px;color:var(--tx3);line-height:1.6;}
+.tp-mode{display:flex;gap:8px;margin-top:10px;}
+.mode-btn{padding:5px 12px;border-radius:7px;border:1px solid var(--bd);background:var(--surface);font-size:11px;font-weight:500;cursor:pointer;font-family:'Poppins',sans-serif;color:var(--tx2);transition:all .15s;}
+.mode-btn.on{background:var(--g);color:#fff;border-color:var(--g);}
+
+/* CLUSTERS */
+.clusters-grid{display:grid;gap:9px;}
+.cluster-card{border-radius:9px;padding:11px 13px;border:1px solid;}
+.cluster-name{font-size:11px;font-weight:600;margin-bottom:7px;display:flex;align-items:center;gap:6px;}
+.cluster-dot{width:5px;height:5px;border-radius:50%;}
+.ctags{display:flex;flex-wrap:wrap;gap:3px;}
+.ctag{font-size:10px;padding:2px 7px;border-radius:4px;cursor:pointer;border:1px solid transparent;transition:opacity .12s;user-select:none;}
+.ctag.on{opacity:1;}.ctag.off{opacity:.25;}
+.must-tag{border-style:solid;}
+.nice-tag{border-style:dashed;opacity:.8;}
+.req-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;}
+.req-box{padding:10px 13px;border-radius:8px;border:1px solid;}
+.req-box.must{background:rgba(225,29,72,.05);border-color:rgba(225,29,72,.2);}
+.req-box.nice{background:rgba(217,119,6,.05);border-color:rgba(217,119,6,.2);}
+.req-hd{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px;}
+.req-hd.must{color:var(--co);}
+.req-hd.nice{color:var(--am);}
+.req-item{font-size:11px;color:var(--tx2);line-height:1.7;display:flex;gap:6px;align-items:flex-start;}
+.req-item::before{content:'•';flex-shrink:0;}
+
+/* CHANNEL MATRIX */
+.ch-matrix{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:12px 16px;}
+.ch-region{border-radius:9px;padding:11px 13px;border:1px solid;transition:all .3s ease;}
+.ch-region.r-us{background:rgba(59,130,246,.04);border-color:rgba(59,130,246,.2);}
+.ch-region.r-cn{background:rgba(225,29,72,.04);border-color:rgba(225,29,72,.2);}
+.ch-region.r-in{background:rgba(217,119,6,.04);border-color:rgba(217,119,6,.2);}
+.ch-region.locked{border-width:2px;box-shadow:0 0 0 1px rgba(145,198,62,.2);}
+.ch-region.disabled{opacity:.28;pointer-events:none;filter:grayscale(1);}
+.ch-region.locked{border-width:2px;box-shadow:0 2px 8px rgba(145,198,62,.12);}
+.ch-region.inactive{opacity:.55;filter:grayscale(.3);}
+.ch-region-hd{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px;}
+.r-us .ch-region-hd{color:var(--bl);}
+.r-cn .ch-region-hd{color:var(--co);}
+.r-in .ch-region-hd{color:var(--am);}
+.ch-pill{display:flex;align-items:center;gap:6px;padding:5px 9px;border-radius:6px;border:1px solid var(--bd);background:var(--surface);cursor:pointer;margin-bottom:4px;transition:all .15s;user-select:none;}
+.ch-pill.on{border-color:var(--g);background:var(--gbg);}
+.ch-pill.on .ch-tgl{color:var(--g2);}
+.ch-pill .ch-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
+.ch-pill .ch-nm{font-size:11px;font-weight:500;color:var(--tx2);flex:1;}
+.ch-pill .ch-badge{font-size:9px;padding:1px 5px;border-radius:3px;}
+.b-auto{background:var(--gbg);color:var(--g2);}.b-semi{background:var(--ambg);color:var(--am);}
+.ch-pill .ch-tgl{font-size:12px;color:var(--tx3);}
+.ch-pill.disabled{opacity:.3;cursor:not-allowed;}
+
+/* REPOS + QUERIES */
+.rq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px 16px;}
+.rq-box{display:flex;flex-direction:column;gap:5px;}
+.rq-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;}
+.rq-title{font-size:11px;font-weight:600;color:var(--tx2);}
+.rq-list{max-height:190px;overflow-y:auto;display:flex;flex-direction:column;gap:5px;}
+.qrow{display:flex;align-items:center;gap:7px;padding:5px 8px;background:var(--s2);border-radius:6px;border:1px solid var(--bd);}
+.qt{flex:1;font-size:11px;color:var(--tx2);font-family:'DM Mono',monospace;}
+.qd{width:18px;height:18px;border-radius:4px;border:none;background:transparent;color:var(--tx3);cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;}
+.qd:hover{background:var(--cobg);color:var(--co);}
+.q-warn{font-size:10px;color:var(--am);margin-top:2px;}
+
+/* ANALYZER TABS */
+.atabs{display:flex;border-bottom:2px solid var(--bd);background:var(--surface);flex-wrap:wrap;}
+.atab{padding:8px 14px;font-size:11px;font-weight:500;cursor:pointer;color:var(--tx3);border-bottom:3px solid transparent;margin-bottom:-2px;transition:all .15s;white-space:nowrap;}
+.atab:hover{color:var(--g);}
+.atab.on{color:var(--g);border-bottom-color:var(--g);}
+.atp{display:none;padding:14px 16px;}.atp.on{display:block;}
+.warn-banner{padding:9px 12px;border-radius:8px;font-size:11px;line-height:1.7;margin-bottom:10px;}
+.wb-gtm{background:rgba(13,148,136,.07);border:1px solid rgba(13,148,136,.2);color:var(--tl);}
+.wb-ga{background:rgba(217,119,6,.07);border:1px solid rgba(217,119,6,.2);color:var(--am);}
+.upload-zone-li{border:2px dashed var(--g);border-radius:10px;padding:20px;text-align:center;cursor:pointer;background:rgba(145,198,62,.03);transition:all .2s;margin-bottom:12px;}
+.upload-zone-li:hover,.upload-zone-li.drag-over{background:rgba(145,198,62,.08);}
+.upload-zone-sm{border:2px dashed var(--bd2);border-radius:8px;padding:14px;text-align:center;cursor:pointer;background:var(--s2);transition:all .2s;margin-bottom:10px;}
+.upload-zone-sm:hover,.upload-zone-sm.drag-over{border-color:var(--g);background:rgba(145,198,62,.04);}
+.search-links{margin-bottom:12px;}
+.sl-hd{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);margin-bottom:7px;}
+.lr{display:flex;align-items:flex-start;gap:9px;padding:5px 9px;background:var(--s2);border-radius:7px;margin-bottom:4px;}
+.lr-d{font-size:11px;color:var(--tx2);flex:1;line-height:1.4;}
+.lr-o{font-size:10px;color:var(--bl);white-space:nowrap;text-decoration:none;padding:2px 8px;background:var(--blbg);border-radius:4px;}
+.lr-o:hover{color:var(--g);}
+.lr-del{background:none;border:none;cursor:pointer;color:var(--tx3);font-size:13px;padding:0 2px;}
+.lr-del:hover{color:var(--co);}
+.comp-chips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:7px;}
+.cc-btn{font-size:10px;padding:3px 9px;border-radius:99px;border:1px solid var(--bd);background:var(--surface);color:var(--tx2);cursor:pointer;font-family:'Poppins',sans-serif;transition:all .12s;}
+.cc-btn:hover{background:var(--gbg);border-color:var(--g);color:var(--g2);}
+.cc-btn.gsi{border-color:rgba(13,148,136,.3);color:var(--tl);}
+.cc-btn.gsi:hover{background:var(--tlbg);}
+.manual-form{margin-top:10px;}
+.mf-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px;}
+.mf-label{font-size:10px;color:var(--tx3);display:block;margin-bottom:3px;}
+input[type=text],input[type=password],input[type=number]{width:100%;padding:7px 10px;border:1px solid var(--bd);border-radius:7px;font-size:12px;font-family:'Poppins',sans-serif;color:var(--tx);background:var(--surface);outline:none;}
+input:focus{border-color:var(--g);}
+
+/* LOG */
+.log-body{background:var(--ch);padding:10px 13px;height:120px;overflow-y:auto;font-family:'DM Mono',monospace;font-size:11px;line-height:1.7;color:#aaa;}
+.l-ok{color:#91C63E;}.l-w{color:#fbbf24;}.l-i{color:#60a5fa;}.l-d{color:#555;}.l-e{color:#f87171;}
+.pbar{height:3px;background:var(--bd);}
+.pf{height:100%;background:linear-gradient(90deg,var(--g),var(--g2));transition:width .4s;}
+
+/* STATS STRIP */
+.stats-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-bottom:14px;}
+.sstat{background:var(--surface);border:1px solid var(--bd);border-radius:9px;padding:11px 14px;}
+.ssl{font-size:10px;color:var(--tx3);margin-bottom:2px;}
+.ssn{font-size:20px;font-weight:700;}
+
+/* SCORE LEGEND */
+.score-legend{display:flex;align-items:center;gap:6px;padding:8px 16px;background:var(--s2);border-bottom:1px solid var(--bd);flex-wrap:wrap;gap:6px;}
+.sl-label{font-size:10px;font-weight:600;color:var(--tx3);text-transform:uppercase;letter-spacing:.06em;margin-right:4px;}
+.sl-pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;padding:3px 10px;border-radius:99px;font-weight:600;}
+.sl-pill span{font-weight:400;}
+.sl-hi{background:var(--gbg);color:var(--g2);}
+.sl-md{background:var(--ambg);color:var(--am);}
+.sl-lo{background:rgba(107,114,128,.1);color:var(--tx3);}
+.sl-sk{background:var(--cobg);color:var(--co);}
+
+/* TABLE */
+.filters{display:flex;gap:5px;flex-wrap:wrap;}
+.ft{padding:4px 10px;border-radius:99px;border:1px solid var(--bd);font-size:11px;color:var(--tx2);cursor:pointer;background:var(--surface);font-family:'Poppins',sans-serif;transition:all .15s;}
+.ft:hover{background:var(--s2);}.ft.on{background:var(--g);color:#fff;border-color:var(--g);font-weight:600;}
+.srch{padding:6px 10px;border:1px solid var(--bd);border-radius:7px;font-size:12px;outline:none;width:155px;font-family:'Poppins',sans-serif;background:var(--surface);color:var(--tx);}
+.srch:focus{border-color:var(--g);}
+.tw{overflow-x:auto;}
+table{width:100%;border-collapse:collapse;table-layout:fixed;}
+th{font-size:10px;font-weight:600;color:var(--tx3);text-align:left;padding:8px 11px;border-bottom:1px solid var(--bd);cursor:pointer;white-space:nowrap;user-select:none;text-transform:uppercase;letter-spacing:.06em;background:var(--s2);}
+td{padding:9px 11px;border-bottom:1px solid var(--bd);vertical-align:top;font-size:12px;color:var(--tx2);word-break:break-word;}
+tr:last-child td{border-bottom:none;}tr:hover td{background:var(--s2);}
+.sp{display:inline-block;padding:3px 9px;border-radius:99px;font-size:11px;font-weight:700;}
+.s-hi{background:var(--gbg);color:var(--g2);}.s-md{background:var(--ambg);color:var(--am);}.s-lo{background:var(--s3);color:var(--tx3);}
+.src-p{font-size:10px;padding:1px 5px;border-radius:3px;margin-top:3px;display:inline-block;}
+.src-gh{background:#f0f0ee;color:#555;}.src-ph{background:rgba(218,85,47,.12);color:#c44010;}
+.src-hn{background:rgba(255,102,0,.1);color:#c45200;}.src-dv{background:rgba(100,110,220,.12);color:#5060cc;}
+.src-li{background:var(--blbg);color:var(--bl);}.src-jike{background:var(--ambg);color:var(--am);}
+.src-xhs{background:rgba(254,44,85,.1);color:#c0003c;}.src-boss{background:rgba(0,204,153,.12);color:#007a59;}
+.src-naukri{background:rgba(217,119,6,.1);color:var(--am);}.src-jj{background:rgba(124,58,237,.1);color:var(--pu);}
+.mb{height:3px;border-radius:99px;background:var(--bd);margin-top:4px;overflow:hidden;}
+.mf{height:100%;border-radius:99px;background:linear-gradient(90deg,var(--g),var(--g2));}
+.lnk{font-size:11px;color:var(--bl);text-decoration:none;display:block;padding:1px 0;white-space:nowrap;}
+.lnk:hover{color:var(--g);}
+.empty{padding:44px;text-align:center;color:var(--tx3);}
+.result-card{background:var(--surface);border:1px solid var(--bd);border-radius:9px;padding:14px;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.spin{width:13px;height:13px;border:2px solid var(--bd);border-top-color:var(--g);border-radius:50%;animation:spin .7s linear infinite;display:inline-block;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.chip{display:inline-block;font-size:10px;padding:2px 6px;border-radius:4px;margin:1px;}
+.cp-1{background:var(--pubg);color:var(--pu);}
+.cp-2{background:var(--tlbg);color:var(--tl);}
+.cp-loc{background:var(--blbg);color:var(--bl);}
+.cp-no{background:var(--cobg);color:var(--co);}
+.provider-btn{width:100%;padding:5px 10px;border-radius:6px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);font-size:11px;font-weight:500;cursor:pointer;font-family:'Poppins',sans-serif;color:rgba(255,255,255,.5);transition:all .15s;text-align:left;}
+.provider-btn:hover{background:rgba(255,255,255,.1);color:rgba(255,255,255,.8);}
+.provider-btn.on{background:rgba(145,198,62,.15);border-color:rgba(145,198,62,.4);color:var(--g);}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="logo">
+    <svg viewBox="0 0 120 120" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#888" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M60 8L104 32v48L60 104 16 80V32Z"/><path d="M60 8v12M104 32l-11 6.5M104 80l-11-6.5M60 104V92M16 80l11-6.5M16 32l11 6.5"/>
+        <path d="M27 38.5L38 45v11M93 38.5L82 45v11M27 73.5L38 67v-11M93 73.5L82 67v-11M38 56v2M82 56v2"/>
+      </g>
+      <g fill="none" stroke="#91C63E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M60 72V44M52 52l8-8 8 8M60 72l-14 8M40 72l6 8 6-6M60 72l14 8M80 72l-6 8-6-6"/>
+      </g>
+    </svg>
+    <div><div class="logo-name">CONVIVA</div><div class="logo-sub">Signal · v4 Claude</div></div>
+  </div>
+  <div class="nav-role" id="navRoleLabel">Select a role to begin sourcing</div>
+  <div class="nav-btns">
+    <button id="showRolesBtn" onclick="toggleRoles()">▼ All Roles</button>
+    <button onclick="shareResults()" id="shareBtn" title="Share candidate list via URL" style="background:var(--s2);border:1px solid var(--bd);border-radius:7px;padding:5px 12px;font-size:11px;font-weight:500;cursor:pointer;font-family:'Poppins',sans-serif;color:var(--tx2);transition:all .15s;display:none">🔗 Share</button>
+  </div>
+</div>
+
+<!-- ROLE SELECTOR -->
+<div id="roleSelector">
+  <div id="roleTabsBar"></div>
+</div>
+
+<div class="layout">
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <div class="sb-sec">API Keys</div>
+  <div class="sb-inp">
+    <label>Claude API Key <span style="color:rgba(145,198,62,.7);font-size:9px">(Anthropic)</span></label>
+    <input type="password" id="apiKey" placeholder="sk-ant-..." onchange="saveState()" onblur="saveState()">
+  </div>
+  <div class="sb-inp" style="margin-top:2px">
+    <label>DeepSeek API Key <span style="color:rgba(59,130,246,.7);font-size:9px">(optional)</span></label>
+    <input type="password" id="dsApiKey" placeholder="sk-..." onchange="saveState()" onblur="saveState()">
+  </div>
+  <div style="font-size:10px;color:rgba(255,255,255,.3);margin:-4px 0 6px;line-height:1.5">platform.deepseek.com · Auto-saved locally</div>
+  <div style="margin-bottom:8px">
+    <div style="font-size:9px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px">AI Provider Mode</div>
+    <div style="display:flex;flex-direction:column;gap:3px" id="providerBtns">
+      <button class="provider-btn on" id="pb-claude" onclick="setProvider('claude',this)" title="All calls use Claude (Sonnet for quality, Haiku for bulk)">✦ Claude Only</button>
+      <button class="provider-btn" id="pb-deepseek" onclick="setProvider('deepseek',this)" title="All calls use DeepSeek V3 — cheapest option">⚡ DeepSeek Only</button>
+      <button class="provider-btn" id="pb-mix" onclick="setProvider('mix',this)" title="Claude Sonnet for clusters/analysis · DeepSeek for bulk GitHub scoring">🔀 Smart Mix (recommended)</button>
+    </div>
+  </div>
+  <div class="sb-inp">
+    <label>GitHub Token (optional)</label>
+    <input type="password" id="ghToken" placeholder="ghp_...">
+  </div>
+  <div class="sb-divider"></div>
+  <div class="sb-sec" style="margin-top:0">Active Role</div>
+  <div class="role-info">
+    <div class="ri-name" id="sbRoleName">—</div>
+    <div class="ri-meta" id="sbRoleMeta">Select a role above</div>
+    <div id="sbRoleType"></div>
+  </div>
+  <div class="sb-sec">Sourcing Settings</div>
+  <div class="score-row">
+    <label style="font-size:11px;color:rgba(255,255,255,.5);white-space:nowrap">Min Score</label>
+    <input type="number" id="minScore" value="60" min="10" max="100">
+    <span>/ 100</span>
+  </div>
+  <button class="btn btn-g btn-f" id="startBtn" onclick="startSourcing()" style="margin-bottom:7px;font-size:13px;padding:11px">▶ Start Sourcing</button>
+  <button class="btn btn-sb btn-f" id="stopBtn" onclick="stopSourcing()" disabled style="margin-bottom:0">■ Stop</button>
+  <div class="sb-divider"></div>
+  <div class="sb-sec" style="margin-top:0">Pipeline Status</div>
+  <div class="sb-stats">
+    <div class="sb-stat"><div class="l">Sourced</div><div class="n" id="sbTotal">—</div></div>
+    <div class="sb-stat s-pass"><div class="l">Passed</div><div class="n" id="sbPassed">—</div></div>
+    <div class="sb-stat s-high"><div class="l">≥80</div><div class="n" id="sbHigh">—</div></div>
+    <div class="sb-stat"><div class="l">Manual</div><div class="n" id="sbManual">0</div></div>
+  </div>
+  <div style="display:flex;gap:7px">
+    <button class="btn btn-sb btn-f btn-sm" id="expCsv" onclick="exportCSV()" disabled>↓ CSV</button>
+    <button class="btn btn-sb btn-f btn-sm" id="expJson" onclick="exportJSON()" disabled>↓ JSON</button>
+  </div>
+  <button class="btn btn-sb btn-f btn-sm" style="margin-top:6px;border-color:rgba(225,29,72,.3);color:rgba(225,29,72,.7)" onclick="if(confirm('Clear all candidates and saved session?'))clearSavedState()">🗑 Clear Session</button>
+  <div style="margin-top:10px;padding:7px 10px;background:rgba(255,255,255,.04);border-radius:7px;border:1px solid rgba(255,255,255,.07)">
+    <div style="font-size:9px;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px">Active Routing</div>
+    <div id="modelRoutingInfo" style="font-size:10px;color:rgba(255,255,255,.6);line-height:1.7">✦ <strong style="color:rgba(145,198,62,.9)">Sonnet 4.6</strong> clusters · <strong style="color:rgba(59,130,246,.9)">Haiku 4.5</strong> scoring</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- INPUT LAYER -->
+<div class="panel">
+  <div class="ph">
+    <div>
+      <div class="ph-title">Input Layer — Parallel Sources</div>
+      <div class="ph-sub">JD + Golden Profile → Tags Processing → Skill Clusters</div>
+    </div>
+    <div style="display:flex;gap:7px">
+      <button class="btn btn-g btn-sm" id="processBtn" onclick="processTags()" disabled>
+        <span id="processIcon">✦</span> Process Tags
+      </button>
+      <button class="btn btn-ghost btn-sm" onclick="clearInputs()">Clear</button>
+    </div>
+  </div>
+  <div class="input-grid">
+    <!-- JD Column -->
+    <div class="input-col">
+      <div class="input-col-label">
+        <div class="dot" style="background:var(--bl)"></div>
+        Job Description (JD)
+      </div>
+      <div id="jdDrop" class="upload-z primary" ondragover="event.preventDefault();this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleFileDrop(event,'jd')" onclick="document.getElementById('jdFile').click()">
+        <input type="file" id="jdFile" accept=".pdf,.txt,.docx" style="display:none" onchange="handleFileChange(event,'jd')">
+        <div class="uz-icon">📋</div>
+        <div class="uz-title">Drop JD file or click to upload</div>
+        <div class="uz-sub">PDF · TXT · DOCX</div>
+        <div class="uz-status" id="jdStatus"></div>
+      </div>
+      <textarea class="ta" id="jdText" rows="6" placeholder="Or paste the full Job Description here..."></textarea>
+    </div>
+    <!-- Golden Profile Column -->
+    <div class="input-col">
+      <div class="input-col-label">
+        <div class="dot" style="background:var(--g2)"></div>
+        Golden Profile (optional but recommended)
+      </div>
+      <div id="gpDrop" class="upload-z" ondragover="event.preventDefault();this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleFileDrop(event,'gp')" onclick="document.getElementById('gpFile').click()">
+        <input type="file" id="gpFile" accept=".pdf,.txt,.docx" style="display:none" onchange="handleFileChange(event,'gp')">
+        <div class="uz-icon">⭐</div>
+        <div class="uz-title">Drop ideal candidate resume / profile</div>
+        <div class="uz-sub">The "perfect fit" example · PDF · TXT · DOCX</div>
+        <div class="uz-status" id="gpStatus"></div>
+      </div>
+      <textarea class="ta" id="gpText" rows="6" placeholder="Or paste a Golden Profile — an ideal candidate's LinkedIn/resume to calibrate the scoring...
+
+e.g. Liu Yi · Principal PM at ByteDance AI · 7yr PM · built LLM eval platform 0→1 · Python/SQL · Beijing"></textarea>
+      <!-- GP Quick-Load: Pre-loaded Golden Profiles -->
+      <div style="margin-top:7px">
+        <div style="font-size:10px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px">⚡ Quick-load Golden Profile</div>
+        <div style="display:flex;gap:5px;flex-wrap:wrap">
+          <button class="btn btn-ghost btn-sm" onclick="loadGP('yiliu')" style="font-size:10px;border-color:var(--g);color:var(--g2)">★ Yi Liu · MIT/ByteDance PM</button>
+          <button class="btn btn-ghost btn-sm" onclick="loadGP('yushengjia')" style="font-size:10px;border-color:var(--bl);color:var(--bl)">★ Yusheng Jia · ByteDance Data+Agent</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Tags mode -->
+  <div style="padding:0 16px 14px">
+    <div style="font-size:10px;font-weight:600;color:var(--tx3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:7px">Tags Processing Mode</div>
+    <div class="tp-mode">
+      <button class="mode-btn on" id="modeUnified" onclick="setMode('unified',this)">Unified — merge JD + GP into one cluster set</button>
+      <button class="mode-btn" id="modeSeparate" onclick="setMode('separate',this)">Separate — keep JD and GP as independent sets</button>
+    </div>
+  </div>
+</div>
+
+<!-- SKILL CLUSTERS OUTPUT -->
+<div class="panel" id="clustersPanel" style="display:none">
+  <div class="ph">
+    <div>
+      <span class="ph-title">AI-Generated Skill Clusters</span>
+      <span class="ph-sub" style="margin-left:8px" id="clustersMode"></span>
+    </div>
+    <div style="display:flex;gap:7px;align-items:center">
+      <span style="font-size:11px;color:var(--tx3)">Click tags to enable/disable</span>
+      <button class="btn btn-ghost btn-sm" onclick="processTags()">↺ Regenerate</button>
+      <button class="btn btn-ghost btn-sm" onclick="document.getElementById('searchPanel').style.display=''">Search Config →</button>
+    </div>
+  </div>
+  <div style="padding:14px 16px">
+    <div id="clustersGrid" class="clusters-grid"></div>
+    <div id="reqSummary" class="req-grid" style="display:none"></div>
+  </div>
+</div>
+
+<!-- STRATEGY INSIGHT PANEL -->
+<div class="panel" id="strategyPanel" style="display:none">
+  <div class="ph">
+    <div>
+      <span class="ph-title">🔍 Search Strategy Insight</span>
+      <span class="ph-sub" style="margin-left:8px">Explains why specific niche terms were selected</span>
+    </div>
+    <button class="btn btn-ghost btn-sm" onclick="document.getElementById('strategyPanel').style.display='none'">Dismiss</button>
+  </div>
+  <div style="padding:14px 16px" id="strategyContent">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div style="background:rgba(59,130,246,.05);border:1px solid rgba(59,130,246,.2);border-radius:8px;padding:11px 14px">
+        <div style="font-size:10px;font-weight:700;color:var(--bl);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px">🔬 Technical Fingerprint Rationale</div>
+        <div id="si-fingerprint" style="font-size:12px;color:var(--tx2);line-height:1.7"></div>
+      </div>
+      <div style="background:rgba(124,58,237,.05);border:1px solid rgba(124,58,237,.2);border-radius:8px;padding:11px 14px">
+        <div style="font-size:10px;font-weight:700;color:var(--pu);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px">🔄 Inverse Mapping Logic</div>
+        <div id="si-inverse" style="font-size:12px;color:var(--tx2);line-height:1.7"></div>
+      </div>
+      <div style="background:rgba(145,198,62,.05);border:1px solid rgba(145,198,62,.2);border-radius:8px;padding:11px 14px">
+        <div style="font-size:10px;font-weight:700;color:var(--g2);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px">⭐ Golden Profile Signals</div>
+        <div id="si-gp-signals" style="font-size:12px;color:var(--tx2)"></div>
+      </div>
+      <div style="background:rgba(225,29,72,.05);border:1px solid rgba(225,29,72,.2);border-radius:8px;padding:11px 14px">
+        <div style="font-size:10px;font-weight:700;color:var(--co);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px">🚫 Search Anti-Patterns (avoid)</div>
+        <div id="si-anti" style="font-size:12px;color:var(--tx2)"></div>
+      </div>
+    </div>
+    <!-- Outreach Hook -->
+    <div class="outreach-hook-box" id="outreach-hook-box" style="display:none;margin-top:12px;align-items:flex-start;gap:10px;padding:12px 14px;background:linear-gradient(135deg,rgba(145,198,62,.07),rgba(59,130,246,.05));border:1px solid rgba(145,198,62,.25);border-radius:9px">
+      <div style="font-size:11px;font-weight:700;color:var(--g2);white-space:nowrap;margin-top:1px">✉ Outreach Hook</div>
+      <div id="si-outreach-hook" style="font-size:12px;color:var(--tx2);line-height:1.7;font-style:italic;flex:1"></div>
+      <button onclick="navigator.clipboard.writeText(document.getElementById('si-outreach-hook').textContent).then(()=>{this.textContent='✓ Copied!';setTimeout(()=>{this.textContent='Copy'},1800)})" style="font-size:10px;padding:3px 10px;border-radius:5px;border:1px solid var(--g);background:var(--gbg);color:var(--g2);cursor:pointer;white-space:nowrap">Copy</button>
+    </div>
+  </div>
+</div>
+
+<!-- SEARCH CONFIGURATION -->
+<div class="panel" id="searchPanel" style="display:none">
+  <div class="ph">
+    <div>
+      <span class="ph-title">Search Configuration</span>
+      <span class="ph-sub" style="margin-left:8px" id="searchConfigNote"></span>
+    </div>
+    <div style="display:flex;gap:7px">
+      <button class="btn btn-g btn-sm" id="regenSearchBtn" onclick="regenSearchConfig()"><span id="regenIcon">↺</span> Regenerate from Clusters</button>
+      <button class="btn btn-ghost btn-sm" onclick="this.closest('.panel').style.display='none'">Collapse ↑</button>
+    </div>
+  </div>
+  <!-- Channel Matrix: 3 regions × role-type -->
+  <div style="padding:10px 16px 6px">
+    <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);margin-bottom:8px">
+      Active Channels by Region
+      <span style="font-weight:400;margin-left:8px;color:var(--tx3)">· Auto = sourced automatically · Semi = manual search links provided</span>
+    </div>
+    <div class="ch-matrix" id="chMatrix"></div>
+  </div>
+  <!-- Repos + Queries (R&D only) -->
+  <div id="repoQuerySection">
+    <div style="padding:8px 16px 4px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px">
+      <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3)">GitHub Config — 📁 Repos = mine contributors · 🔍 Queries = search users (1-2 keywords, no location:)</div>
+      <span id="rqRoleNote" style="font-size:10px;color:var(--am)"></span>
+    </div>
+    <div class="rq-grid">
+      <div class="rq-box">
+        <div class="rq-hd"><span class="rq-title">GitHub Repos (contributor mining)</span><button class="btn btn-ghost btn-sm" onclick="addRepo()">+ Add</button></div>
+        <div class="rq-list" id="repoList"></div>
+      </div>
+      <div class="rq-box">
+        <div class="rq-hd"><span class="rq-title">Semantic Search Queries (user search)</span><button class="btn btn-ghost btn-sm" onclick="addQuery()">+ Add</button></div>
+        <div class="rq-list" id="queryList"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RUN LOG -->
+<div class="panel">
+  <div class="ph"><span class="ph-title">Run Log</span><button class="btn btn-ghost btn-sm" onclick="clearLog()">Clear</button></div>
+  <div class="log-body" id="logBox"><span class="l-d">Waiting to start...</span></div>
+  <div class="pbar"><div class="pf" id="pbar" style="width:0%"></div></div>
+</div>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="sstat"><div class="ssl">GitHub</div><div class="ssn" id="sGH">—</div></div>
+  <div class="sstat"><div class="ssl">Other Channels</div><div class="ssn" id="sOther">—</div></div>
+  <div class="sstat"><div class="ssl">Manual Added</div><div class="ssn" id="sManual">0</div></div>
+  <div class="sstat"><div class="ssl">Score Passed</div><div class="ssn" id="sPassed">—</div></div>
+  <div class="sstat"><div class="ssl">High Match ≥80</div><div class="ssn" id="sHigh">—</div></div>
+</div>
+
+<!-- RESULTS TABLE -->
+<div class="panel">
+  <div class="score-legend">
+    <span class="sl-label">Match Guide</span>
+    <span class="sl-pill sl-hi">80–100 <span>Prioritize outreach</span></span>
+    <span class="sl-pill sl-md">60–79 <span>Worth exploring</span></span>
+    <span class="sl-pill sl-lo">40–59 <span>Needs review</span></span>
+    <span class="sl-pill sl-sk">&lt;40 <span>Skip</span></span>
+  </div>
+  <div class="ph" style="flex-wrap:wrap;gap:9px">
+    <div class="filters">
+      <button class="ft on" onclick="setF('all',this)">All</button>
+      <button class="ft" onclick="setF('hi',this)">≥80 ★</button>
+      <button class="ft" onclick="setF('sig1',this)" id="f-sig1">Signal 1</button>
+      <button class="ft" onclick="setF('sig2',this)" id="f-sig2">Signal 2</button>
+      <button class="ft" onclick="setF('loc',this)">Location ✓</button>
+      <button class="ft" onclick="setF('manual',this)">Manual</button>
+    </div>
+    <input class="srch" id="tblSrch" placeholder="Search name / bio..." oninput="renderTable()">
+  </div>
+  <div class="tw"><table><thead><tr>
+    <th style="width:78px" onclick="sortBy('score')">MATCH ↕</th>
+    <th style="width:140px" onclick="sortBy('name')">NAME</th>
+    <th style="width:105px">SIGNALS</th>
+    <th>BIO / COMPANY</th>
+    <th style="width:100px" onclick="sortBy('location')">LOCATION</th>
+    <th style="width:185px">AI ASSESSMENT</th>
+    <th style="width:108px">LINKS</th>
+  </tr></thead>
+  <tbody id="tblBody"><tr><td colspan="7"><div class="empty">Select a role and process the JD to begin</div></td></tr></tbody>
+  </table></div>
+</div>
+
+<!-- SEMI-AUTO ANALYZER -->
+<div class="panel" id="analyzerPanel" style="display:none">
+  <div class="ph">
+    <div><span class="ph-title">Semi-Auto Profile Analyzer</span><span class="ph-sub" style="margin-left:8px">Upload resume or paste profile → AI scores vs clusters</span></div>
+    <button class="btn btn-ghost btn-sm" onclick="openTopSearch()" title="Open top 3 search links in new tabs">🚀 Top 3 Links</button>
+  </div>
+  <div class="atabs" id="analyzerTabs"></div>
+  <div id="analyzerContent"></div>
+</div>
+
+</div><!-- /main -->
+</div><!-- /layout -->
+<script>
+// ════════════════════════════════════════════════════════
+// ROLE DATA — All Conviva open roles
+// ════════════════════════════════════════════════════════
+const ROLES=[
+  // US Foster City
+  {id:'acct',label:'Accountant, Payroll & Stock',dept:'Finance',deptClass:'Fin',office:'Foster City',region:'US',days:67,type:'GA'},
+  {id:'ae',label:'Account Executive',dept:'Sales',deptClass:'Sales',office:'Foster City',region:'US',days:104,type:'GTM'},
+  {id:'recruiter',label:'Corporate Recruiter',dept:'Human Resources',deptClass:'HR',office:'Foster City',region:'US',days:209,type:'GA'},
+  {id:'dir_creative',label:'Director, Creative & Web',dept:'Marketing',deptClass:'Mkt',office:'Foster City',region:'US',days:88,type:'GTM'},
+  {id:'fde',label:'Forward Deployed Engineer',dept:'Technical Solutions',deptClass:'Eng',office:'Foster City',region:'US',days:66,type:'RND'},
+  {id:'head_partners',label:'Head of Strategic Partnerships',dept:'Sales',deptClass:'Sales',office:'Foster City',region:'US',days:86,type:'GTM'},
+  {id:'int_eng',label:'Integration Engineer',dept:'Engineering',deptClass:'Eng',office:'Foster City',region:'US',days:52,type:'RND'},
+  {id:'it_mgr',label:'IT Manager',dept:'Information Systems',deptClass:'Fin',office:'Foster City',region:'US',days:74,type:'GA'},
+  {id:'mle',label:'Machine Learning Engineer',dept:'Engineering',deptClass:'Eng',office:'Foster City',region:'US',days:328,type:'RND'},
+  {id:'mle_llm',label:'ML Engineer (LLM Track)',dept:'Engineering',deptClass:'Eng',office:'Foster City',region:'US',days:191,type:'RND'},
+  {id:'people_ops',label:'People Ops Coordinator',dept:'Human Resources',deptClass:'HR',office:'Foster City',region:'US',days:67,type:'GA'},
+  {id:'product_builder',label:'Principal Product Builder',dept:'Product Management',deptClass:'Prod',office:'Foster City',region:'US',days:58,type:'RND'},
+  {id:'pm_agent',label:'PM, Agent Analytics',dept:'Product Management',deptClass:'Prod',office:'Foster City',region:'US',days:88,type:'RND'},
+  {id:'senior_am',label:'Senior Account Manager',dept:'Sales',deptClass:'Sales',office:'Foster City',region:'US',days:107,type:'GTM'},
+  {id:'senior_ds',label:'Senior Data Scientist — AI Alerts',dept:'Engineering',deptClass:'Eng',office:'Foster City',region:'US',days:201,type:'RND'},
+  {id:'senior_mle',label:'Senior ML Engineer',dept:'Engineering',deptClass:'Eng',office:'Foster City',region:'US',days:327,type:'RND'},
+  {id:'swe_dist',label:'SWE, Distributed Systems',dept:'Engineering',deptClass:'Eng',office:'Foster City',region:'US',days:null,type:'RND'},
+  // Beijing
+  {id:'bj_support',label:'Product Support Engineer',dept:'Customer Support',deptClass:'Sup',office:'Beijing',region:'CN',days:45,type:'RND'},
+  {id:'bj_pb',label:'Sr/Principal Product Builder',dept:'Product Management',deptClass:'Prod',office:'Beijing',region:'CN',days:54,type:'RND'},
+  // Bengaluru
+  {id:'in_pe',label:'Engineer, Principal',dept:'Engineering',deptClass:'Eng',office:'Bengaluru',region:'IN',days:90,type:'RND'},
+  {id:'in_swe_rust',label:'Engineer, Senior (Rust/C++)',dept:'Engineering',deptClass:'Eng',office:'Bengaluru',region:'IN',days:157,type:'RND'},
+];
+
+const ROLE_TYPE_META={
+  RND:{label:'R&D',color:'var(--pu)',bg:'var(--pubg)',class:'rt-rnd'},
+  GTM:{label:'GTM',color:'var(--am)',bg:'var(--ambg)',class:'rt-gtm'},
+  GA:{label:'G&A',color:'var(--tl)',bg:'var(--tlbg)',class:'rt-ga'},
+};
+
+// ════════════════════════════════════════════════════════
+// CHANNEL MATRIX — per role type × region
+// ════════════════════════════════════════════════════════
+const CH_MATRIX={
+  RND:{
+    US:[
+      {id:'gh',nm:'GitHub',dot:'#6e7681',type:'auto',enabled:true},
+      {id:'ph',nm:'Product Hunt',dot:'#da552f',type:'auto',enabled:true},
+      {id:'hn',nm:'Hacker News',dot:'#ff6600',type:'auto',enabled:true},
+      {id:'devto',nm:'Dev.to',dot:'#3b49df',type:'auto',enabled:true},
+      {id:'li_us',nm:'LinkedIn X-Ray',dot:'#0a66c2',type:'semi',enabled:true},
+      {id:'x',nm:'X / Twitter',dot:'#1a1a1a',type:'semi',enabled:true},
+    ],
+    CN:[
+      {id:'gh',nm:'GitHub',dot:'#6e7681',type:'auto',enabled:true},
+      {id:'juejin',nm:'掘金 Juejin',dot:'#1e80ff',type:'auto',enabled:true},
+      {id:'segfault',nm:'思否 SegmentFault',dot:'#009a61',type:'auto',enabled:false},
+      {id:'boss',nm:'Boss直聘',dot:'#00cc99',type:'semi',enabled:true},
+      {id:'maimai',nm:'脉脉 Maimai',dot:'#1890ff',type:'semi',enabled:true},
+      {id:'li_cn',nm:'LinkedIn China',dot:'#0a66c2',type:'semi',enabled:true},
+      {id:'xhs',nm:'小红书 XHS',dot:'#fe2c55',type:'semi',enabled:false},
+    ],
+    IN:[
+      {id:'gh',nm:'GitHub',dot:'#6e7681',type:'auto',enabled:true},
+      {id:'naukri',nm:'Naukri.com',dot:'#854F0B',type:'semi',enabled:true},
+      {id:'li_in',nm:'LinkedIn India',dot:'#0a66c2',type:'semi',enabled:true},
+      {id:'hacker_earth',nm:'HackerEarth',dot:'#44a6c6',type:'semi',enabled:false},
+    ],
+  },
+  GTM:{
+    US:[
+      {id:'li_us',nm:'LinkedIn X-Ray',dot:'#0a66c2',type:'semi',enabled:true},
+      {id:'x',nm:'X / Twitter',dot:'#1a1a1a',type:'semi',enabled:true},
+      {id:'wellfound',nm:'Wellfound',dot:'#000',type:'semi',enabled:true},
+      {id:'glassdoor',nm:'Glassdoor',dot:'#0caa41',type:'semi',enabled:false},
+    ],
+    CN:[
+      {id:'li_cn',nm:'LinkedIn China',dot:'#0a66c2',type:'semi',enabled:true},
+      {id:'boss',nm:'Boss直聘',dot:'#00cc99',type:'semi',enabled:true},
+      {id:'liepin',nm:'猎聘 Liepin',dot:'#f60',type:'semi',enabled:true},
+      {id:'maimai',nm:'脉脉 Maimai',dot:'#1890ff',type:'semi',enabled:true},
+      {id:'xhs',nm:'小红书 XHS',dot:'#fe2c55',type:'semi',enabled:true},
+      {id:'jike',nm:'即刻 Jike',dot:'#f5a623',type:'semi',enabled:false},
+    ],
+    IN:[
+      {id:'li_in',nm:'LinkedIn India',dot:'#0a66c2',type:'semi',enabled:true},
+      {id:'naukri',nm:'Naukri.com',dot:'#854F0B',type:'semi',enabled:true},
+    ],
+  },
+  GA:{
+    US:[
+      {id:'li_us',nm:'LinkedIn X-Ray',dot:'#0a66c2',type:'semi',enabled:true},
+      {id:'indeed',nm:'Indeed (links)',dot:'#2557a7',type:'semi',enabled:false},
+      {id:'glassdoor',nm:'Glassdoor',dot:'#0caa41',type:'semi',enabled:false},
+    ],
+    CN:[
+      {id:'boss',nm:'Boss直聘',dot:'#00cc99',type:'semi',enabled:true},
+      {id:'liepin',nm:'猎聘 Liepin',dot:'#f60',type:'semi',enabled:true},
+      {id:'maimai',nm:'脉脉 Maimai',dot:'#1890ff',type:'semi',enabled:true},
+      {id:'li_cn',nm:'LinkedIn China',dot:'#0a66c2',type:'semi',enabled:false},
+    ],
+    IN:[
+      {id:'li_in',nm:'LinkedIn India',dot:'#0a66c2',type:'semi',enabled:true},
+      {id:'naukri',nm:'Naukri.com',dot:'#854F0B',type:'semi',enabled:true},
+    ],
+  },
+};
+
+// Active channel toggles state
+let chState={};
+
+// ════════════════════════════════════════════════════════
+// ROLE TYPE HELPERS
+// ════════════════════════════════════════════════════════
+function isGTMRole(role){
+  if(!role)return false;
+  const l=(role.label||'').toLowerCase(),d=(role.dept||'').toLowerCase();
+  return l.includes('partner')||l.includes('alliance')||l.includes('sales')||
+         l.includes('account exec')||l.includes('marketing')||l.includes('growth')||
+         d.includes('sales')||d.includes('marketing')||d.includes('business development');
+}
+
+// ════════════════════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════════════════════
+let activeRole=null,stopped=false,candidates=[],sortKey='score',sortAsc=false,activeFilter='all';
+let generatedClusters=[],generatedRepos=[],generatedQueries=[],generatedSearches={};
+let tagsMode='unified';
+
+// ── PERSISTENCE (localStorage) ──
+const LS_KEY='conviva_signal_v4';
+function saveState(){
+  try{
+    const st={
+      candidates:candidates.slice(0,200), // cap at 200 to stay under 5MB
+      activeRoleId:activeRole?.id||null,
+      clusters:generatedClusters,
+      searches:generatedSearches,
+      repos:generatedRepos,
+      queries:generatedQueries,
+      apiKey:document.getElementById('apiKey')?.value||'',
+      dsApiKey:document.getElementById('dsApiKey')?.value||'',
+      aiProvider:aiProvider
+    };
+    localStorage.setItem(LS_KEY,JSON.stringify(st));
+  }catch(e){/* quota exceeded — silent */}
+}
+function loadState(){
+  try{
+    const raw=localStorage.getItem(LS_KEY);if(!raw)return;
+    const st=JSON.parse(raw);
+    if(st.apiKey){const el=document.getElementById('apiKey');if(el)el.value=st.apiKey;}
+    if(st.dsApiKey){const el=document.getElementById('dsApiKey');if(el)el.value=st.dsApiKey;}
+    if(st.aiProvider){
+      aiProvider=st.aiProvider;
+      const pb=document.getElementById('pb-'+st.aiProvider);
+      if(pb){document.querySelectorAll('.provider-btn').forEach(b=>b.classList.remove('on'));pb.classList.add('on');}
+      updateModelRoutingDisplay();
+    }
+    if(st.candidates?.length){candidates=st.candidates;renderTable(candidates);setStat('sPassed',candidates.filter(c=>c.score>=60).length);setStat('sHigh',candidates.filter(c=>c.score>=80).length);setStat('sManual',candidates.filter(c=>c.src?.startsWith('manual')).length);setStat('sbPassed',candidates.filter(c=>c.score>=60).length);setStat('sbHigh',candidates.filter(c=>c.score>=80).length);setStat('sbManual',candidates.filter(c=>c.src?.startsWith('manual')).length);document.getElementById('shareBtn').style.display='';}
+    if(st.clusters?.length){generatedClusters=st.clusters;generatedSearches=st.searches||{};generatedRepos=st.repos||[];generatedQueries=st.queries||[];renderClusters();renderRepos();renderQueries();document.getElementById('clustersPanel').style.display='';document.getElementById('searchPanel').style.display='';}
+    if(st.activeRoleId){const r=ROLES.find(r=>r.id===st.activeRoleId);if(r){selectRole(r.id);document.getElementById('rc-'+r.id)?.classList.add('active');}}
+    if(candidates.length)showPersistBanner(candidates.length);
+  }catch(e){/* corrupt data — ignore */}
+}
+function clearSavedState(){
+  localStorage.removeItem(LS_KEY);
+  candidates=[];renderTable([]);generatedClusters=[];generatedRepos=[];generatedQueries=[];generatedSearches={};
+  document.getElementById('clustersPanel').style.display='none';
+  document.getElementById('searchPanel').style.display='none';
+  ['sGH','sOther','sManual','sPassed','sHigh','sbTotal','sbPassed','sbHigh','sbManual'].forEach(id=>setStat(id,id==='sManual'||id==='sbManual'?'0':'—'));
+  log('Session cleared. API key retained.','l-w');
+}
+function showPersistBanner(count){
+  const existing=document.getElementById('persist-banner');if(existing)return;
+  const b=document.createElement('div');
+  b.id='persist-banner';
+  b.style.cssText='position:fixed;bottom:16px;right:16px;background:var(--ch);color:#fff;padding:10px 16px;border-radius:9px;font-size:12px;z-index:999;box-shadow:0 4px 16px rgba(0,0,0,.25);display:flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,.1)';
+  b.innerHTML=`<span>💾 Restored ${count} candidates from last session</span><button onclick="clearSavedState();document.getElementById('persist-banner').remove()" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:#fff;border-radius:5px;padding:3px 9px;font-size:11px;cursor:pointer;font-family:Poppins,sans-serif">Clear</button><button onclick="document.getElementById('persist-banner').remove()" style="background:none;border:none;color:rgba(255,255,255,.4);cursor:pointer;font-size:16px;padding:0">×</button>`;
+  document.body.appendChild(b);setTimeout(()=>b?.remove(),8000);
+}
+
+// ── DEDUPLICATION ──
+const seenLogins=new Set();
+function isDupe(login){return seenLogins.has((login||''). toLowerCase());}
+function registerCandidate(login){seenLogins.add((login||'').toLowerCase());}
+function rebuildSeenSet(){seenLogins.clear();candidates.forEach(c=>registerCandidate(c.login));}
+const LOC_KEYWORDS={
+  US:['foster city','san francisco','bay area','sf','california','ca','remote us'],
+  CN:['beijing','北京','shanghai','上海','shenzhen','深圳','china','中国','hangzhou'],
+  IN:['bengaluru','bangalore','india','hyderabad','pune','mumbai','chennai'],
+};
+
+// ════════════════════════════════════════════════════════
+// ROLE TABS
+// ════════════════════════════════════════════════════════
+let rolesVisible=true;
+function toggleRoles(){
+  rolesVisible=!rolesVisible;
+  document.getElementById('roleSelector').style.display=rolesVisible?'':'none';
+  document.getElementById('showRolesBtn').textContent=rolesVisible?'▲ Hide Roles':'▼ All Roles';
+}
+function buildRoleTabs(){
+  const bar=document.getElementById('roleTabsBar');
+  const regions=[{key:'US',label:'🇺🇸 US · Foster City',cls:'rg-us'},{key:'CN',label:'🇨🇳 Beijing',cls:'rg-cn'},{key:'IN',label:'🇮🇳 Bengaluru',cls:'rg-in'}];
+  bar.innerHTML=regions.map(rg=>{
+    const roles=ROLES.filter(r=>r.region===rg.key);
+    return`<div class="region-group ${rg.cls}"><div class="region-lbl">${rg.label}</div>
+      <div class="role-cards">${roles.map(r=>`
+        <div class="rc" id="rc-${r.id}" onclick="selectRole('${r.id}')">
+          <span class="dept-tag dept-${r.deptClass}">${r.dept.split(' ')[0]}</span>
+          ${r.label}
+          ${r.days?`<span class="days">${r.days}d</span>`:''}
+        </div>`).join('')}
+      </div></div>`;
+  }).join('');
+}
+
+function selectRole(id){
+  activeRole=ROLES.find(r=>r.id===id);if(!activeRole)return;
+  document.querySelectorAll('.rc').forEach(c=>c.classList.remove('active'));
+  document.getElementById('rc-'+id)?.classList.add('active');
+  const meta=ROLE_TYPE_META[activeRole.type]||ROLE_TYPE_META.RND;
+  document.getElementById('navRoleLabel').innerHTML=`<strong>${activeRole.label}</strong> &nbsp;·&nbsp; ${activeRole.dept} · ${activeRole.office}`;
+  document.getElementById('sbRoleName').textContent=activeRole.label;
+  document.getElementById('sbRoleMeta').textContent=activeRole.dept+' · '+activeRole.office;
+  document.getElementById('sbRoleType').innerHTML=`<span class="role-type-badge ${meta.class}">${meta.label}</span>`;
+  // Hide roles panel
+  toggleRoles();
+  // Enable process button
+  document.getElementById('processBtn').disabled=false;
+  // Rebuild channel matrix
+  buildChannelMatrix();
+  // Show/hide repo section
+  // Repo/query section always visible; show note for non-RND roles
+const rqNote=document.getElementById('rqRoleNote');
+if(rqNote)rqNote.textContent=activeRole.type!=='RND'?'Note: GitHub is less relevant for '+activeRole.type+' roles — manual LinkedIn/channel searches recommended':'';
+  // Show/hide search config note
+  document.getElementById('searchConfigNote').textContent=
+    activeRole.type==='RND'?'GitHub + developer platforms optimized':
+    activeRole.type==='GTM'?'LinkedIn primary · GitHub disabled for GTM roles':
+    'LinkedIn primary · GitHub disabled for G&A roles';
+  // Build analyzer
+  buildAnalyzer();
+  // Update filter labels
+  const s1=activeRole.type==='GTM'?'Alliance Signal':activeRole.type==='GA'?'Domain Signal':'Tech Signal';
+  const s2=activeRole.type==='GTM'?'Exec Signal':activeRole.type==='GA'?'Industry Signal':'LLM Signal';
+  document.getElementById('f-sig1').textContent=s1;
+  document.getElementById('f-sig2').textContent=s2;
+}
+
+// ════════════════════════════════════════════════════════
+// CHANNEL MATRIX RENDER
+// ════════════════════════════════════════════════════════
+function buildChannelMatrix(){
+  if(!activeRole)return;
+  const type=activeRole.type;
+  const roleRegion=activeRole.region;
+  const matrix=CH_MATRIX[type]||CH_MATRIX.RND;
+  const regions=[
+    {key:'US',cls:'r-us',flag:'🇺🇸 US · Foster City'},
+    {key:'CN',cls:'r-cn',flag:'🇨🇳 China · Beijing'},
+    {key:'IN',cls:'r-in',flag:'🇮🇳 India · Bengaluru'},
+  ];
+  chState={};
+  regions.forEach(rg=>{(matrix[rg.key]||[]).forEach(ch=>{chState[rg.key+'_'+ch.id]=rg.key===roleRegion&&ch.enabled;});});
+  const el=document.getElementById('chMatrix');
+  el.innerHTML=regions.map(rg=>{
+    const isActive=rg.key===roleRegion;
+    const channels=matrix[rg.key]||[];
+    return`<div class="ch-region ${rg.cls} ${isActive?'locked':'disabled'}">
+      <div class="ch-region-hd">
+        <span>${rg.flag}</span>
+        ${isActive?'<span style="font-size:10px;background:var(--gbg);color:var(--g2);padding:2px 8px;border-radius:99px;font-weight:600">✅ Active</span>':'<span style="font-size:10px;color:var(--tx3);font-style:italic">Semi-auto links only</span>'}
+      </div>
+      ${channels.map(ch=>{
+        const k=rg.key+'_'+ch.id,on=chState[k];
+        return`<div class="ch-pill ${on?'on':''}" onclick="${isActive?`toggleCh('${k}',this)`:''}" style="${!isActive?'opacity:.42;cursor:default':''}">
+          <div class="ch-dot" style="background:${ch.dot}"></div>
+          <span class="ch-nm">${ch.nm}</span>
+          <span class="ch-badge ${ch.type==='auto'?'b-auto':'b-semi'}">${ch.type==='auto'?'Auto':'Semi'}</span>
+          <span class="ch-tgl">${on?'✓':'○'}</span>
+        </div>`;
+      }).join('')}
+    </div>`;
+  }).join('');
+}
+function toggleCh(key,pill){
+  chState[key]=!chState[key];
+  const on=chState[key];
+  on?pill.classList.add('on'):pill.classList.remove('on');
+  pill.querySelector('.ch-tgl').textContent=on?'✓':'○';
+}
+function getEnabledChs(region){
+  return Object.keys(chState).filter(k=>k.startsWith(region+'_')&&chState[k]).map(k=>k.replace(region+'_',''));
+}
+
+// ════════════════════════════════════════════════════════
+// FILE EXTRACTION
+// ════════════════════════════════════════════════════════
+let pdfJsLoaded=false,mammothLoaded=false;
+async function loadPdfJs(){if(pdfJsLoaded)return;return new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js';s.onload=()=>{pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';pdfJsLoaded=true;res();};s.onerror=rej;document.head.appendChild(s);});}
+async function loadMammoth(){if(mammothLoaded)return;return new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js';s.onload=()=>{mammothLoaded=true;res();};s.onerror=rej;document.head.appendChild(s);});}
+async function extractText(file){
+  const ext=file.name.split('.').pop().toLowerCase();
+  if(ext==='pdf'){await loadPdfJs();const buf=await file.arrayBuffer();const pdf=await pdfjsLib.getDocument({data:buf}).promise;let t='';for(let i=1;i<=pdf.numPages;i++){const pg=await pdf.getPage(i);const ct=await pg.getTextContent();t+=ct.items.map(it=>it.str).join(' ')+'\n';}return t.trim();}
+  if(ext==='docx'||ext==='doc'){await loadMammoth();const buf=await file.arrayBuffer();const r=await mammoth.extractRawText({arrayBuffer:buf});return r.value.trim();}
+  return await file.text();
+}
+async function handleFileDrop(e,target){e.preventDefault();document.getElementById(target+'Drop').classList.remove('drag-over');const f=e.dataTransfer.files[0];if(f)await loadFileInto(f,target);}
+async function handleFileChange(e,target){const f=e.target.files[0];if(f)await loadFileInto(f,target);}
+async function loadFileInto(file,target){
+  const st=document.getElementById(target+'Status');
+  st.style.display='block';st.textContent='⏳ Extracting...';st.style.color='var(--tx3)';
+  try{const txt=await extractText(file);document.getElementById(target+'Text').value=txt;st.textContent='✓ Loaded "'+file.name+'"';st.style.color='var(--g)';document.getElementById('processBtn').disabled=false;}
+  catch(e){st.textContent='✗ '+e.message;st.style.color='var(--co)';}
+}
+function clearInputs(){['jdText','gpText'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});['jdStatus','gpStatus'].forEach(id=>{const el=document.getElementById(id);if(el)el.style.display='none';});document.getElementById('clustersPanel').style.display='none';document.getElementById('searchPanel').style.display='none';}
+function setMode(mode,btn){tagsMode=mode;document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');}
+
+// ════════════════════════════════════════════════════════
+// AI PROVIDER ROUTING — Claude / DeepSeek / Smart Mix
+//   claudeCall()  → quality calls (clusters, deep analysis)
+//   haikuCall()   → bulk scoring (GitHub candidates)
+//   Provider mode controls which backend handles each tier
+// ════════════════════════════════════════════════════════
+let aiProvider = 'claude'; // 'claude' | 'deepseek' | 'mix'
+
+function setProvider(mode, btn) {
+  aiProvider = mode;
+  document.querySelectorAll('.provider-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  updateModelRoutingDisplay();
+  saveState();
+  log('AI provider set to: ' + {claude:'Claude Only',deepseek:'DeepSeek Only',mix:'Smart Mix (Claude quality + DeepSeek bulk)'}[mode], 'l-i');
+}
+
+function updateModelRoutingDisplay() {
+  const el = document.getElementById('modelRoutingInfo');
+  if (!el) return;
+  const info = {
+    claude:    '✦ <strong style="color:rgba(145,198,62,.9)">Sonnet 4.6</strong> clusters · <strong style="color:rgba(59,130,246,.9)">Haiku 4.5</strong> scoring',
+    deepseek:  '⚡ <strong style="color:rgba(59,130,246,.9)">DeepSeek V3</strong> all calls · cheapest',
+    mix:       '✦ <strong style="color:rgba(145,198,62,.9)">Sonnet</strong> quality · <strong style="color:rgba(59,130,246,.9)">DeepSeek</strong> bulk'
+  }[aiProvider] || '';
+  el.innerHTML = info;
+}
+
+// Low-level fetch for Anthropic
+async function _anthropicFetch(model, prompt, maxTokens) {
+  const key = document.getElementById('apiKey').value.trim();
+  if (!key) throw new Error('Please enter your Claude API Key (sk-ant-...) in the sidebar');
+  const r = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': key,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({ model, max_tokens: maxTokens, temperature: 0.1, messages: [{ role: 'user', content: prompt }] })
+  });
+  if (!r.ok) { const err = await r.text(); throw new Error('Claude API ' + r.status + ': ' + err.slice(0, 300)); }
+  const d = await r.json();
+  if (d.error) throw new Error(d.error.message || 'API error');
+  const blocks = (d.content || []).filter(b => b.type === 'text');
+  if (!blocks.length) throw new Error('No text in Claude response');
+  return blocks.map(b => b.text).join('');
+}
+
+// Low-level fetch for DeepSeek
+async function _deepseekFetch(prompt, maxTokens) {
+  const key = document.getElementById('dsApiKey').value.trim();
+  if (!key) throw new Error('Please enter your DeepSeek API Key in the sidebar');
+  const r = await fetch('https://api.deepseek.com/v1/chat/completions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + key },
+    body: JSON.stringify({ model: 'deepseek-chat', max_tokens: maxTokens, temperature: 0.1, messages: [{ role: 'user', content: prompt }] })
+  });
+  if (!r.ok) { const err = await r.text(); throw new Error('DeepSeek API ' + r.status + ': ' + err.slice(0, 300)); }
+  const d = await r.json();
+  if (d.error) throw new Error(d.error.message || 'API error');
+  return d.choices[0].message.content;
+}
+
+// Quality call — JD→Clusters, resume deep analysis, regen search config
+// claude: Sonnet | deepseek: DeepSeek V3 | mix: Claude Sonnet
+async function claudeCall(prompt, maxTokens = 1500) {
+  if (aiProvider === 'deepseek') return _deepseekFetch(prompt, maxTokens);
+  return _anthropicFetch('claude-sonnet-4-20250514', prompt, maxTokens);
+}
+
+// Bulk scoring call — GitHub candidates, high-volume, lower stakes
+// claude: Haiku | deepseek: DeepSeek V3 | mix: DeepSeek V3
+async function haikuCall(prompt, maxTokens = 800) {
+  if (aiProvider === 'claude') return _anthropicFetch('claude-haiku-4-5-20251001', prompt, maxTokens);
+  return _deepseekFetch(prompt, maxTokens); // deepseek or mix both use DeepSeek for bulk
+}
+
+// ════════════════════════════════════════════════════════
+// TAGS PROCESSING — core function
+// ════════════════════════════════════════════════════════
+async function processTags(){
+  const jd=document.getElementById('jdText').value.trim();
+  const gp=document.getElementById('gpText').value.trim();
+  if(!jd&&!gp){alert('Please paste a JD or upload a file first');return;}
+  const btn=document.getElementById('processBtn');
+  btn.disabled=true;document.getElementById('processIcon').innerHTML='<span class="spin"></span>';
+  document.getElementById('clustersPanel').style.display='';
+  document.getElementById('clustersGrid').innerHTML='<div style="padding:20px;display:flex;align-items:center;gap:10px;color:var(--tx3)"><span class="spin"></span>Claude is analyzing inputs and generating skill clusters...</div>';
+  document.getElementById('reqSummary').style.display='none';
+
+  const roleCtx=activeRole?`Role: ${activeRole.label} (${activeRole.type} — ${activeRole.dept} · ${activeRole.office})\n`:'';
+  const gpHeader=gp?`PRIMARY REFERENCE (Golden Profile — weight this more heavily than the JD):\n${gp.slice(0,2500)}`:'NO GOLDEN PROFILE PROVIDED — extract signals from JD only';
+  const jdHeader=jd?`SECONDARY REFERENCE (Job Description):\n${jd.slice(0,3000)}`:'NO JD PROVIDED';
+  const prompt=`You are a Senior Technical Executive Search Consultant specializing in "Product Builders" and high-impact R&D roles. Convert the JD and Golden Profile into hyper-precise search parameters.
+
+${roleCtx}
+
+### INPUT DATA
+1. ${jdHeader}
+
+2. ${gpHeader}
+
+### CORE STRATEGY: THE "PRODUCT BUILDER" LENS
+A "Product Builder" is not just a coder — they are full-stack owners. Prioritize candidates who show evidence of:
+- End-to-end ownership (Idea → Prototype → Ship)
+- Cross-functional DNA: Frontend (React/Next.js) + Backend (Python/FastAPI/Node)
+- Product Mindset: READMEs containing "Roadmaps", "Demo links", or "Architecture diagrams"
+
+### EXTRACTION RULES
+1. PRIMARY WEIGHTING (GP Focus):
+   - Prioritize SPECIFIC technical fingerprints from the Golden Profile over generic JD terms
+   - If GP mentions "Agent evaluation framework" → use "LLM evaluation", "RAG metrics", "LangSmith" NOT "AI development"
+   - Each tag must be something a top-5% expert has in their bio/README — juniors would NOT have it
+
+2. NEGATIVE CONSTRAINTS (Noise Reduction):
+   - Explicitly exclude educational indicators: "tutorial", "student", "assignment", "homework", "coursework", "bootcamp"
+   - Cluster names: 2-4 words MAX
+   - Tags: 1-3 words MAX — keyword-style fingerprints
+
+3. GITHUB QUERIES — "Inverse Mapping":
+   - DO NOT use job titles or generic keywords
+   - Combine 1 Tech Stack + 1 Action word: e.g. "FastAPI shipped", "LangGraph production"
+   - Combine 1 Domain + 1 Evidence word: e.g. "agent eval roadmap", "RAG metrics deployed"
+   - NO location: filter (breaks GitHub search), MAX 2 keywords per query
+
+4. X-RAY SEARCHES — Multi-platform:
+   - LinkedIn: site:linkedin.com/in — role synonyms + company archetypes (ByteDance/TikTok/Airbnb/Uber/Stripe/AI startups)
+   - Read.cv: site:read.cv — builders who document their work
+   - Polywork: site:polywork.com — indie builders, side projects, multi-role people
+   - Use "Role Synonyms": for Product Builder → "Founding Engineer" OR "Product Engineer" + "0 to 1"
+
+Return JSON only (no markdown, no code block):
+{
+  "role_title": "<infer from JD or GP>",
+  "role_dept": "<Engineering|Sales|Marketing|Finance|HR|Product|Operations|Legal>",
+  "role_type": "<RND|GTM|GA>",
+  "role_office": "<primary office>",
+  "builder_level": "<Senior|Principal|Lead>",
+  "clusters": [
+    {
+      "name": "<3-4 word max cluster name — e.g. 'LLM Observability' not 'LLM Monitoring and Observability Tools'>",
+      "source": "<jd|gp|both>",
+      "priority": "<critical|important|nice>",
+      "color": "<one of: #7c3aed|#0d9488|#3b82f6|#ea580c|#91C63E|#d97706>",
+      "weight": <1-5>,
+      "must_tags": ["SHORT tag — 1-3 words max — e.g. 'LangFuse' not 'LangFuse LLM observability platform'"],
+      "nice_tags": ["SHORT tag — 1-3 words max"]
+    }
+  ],
+  "must_have": ["<10 words max — e.g. '5yr+ PM in SaaS analytics' not a sentence>"],
+  "nice_have": ["<10 words max>"],
+  "github_repos": ["owner/repo — REAL public repos only, [] if GTM/GA role"],
+  "github_queries": ["max 2 keywords per query — NO location: filter — e.g. 'LLM observability' or 'founding product manager'"],
+  "xray_searches": [
+    {"platform":"LinkedIn","desc":"inverse-mapped role synonym + company archetype","q":"site:linkedin.com/in 'Founding Engineer' OR 'Product Engineer' '0 to 1'","region":"US|CN|IN"},
+    {"platform":"Read.cv","desc":"builders who document shipped work","q":"site:read.cv 'product builder' 'shipped'","region":"Global"},
+    {"platform":"Polywork","desc":"indie builders and multi-role people","q":"site:polywork.com 'product' 'launched'","region":"Global"}
+  ],
+  "competitor_companies": ["ByteDance","TikTok","Airbnb","Uber","Stripe"],
+  "gsi_partners": [],
+  "strict_filter": "<disqualifier — e.g. Pure engineer without product ownership = disqualified>",
+  "scoring_dimensions": {
+    "sig1_name": "<primary signal name, e.g. 'Alliance Signal'>",
+    "sig1_desc": "<what sig1=true means>",
+    "sig2_name": "<secondary signal name>",
+    "sig2_desc": "<what sig2=true means>"
+  },
+  "outreach_hook": "<unique icebreaker referencing GP career trajectory — e.g. Your track record of shipping 0→1 data products combined with...>",
+  "strategy_insight": {
+    "fingerprint_rationale": "<2-3 sentences: why these specific niche terms — derived from GP signals, not JD generics — e.g. 'LangGraph was derived from the GP's multi-agent orchestration experience...'>",
+    "inverse_map_rationale": "<2-3 sentences: the company archetypes and role synonyms logic used>",
+    "golden_profile_signals": ["<key signal extracted from GP>","<signal 2>"],
+    "search_anti_patterns": ["<what NOT to search for and why>"]
+  }
+}`;
+
+  try{
+    const raw=await claudeCall(prompt,3000);
+    const res=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    generatedClusters=res.clusters||[];
+    generatedRepos=res.github_repos||[];
+    generatedQueries=res.github_queries||[];
+    // Handle both old li_searches and new xray_searches format
+    const xray=res.xray_searches||[];
+    const liSearches=xray.filter(x=>x.platform==='LinkedIn'||x.platform==='linkedin').concat(res.li_searches||[]);
+    const readcvSearches=xray.filter(x=>x.platform==='Read.cv'||x.platform==='read.cv');
+    const polyworkSearches=xray.filter(x=>x.platform==='Polywork'||x.platform==='polywork');
+    generatedSearches={
+      li:liSearches,
+      readcv:readcvSearches,
+      polywork:polyworkSearches,
+      competitors:res.competitor_companies||[],
+      gsi:res.gsi_partners||[]
+    };
+    // Store outreach hook and builder level
+    // Guard: activeRole may be null if no tab selected — auto-create from AI response
+    if(!activeRole){
+      const t=res.role_type||'RND', d=res.role_dept||'Unknown', o=res.role_office||'Foster City';
+      activeRole={id:'auto_jd',label:res.role_title||'Detected Role',dept:d,office:o,region:'US',type:t,days:null};
+      const meta=ROLE_TYPE_META[t]||ROLE_TYPE_META.RND;
+      document.getElementById('sbRoleName').textContent=activeRole.label;
+      document.getElementById('sbRoleMeta').textContent=d+' · '+o;
+      document.getElementById('sbRoleType').innerHTML=`<span class="role-type-badge ${meta.class}">${meta.label}</span>`;
+      document.getElementById('navRoleLabel').innerHTML=`<strong>${activeRole.label}</strong> · ${d}`;
+      buildChannelMatrix();
+    }
+    if(res.outreach_hook)activeRole._outreachHook=res.outreach_hook;
+    if(res.builder_level)activeRole._builderLevel=res.builder_level;
+    // Apply detected role metadata if no role selected
+    if(!activeRole){
+      activeRole={id:'auto',label:res.role_title||'Role',dept:res.role_dept||'Unknown',
+        office:res.role_office||'Foster City',region:'US',type:res.role_type||'RND',days:null};
+      document.getElementById('sbRoleName').textContent=activeRole.label;
+      document.getElementById('sbRoleMeta').textContent=activeRole.dept+' · '+activeRole.office;
+      const meta=ROLE_TYPE_META[activeRole.type]||ROLE_TYPE_META.RND;
+      document.getElementById('sbRoleType').innerHTML=`<span class="role-type-badge ${meta.class}">${meta.label}</span>`;
+      document.getElementById('navRoleLabel').innerHTML=`<strong>${activeRole.label}</strong> · ${activeRole.dept}`;
+      buildChannelMatrix();
+    }
+    if(res.scoring_dimensions){
+      const s=res.scoring_dimensions;
+      const fs1=document.getElementById('f-sig1');const fs2=document.getElementById('f-sig2');
+      if(fs1)fs1.textContent=s.sig1_name||'Signal 1';
+      if(fs2)fs2.textContent=s.sig2_name||'Signal 2';
+    }
+    if(activeRole){
+      activeRole._mustHave=res.must_have||[];
+      activeRole._niceHave=res.nice_have||[];
+      activeRole._strictFilter=res.strict_filter||'';
+      activeRole._scoring=res.scoring_dimensions||{};
+    }
+    renderClusters();
+    renderReqSummary(res.must_have||[],res.nice_have||[]);
+    renderRepos();renderQueries();
+    updateSearchLinks();buildAnalyzer();
+    document.getElementById('clustersMode').textContent=tagsMode==='unified'?'(Unified: JD + Golden Profile merged)':'(Separate: JD clusters | GP clusters)';
+    document.getElementById('searchPanel').style.display='';
+    // Render strategy insight
+    if(res.strategy_insight||res.outreach_hook){
+      const si=res.strategy_insight||{};
+      document.getElementById('strategyPanel').style.display='';
+      document.getElementById('si-fingerprint').textContent=si.fingerprint_rationale||'—';
+      document.getElementById('si-inverse').textContent=si.inverse_map_rationale||'—';
+      document.getElementById('si-gp-signals').innerHTML=(si.golden_profile_signals||[]).map(s=>`<div style="display:flex;gap:6px;margin-bottom:4px"><span style="color:var(--g2)">✓</span>${s}</div>`).join('')||'No GP loaded';
+      document.getElementById('si-anti').innerHTML=(si.search_anti_patterns||[]).map(s=>`<div style="display:flex;gap:6px;margin-bottom:4px"><span style="color:var(--co)">✗</span>${s}</div>`).join('')||'—';
+      // Show outreach hook
+      const hookEl=document.getElementById('si-outreach-hook');
+      if(hookEl&&res.outreach_hook){
+        hookEl.textContent='"'+res.outreach_hook+'"';
+        const box=document.querySelector('.outreach-hook-box');
+        if(box)box.style.display='flex';
+      }
+    }
+  }catch(e){document.getElementById('clustersGrid').innerHTML=`<div style="padding:16px;color:var(--co);font-size:12px">Processing failed: ${e.message}</div>`;}
+  saveState(); // persist clusters after processing
+  btn.disabled=false;document.getElementById('processIcon').textContent='✦';
+}
+
+// ════════════════════════════════════════════════════════
+// RENDER CLUSTERS
+// ════════════════════════════════════════════════════════
+function renderClusters(){
+  const cols=Math.min(generatedClusters.length,3);
+  const grid=document.getElementById('clustersGrid');
+  grid.style.gridTemplateColumns=`repeat(${cols},1fr)`;
+  grid.innerHTML=generatedClusters.map(c=>{
+    const bg=c.color+'18',bd=c.color+'44';
+    const src=c.source==='gp'?'<span style="font-size:9px;background:rgba(145,198,62,.15);color:var(--g2);padding:1px 5px;border-radius:3px;margin-left:auto">GP</span>':c.source==='jd'?'<span style="font-size:9px;background:rgba(59,130,246,.15);color:var(--bl);padding:1px 5px;border-radius:3px;margin-left:auto">JD</span>':'';
+    const mustT=(c.must_tags||[]).map(t=>`<span class="ctag must-tag on" data-cluster="${c.name}" style="background:${c.color}20;color:${c.color};border-color:${c.color}55" onclick="this.classList.toggle('on');this.classList.toggle('off')">${t}</span>`).join('');
+    const niceT=(c.nice_tags||[]).map(t=>`<span class="ctag nice-tag on" data-cluster="${c.name}" style="background:${c.color}0d;color:${c.color}bb;border-color:${c.color}33" onclick="this.classList.toggle('on');this.classList.toggle('off')">${t}*</span>`).join('');
+    return`<div class="cluster-card" style="background:${bg};border-color:${bd}">
+      <div class="cluster-name" style="color:${c.color}">
+        <div class="cluster-dot" style="background:${c.color}"></div>${c.name}
+        ${src}<span style="font-size:10px;opacity:.6;margin-left:4px">${'★'.repeat(c.weight)}</span>
+      </div>
+      <div class="ctags">${mustT}${niceT}</div>
+    </div>`;
+  }).join('');
+}
+function renderReqSummary(must,nice){
+  const el=document.getElementById('reqSummary');
+  if(!must.length&&!nice.length){el.style.display='none';return;}
+  el.style.display='grid';
+  el.innerHTML=`
+    <div class="req-box must"><div class="req-hd must">🔴 Must-Have</div>${must.map(m=>`<div class="req-item">${m}</div>`).join('')}</div>
+    <div class="req-box nice"><div class="req-hd nice">🟡 Nice-to-Have</div>${nice.map(n=>`<div class="req-item">${n}</div>`).join('')}</div>`;
+}
+
+// ════════════════════════════════════════════════════════
+// REPOS + QUERIES
+// ════════════════════════════════════════════════════════
+function renderRepos(){
+  const el=document.getElementById('repoList');if(!el)return;
+  const repos=generatedRepos||[];
+  el.innerHTML=repos.length?repos.map(r=>`
+    <div style="display:flex;align-items:center;gap:6px;padding:5px 8px;background:var(--s2);border-radius:6px;border:1px solid var(--bd)">
+      <input type="checkbox" checked style="accent-color:var(--g);width:13px;height:13px;flex-shrink:0" data-repo="${r}">
+      <span style="font-size:11px;font-family:'DM Mono',monospace;color:var(--tx2);flex:1">${r}</span>
+      <button onclick="this.parentElement.remove()" style="background:none;border:none;color:var(--tx3);cursor:pointer;font-size:14px">×</button>
+    </div>`).join('')
+    :`<div style="font-size:11px;color:var(--tx3);padding:8px 4px">No repos yet. Click <strong>+ Add</strong> to add GitHub repos, or run <strong>Regenerate from Clusters</strong> above.</div>`;
+}
+function renderQueries(){
+  const el=document.getElementById('queryList');if(!el)return;
+  const queries=generatedQueries||[];
+  el.innerHTML=queries.length?queries.map(q=>{
+    const warn=/(location:|lang:)/i.test(q)||q.trim().split(/\s+/).length>4;
+    const tip=/(location:|lang:)/i.test(q)?'⚠ Remove location: — rarely works':q.trim().split(/\s+/).length>4?'⚠ Too many keywords — use 1-2 terms':'';
+    return`<div class="qrow" style="${warn?'border-color:var(--am)':''}">
+      <div style="flex:1"><span class="qt">${q}</span>${warn?`<div class="q-warn">${tip}</div>`:''}</div>
+      <button class="qd" onclick="this.parentElement.remove()">×</button>
+    </div>`;
+  }).join('')
+  :`<div style="font-size:11px;color:var(--tx3);padding:8px 4px">No queries yet. Click <strong>+ Add</strong> to add a search query (1-2 keywords, no location:), or run <strong>Regenerate from Clusters</strong>.</div>`;
+}
+function getRepos(){return[...document.querySelectorAll('#repoList input:checked')].map(cb=>cb.dataset.repo);}
+function getQueries(){return[...document.querySelectorAll('#queryList .qt')].map(el=>el.textContent.trim()).filter(Boolean);}
+function addRepo(){
+  const list=document.getElementById('repoList');if(!list)return;
+  // Remove empty state if present
+  const empty=list.querySelector('div:not([style*="flex"])');
+  // Insert inline input row
+  const row=document.createElement('div');row.style.cssText='display:flex;align-items:center;gap:6px;padding:4px 8px;background:var(--s2);border-radius:6px;border:1px solid var(--g)';
+  row.innerHTML=`<input type="text" placeholder="owner/repo e.g. langfuse/langfuse" style="flex:1;font-size:11px;font-family:'DM Mono',monospace;background:transparent;border:none;outline:none;color:var(--tx2)" id="newRepoInput">
+    <button onclick="confirmAddRepo(this)" style="background:var(--g);color:#fff;border:none;border-radius:5px;padding:3px 9px;font-size:11px;cursor:pointer;font-family:'Poppins',sans-serif">Add</button>
+    <button onclick="this.parentElement.remove()" style="background:none;border:none;color:var(--tx3);cursor:pointer;font-size:14px">×</button>`;
+  list.appendChild(row);
+  setTimeout(()=>document.getElementById('newRepoInput')?.focus(),50);
+}
+function confirmAddRepo(btn){
+  const inp=document.getElementById('newRepoInput');if(!inp)return;
+  const r=inp.value.trim();if(!r){return;}
+  const row=btn.parentElement;
+  row.innerHTML=`<input type="checkbox" checked style="accent-color:var(--g);width:13px;height:13px;flex-shrink:0" data-repo="${r}"><span style="font-size:11px;font-family:'DM Mono',monospace;color:var(--tx2);flex:1">${r}</span><button onclick="this.parentElement.remove()" style="background:none;border:none;color:var(--tx3);cursor:pointer;font-size:14px">×</button>`;
+  row.style.border='1px solid var(--bd)';
+}
+
+function addQuery(){
+  const list=document.getElementById('queryList');if(!list)return;
+  const row=document.createElement('div');row.className='qrow';row.style.borderColor='var(--g)';
+  row.innerHTML=`<input type="text" placeholder="1-2 keywords e.g. LLM observability" style="flex:1;font-size:11px;font-family:'DM Mono',monospace;background:transparent;border:none;outline:none;color:var(--tx2)" id="newQueryInput">
+    <button onclick="confirmAddQuery(this)" style="background:var(--g);color:#fff;border:none;border-radius:5px;padding:3px 9px;font-size:11px;cursor:pointer;font-family:'Poppins',sans-serif">Add</button>
+    <button onclick="this.parentElement.remove()" style="background:none;border:none;color:var(--tx3);cursor:pointer;font-size:14px">×</button>`;
+  list.appendChild(row);
+  setTimeout(()=>document.getElementById('newQueryInput')?.focus(),50);
+}
+function confirmAddQuery(btn){
+  const inp=document.getElementById('newQueryInput');if(!inp)return;
+  const q=inp.value.trim();if(!q)return;
+  const row=btn.parentElement;
+  const warn=/(location:|lang:)/i.test(q)||q.trim().split(/\s+/).length>4;
+  const tip=/(location:|lang:)/i.test(q)?'⚠ Remove location: filter':q.trim().split(/\s+/).length>4?'⚠ Too many keywords':'';
+  row.innerHTML=`<div style="flex:1"><span class="qt">${q}</span>${warn?`<div class="q-warn">${tip}</div>`:''}</div><button class="qd" onclick="this.parentElement.remove()">×</button>`;
+  row.style.borderColor=warn?'var(--am)':'var(--bd)';
+  row.className='qrow';
+}
+
+// ════════════════════════════════════════════════════════
+// SEARCH LINKS + ANALYZER
+// ════════════════════════════════════════════════════════
+function updateSearchLinks(){buildAnalyzer();}
+function getActiveTags(){return generatedClusters.flatMap(c=>[...(c.must_tags||[]),...(c.nice_tags||[])].filter((_,i,a)=>document.querySelectorAll(`.ctag.on[data-cluster="${c.name}"]`).length>0));}
+
+function buildAnalyzer(){
+  if(!activeRole)return;
+  const type=activeRole.type,region=activeRole.region;
+  const isGTM=type==='GTM',isGA=type==='GA',isRND=type==='RND';
+  const tabs=document.getElementById('analyzerTabs');
+  const contentEl=document.getElementById('analyzerContent');
+
+  // ── Tab list: no Read.cv, no Polywork ──
+  const tabDefs=[];
+  tabDefs.push({id:'linkedin',label:'LinkedIn'});
+  // Boss直聘: for CN region or GTM/GA (all regions)
+  if(region==='CN'||isGTM||isGA)tabDefs.push({id:'boss',label:'Boss直聘'});
+  // XHS: CN region, or GTM (useful for brand/growth roles)
+  if(region==='CN'||isGTM)tabDefs.push({id:'xhs',label:'小红书 XHS'});
+  // Jike: CN region RND/GTM
+  if(region==='CN')tabDefs.push({id:'jike',label:'即刻 Jike'});
+  // Maimai: CN region
+  if(region==='CN'||isGTM||isGA)tabDefs.push({id:'maimai',label:'脉脉 Maimai'});
+  // Liepin: GTM/GA China
+  if(isGTM||isGA)tabDefs.push({id:'liepin',label:'猎聘 Liepin'});
+  // Naukri: India
+  if(region==='IN')tabDefs.push({id:'naukri',label:'Naukri 🇮🇳'});
+  // X/Twitter: US/global
+  if(region==='US'||isGTM)tabDefs.push({id:'x',label:'X / Twitter'});
+
+  tabs.innerHTML=tabDefs.map((t,i)=>`<div class="atab ${i===0?'on':''}" onclick="switchAtab('${t.id}',this)">${t.label}</div>`).join('');
+
+  const panes=tabDefs.map((t,i)=>{
+    let html='';
+    if(t.id==='linkedin'){
+      html=buildLinkedInPane();
+    }else if(t.id==='boss'){
+      html=buildBossPane();
+    }else if(t.id==='xhs'){
+      html=buildXHSPane();
+    }else if(t.id==='jike'){
+      html=buildJikePane();
+    }else if(t.id==='maimai'){
+      html=buildMaimaiPane();
+    }else if(t.id==='liepin'){
+      html=buildLiepinPane();
+    }else if(t.id==='naukri'){
+      html=buildNaukriPane();
+    }else if(t.id==='x'){
+      html=buildXPane();
+    }
+    return`<div class="atp ${i===0?'on':''}" id="atp-${t.id}">${html}</div>`;
+  }).join('');
+  contentEl.innerHTML=panes;
+  document.getElementById('analyzerPanel').style.display='';
+}
+
+// ── Generate X-Ray search queries from current clusters ──
+function genLiXray(roleLabel,dept,office,region,clusters,comps){
+  // Inverse mapping — role synonyms + company archetypes
+  const roleMap={
+    'Product Builder':['Founding Product Engineer','Product Engineer','Lead PM','Head of Product','VP Product'],
+    'Product Manager':['Product Manager','Senior PM','Principal PM','Head of Product'],
+    'ML Engineer':['Machine Learning Engineer','AI Engineer','ML Scientist','Research Engineer'],
+    'Account Executive':['Account Executive','Enterprise AE','Senior AE','Regional Sales Manager'],
+    'Strategic Partnerships':['VP Alliances','Alliance Director','Head of Partnerships','Global Alliance Director'],
+    'Engineer':['Senior Software Engineer','Staff Engineer','Principal Engineer','Tech Lead'],
+  };
+  const titleKey=Object.keys(roleMap).find(k=>roleLabel.toLowerCase().includes(k.toLowerCase()))||'Engineer';
+  const synonyms=roleMap[titleKey]||['Senior Engineer'];
+  const topTags=(clusters.flatMap(c=>(c.must_tags||[]).slice(0,2))).slice(0,6);
+  const locStr=region==='CN'?'"Beijing" OR "Shanghai" OR "China"':region==='IN'?'"Bengaluru" OR "Bangalore" OR "India"':'"San Francisco" OR "Bay Area" OR "Foster City"';
+  const queries=[];
+  // Query 1: role synonym + location
+  queries.push({desc:`${synonyms[0]} in ${region==='CN'?'Beijing/Shanghai':region==='IN'?'Bengaluru':'Bay Area'}`,q:`site:linkedin.com/in ("${synonyms[0]}" OR "${synonyms[1]||synonyms[0]}") (${locStr})`});
+  // Query 2: fingerprint tech + location
+  if(topTags.length>=2)queries.push({desc:`${topTags[0]} + ${topTags[1]} specialist`,q:`site:linkedin.com/in ("${topTags[0]}" "${topTags[1]}") (${locStr})`});
+  // Query 3: competitor alumni
+  if(comps.length>=2)queries.push({desc:`${comps[0]} OR ${comps[1]} alumni`,q:`site:linkedin.com/in ("${comps[0]}" OR "${comps[1]}") ("${synonyms[0]}" OR "${synonyms[1]||synonyms[0]}") (${locStr})`});
+  // Query 4: 0-to-1 builder signal (for product/engineer roles)
+  if(titleKey.includes('Product')||titleKey.includes('Engineer'))queries.push({desc:`0-to-1 builder with ${topTags[0]||'AI'} experience`,q:`site:linkedin.com/in ("founding" OR "0 to 1" OR "built from scratch") ("${topTags[0]||'AI'}") (${locStr})`});
+  // Query 5: tag cluster deep search
+  if(topTags.length>=3)queries.push({desc:`${topTags[2]} + ${topTags[3]||topTags[0]} cross-stack`,q:`site:linkedin.com/in ("${topTags[2]}" "${topTags[3]||topTags[0]}") (${locStr})`});
+  return queries;
+}
+
+function buildLinkedInPane(){
+  const role=activeRole,comps=generatedSearches.competitors||[],gsis=generatedSearches.gsi||[];
+  const liSearches=generatedSearches.li||[];
+  const isGTM=isGTMRole(role),isGA=role?.type==='GA';
+  const warn=isGTM?'<div class="warn-banner wb-gtm" style="margin-bottom:10px"><strong>GTM/Alliance role.</strong> Target titles: "VP Alliances", "Global Alliance Director", "Head of Strategic Partnerships". Add GSI firms below.</div>':
+    isGA?'<div class="warn-banner wb-ga" style="margin-bottom:10px"><strong>G&A role.</strong> LinkedIn is the primary channel for this role type.</div>':'';
+
+  // Generate fresh X-Ray queries from clusters
+  const freshQueries=genLiXray(role?.label||'Engineer',role?.dept||'',role?.office||'',role?.region||'US',generatedClusters,comps);
+  // Merge with AI-generated ones, dedupe
+  const allQueries=[...freshQueries,...liSearches.filter(s=>!freshQueries.some(f=>f.desc===s.desc))].slice(0,8);
+
+  const linksHtml=allQueries.length?`
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px">
+      <div class="sl-hd" style="margin:0">LinkedIn X-Ray Searches</div>
+      <button class="btn btn-ghost btn-sm" style="font-size:10px" onclick="refreshLinkedInSearches()">↺ Refresh Queries</button>
+    </div>
+    <div id="li_links">${allQueries.map(l=>`
+      <div class="lr" style="margin-bottom:5px">
+        <div style="flex:1">
+          <div class="lr-d" style="cursor:pointer" onclick="editLinkLabel(this)">${l.desc}</div>
+          <div style="font-size:10px;color:var(--tx3);font-family:'DM Mono',monospace;margin-top:2px;word-break:break-all">${l.q}</div>
+        </div>
+        <div style="display:flex;gap:4px;flex-shrink:0">
+          <a class="lr-o" href="https://www.google.com/search?q=${encodeURIComponent(l.q)}" target="_blank">Search →</a>
+          <button class="lr-del" onclick="this.closest('.lr').remove()">×</button>
+        </div>
+      </div>`).join('')}</div>`:'<div style="font-size:11px;color:var(--tx3);padding:8px">Process JD first to generate searches.</div>';
+
+  const compChips=comps.length?`
+    <div style="margin-top:10px;padding:10px 12px;background:var(--s2);border-radius:8px;border:1px solid var(--bd)">
+      <div style="font-size:10px;font-weight:700;color:var(--tx3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">+ Competitor Company Search</div>
+      <div class="comp-chips">${comps.slice(0,10).map(c=>`<button class="cc-btn" onclick="addCompSearch('${c.replace(/'/g,"\\'")}','li_links')">${c}</button>`).join('')}</div>
+      ${gsis.length?`<div style="font-size:10px;font-weight:700;color:var(--tl);text-transform:uppercase;letter-spacing:.06em;margin:7px 0 5px">GSI / Consulting firms</div><div class="comp-chips">${gsis.map(g=>`<button class="cc-btn gsi" onclick="addCompSearch('${g.replace(/'/g,"\\'")}','li_links')">${g}</button>`).join('')}</div>`:''}
+      <div style="display:flex;gap:6px;margin-top:7px">
+        <input type="text" id="customCompInput" placeholder="Type any company..." style="flex:1;font-size:11px">
+        <button class="btn btn-ghost btn-sm" onclick="addCustomCompany()">+ Add</button>
+      </div>
+    </div>`:'';
+
+  return warn+`<div style="padding-bottom:10px">${linksHtml}</div>`+compChips+'<div style="height:1px;background:var(--bd);margin:12px 0"></div>'+buildPasteAnalyzer('li','linkedin','Paste LinkedIn About + Experience (not Google snippet)...');
+}
+
+function refreshLinkedInSearches(){
+  const role=activeRole,comps=generatedSearches.competitors||[];
+  const fresh=genLiXray(role?.label||'Engineer',role?.dept||'',role?.office||'',role?.region||'US',generatedClusters,comps);
+  const container=document.getElementById('li_links');
+  if(!container)return;
+  container.innerHTML=fresh.map(l=>`
+    <div class="lr" style="margin-bottom:5px">
+      <div style="flex:1">
+        <div class="lr-d" style="cursor:pointer" onclick="editLinkLabel(this)">${l.desc}</div>
+        <div style="font-size:10px;color:var(--tx3);font-family:'DM Mono',monospace;margin-top:2px;word-break:break-all">${l.q}</div>
+      </div>
+      <div style="display:flex;gap:4px;flex-shrink:0">
+        <a class="lr-o" href="https://www.google.com/search?q=${encodeURIComponent(l.q)}" target="_blank">Search →</a>
+        <button class="lr-del" onclick="this.closest('.lr').remove()">×</button>
+      </div>
+    </div>`).join('');
+  log('LinkedIn X-Ray queries refreshed from clusters','l-ok');
+}
+
+function addCustomCompany(){
+  const inp=document.getElementById('customCompInput');
+  const c=(inp?.value||'').trim();if(!c)return;
+  addCompSearch(c,'li_links');inp.value='';
+}
+
+function editLinkLabel(el){
+  const old=el.textContent;
+  const inp=document.createElement('input');
+  inp.type='text';inp.value=old;inp.style.cssText='width:100%;font-size:11px;border:1px solid var(--g);border-radius:4px;padding:2px 5px;font-family:Poppins,sans-serif;background:var(--surface);color:var(--tx)';
+  inp.onblur=()=>{ el.textContent=inp.value||old; inp.replaceWith(el); };
+  inp.onkeydown=e=>{ if(e.key==='Enter'||e.key==='Escape'){el.textContent=inp.value||old;inp.replaceWith(el);} };
+  el.replaceWith(inp); inp.focus(); inp.select();
+}
+
+function buildBossPane(){
+  const tags=generatedClusters.flatMap(c=>(c.must_tags||[]).slice(0,2)).slice(0,6);
+  const role=activeRole;
+  const office=role?.office||'';
+  const city=office.includes('Beijing')?'101010100':office.includes('Shanghai')?'101020100':'101010100';
+  const cnKws=tags.length?tags:[role?.label||'产品经理'];
+  // Generate Boss queries: tag → direct Boss search URL
+  const queries=cnKws.map(kw=>({
+    kw,
+    url:`https://www.zhipin.com/web/geek/job?query=${encodeURIComponent(kw)}&city=${city}`
+  }));
+  // Add role-title based searches
+  if(role?.type==='RND'&&role?.dept?.includes('Product'))queries.unshift({kw:'产品经理 AI 大模型',url:`https://www.zhipin.com/web/geek/job?query=${encodeURIComponent('产品经理 AI 大模型')}&city=${city}`});
+  if(role?.type==='RND'&&role?.dept?.includes('Engineering'))queries.unshift({kw:'后端工程师 AI',url:`https://www.zhipin.com/web/geek/job?query=${encodeURIComponent('后端工程师 AI')}&city=${city}`});
+
+  const linksHtml=`
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div class="sl-hd" style="margin:0">Boss直聘 直搜链接 <span style="font-weight:400;color:var(--tx3)">(based on skill clusters)</span></div>
+      <button class="btn btn-ghost btn-sm" style="font-size:10px" onclick="buildAnalyzer()">↺ Refresh</button>
+    </div>
+    <div style="font-size:11px;color:var(--am);background:var(--ambg);border-radius:6px;padding:7px 10px;margin-bottom:8px">
+      💡 Click any link → opens Boss直聘 search in new tab. Paste the candidate's profile text below to score with AI.
+    </div>
+    ${queries.slice(0,8).map(q=>`
+      <div class="lr">
+        <span class="lr-d">${q.kw}</span>
+        <a class="lr-o" href="${q.url}" target="_blank">Boss直聘 →</a>
+        <button class="lr-del" onclick="this.closest('.lr').remove()">×</button>
+      </div>`).join('')}
+    <div style="margin-top:8px;display:flex;gap:6px">
+      <input type="text" id="bossCustomKw" placeholder="Add custom keyword (e.g. 产品负责人)..." style="flex:1;font-size:11px">
+      <button class="btn btn-ghost btn-sm" onclick="addBossSearch()">+ Add</button>
+    </div>`;
+
+  return linksHtml+'<div style="height:1px;background:var(--bd);margin:12px 0"></div>'+buildPasteAnalyzer('boss','boss','Paste Boss直聘 profile text here...');
+}
+
+function addBossSearch(){
+  const inp=document.getElementById('bossCustomKw');
+  const kw=(inp?.value||'').trim();if(!kw)return;
+  const city='101010100';
+  const url=`https://www.zhipin.com/web/geek/job?query=${encodeURIComponent(kw)}&city=${city}`;
+  const container=document.querySelector('#atp-boss .lr')?.parentElement;
+  if(!container)return;
+  const div=document.createElement('div');
+  div.className='lr';div.style.marginBottom='5px';
+  div.innerHTML=`<span class="lr-d">${kw}</span><a class="lr-o" href="${url}" target="_blank">Boss直聘 →</a><button class="lr-del" onclick="this.closest('.lr').remove()">×</button>`;
+  container.insertBefore(div,container.querySelector('div[style*="gap:6px"]'));
+  inp.value='';
+}
+
+function buildXHSPane(){
+  const tags=generatedClusters.flatMap(c=>(c.must_tags||[]).slice(0,2)).slice(0,6);
+  const role=activeRole;
+  const xhsKws=tags.length?tags:[role?.label||'产品经理'];
+  const linksHtml=`
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+      <div class="sl-hd" style="margin:0">小红书 XHS 搜索链接</div>
+      <button class="btn btn-ghost btn-sm" style="font-size:10px" onclick="buildAnalyzer()">↺ Refresh</button>
+    </div>
+    <div style="font-size:11px;color:var(--bl);background:var(--blbg);border-radius:6px;padding:7px 10px;margin-bottom:8px">
+      💡 小红书 is strong for finding Product/GTM talents in China who post about their work. Copy the keyword → search on XHS app or web.
+    </div>
+    ${xhsKws.map(kw=>`
+      <div class="lr">
+        <span class="lr-d">${kw}</span>
+        <a class="lr-o" href="https://www.xiaohongshu.com/search_result?keyword=${encodeURIComponent(kw)}&source=web_search_result_notes" target="_blank">小红书 →</a>
+        <button onclick="navigator.clipboard.writeText('${kw.replace(/'/g,"\\'")}').then(()=>{this.textContent='✓';setTimeout(()=>{this.textContent='Copy'},1500)})" style="font-size:10px;padding:2px 8px;border-radius:4px;border:1px solid var(--bd);background:var(--surface);cursor:pointer">Copy</button>
+        <button class="lr-del" onclick="this.closest('.lr').remove()">×</button>
+      </div>`).join('')}
+    <div style="margin-top:8px;display:flex;gap:6px">
+      <input type="text" id="xhsCustomKw" placeholder="Add keyword (e.g. AI产品经理 从0到1)..." style="flex:1;font-size:11px">
+      <button class="btn btn-ghost btn-sm" onclick="addXHSSearch()">+ Add</button>
+    </div>`;
+  return linksHtml+'<div style="height:1px;background:var(--bd);margin:12px 0"></div>'+buildPasteAnalyzer('xhs','xiaohongshu','Paste XHS profile bio + post titles...');
+}
+
+function addXHSSearch(){
+  const inp=document.getElementById('xhsCustomKw');
+  const kw=(inp?.value||'').trim();if(!kw)return;
+  const container=document.querySelector('#atp-xhs .lr')?.parentElement;
+  if(!container)return;
+  const div=document.createElement('div');div.className='lr';
+  div.innerHTML=`<span class="lr-d">${kw}</span><a class="lr-o" href="https://www.xiaohongshu.com/search_result?keyword=${encodeURIComponent(kw)}&source=web_search_result_notes" target="_blank">小红书 →</a><button onclick="navigator.clipboard.writeText('${kw}').then(()=>{this.textContent='✓';setTimeout(()=>{this.textContent='Copy'},1500)})" style="font-size:10px;padding:2px 8px;border-radius:4px;border:1px solid var(--bd);background:var(--surface);cursor:pointer">Copy</button><button class="lr-del" onclick="this.closest('.lr').remove()">×</button>`;
+  container.insertBefore(div,container.querySelector('div[style*="gap:6px"]'));
+  inp.value='';
+}
+
+function buildJikePane(){
+  const tags=generatedClusters.flatMap(c=>(c.must_tags||[]).slice(0,1)).slice(0,5);
+  const links=tags.map(kw=>`<div class="lr"><span class="lr-d">${kw}</span><a class="lr-o" href="https://web.okjike.com/search?keywords=${encodeURIComponent(kw)}" target="_blank">即刻 →</a><button class="lr-del" onclick="this.closest('.lr').remove()">×</button></div>`).join('');
+  return`<div class="sl-hd" style="margin-bottom:8px">即刻 Jike</div>${links||'<div style="font-size:11px;color:var(--tx3)">Generate clusters first</div>'}
+    <div style="height:1px;background:var(--bd);margin:12px 0"></div>`+buildPasteAnalyzer('jike','jike','Paste Jike profile + posts...');
+}
+
+function buildMaimaiPane(){
+  const tags=generatedClusters.flatMap(c=>(c.must_tags||[]).slice(0,1)).slice(0,5);
+  const links=tags.map(kw=>`<div class="lr"><span class="lr-d">${kw}</span><a class="lr-o" href="https://maimai.cn/web/search_center?type=talent&query=${encodeURIComponent(kw)}" target="_blank">脉脉 →</a><button class="lr-del" onclick="this.closest('.lr').remove()">×</button></div>`).join('');
+  return`<div class="sl-hd" style="margin-bottom:8px">脉脉 Maimai</div>${links||'<div style="font-size:11px;color:var(--tx3)">Generate clusters first</div>'}
+    <div style="height:1px;background:var(--bd);margin:12px 0"></div>`+buildPasteAnalyzer('maimai','maimai','Paste 脉脉 profile content...');
+}
+
+function buildLiepinPane(){
+  const tags=generatedClusters.flatMap(c=>(c.must_tags||[]).slice(0,1)).slice(0,5);
+  const links=tags.map(kw=>`<div class="lr"><span class="lr-d">${kw}</span><a class="lr-o" href="https://www.liepin.com/zhaopin/?key=${encodeURIComponent(kw)}" target="_blank">猎聘 →</a><button class="lr-del" onclick="this.closest('.lr').remove()">×</button></div>`).join('');
+  return`<div class="sl-hd" style="margin-bottom:8px">猎聘 Liepin</div>${links||'<div style="font-size:11px;color:var(--tx3)">Generate clusters first</div>'}
+    <div style="height:1px;background:var(--bd);margin:12px 0"></div>`+buildPasteAnalyzer('liepin','liepin','Paste 猎聘 profile...');
+}
+
+function buildNaukriPane(){
+  const tags=generatedClusters.flatMap(c=>(c.must_tags||[]).slice(0,1)).slice(0,5);
+  const links=tags.map(kw=>`<div class="lr"><span class="lr-d">${kw} — Bengaluru</span><a class="lr-o" href="https://www.naukri.com/${kw.toLowerCase().replace(/[^a-z0-9]+/g,'-')}-jobs-in-bengaluru" target="_blank">Naukri →</a><button class="lr-del" onclick="this.closest('.lr').remove()">×</button></div>`).join('');
+  return`<div class="sl-hd" style="margin-bottom:8px">Naukri.com (India)</div>${links||'<div style="font-size:11px;color:var(--tx3)">Generate clusters first</div>'}
+    <div style="height:1px;background:var(--bd);margin:12px 0"></div>`+buildPasteAnalyzer('naukri','naukri','Paste Naukri profile / resume...');
+}
+
+function buildXPane(){
+  const tags=generatedClusters.flatMap(c=>(c.must_tags||[]).slice(0,1)).slice(0,4);
+  const comps=generatedSearches.competitors||[];
+  const queries=[
+    ...(tags.slice(0,2).map(t=>({desc:t+' builder',q:'"'+t+'" "building" OR "shipped" OR "launched"'}))),
+    ...(comps.slice(0,2).map(c=>({desc:'Ex-'+c+' product/eng',q:'"'+c+'" "product" OR "engineer"'}))),
+  ];
+  const links=queries.map(q=>`<div class="lr"><span class="lr-d">${q.desc}</span><a class="lr-o" href="https://twitter.com/search?q=${encodeURIComponent(q.q)}&f=people" target="_blank">X →</a><button class="lr-del" onclick="this.closest('.lr').remove()">×</button></div>`).join('');
+  return`<div class="sl-hd" style="margin-bottom:8px">X / Twitter People Search</div>${links||'<div style="font-size:11px;color:var(--tx3)">Generate clusters first</div>'}
+    <div style="height:1px;background:var(--bd);margin:12px 0"></div>`+buildPasteAnalyzer('x','twitter','Paste X/Twitter bio + tweets...');
+}
+
+
+function buildPasteAnalyzer(id,ch,ph){
+  return`<div style="margin-top:${id==='li'?'0':'10px'}">
+    <div id="${id}Drop" class="upload-zone-${id==='li'?'li':'sm'}" ondragover="event.preventDefault();this.classList.add('drag-over')" ondragleave="this.classList.remove('drag-over')" ondrop="handleResumeDrop(event,'${id}','${ch}')" onclick="document.getElementById('${id}FileAn').click()">
+      <input type="file" id="${id}FileAn" accept=".pdf,.txt" style="display:none" onchange="handleResumeFileAn(event,'${id}','${ch}')">
+      <div style="font-size:${id==='li'?'20':'16'}px;margin-bottom:4px">📄</div>
+      <div style="font-size:12px;font-weight:500;color:var(--tx2);margin-bottom:2px">Drop resume PDF — analysis starts automatically</div>
+      <div style="font-size:11px;color:var(--tx3)">PDF · TXT · processed locally</div>
+      <div id="${id}FileStatus" style="margin-top:6px;font-size:11px;font-weight:500;color:var(--g);display:none"></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;margin:9px 0"><div style="flex:1;height:1px;background:var(--bd)"></div><span style="font-size:10px;color:var(--tx3);font-weight:600">OR PASTE MANUALLY</span><div style="flex:1;height:1px;background:var(--bd)"></div></div>
+    ${id==='li'?`<div class="manual-form">
+      <div class="mf-grid">
+        <div><label class="mf-label">Full Name</label><input type="text" id="li_name" placeholder="John Smith"></div>
+        <div><label class="mf-label">Current Title</label><input type="text" id="li_title" placeholder="Senior Engineer"></div>
+        <div><label class="mf-label">Company</label><input type="text" id="li_company" placeholder="ByteDance"></div>
+        <div><label class="mf-label">Location</label><input type="text" id="li_location" placeholder="San Francisco, CA"></div>
+        <div><label class="mf-label">Years Exp.</label><input type="text" id="li_years" placeholder="6 years"></div>
+        <div><label class="mf-label">LinkedIn URL</label><input type="text" id="li_url" placeholder="linkedin.com/in/..."></div>
+      </div>
+      <div style="margin-bottom:8px"><label class="mf-label">About / Summary <span style="color:var(--g)">← copy from LinkedIn (not Google snippet)</span></label><textarea class="ta" rows="3" id="li_about" placeholder="Paste the About section from their LinkedIn profile page..."></textarea></div>
+      <div style="margin-bottom:8px"><label class="mf-label">Experience <span style="color:var(--g)">← copy last 2–3 jobs</span></label><textarea class="ta" rows="5" id="li_experience" placeholder="Senior Engineer · Company · 2021–Present&#10;• Built real-time pipeline..."></textarea></div>
+      <div style="margin-bottom:10px"><label class="mf-label">Skills / Education</label><textarea class="ta" rows="2" id="li_skills" placeholder="e.g. Python, Kafka · MIT CS MS..."></textarea></div>
+    </div>`:`<div style="display:flex;gap:8px;align-items:flex-start">
+      <div style="flex:1"><input type="text" placeholder="Candidate name (optional)" style="margin-bottom:6px" id="${id}_name"><textarea class="ta" rows="4" placeholder="${ph}" id="${id}_text"></textarea></div>
+    </div>`}
+    <div style="display:flex;gap:8px;margin-top:8px">
+      ${id==='li'?`<button class="btn btn-g" onclick="analyzeLi()" id="li_btn"><span id="li_icon">🔍</span> Analyze with AI</button><button class="btn btn-ghost btn-sm" onclick="clearLiForm()">Clear</button>`
+      :`<button class="btn btn-g btn-sm" onclick="analyzeChannel('${id}','${ch}')">Analyze →</button>`}
+    </div>
+    <div id="${id}_result" style="margin-top:10px"></div>
+  </div>`;
+}
+
+function switchAtab(id,btn){
+  document.querySelectorAll('.atab').forEach(t=>t.classList.remove('on'));
+  document.querySelectorAll('.atp').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  document.getElementById('atp-'+id)?.classList.add('on');
+}
+function addCompSearch(company,listId){
+  const role=activeRole;const dept=(role?.dept||'').toLowerCase();const label=(role?.label||'').toLowerCase();
+  let rKw='"software engineer"';
+  if(label.includes('partner')||label.includes('alliance'))rKw='"VP alliances" OR "alliance director" OR "head of partnerships"';
+  else if(dept.includes('sales')||label.includes('account'))rKw='"account executive" OR "enterprise sales"';
+  else if(dept.includes('marketing'))rKw='"marketing manager" OR "product marketing"';
+  else if(dept.includes('product'))rKw='"product manager" OR "product builder"';
+  const q=`site:linkedin.com/in ${rKw} "${company}"`;
+  const url='https://www.google.com/search?q='+encodeURIComponent(q);
+  const container=document.getElementById(listId);if(!container)return;
+  const div=document.createElement('div');
+  div.innerHTML=`<div class="lr"><span class="lr-d">${rKw.replace(/"/g,'')} at ${company}</span><a class="lr-o" href="${url}" target="_blank">Open →</a><button class="lr-del" onclick="this.closest('.lr').remove()">×</button></div>`;
+  container.appendChild(div.firstChild);
+}
+
+// ════════════════════════════════════════════════════════
+// RESUME ANALYSIS
+// ════════════════════════════════════════════════════════
+async function handleResumeDrop(e,id,ch){e.preventDefault();document.getElementById(id+'Drop')?.classList.remove('drag-over');const f=e.dataTransfer.files[0];if(f)await processResumeFile(f,id,ch);}
+async function handleResumeFileAn(e,id,ch){const f=e.target.files[0];if(f)await processResumeFile(f,id,ch);}
+async function processResumeFile(file,id,ch){
+  const st=document.getElementById(id+'FileStatus');if(st){st.style.display='block';st.textContent='⏳ Extracting...';}
+  try{const txt=await extractText(file);if(txt.length<30)throw new Error('Could not extract text');
+    const words=txt.split(/\s+/).length;if(st){st.textContent=`✓ ${words} words — analyzing...`;st.style.color='var(--g)';}
+    const fl=txt.split('\n')[0].trim();
+    if(id==='li'){const nm=document.getElementById('li_name');if(nm&&!nm.value&&fl.length<60)nm.value=fl;const exp=document.getElementById('li_experience');if(exp)exp.value=txt.slice(0,3500);setTimeout(()=>analyzeLi(),500);}
+    else{const nm=document.getElementById(id+'_name');if(nm&&!nm.value&&fl.length<60)nm.value=fl;const tx=document.getElementById(id+'_text');if(tx)tx.value=txt.slice(0,3000);setTimeout(()=>analyzeChannel(id,ch),500);}
+  }catch(e){if(st){st.textContent='✗ '+e.message;st.style.color='var(--co)';}}
+}
+
+function buildScoringPrompt(profileText,name,ch){
+  const role=activeRole||{label:'Unknown',dept:'',office:'Foster City',type:'RND'};
+  const clusters=generatedClusters.map(c=>`${c.name} (w:${c.weight}): must=[${(c.must_tags||[]).join(',')}] nice=[${(c.nice_tags||[]).join(',')}]`).join('\n');
+  const must=(role._mustHave||[]).join('; ');
+  const nice=(role._niceHave||[]).join('; ');
+  const sc=role._scoring||{};
+  const strict=role._strictFilter||'';
+  const isGTM=role.type==='GTM';
+  const isGA=role.type==='GA';
+  return`Senior recruiter at Conviva. Score this candidate 0-100. Be evidence-based, transparent about gaps.
+
+ROLE: ${role.label} · ${role.dept} · ${role.office} (on-site)
+TYPE: ${role.type==='RND'?'R&D — technical/product':role.type==='GTM'?'GTM — sales/marketing/partnerships':'G&A — finance/HR/legal/operations'}
+MUST-HAVE: ${must||'See JD'}
+NICE-TO-HAVE: ${nice||'See JD'}
+DISQUALIFIER: ${strict||'See requirements'}
+
+SKILL CLUSTERS:
+${clusters}
+
+SIGNALS TO CHECK:
+sig1 (${sc.sig1_name||'Primary Signal'}): ${sc.sig1_desc||'Primary qualification signal'}
+sig2 (${sc.sig2_name||'Secondary Signal'}): ${sc.sig2_desc||'Secondary qualification signal'}
+
+${isGTM?`GTM RULES: sig1=true ONLY if verifiable revenue-producing partnership OR alliance experience with named companies. sig2=true ONLY if C-level/SVP external relationship management proven.`:''}
+${isGA?`G&A RULES: sig1=true if direct domain experience in ${role.dept}. sig2=true if industry/sector knowledge matches.`:''}
+
+CANDIDATE (from ${ch}):
+${profileText.slice(0,3000)}
+
+Return JSON only:
+{"score":<0-100>,"sig1":<bool>,"sig2":<bool>,"location_match":"strong"/"possible"/"unknown","location_found":"<text>","company_found":"<company>","years_found":"<years>","matched_clusters":["name"],"strengths":["evidence-based 1","2","3"],"gaps":["specific gap 1","2","3"],"dealbreakers":["if any"],"insufficient_info":["what's missing"],"summary":"<3 sentences: verdict+confidence+what would change it>","outreach_angle":"<specific icebreaker or empty if skip>","recommendation":"proceed"/"maybe"/"skip"}`;
+}
+
+async function analyzeLi(){
+  const name=(document.getElementById('li_name')?.value||'').trim();
+  const about=(document.getElementById('li_about')?.value||'').trim();
+  const exp=(document.getElementById('li_experience')?.value||'').trim();
+  if(!about&&!exp){alert('Please upload a PDF or paste the About + Experience sections from their full LinkedIn profile (not the Google snippet).');return;}
+  const btn=document.getElementById('li_btn');btn.disabled=true;document.getElementById('li_icon').innerHTML='<span class="spin"></span>';
+  const profile=`NAME: ${name}\nTITLE: ${document.getElementById('li_title')?.value||''}\nCOMPANY: ${document.getElementById('li_company')?.value||''}\nLOCATION: ${document.getElementById('li_location')?.value||''}\nYEARS: ${document.getElementById('li_years')?.value||''}\n\nABOUT:\n${about}\n\nEXPERIENCE:\n${exp}\n\nSKILLS:\n${document.getElementById('li_skills')?.value||''}`;
+  document.getElementById('li_result').innerHTML=`<div style="padding:14px;display:flex;align-items:center;gap:9px;color:var(--tx3)"><span class="spin"></span>Analyzing with Claude AI...</div>`;
+  try{const raw=await claudeCall(buildScoringPrompt(profile,name,'linkedin'),1200);renderResult('li_result',name||'Unknown','linkedin',JSON.parse(raw.replace(/```json|```/g,'').trim()));}
+  catch(e){document.getElementById('li_result').innerHTML=`<div style="padding:10px;color:var(--co);font-size:12px">Failed: ${e.message}</div>`;}
+  finally{btn.disabled=false;document.getElementById('li_icon').textContent='🔍';}
+}
+function clearLiForm(){['li_name','li_title','li_company','li_location','li_years','li_url','li_about','li_experience','li_skills'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});const r=document.getElementById('li_result');if(r)r.innerHTML='';}
+async function analyzeChannel(id,ch){
+  const txt=(document.getElementById(id+'_text')?.value||'').trim();
+  const name=(document.getElementById(id+'_name')?.value||'Unknown').trim();
+  if(!txt){alert('Please upload a PDF or paste profile content first');return;}
+  const rEl=document.getElementById(id+'_result');
+  rEl.innerHTML=`<div style="padding:12px;display:flex;align-items:center;gap:8px;color:var(--tx3)"><span class="spin"></span>Analyzing...</div>`;
+  try{const raw=await claudeCall(buildScoringPrompt(txt,name,ch),1200);renderResult(id+'_result',name,ch,JSON.parse(raw.replace(/```json|```/g,'').trim()));}
+  catch(e){rEl.innerHTML=`<div style="padding:10px;color:var(--co);font-size:12px">Failed: ${e.message}</div>`;}
+}
+
+function renderResult(elId,name,ch,res){
+  const el=document.getElementById(elId);if(!el)return;
+  const sc=res.score>=80?'s-hi':res.score>=60?'s-md':'s-lo';
+  const recC={proceed:'var(--g2)',maybe:'var(--am)',skip:'var(--co)'}[res.recommendation]||'var(--tx3)';
+  const recL={proceed:'✓ Proceed',maybe:'◐ Maybe',skip:'✗ Skip'}[res.recommendation]||'';
+  const sd=activeRole?._scoring||{};
+  const chips=[
+    res.sig1?`<span class="chip cp-1">${sd.sig1_name||'Signal 1'} ✓</span>`:`<span class="chip cp-no">No ${sd.sig1_name||'Signal 1'}</span>`,
+    res.sig2?`<span class="chip cp-2">${sd.sig2_name||'Signal 2'} ✓</span>`:'',
+    res.location_match==='strong'?'<span class="chip cp-loc">Location ✓</span>':res.location_match==='possible'?'<span class="chip cp-loc" style="opacity:.5">Location?</span>':'<span class="chip cp-no">Location?</span>',
+  ].filter(Boolean).join('');
+  const cls=(res.matched_clusters||[]).map(c=>`<span style="font-size:10px;color:var(--g2);background:var(--gbg);padding:2px 7px;border-radius:4px;margin:1px;display:inline-block">${c}</span>`).join('');
+  const sH=(res.strengths||[]).map(s=>`<li style="margin-bottom:3px;color:var(--g2)">✓ ${s}</li>`).join('');
+  const gH=(res.gaps||[]).map(g=>`<li style="margin-bottom:3px;color:var(--am)">△ ${g}</li>`).join('');
+  const dbH=(res.dealbreakers||[]).map(d=>`<li style="margin-bottom:3px;color:var(--co)">✗ ${d}</li>`).join('');
+  const inH=(res.insufficient_info||[]).map(i=>`<li style="margin-bottom:3px;color:var(--bl)">? ${i}</li>`).join('');
+  const safeRes=JSON.stringify(res).replace(/\\/g,'\\\\').replace(/`/g,'\\`').replace(/\$/g,'\\$');
+  const safeName=(name||'Unknown').replace(/'/g,"\\'");
+  el.innerHTML=`<div class="result-card">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+      <span class="sp ${sc}" style="font-size:14px;padding:4px 12px">${res.score}/100</span>
+      <div style="flex:1"><div class="mb" style="height:5px"><div class="mf" style="width:${res.score}%"></div></div></div>
+      <span style="font-size:12px;font-weight:700;color:${recC}">${recL}</span>
+    </div>
+    <div style="margin-bottom:9px">${chips}</div>
+    ${cls?`<div style="margin-bottom:9px">${cls}</div>`:''}
+    <div style="font-size:12px;color:var(--tx2);line-height:1.7;margin-bottom:12px;padding:10px 12px;background:var(--s2);border-radius:7px;border:1px solid var(--bd)">${res.summary||''}</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:9px">
+      <div style="background:rgba(145,198,62,.06);border:1px solid rgba(145,198,62,.2);border-radius:7px;padding:9px 11px">
+        <div style="font-size:9px;font-weight:700;color:var(--g2);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px">✓ Strengths</div>
+        <ul style="list-style:none;font-size:11px;line-height:1.6">${sH||'<li style="color:var(--tx3)">None identified</li>'}</ul>
+      </div>
+      <div style="background:rgba(217,119,6,.06);border:1px solid rgba(217,119,6,.2);border-radius:7px;padding:9px 11px">
+        <div style="font-size:9px;font-weight:700;color:var(--am);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px">△ Gaps</div>
+        <ul style="list-style:none;font-size:11px;line-height:1.6">${gH||'<li style="color:var(--tx3)">None</li>'}</ul>
+      </div>
+    </div>
+    ${dbH?`<div style="background:rgba(225,29,72,.06);border:1px solid rgba(225,29,72,.2);border-radius:7px;padding:9px 11px;margin-bottom:9px"><div style="font-size:9px;font-weight:700;color:var(--co);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px">✗ Dealbreakers</div><ul style="list-style:none;font-size:11px;line-height:1.6">${dbH}</ul></div>`:''}
+    ${inH?`<div style="background:var(--blbg);border:1px solid rgba(59,130,246,.2);border-radius:7px;padding:9px 11px;margin-bottom:9px"><div style="font-size:9px;font-weight:700;color:var(--bl);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px">? More Info Needed</div><ul style="list-style:none;font-size:11px;line-height:1.6">${inH}</ul></div>`:''}
+    <div style="display:flex;align-items:center;gap:9px;margin-top:4px">
+      ${res.outreach_angle?`<div style="flex:1;font-size:11px;font-style:italic;color:var(--g2);padding:6px 10px;background:var(--gbg);border-radius:6px">"${res.outreach_angle}"</div>`:''}
+      <button class="btn btn-ghost btn-sm" style="color:var(--g2);border-color:var(--g)" onclick="addManual('${safeName}','${ch}',\`${safeRes}\`)">+ Add to Pipeline</button>
+    </div>
+  </div>`;
+}
+function addManual(name,ch,resIn){
+  let res=resIn;if(typeof res==='string'){try{res=JSON.parse(res);}catch(e){return;}}
+  const c={login:(name||'unknown').toLowerCase().replace(/\s+/g,'_').slice(0,28),name:name||'Unknown',channel:ch,src:'manual:'+ch,bio:res.summary||'',company:res.company_found||'',location:res.location_found||'',blog:'',followers:0,github_url:'',score:res.score||0,sig1:!!res.sig1,sig2:!!res.sig2,location_match:res.location_match||'unknown',matched_clusters:res.matched_clusters||[],strengths:res.strengths||[],gaps:res.gaps||[],dealbreakers:res.dealbreakers||[],reason:res.summary||'',outreach_angle:res.outreach_angle||'',linkedin_xray:'https://www.google.com/search?q='+encodeURIComponent(`site:linkedin.com/in "${name}"${res.company_found?' "'+res.company_found.trim()+'"':''}`)};
+  if(!isDupe(c.login)){registerCandidate(c.login);candidates.push(c);renderTable(candidates);saveState();setStat('sManual',(parseInt(document.getElementById('sManual')?.textContent)||0)+1);setStat('sbManual',(parseInt(document.getElementById('sbManual')?.textContent)||0)+1);}else{alert(name+' is already in your pipeline.');return;}
+  document.getElementById('analyzerPanel').style.display='';
+  alert('Added to pipeline: '+name);
+}
+
+// ════════════════════════════════════════════════════════
+// REGEN SEARCH CONFIG
+// ════════════════════════════════════════════════════════
+async function regenSearchConfig(){
+  if(!generatedClusters.length){alert('Generate skill clusters first');return;}
+  const btn=document.getElementById('regenSearchBtn');btn.disabled=true;document.getElementById('regenIcon').innerHTML='<span class="spin"></span>';
+  const role=activeRole;const type=role?.type||'RND';
+  const clusterSummary=generatedClusters.map(c=>`${c.name}: ${(c.must_tags||[]).slice(0,5).join(', ')}`).join('\n');
+  const prompt=`Senior Technical Recruiter at Conviva. Generate a precision search config using these advanced techniques:
+
+ROLE: ${role?.label||'role'} (${type}) · ${role?.office||'Foster City'}
+SKILL CLUSTERS:
+${clusterSummary}
+
+TECHNIQUE 1 — Technical Fingerprinting (GitHub queries):
+- Use expert-only niche terms, NOT job titles
+- MAX 2 keywords per query, NO location: filter
+- Good: "LangGraph production", "multi-agent orchestration", "founding engineer shipped"
+- Bad: "product manager AI", "software engineer Python location:China"
+
+TECHNIQUE 2 — Inverse Mapping (LinkedIn X-Ray):
+- Instead of searching job titles, search by Company Archetypes + Role Synonyms
+- e.g. for Product Builder: use \`"Founding Engineer" OR "Product Engineer"\` + \`"0 to 1"\`
+- e.g. for Partnerships: use \`"Alliance Director" OR "Channel Chief"\` + \`"GSI"\`
+- Include industry context (e.g. "high-concurrency" or "e-commerce" for TikTok-type companies)
+- Vary regions: US (Foster City/Bay Area), CN (Beijing/Shanghai), IN (Bengaluru) as applicable for ${role?.region}
+
+TECHNIQUE 3 — Competitor Archetypes:
+- List companies where the IDEAL candidate currently works
+- Include direct competitors AND adjacent companies where skills transfer
+
+Return JSON only (no markdown):
+{"github_repos":["REAL public repos only — [] for GTM/GA"],"github_queries":["fingerprint query 1","fingerprint query 2"],"li_searches":[{"desc":"inverse-mapped description","q":"site:linkedin.com/in ... full query","region":"US|CN|IN"}],"competitor_companies":["company1"],"gsi_partners":["GSI1 if relevant else []"]}`;
+  try{
+    const raw=await claudeCall(prompt,1500);
+    const res=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    generatedRepos=res.github_repos||[];
+    generatedQueries=res.github_queries||[];
+    generatedSearches.li=res.li_searches||[];
+    generatedSearches.competitors=res.competitor_companies||[];
+    generatedSearches.gsi=res.gsi_partners||[];
+    renderRepos();renderQueries();buildAnalyzer();
+    const note=document.createElement('span');note.style.cssText='font-size:11px;color:var(--g);margin-left:8px';note.textContent='✓ Regenerated';document.querySelector('#searchPanel .ph')?.appendChild(note);setTimeout(()=>note.remove(),3000);
+  }catch(e){alert('Failed: '+e.message);}
+  btn.disabled=false;document.getElementById('regenIcon').textContent='↺';
+}
+
+// ════════════════════════════════════════════════════════
+// GITHUB SOURCING
+// ════════════════════════════════════════════════════════
+async function ghFetch(url,tok){const h={Accept:'application/vnd.github+json'};if(tok)h.Authorization=`Bearer ${tok}`;try{const r=await fetch(url,{headers:h});if(r.status===403||r.status===429){log('  GitHub rate limit...','l-w');await sleep(6000);return null;}if(!r.ok)return null;return r.json();}catch(e){return null;}}
+function quickSigs(det,repos){
+  const bio=(det.bio||'').toLowerCase(),co=(det.company||'').toLowerCase();
+  let sc=0;const sigs=[];
+  const allTags=generatedClusters.flatMap(c=>[...(c.must_tags||[]),...(c.nice_tags||[])]).map(t=>t.toLowerCase());
+
+  // --- FIX 2: Evidence-Based Weighting ---
+
+  // Followers: signal quality, not just volume
+  if(det.followers>200){sigs.push(`★${det.followers}`);sc+=3;}
+  else if(det.followers>80){sigs.push(`★${det.followers}`);sc+=2;}
+  else if(det.followers>20){sc+=1;}
+
+  if(det.blog){sigs.push('site/blog');sc+=1;}
+
+  // Bio domain match
+  if(allTags.some(t=>bio.includes(t)||co.includes(t))){sigs.push('domain:bio');sc+=3;}
+  if(/(product|pm|engineer|developer|scientist|founder|head of|director|sales|marketing)/i.test(bio)){sigs.push('role:bio');sc+=2;}
+
+  // --- OWNERSHIP signals ---
+  let ownedRepos=0, forkedRepos=0, stars=0;
+  let langSet=new Set();  // cross-stack detection
+  let hasBackend=false, hasFrontend=false, hasMLorData=false;
+  let highQualityRepo=false;
+
+  for(const repo of repos||[]){
+    const t=repo.topics||[];
+    const d=(repo.description||'').toLowerCase();
+    const n=(repo.name||'').toLowerCase();
+    const lang=(repo.language||'').toLowerCase();
+    stars+=repo.stargazers_count||0;
+
+    if(repo.fork){forkedRepos++;continue;} // Skip forked repos
+    ownedRepos++;
+
+    // Cross-stack detection
+    if(lang)langSet.add(lang);
+    if(['python','rust','go','java','node','fastapi','django','flask'].some(l=>lang.includes(l)||d.includes(l))){hasBackend=true;}
+    if(['typescript','javascript','react','next','vue','svelte'].some(l=>lang.includes(l)||d.includes(l)||n.includes(l))){hasFrontend=true;}
+    if(['ml','ai','llm','model','pytorch','tensorflow','data','analytics'].some(l=>lang.includes(l)||d.includes(l)||n.includes(l))){hasMLorData=true;}
+
+    // High-quality repo signal: stars + description + topics = product-oriented
+    if(repo.stargazers_count>50&&repo.description&&t.length>0){highQualityRepo=true;sigs.push('quality-repo:'+repo.name);sc+=3;}
+    else if(allTags.some(k=>t.includes(k)||d.includes(k)||n.includes(k))){sigs.push('domain-repo:'+repo.name);sc+=2;}
+  }
+
+  // Ownership bonus: original repos > forked
+  if(ownedRepos>=3){sigs.push(`owns:${ownedRepos}repos`);sc+=2;}
+  else if(ownedRepos>=1){sc+=1;}
+
+  // Cross-stack Full-Stack/Product Builder signal
+  if(hasBackend&&hasFrontend){sigs.push('cross-stack:FE+BE');sc+=3;}
+  if(hasBackend&&hasMLorData){sigs.push('cross-stack:BE+ML');sc+=3;}
+  if(hasFrontend&&hasMLorData){sigs.push('cross-stack:FE+ML');sc+=2;}
+  if(langSet.size>=3){sigs.push(`multi-lang:${[...langSet].slice(0,3).join('+')}`);sc+=1;}
+
+  // Star quality
+  if(stars>500)sc+=2;else if(stars>100)sc+=1;
+
+  return{sc,sigs,ownedRepos,forkedRepos,hasBackend,hasFrontend,hasMLorData,highQualityRepo};
+}
+async function scoreGHCandidate(c){
+  const role=activeRole||{label:'Unknown',dept:'',office:'Foster City',type:'RND',region:'US'};
+  const sc=role._scoring||{};
+  const type=role.type||'RND';
+  const isGTM=type==='GTM',isGA=type==='GA',isRND=type==='RND';
+
+  // Fix 1: Strict location — use self-reported only, never infer from company
+  const LOC_HINTS={
+    US:['foster city','san francisco','bay area',' ca,','ca ','fremont','sunnyvale','palo alto','mountain view','remote us','united states','california'],
+    CN:['beijing','北京','shanghai','上海','shenzhen','深圳','china','中国','hangzhou'],
+    IN:['bengaluru','bangalore','india','hyderabad','pune','mumbai','chennai'],
+  };
+  const cLoc=(c.location||'').toLowerCase();
+  const regionHints=LOC_HINTS[role.region||'US']||LOC_HINTS.US;
+  const locMatch=!cLoc?'unknown':regionHints.some(h=>cLoc.includes(h))?'strong':
+    Object.values(LOC_HINTS).flat().some(h=>cLoc.includes(h))?'possible':'unknown';
+
+  // Fix 2: Role-specific signal dimensions — don't inherit from previous role
+  const sig1Name=sc.sig1_name||(isGTM?'Alliance Signal':isGA?'Domain Signal':'Product Ownership');
+  const sig2Name=sc.sig2_name||(isGTM?'Exec Relationship':isGA?'Industry Signal':'AI Builder Signal');
+  const sig1Desc=sc.sig1_desc||(isRND?'0 to 1 shipped PRODUCT ownership — PM title OR founding product role OR documented roadmap ownership. Engineering contributions alone = false.':isGTM?'Revenue-producing alliance with named GSI or hyperscaler':'Direct domain expertise in '+role.dept);
+  const sig2Desc=sc.sig2_desc||(isRND?'Expert-level niche AI fingerprint in production: LangGraph/DSPy/RAG eval/LLMOps — not tutorial or academic':'Secondary domain signal');
+
+  // Fix 3: PM disqualifier rule
+  const pmRule=isRND&&(role.label||'').toLowerCase().match(/product|pm |builder|manager/)?
+    'HARD RULE: This is a PRODUCT role. Pure engineers without PM ownership = 40 pts MAX. "Sole architect" or "built the system" = ENGINEER not PM. Requires product roadmap ownership or founding PM evidence to exceed 40.':'';
+
+  // Fix 4: README is supporting evidence only — cannot drive score above 50 alone
+  const readmeSigs=(c.sigs||[]).filter(s=>s.startsWith('readme:'));
+  const readmeNote=readmeSigs.length?'README signals ('+readmeSigs.join(',')+') = supporting evidence only, NOT primary score driver. Cannot push score past 50 without role-match evidence.':'';
+
+  const clusters=generatedClusters.map(cl=>`${cl.name}(w:${cl.weight}): must=[${(cl.must_tags||[]).slice(0,4).join(',')}]`).join(' | ');
+  const must=(role._mustHave||[]).slice(0,4).join('; ');
+
+  const prompt='Senior recruiter at Conviva. Score this GitHub candidate STRICTLY.\n\nROLE: '+role.label+' ('+type+') | '+role.dept+' | '+role.office+'\nMUST-HAVE: '+(must||'see clusters')+'\nCLUSTERS: '+clusters+'\n'+(role._strictFilter?'DISQUALIFIER: '+role._strictFilter+'\n':'')+pmRule+'\n\nCANDIDATE:\n- Name: '+c.name+'\n- Self-reported location: "'+cLoc+'" <- USE ONLY THIS for location_match\n- Company: '+(c.company||'unknown')+'\n- Bio: '+(c.bio||'n/a').slice(0,200)+'\n- Signals: '+(c.sigs||[]).slice(0,6).join(', ')+'\n- Owned repos: '+(c.owned_repos||0)+' | Cross-stack: '+((c.cross_stack||[]).join('+')||'none')+'\n'+(readmeNote?readmeNote+'\n':'')+'\nSCORING:\n- sig1='+sig1Name+': '+sig1Desc+'\n- sig2='+sig2Name+': '+sig2Desc+'\n- 80-100: strong on must-have AND sig1\n- 60-79: strong on sig1 OR most must-have\n- 40-59: partial, notable gaps\n- <40: missing critical req or hard disqualifier\n\nReturn JSON only:\n{"score":<int>,"sig1":<bool>,"sig2":<bool>,"matched_clusters":["name"],"reason":"<2 evidence sentences>","dealbreakers":["if any"],"outreach_angle":"<1 sentence or empty>"}';
+
+  try{
+    const raw=await haikuCall(prompt,800);
+    const res=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    // Always override with our deterministic location check
+    res.location_match=locMatch;
+    res.location_found=c.location||'not set';
+    return res;
+  }catch(e){
+    return{score:0,sig1:false,sig2:false,location_match:locMatch,location_found:c.location||'?',matched_clusters:[],reason:'Score failed: '+e.message,dealbreakers:[],outreach_angle:''};
+  }
+}
+
+// ════════════════════════════════════════════════════════
+// MAIN SOURCING FLOW
+// ════════════════════════════════════════════════════════
+async function startSourcing(){
+  if(!activeRole){alert('Please select a role first');return;}
+  if(!generatedClusters.length){alert('Please process the JD first to generate skill clusters');return;}
+  // Validate keys for chosen provider
+  const _ck=document.getElementById('apiKey').value.trim();
+  const _dk=document.getElementById('dsApiKey').value.trim();
+  if(aiProvider==='claude'&&!_ck){alert('Claude API Key required for Claude Only mode.');return;}
+  if(aiProvider==='deepseek'&&!_dk){alert('DeepSeek API Key required for DeepSeek Only mode.');return;}
+  if(aiProvider==='mix'&&!_ck&&!_dk){alert('Smart Mix mode requires at least one API key.');return;}
+  if(aiProvider==='mix'&&!_ck){alert('Smart Mix mode: Claude key missing — quality calls (clusters/analysis) will fail. Add Claude key or switch to DeepSeek Only.');return;}
+  const ghTok=document.getElementById('ghToken').value.trim();
+  const minScore=parseInt(document.getElementById('minScore').value)||60;
+  const repos=getRepos(),queries=getQueries();
+  const type=activeRole.type;
+  const isRND=type==='RND';
+  const ghAnyEnabled=Object.keys(chState).some(k=>k.endsWith('_gh')&&chState[k]);
+  // For RND: need either (github enabled + repos/queries) OR other channels (PH/HN/Dev.to)
+  // For GTM/GA: channels are all semi-auto, so auto sourcing pool will be small — that's expected
+  const hasPH=Object.keys(chState).some(k=>k.endsWith('_ph')&&chState[k]);
+  const hasHN=Object.keys(chState).some(k=>k.endsWith('_hn')&&chState[k]);
+  const hasDV=Object.keys(chState).some(k=>k.endsWith('_devto')&&chState[k]);
+  if(isRND&&!ghAnyEnabled&&!hasPH&&!hasHN&&!hasDV){
+    if(!confirm('No auto channels are enabled. Auto sourcing will return 0 results.\n\nUse the Semi-Auto Profile Analyzer below to manually analyze candidate profiles.\n\nContinue anyway?'))return;
+  }
+  stopped=false;
+  const manuals=candidates.filter(c=>c.src?.startsWith('manual'));
+  candidates=[...manuals];
+  rebuildSeenSet(); // reset dedup from existing manuals
+  document.getElementById('startBtn').disabled=true;document.getElementById('stopBtn').disabled=false;
+  document.getElementById('expCsv').disabled=true;document.getElementById('expJson').disabled=true;
+  clearLog();pbar(0);
+  ['sGH','sOther','sPassed','sHigh'].forEach(id=>setStat(id,'…'));
+  ['sbTotal','sbPassed','sbHigh'].forEach(id=>setStat(id,'…'));
+  renderTable(candidates);
+  document.getElementById('analyzerPanel').style.display='';
+  log(`=== ${activeRole.label} · ${type} · ${activeRole.office} ===`,'l-i');
+  const activeChKeys=Object.keys(chState).filter(k=>chState[k]);
+  log(`Active channels: ${activeChKeys.join(', ')||'NONE — check channel toggles'}`,activeChKeys.length?'l-d':'l-e');
+  log(`Repos: ${repos.length} · Queries: ${queries.length}`,'l-d');
+  const ghAny=Object.keys(chState).some(k=>k.endsWith('_gh')&&chState[k]);
+  if(!ghAny&&isRND&&repos.length===0&&queries.length===0){
+    log('⚠ GitHub disabled AND no repos/queries — nothing to source from. Enable GitHub in channels or add queries.','l-w');
+  }
+
+  let raw=[];
+  // GitHub only for R&D roles
+  // Check if GitHub is enabled in ANY region (CN_gh, US_gh, IN_gh)
+  const ghEnabled=Object.keys(chState).some(k=>k.endsWith('_gh')&&chState[k]);
+  if(isRND&&(repos.length||queries.length)&&ghEnabled){
+    log('\n── GitHub ──','l-i');const seen=new Set();
+    for(const repo of repos){if(stopped)break;log(`  contrib: ${repo}`);const data=await ghFetch(`https://api.github.com/repos/${repo}/contributors?per_page=20&anon=0`,ghTok);let n=0;for(const c of data||[])if(c.login&&!c.login.includes('[bot]')&&!seen.has(c.login)){seen.add(c.login);raw.push({login:c.login,src:'gh:'+repo,channel:'github'});n++;}log(`    +${n}`,'l-ok');await sleep(350);}
+    for(const q of queries){if(stopped)break;log(`  search: "${q.slice(0,45)}"`);const data=await ghFetch(`https://api.github.com/search/users?q=${encodeURIComponent(q)}&per_page=12&sort=followers`,ghTok);let n=0;for(const u of(data||{}).items||[])if(u.login&&!seen.has(u.login)){seen.add(u.login);raw.push({login:u.login,src:'gh-s',channel:'github'});n++;}log(`    +${n}`,'l-ok');await sleep(500);}
+    setStat('sGH',raw.length);
+    log(`Enriching ${raw.length} GitHub profiles...`,'l-i');
+    const enriched=[];
+    for(let i=0;i<raw.length;i++){if(stopped)break;const c=raw[i];const det=await ghFetch(`https://api.github.com/users/${c.login}`,ghTok);if(!det){await sleep(200);continue;}const r2=await ghFetch(`https://api.github.com/users/${c.login}/repos?sort=stargazers&per_page=8`,ghTok)||[];
+      const{sc,sigs,ownedRepos,hasBackend,hasFrontend,hasMLorData,highQualityRepo}=quickSigs(det,r2);
+
+      // FIX 4: README Quality Signal — check top repo README for product-mindedness
+      let readmeSignal=null;
+      const topOriginal=r2.filter(r=>!r.fork&&r.stargazers_count>0).sort((a,b)=>b.stargazers_count-a.stargazers_count)[0];
+      if(topOriginal&&sc>=2){
+        try{
+          const readme=await ghFetch(`https://api.github.com/repos/${c.login}/${topOriginal.name}/readme`,ghTok);
+          if(readme?.content){
+            const decoded=atob((readme.content||'').replace(/\s/g,''));
+            const text=decoded.toLowerCase();
+            let rScore=0;const rSigs=[];
+            // Product-oriented README patterns
+            if(text.includes('architecture')||text.includes('diagram')){rScore+=2;rSigs.push('arch-diagram');}
+            if(text.includes('roadmap')||text.includes('todo')||text.includes('planned')){rScore+=2;rSigs.push('has-roadmap');}
+            if(text.includes('deploy')||text.includes('production')||text.includes('live at')||text.includes('demo')){rScore+=2;rSigs.push('production-minded');}
+            if(text.includes('why')||text.includes('problem')||text.includes('motivation')){rScore+=1;rSigs.push('problem-framing');}
+            if(decoded.length>1000){rScore+=1;rSigs.push('detailed-docs');}
+            if(rScore>=3){readmeSignal={score:rScore,signals:rSigs,repo:topOriginal.name};sigs.push('readme:'+rSigs.join('+'));}
+          }
+        }catch(e){/* README fetch failed, skip */}
+        await sleep(150);
+      }const finalScore=sc+(readmeSignal?readmeSignal.score:0);
+      if(finalScore>=1&&!isDupe(c.login)){registerCandidate(c.login);enriched.push({...c,name:det.name||c.login,bio:det.bio||'',company:det.company||'',location:det.location||'',blog:det.blog||'',followers:det.followers||0,github_url:det.html_url||'https://github.com/'+c.login,sigs,quick_score:finalScore,readme_signal:readmeSignal,owned_repos:ownedRepos,cross_stack:[hasBackend&&hasFrontend?'FE+BE':null,hasBackend&&hasMLorData?'BE+ML':null].filter(Boolean)});}if(i%10===0)log(`  [${i+1}/${raw.length}] passed:${enriched.length}`,enriched.length>0?'l-ok':'l-d');await sleep(240);}
+    raw=enriched;setStat('sGH',enriched.length);
+  }else{if(!isRND)log('GitHub disabled for '+type+' roles','l-d');setStat('sGH','—');}
+
+  // Other auto channels (PH/HN/Dev.to for RND)
+  let otherCt=0;
+  if(isRND&&!stopped){
+    if(chState['US_ph']||chState['CN_ph']){log('\n── Product Hunt ──','l-i');const seen=new Set();const phKws=generatedClusters.flatMap(c=>(c.must_tags||[]).slice(0,1)).slice(0,3);for(const kw of phKws){if(stopped)break;try{const r=await fetch('https://api.producthunt.com/v2/api/graphql',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({query:`{posts(first:5,order:VOTES,query:"${kw}"){edges{node{name tagline votesCount makers{name username headline websiteUrl profileUrl}}}}}`})});const d=await r.json();let n=0;for(const e of(d.data?.posts?.edges||[])){const post=e.node;for(const m of post.makers||[])if(m.username&&!seen.has(m.username)){seen.add(m.username);raw.push({channel:'producthunt',login:m.username,src:'ph:'+post.name,name:m.name||m.username,bio:m.headline||'',company:'',location:'',blog:m.websiteUrl||'',followers:0,github_url:'',ph_profile:m.profileUrl||`https://www.producthunt.com/@${m.username}`,sigs:['PH:'+post.name],quick_score:4});n++;otherCt++;}}log(`  "${kw}" +${n}`,'l-ok');}catch(e){log('  PH failed','l-w');}await sleep(500);};}
+    if(chState['US_hn']||chState['CN_hn']){log('\n── Hacker News ──','l-i');const seen=new Set();for(const q of queries.slice(0,2)){if(stopped)break;try{const r=await fetch(`https://hn.algolia.com/api/v1/search?query=${encodeURIComponent(q)}&tags=comment&hitsPerPage=8`);const d=await r.json();let n=0;for(const hit of d.hits||[]){if(hit.author&&!seen.has(hit.author)){seen.add(hit.author);raw.push({channel:'hackernews',login:hit.author,src:'hn',name:hit.author,bio:(hit.comment_text||'').slice(0,100),company:'',location:'',blog:'',followers:0,github_url:'',hn_url:`https://news.ycombinator.com/user?id=${hit.author}`,sigs:['HN'],quick_score:3});n++;otherCt++;}}log(`  "${q.slice(0,30)}" +${n}`,'l-ok');}catch(e){log('  HN failed','l-w');}await sleep(400);};}
+    // Juejin for CN roles
+    if(chState['CN_juejin']&&!stopped){
+      log('\n── 掘金 Juejin ──','l-i');
+      const jKws=generatedClusters.flatMap(c=>(c.must_tags||[]).slice(0,1)).slice(0,3).map(t=>encodeURIComponent(t));
+      for(const kw of jKws){
+        if(stopped)break;
+        try{
+          // Juejin public API
+          const r=await fetch(`https://api.juejin.cn/user_api/v1/author/recommend?cursor=0&limit=10&spider=0`,{method:'GET'});
+          // Juejin doesn't have a public search API we can use directly
+          // Provide search link instead
+          log(`  掘金: search link provided (no public API)`, 'l-d');
+        }catch(e){log('  Juejin API not accessible','l-d');}
+        await sleep(200);
+      }
+    }
+    if(chState['US_devto']||chState['CN_devto']){log('\n── Dev.to ──','l-i');const seen=new Set();const tags=generatedClusters.flatMap(c=>(c.must_tags||[]).slice(0,1)).slice(0,3).map(t=>t.toLowerCase().replace(/\s+/g,''));for(const tag of tags){if(stopped)break;try{const r=await fetch(`https://dev.to/api/articles?tag=${tag}&per_page=10&top=30`);const arts=await r.json();let n=0;for(const a of arts||[]){const user=a.user;if(!user?.username||seen.has(user.username))continue;seen.add(user.username);raw.push({channel:'devto',login:user.username,src:'devto:'+tag,name:user.name||user.username,bio:user.summary||a.title,company:'',location:user.location||'',blog:user.website_url||'',followers:user.followers_count||0,github_url:'',devto_url:`https://dev.to/${user.username}`,sigs:['devto:'+tag],quick_score:4});n++;otherCt++;}log(`  tag:${tag} +${n}`,'l-ok');}catch(e){log('  Dev.to failed','l-w');}await sleep(350);};}
+  }
+  setStat('sOther',otherCt||'—');
+  const totalPool=raw.length;setStat('sbTotal',totalPool||'—');
+  log(`\nTotal pool: ${raw.length}. Scoring with Claude...`,'l-i');pbar(50);
+
+  const passed=[];
+  for(let i=0;i<raw.length;i++){
+    if(stopped)break;const c=raw[i];const res=await scoreGHCandidate(c);
+    Object.assign(c,{score:res.score||0,sig1:!!res.sig1,sig2:!!res.sig2,location_match:res.location_match||'unknown',matched_clusters:res.matched_clusters||[],reason:res.reason||'',outreach_angle:res.outreach_angle||'',linkedin_xray:'https://www.google.com/search?q='+encodeURIComponent(`site:linkedin.com/in "${c.name}"${c.company?' "'+c.company.trim()+'"':''}`)});
+    log(`  [${i+1}/${raw.length}][${c.channel}] ${c.name} → ${c.score}/100`,c.score>=minScore?'l-ok':'l-d');
+    if(c.score>=minScore){passed.push(c);candidates=[...candidates.filter(x=>x.src?.startsWith('manual')),...passed];renderTable(candidates);setStat('sPassed',passed.length);setStat('sHigh',passed.filter(x=>x.score>=80).length);setStat('sbPassed',passed.length);setStat('sbHigh',passed.filter(x=>x.score>=80).length);}
+    pbar(50+(i/raw.length)*48);await sleep(400);
+  }
+  pbar(100);log(`\nDone! Qualified: ${passed.length}`,'l-ok');
+  candidates=[...candidates.filter(x=>x.src?.startsWith('manual')),...passed];
+  renderTable(candidates);
+  saveState(); // persist to localStorage
+  document.getElementById('startBtn').disabled=false;document.getElementById('stopBtn').disabled=true;
+  document.getElementById('expCsv').disabled=false;document.getElementById('expJson').disabled=false;
+  document.getElementById('shareBtn').style.display='';
+}
+function stopSourcing(){stopped=true;log('Stopped.','l-w');document.getElementById('startBtn').disabled=false;document.getElementById('stopBtn').disabled=true;}
+
+// ════════════════════════════════════════════════════════
+// TABLE
+// ════════════════════════════════════════════════════════
+function setF(f,btn){activeFilter=f;document.querySelectorAll('.ft').forEach(b=>b.classList.remove('on'));btn.classList.add('on');renderTable(candidates);}
+function sortBy(k){if(sortKey===k)sortAsc=!sortAsc;else{sortKey=k;sortAsc=false;}renderTable(candidates);}
+function renderTable(data){
+  data=data||candidates;const q=(document.getElementById('tblSrch')?.value||'').toLowerCase();
+  const sd=activeRole?._scoring||{};
+  let rows=data.filter(c=>{
+    const mq=!q||c.name.toLowerCase().includes(q)||(c.bio||'').toLowerCase().includes(q)||(c.company||'').toLowerCase().includes(q);
+    const mf=activeFilter==='all'||(activeFilter==='hi'&&c.score>=80)||(activeFilter==='sig1'&&c.sig1)||(activeFilter==='sig2'&&c.sig2)||(activeFilter==='loc'&&c.location_match==='strong')||(activeFilter==='manual'&&c.src?.startsWith('manual'));
+    return mq&&mf;
+  }).sort((a,b)=>{let av=a[sortKey]||0,bv=b[sortKey]||0;if(typeof av==='string'){av=av.toLowerCase();bv=bv.toLowerCase();}return sortAsc?(av>bv?1:-1):(av<bv?1:-1);});
+  const tb=document.getElementById('tblBody');
+  if(!rows.length){tb.innerHTML=`<tr><td colspan="7"><div class="empty">${data.length?'No candidates match filter':'Process JD → Generate Clusters → Start Sourcing'}</div></td></tr>`;return;}
+  const srcM={github:'src-gh',producthunt:'src-ph',hackernews:'src-hn',devto:'src-dv',linkedin:'src-li',xiaohongshu:'src-xhs',jike:'src-jike',boss:'src-boss',maimai:'src-li',naukri:'src-naukri',twitter:'src-li',wellfound:'src-li',liepin:'src-jike'};
+  const srcL={github:'GitHub',producthunt:'PH',hackernews:'HN',devto:'Dev.to',linkedin:'LinkedIn',xiaohongshu:'XHS',jike:'Jike',boss:'Boss',maimai:'Maimai',naukri:'Naukri',twitter:'Twitter',wellfound:'Wellfound',liepin:'猎聘'};
+  tb.innerHTML=rows.map(c=>{
+    const sc=c.score>=80?'s-hi':c.score>=60?'s-md':'s-lo';
+    const cc=srcM[c.channel]||'src-li',cl=srcL[c.channel]||c.channel;
+    const s1=c.sig1?`<span class="chip cp-1">${sd.sig1_name||'Sig1'} ✓</span>`:'';
+    const s2=c.sig2?`<span class="chip cp-2">${sd.sig2_name||'Sig2'} ✓</span>`:'';
+    const ownChip=c.owned_repos>=3?`<span class="chip" style="background:rgba(59,130,246,.1);color:var(--bl)">Owns ${c.owned_repos} repos</span>`:'';
+    const loc=c.location_match==='strong'?'<span class="chip cp-loc">Loc ✓</span>':c.location_match==='possible'?'<span class="chip cp-loc" style="opacity:.4">Loc?</span>':'';
+    const cls=(c.matched_clusters||[]).slice(0,2).map(cl2=>`<span style="font-size:10px;color:var(--g2)">${cl2}</span>`).join(' · ');
+    const bio=[c.company&&`<strong style="color:var(--tx)">${c.company}</strong>`,c.bio&&`<span>${c.bio.slice(0,72)}</span>`].filter(Boolean).join('<br>');
+    let assess=`<span style="font-size:11px;color:var(--tx2)">${(c.reason||'—').slice(0,95)}</span>`;
+    if(c.readme_signal){assess+=`<br><span style="font-size:10px;color:var(--bl)">📄 README: ${(c.readme_signal.signals||[]).join(' · ')}</span>`;}
+    if((c.cross_stack||[]).length){assess+=`<br><span style="font-size:10px;color:var(--pu)">⚡ Cross-stack: ${c.cross_stack.join(', ')}</span>`;}
+    if(c.src?.startsWith('manual')&&(c.gaps||[]).length)assess+='<br>'+(c.gaps||[]).slice(0,2).map(g=>`<span style="font-size:10px;color:var(--am)">△ ${g}</span>`).join('<br>');
+    if(c.outreach_angle)assess+=`<br><span style="font-size:10px;font-style:italic;color:var(--g2)">"${c.outreach_angle}"</span>`;
+    const links=[c.github_url&&`<a class="lnk" href="${c.github_url}" target="_blank">GitHub</a>`,c.ph_profile&&`<a class="lnk" href="${c.ph_profile}" target="_blank">PH</a>`,c.hn_url&&`<a class="lnk" href="${c.hn_url}" target="_blank">HN</a>`,c.devto_url&&`<a class="lnk" href="${c.devto_url}" target="_blank">Dev.to</a>`,`<a class="lnk" href="${c.linkedin_xray}" target="_blank">LinkedIn</a>`,c.blog&&`<a class="lnk" href="${c.blog.startsWith('http')?c.blog:'https://'+c.blog}" target="_blank">Site</a>`].filter(Boolean).join('<br>');
+    return`<tr><td><span class="sp ${sc}">${c.score}</span><div class="mb"><div class="mf" style="width:${c.score}%"></div></div><span class="src-p ${cc}" style="margin-top:4px">${cl}</span></td><td style="color:var(--tx);font-weight:500">${c.name}<br><span style="font-size:10px;color:var(--tx3);font-family:'DM Mono',monospace">${c.login}</span></td><td>${s1}${s2}${ownChip||""}${loc}<br><span style="display:block;margin-top:2px;font-size:10px">${cls}</span></td><td style="font-size:11px">${bio||'—'}</td><td style="font-size:11px;color:${c.location_match==='strong'?'var(--bl)':'var(--tx2)'}">${c.location||'—'}</td><td style="font-size:11px;line-height:1.6">${assess}</td><td>${links}</td></tr>`;
+  }).join('');
+}
+
+// ════════════════════════════════════════════════════════
+// UTILS
+// ════════════════════════════════════════════════════════
+// ── OPEN TOP 3 SEARCH LINKS ──
+function openTopSearch(){
+  const activePane=document.querySelector('.atp.on');
+  if(!activePane){alert('Select a channel tab first');return;}
+  const links=[...activePane.querySelectorAll('.lr-o')].slice(0,3);
+  if(!links.length){alert('No search links in this tab yet. Generate clusters first.');return;}
+  links.forEach((l,i)=>setTimeout(()=>window.open(l.href,'_blank'),i*500));
+  log(`Opened ${links.length} search links in new tabs`,'l-ok');
+}
+
+// ── SHARE VIA URL ──
+function shareResults(){
+  if(!candidates.length){alert('No candidates to share yet');return;}
+  const payload={
+    role:activeRole?{label:activeRole.label,dept:activeRole.dept,office:activeRole.office}:null,
+    candidates:candidates.map(c=>({name:c.name,login:c.login,channel:c.channel,score:c.score,sig1:c.sig1,sig2:c.sig2,location_match:c.location_match,location:c.location,company:c.company,bio:(c.bio||'').slice(0,200),reason:(c.reason||'').slice(0,200),outreach_angle:c.outreach_angle||'',linkedin_xray:c.linkedin_xray||'',github_url:c.github_url||''}))
+  };
+  try{
+    const encoded=btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
+    const url=window.location.href.split('?')[0]+'?share='+encoded;
+    if(url.length>50000){alert('Too many candidates to encode in URL (max ~50). Export CSV/JSON instead.');return;}
+    navigator.clipboard.writeText(url).then(()=>{
+      const btn=document.getElementById('shareBtn');
+      const orig=btn.textContent;btn.textContent='✓ Link Copied!';btn.style.color='var(--g2)';
+      setTimeout(()=>{btn.textContent=orig;btn.style.color='';},2500);
+    });
+  }catch(e){alert('Share failed: '+e.message);}
+}
+
+function loadSharedResults(){
+  const params=new URLSearchParams(window.location.search);
+  const share=params.get('share');
+  if(!share)return;
+  try{
+    const payload=JSON.parse(decodeURIComponent(escape(atob(share))));
+    if(payload.candidates?.length){
+      candidates=payload.candidates;
+      if(payload.role){
+        activeRole={...payload.role,id:'shared',type:'RND',region:'US'};
+        document.getElementById('navRoleLabel').innerHTML=`<strong>Shared: ${activeRole.label}</strong> · ${activeRole.dept}`;
+        document.getElementById('sbRoleName').textContent=activeRole.label;
+        document.getElementById('sbRoleMeta').textContent=activeRole.dept+' · '+activeRole.office;
+      }
+      renderTable(candidates);
+      setStat('sPassed',candidates.filter(c=>c.score>=60).length);
+      setStat('sHigh',candidates.filter(c=>c.score>=80).length);
+      setStat('sManual',candidates.filter(c=>c.src?.startsWith('manual')).length);
+      document.getElementById('shareBtn').style.display='';
+      // Show a banner
+      const banner=document.createElement('div');
+      banner.style.cssText='position:fixed;top:60px;left:50%;transform:translateX(-50%);background:var(--ch);color:#fff;padding:10px 20px;border-radius:8px;font-size:12px;z-index:999;box-shadow:0 4px 12px rgba(0,0,0,.3)';
+      banner.textContent=`✓ Loaded ${candidates.length} shared candidates`;
+      document.body.appendChild(banner);setTimeout(()=>banner.remove(),3500);
+    }
+  }catch(e){console.warn('Share URL parse failed',e);}
+}
+
+function log(msg,cls=''){const b=document.getElementById('logBox'),d=document.createElement('div');if(cls)d.className=cls;d.textContent=msg;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+function clearLog(){document.getElementById('logBox').innerHTML='';}
+function pbar(p){document.getElementById('pbar').style.width=Math.round(p)+'%';}
+function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
+function setStat(id,v){const el=document.getElementById(id);if(el)el.textContent=v;}
+function exportCSV(){if(!candidates.length)return;const cols=['name','login','channel','score','sig1','sig2','location_match','location','company','bio','matched_clusters','reason','outreach_angle','linkedin_xray','github_url'];const csv=[cols.join(','),...candidates.map(c=>cols.map(k=>{const v=Array.isArray(c[k])?c[k].join('|'):(c[k]||'');return`"${String(v).replace(/"/g,'""')}"`;}).join(','))].join('\n');dl(`conviva_${activeRole?.id||'candidates'}.csv`,'text/csv','\uFEFF'+csv);}
+function exportJSON(){if(!candidates.length)return;dl(`conviva_${activeRole?.id||'candidates'}.json`,'application/json',JSON.stringify(candidates,null,2));}
+function dl(name,type,content){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([content],{type}));a.download=name;a.click();}
+
+
+// ════════════════════════════════════════════════════════
+// GOLDEN PROFILE QUICK-LOAD DATA
+// ════════════════════════════════════════════════════════
+const GP_PROFILES = {
+  yiliu: `YI LIU — Product Builder · MIT MSc AI + INSEAD MBA
+Current: Cofounder & CPO at Minsy AI (No-Code Quant AI Agent, MIT Sandbox-backed)
+Location: Cambridge, MA (open to Foster City)
+
+SUMMARY:
+Built and scaled AI edtech product from 0 to 3M MAU at ByteDance (now Gauth, 40M MAU globally). Deep expertise in agentic product development, with a track record of shipping consumer and enterprise AI — including end-to-end product delivery using agentic engineering tools.
+
+KEY PRODUCT BUILDER SIGNALS:
+- MIT MSc AI (GPA 5.0, SERC Scholar "Age of AI and Platforms") + INSEAD MBA (Alcatel-Lucent Scholarship €45K, top of 450-person cohort)
+- Shipped MVP of AI quant trading agent in 2 WEEKS (Minsy AI)
+- End-to-end delivery using agentic engineering: Claude Code, Antigravity, OpenAI Codex — independently shipped products to production
+- Languages: Python, C, R, SQL; AI Tools: Claude Code, Antigravity, Codex
+- Personal website: yiliu.vercel.app (shows shipped product mindset)
+
+CAREER HIGHLIGHTS:
+ByteDance (Oct 2018 – Mar 2021) — Product Manager, Edtech & AI, Shanghai
+- Led AI edtech product 0→3M MAU in 15 months (product grew to Gauth 40M MAU globally)
+- Built industry-first auto-grading for Chinese language subjects; search accuracy 50%→99.9%
+- Video production cost reduction 80% via scalable strategy
+
+ThinkingData (Jul 2022 – Jun 2023) — Senior PM, Internationalization & AI, Shanghai
+- Built Tiki: 0→1 AI data analysis chatbot using RAG, reduced support workload 25%
+- Launched international SaaS (English/Korean/Japanese); built internal localization platform saving $100K+/yr
+
+Secure3 (Aug 2023 – Aug 2024) — Founding Product Manager (Remote)
+- Launched audit contest platform 0→1, 100+ contests, $5M+ revenue
+- Proposed public audit contest model to CEO/CTO → doubled auditor growth
+
+Z.ai / GLM (Jun–Aug 2025) — AI PM & Growth, Beijing
+- GLM-4.5 launch GTM: 50+ influencer partnerships, DAU 25K→100K, 5M+ impressions
+
+EDUCATION: MIT MSc AI (2025-2026) · INSEAD MBA (2024-2025) · Tongji University BA Japanese
+INTERESTS: Theater (lead roles, covered by MIT News), skydiving, digital nomad`,
+
+  yushengjia: `YUSHENG JIA — Senior Data Product Manager / AI Data Product Builder
+Location: Beijing, China
+Personal Website: ProductForge
+Contact: wyy_luckyj@163.com
+
+SUMMARY:
+10+ years in data domain spanning both product and engineering roles. Built data platforms and analytics tools for international business. Skilled in LLM/Agent technologies for intelligent data products serving business users, merchants, and media clients.
+
+KEY PRODUCT BUILDER SIGNALS:
+- Cross-functional DNA: started as Senior Data Engineer at Alibaba, transitioned to Senior Data PM at ByteDance
+- Built LLM agent systems end-to-end in production (not prototypes): Customer Support Agent (90% query automation), Marketing Intelligence Agent (60% efficiency gain)
+- AI Tools in use: Cursor, Claude Code, Gemini — strong builder mindset (idea → prototype → iteration)
+- Published personal AI-powered website (ProductForge) with end-to-end product prototypes
+- Agent evaluation framework expertise: accuracy, latency, satisfaction metrics
+- Built advertising attribution analytics tool + AI travel planning agent
+
+CAREER HIGHLIGHTS:
+ByteDance — Senior Data PM / AI Data Product (Jul 2020 – Jun 2025), Beijing
+TikTok Shop AI-Powered DMP & Agent Systems:
+- Led transformation of traditional DMP into AI-native, agent-driven analytics platform
+- Designed and shipped LLM-based agent system (intent understanding, RAG, prompt & evaluation loops)
+- Customer Support Agent: automated 90% of queries, saved 50+ hours/week; built agent eval framework (accuracy/latency/satisfaction)
+- Marketing Intelligence Agent: automated analysis and campaign optimization, 60%+ efficiency gain
+
+TikTok Data Platform (Analytics & Intelligence):
+- Built unified data & analytics platform across 8+ domains (video, user, publisher, e-commerce), serving 10K+ clients / 1,500+ WAU
+- Designed data-driven decision frameworks (funnel analysis, exploratory analysis, insight generation)
+
+Alibaba — Senior Data Engineer (Oct 2015 – Jun 2020)
+- Built real-time and offline data pipelines for advertising analytics (B2B)
+- Developed attribution and ROI analysis systems, audience segmentation for precise targeting
+
+EDUCATION: Nanjing University MSc Computer Application & AI/ML/Data Mining (2012-2015) · Sichuan University BSc Computer Science + Minor Finance GPA 3.5 (2008-2012)
+SKILLS: LLM applications, agent systems, agent evaluation; Cursor/Claude Code/Gemini; 0→1 product development with end-to-end ownership`
+};
+
+// Load a pre-defined golden profile into the GP textarea
+function loadGP(key) {
+  const gp = GP_PROFILES[key];
+  if (!gp) return;
+  const ta = document.getElementById('gpText');
+  if (ta) {
+    ta.value = gp;
+    const st = document.getElementById('gpStatus');
+    if (st) { st.style.display = 'block'; st.textContent = '✓ Golden Profile loaded'; st.style.color = 'var(--g)'; }
+    document.getElementById('processBtn').disabled = false;
+    // Flash the textarea briefly
+    ta.style.borderColor = 'var(--g)';
+    setTimeout(() => { ta.style.borderColor = ''; }, 1500);
+    log('Golden Profile loaded: ' + (key === 'yiliu' ? 'Yi Liu (MIT/ByteDance)' : 'Yusheng Jia (ByteDance Data+Agent)'), 'l-ok');
+  }
+}
+
+// INIT
+buildRoleTabs();
+loadSharedResults();
+// Restore persisted session (after roles are built so selectRole works)
+setTimeout(() => { loadState(); updateModelRoutingDisplay(); }, 100);
+</script>
+</body>
+</html>

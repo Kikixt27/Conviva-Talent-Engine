@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Principal Product Builder",
+    "language": "python",
+    "location": "China",
+    "requirements": "Senior IC who can architect AND ship product end-to-end. Deep coding DNA, prior 0->1 product experience, comfort with LLM/AI systems. Bonus: prior startup founder or principal engineer experience.",
+    "github_queries": [
+      "AI product builder",
+      "LLM application engineer",
+      "founding engineer"
+    ],
+    "hn_queries": [
+      "founding engineer hiring",
+      "principal engineer ai product"
+    ]
+  },
+  {
+    "title": "Senior MLE",
+    "language": "python",
+    "location": "China",
+    "requirements": "Senior machine-learning engineer with production experience deploying recommendation, ranking, or LLM systems at scale. PyTorch / Ray / vLLM background a plus.",
+    "github_queries": [
+      "machine learning engineer",
+      "vllm pytorch inference",
+      "recommendation system engineer"
+    ],
+    "hn_queries": [
+      "ml engineer hiring",
+      "vllm production"
+    ]
+  },
+  {
+    "title": "Frontend Architect",
+    "language": "typescript",
+    "location": "China",
+    "requirements": "Lead frontend engineer with deep React/TypeScript expertise, micro-frontend architecture, design-system ownership, and an eye for performance and DX.",
+    "github_queries": [
+      "react architect",
+      "design system typescript",
+      "micro frontend"
+    ],
+    "hn_queries": [
+      "frontend architect hiring"
+    ]
+  }
+]

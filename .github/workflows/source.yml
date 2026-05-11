@@ -1,0 +1,61 @@
+name: Conviva Signal — Nightly Sourcing
+
+on:
+  schedule:
+    # 00:00 UTC == 08:00 Beijing time, weekdays only
+    - cron: "0 0 * * 1-5"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nightly-sourcing
+  cancel-in-progress: false
+
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run sourcing engine
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
+          DS_API_KEY: ${{ secrets.DS_API_KEY }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          AI_PROVIDER: auto
+          SCORE_THRESHOLD: "70"
+          MAX_CANDIDATES_PER_QUERY: "15"
+        run: python scripts/source.py
+
+      - name: Upload daily report
+        uses: actions/upload-artifact@v4
+        with:
+          name: signal-report
+          path: reports/
+          retention-days: 30
+
+      - name: Commit updated candidate database
+        run: |
+          git config user.name  "conviva-signal-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/candidates.json reports/
+          if git diff --cached --quiet; then
+            echo "No new candidates to commit."
+          else
+            git commit -m "data: nightly sourcing run $(date -u +'%Y-%m-%d')"
+            git push
+          fi
