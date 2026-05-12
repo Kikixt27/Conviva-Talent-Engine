@@ -414,6 +414,7 @@ e.g. Liu Yi · Principal PM at ByteDance AI · 7yr PM · built LLM eval platform
         <div style="display:flex;gap:5px;flex-wrap:wrap">
           <button class="btn btn-ghost btn-sm" onclick="loadGP('yiliu')" style="font-size:10px;border-color:var(--g);color:var(--g2)">★ Yi Liu · MIT/ByteDance PM</button>
           <button class="btn btn-ghost btn-sm" onclick="loadGP('yushengjia')" style="font-size:10px;border-color:var(--bl);color:var(--bl)">★ Yusheng Jia · ByteDance Data+Agent</button>
+          <button class="btn btn-ghost btn-sm" onclick="loadGP('yushengjia');selectRole('bj_pb')" style="font-size:10px;border-color:var(--co);color:var(--co)">🇨🇳 Quick: BJ Product Builder</button>
         </div>
       </div>
     </div>
@@ -1027,6 +1028,8 @@ A "Product Builder" is not just a coder — they are full-stack owners. Prioriti
    - Combine 1 Tech Stack + 1 Action word: e.g. "FastAPI shipped", "LangGraph production"
    - Combine 1 Domain + 1 Evidence word: e.g. "agent eval roadmap", "RAG metrics deployed"
    - NO location: filter (breaks GitHub search), MAX 2 keywords per query
+   - For CN roles: use Chinese tech company alumni signals (字节跳动, 阿里, 百度) as context in xray_searches, NOT in github_queries
+   - For CN roles: GitHub queries should use English technical fingerprints only (CN devs publish in English on GitHub)
 
 4. X-RAY SEARCHES — Multi-platform:
    - LinkedIn: site:linkedin.com/in — role synonyms + company archetypes (ByteDance/TikTok/Airbnb/Uber/Stripe/AI startups)
@@ -1063,7 +1066,7 @@ Return JSON only (no markdown, no code block):
   ],
   "competitor_companies": ["ByteDance","TikTok","Airbnb","Uber","Stripe"],
   "gsi_partners": [],
-  "strict_filter": "<disqualifier — e.g. Pure engineer without product ownership = disqualified>",
+  "strict_filter": "<disqualifier — e.g. Pure engineer without product ownership = disqualified. For CN roles: candidate not based in Beijing/Shanghai/China = disqualified>",
   "scoring_dimensions": {
     "sig1_name": "<primary signal name, e.g. 'Alliance Signal'>",
     "sig1_desc": "<what sig1=true means>",
@@ -1436,7 +1439,15 @@ function buildBossPane(){
     url:`https://www.zhipin.com/web/geek/job?query=${encodeURIComponent(kw)}&city=${city}`
   }));
   // Add role-title based searches
-  if(role?.type==='RND'&&role?.dept?.includes('Product'))queries.unshift({kw:'产品经理 AI 大模型',url:`https://www.zhipin.com/web/geek/job?query=${encodeURIComponent('产品经理 AI 大模型')}&city=${city}`});
+  if(role?.type==='RND'&&role?.dept?.includes('Product')){
+    [
+      '产品经理 AI Agent 北京',
+      'AI产品负责人 大模型 北京',
+      '产品经理 RAG LLM 北京',
+      '数据产品经理 Agent评测 北京',
+      '高级产品经理 字节系 AI',
+    ].forEach(kw=>queries.unshift({kw,url:`https://www.zhipin.com/web/geek/job?query=${encodeURIComponent(kw)}&city=${city}`}));
+  }
   if(role?.type==='RND'&&role?.dept?.includes('Engineering'))queries.unshift({kw:'后端工程师 AI',url:`https://www.zhipin.com/web/geek/job?query=${encodeURIComponent('后端工程师 AI')}&city=${city}`});
 
   const linksHtml=`
@@ -1631,8 +1642,10 @@ function buildScoringPrompt(profileText,name,ch){
   const strict=role._strictFilter||'';
   const isGTM=role.type==='GTM';
   const isGA=role.type==='GA';
+  const locRule=role.region==='CN'?'\nLOCATION RULE: Role is Beijing on-site. Candidates WITHOUT Beijing/Shanghai/China in self-reported location = location_match:"unknown", score CAPPED at 45 regardless of skills.\n':
+    role.region==='IN'?'\nLOCATION RULE: Role is Bengaluru on-site. Candidates without India location = score capped at 45.\n':'';
   return`Senior recruiter at Conviva. Score this candidate 0-100. Be evidence-based, transparent about gaps.
-
+${locRule}
 ROLE: ${role.label} · ${role.dept} · ${role.office} (on-site)
 TYPE: ${role.type==='RND'?'R&D — technical/product':role.type==='GTM'?'GTM — sales/marketing/partnerships':'G&A — finance/HR/legal/operations'}
 MUST-HAVE: ${must||'See JD'}
@@ -1885,6 +1898,11 @@ async function scoreGHCandidate(c){
     // Always override with our deterministic location check
     res.location_match=locMatch;
     res.location_found=c.location||'not set';
+    if((role.region==='CN'||role.region==='IN')&&locMatch!=='strong'){
+      res.score=Math.min(res.score,45);
+      if(!res.dealbreakers)res.dealbreakers=[];
+      if(locMatch==='unknown')res.dealbreakers.push('Location not confirmed for on-site '+role.office+' role');
+    }
     return res;
   }catch(e){
     return{score:0,sig1:false,sig2:false,location_match:locMatch,location_found:c.location||'?',matched_clusters:[],reason:'Score failed: '+e.message,dealbreakers:[],outreach_angle:''};
