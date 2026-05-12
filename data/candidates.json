@@ -136,5 +136,152 @@
       "top_signal": "Recruiting for React/TypeScript architect roles"
     },
     "first_seen": "2026-05-11T06:08:52.749842+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "TealMyEal",
+    "name": "TealMyEal",
+    "profile_url": "https://news.ycombinator.com/user?id=TealMyEal",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "Strong founding engineer with demonstrated 0->1 product experience, LLM/AI systems exposure (Anthropic API, WhatsApp agent), and deep coding DNA (NestJS/Postgres stack). However, this is a job posting from the candidate's startup rather than their own background/experience, making it difficult to assess their actual IC capability, shipping track record, or architectural experience.",
+    "signals": {
+      "top_signal": "Founding engineer building LLM-integrated product from scratch"
+    },
+    "first_seen": "2026-05-12T03:22:54.703628+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "agentic_fish",
+    "name": "agentic_fish",
+    "profile_url": "https://news.ycombinator.com/user?id=agentic_fish",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "Strong founding engineer experience with 0->1 product execution (Recover post-seed), demonstrated ability to ship across multiple platforms (desktop/iOS), and infrastructure/systems thinking. Missing explicit signals on deep coding DNA across backend systems, LLM/AI expertise, and principal-level architectural scope at prior roles.",
+    "signals": {
+      "top_signal": "Founding engineer with live multi-platform product and seed-stage execution track record"
+    },
+    "first_seen": "2026-05-12T03:22:56.395298+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "isaacgoldstein",
+    "name": "isaacgoldstein",
+    "profile_url": "https://news.ycombinator.com/user?id=isaacgoldstein",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "Strong founder/0->1 product experience with AI/LLM systems in EdTech startup, demonstrating ability to architect and ship end-to-end. However, limited visibility into depth of coding DNA and prior principal engineer experience from this profile alone.",
+    "signals": {
+      "top_signal": "Founding engineer building AI tools for special education—clear 0->1 product DNA with AI systems"
+    },
+    "first_seen": "2026-05-12T03:23:01.405340+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "Kiran_MixRank",
+    "name": "Kiran_MixRank",
+    "profile_url": "https://news.ycombinator.com/user?id=Kiran_MixRank",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "Founder/leader of YC-backed company (S11) with proven 0->1 product experience, profitable operations, and demonstrated ability to ship at scale (petabytes of data, enterprise customers). Strong signals on architecture and shipping, though no explicit evidence of deep personal coding DNA or LLM/AI systems experience.",
+    "signals": {
+      "top_signal": "YC founder with 0->1 product, profitable, scaled to enterprise"
+    },
+    "first_seen": "2026-05-12T03:23:03.158371+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "lucie22sc32",
+    "name": "lucie22sc32",
+    "profile_url": "https://news.ycombinator.com/user?id=lucie22sc32",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "Strong founder signal with clear 0->1 product vision and mission-driven execution; founding full-stack engineer role demonstrates end-to-end shipping capability and coding DNA. Missing explicit evidence of LLM/AI systems experience and scale/complexity of prior technical architecture work.",
+    "signals": {
+      "top_signal": "Founding full-stack engineer with 0->1 product experience"
+    },
+    "first_seen": "2026-05-12T03:23:04.700588+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "onejgordon",
+    "name": "onejgordon",
+    "profile_url": "https://news.ycombinator.com/user?id=onejgordon",
+    "role": "Principal Product Builder",
+    "score": 78,
+    "reasoning": "Strong founder/founding team experience with deep product expertise (healthcare AI/LLM systems), proven ability to ship end-to-end products, and experience recruiting senior talent indicates architectural capability. However, no direct evidence of personal 0->1 coding contribution or architectural decisions in the public profile limits confidence in deep technical execution.",
+    "signals": {
+      "top_signal": "Founding team builder with LLM/AI product expertise"
+    },
+    "first_seen": "2026-05-12T03:23:06.334250+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "decodebytes",
+    "name": "decodebytes",
+    "profile_url": "https://news.ycombinator.com/user?id=decodebytes",
+    "role": "Principal Product Builder",
+    "score": 78,
+    "reasoning": "Strong founder/principal engineer background with proven 0->1 product experience (Sigstore adoption across major ecosystems, now building nono.sh). Deep technical credibility and shipping track record, though limited explicit evidence of LLM/AI system expertise or coding demonstrations that would confirm current hands-on capabilities.",
+    "signals": {
+      "top_signal": "Founding engineer building agent security tooling post-successful infrastructure product"
+    },
+    "first_seen": "2026-05-12T03:23:22.849615+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "8098261",
+    "name": "GUOQIANG LIN",
+    "profile_url": "https://github.com/fjkfwz",
+    "role": "Senior MLE",
+    "score": 72,
+    "reasoning": "Strong candidate with directly relevant experience in ML, search, and recommendation systems, plus significant open source contribution (112 repos). However, profile lacks explicit evidence of production-scale deployment experience, PyTorch/Ray/vLLM expertise, or seniority-level track record that would be expected for a Senior MLE role.",
+    "signals": {
+      "top_signal": "Recommendation systems + infrastructure background",
+      "followers": 47,
+      "public_repos": 112,
+      "company": "@xiachufang ",
+      "location": "Beijing,China"
+    },
+    "first_seen": "2026-05-12T03:23:45.036297+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "noahho",
+    "name": "noahho",
+    "profile_url": "https://news.ycombinator.com/user?id=noahho",
+    "role": "Senior MLE",
+    "score": 72,
+    "reasoning": "Strong candidate with proven ability to build and scale ML systems (TabPFN foundation model with 3M+ downloads, Nature publication). However, no explicit mention of PyTorch/Ray/vLLM experience, recommendation/ranking systems, or traditional production ML deployment at scale, which are key role requirements.",
+    "signals": {
+      "top_signal": "Built and deployed foundation model to production at scale"
+    },
+    "first_seen": "2026-05-12T03:24:15.993778+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "fzysingularity",
+    "name": "fzysingularity",
+    "profile_url": "https://news.ycombinator.com/user?id=fzysingularity",
+    "role": "Senior MLE",
+    "score": 72,
+    "reasoning": "Strong signal on production ML systems at scale with VLM/inference expertise and shipping real products (Orion, mm-ctx), directly matching the LLM systems requirement. However, limited visibility into depth of PyTorch/Ray experience, recommendation/ranking systems background, or scale metrics from the brief HN post alone.",
+    "signals": {
+      "top_signal": "Building production VLM inference and orchestration layer"
+    },
+    "first_seen": "2026-05-12T03:24:17.863744+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "yewenjie",
+    "name": "yewenjie",
+    "profile_url": "https://news.ycombinator.com/user?id=yewenjie",
+    "role": "Frontend Architect",
+    "score": 72,
+    "reasoning": "Strong technical foundation with 6+ years shipping products, solid React/TypeScript skills, and proven ability to own complex systems (full frontend build at cybersecurity startup). However, limited evidence of micro-frontend architecture expertise, design-system ownership, or explicit performance optimization focus that the role emphasizes.",
+    "signals": {
+      "top_signal": "Full-stack frontend ownership at startup + TypeScript/React expertise + systems-thinking mindset"
+    },
+    "first_seen": "2026-05-12T03:25:12.048880+00:00"
   }
 ]
