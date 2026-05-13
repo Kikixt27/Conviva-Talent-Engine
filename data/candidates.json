@@ -283,5 +283,22 @@
       "top_signal": "Full-stack frontend ownership at startup + TypeScript/React expertise + systems-thinking mindset"
     },
     "first_seen": "2026-05-12T03:25:12.048880+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "246413142",
+    "name": "Minirice",
+    "profile_url": "https://github.com/MiniriceAI",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "Strong technical foundation with deep LLM/AI expertise and Microsoft senior engineering background demonstrates shipping capability and system architecture skills. However, limited GitHub presence (6 repos, 3 followers) and no clear evidence of 0->1 product creation or founder experience raises questions about independent product vision and execution at scale.",
+    "signals": {
+      "top_signal": "Senior AI engineer with LLM/RAG/Agent expertise",
+      "followers": 3,
+      "public_repos": 6,
+      "company": "Microsoft (Former)",
+      "location": "Suzhou, China"
+    },
+    "first_seen": "2026-05-13T03:30:17.546018+00:00"
   }
 ]
