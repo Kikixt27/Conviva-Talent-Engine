@@ -300,5 +300,31 @@
       "location": "Suzhou, China"
     },
     "first_seen": "2026-05-13T03:30:17.546018+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "Dashakid",
+    "name": "Dashakid",
+    "profile_url": "https://news.ycombinator.com/user?id=Dashakid",
+    "role": "Senior MLE",
+    "score": 72,
+    "reasoning": "Strong production ML systems experience with LLM orchestration, RAG pipelines, and relevant cloud infrastructure (GCP/AWS). However, lacks explicit mention of PyTorch/Ray/vLLM experience and no clear evidence of large-scale recommendation/ranking systems, which are core to the role.",
+    "signals": {
+      "top_signal": "3 shipped production systems including LLM orchestrator and ML SaaS at scale"
+    },
+    "first_seen": "2026-05-15T03:35:40.436749+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "boltzmann-brain",
+    "name": "boltzmann-brain",
+    "profile_url": "https://news.ycombinator.com/user?id=boltzmann-brain",
+    "role": "Senior MLE",
+    "score": 72,
+    "reasoning": "Strong candidate with proven production ML experience including end-to-end LLM system design and deployment, plus deep technical leadership background. However, profile lacks explicit mention of PyTorch, Ray, or vLLM specifics, and no clear evidence of recommendation/ranking systems at scale which are core to the role.",
+    "signals": {
+      "top_signal": "Designed and shipped commercial LLM end-to-end with MLops"
+    },
+    "first_seen": "2026-05-15T03:35:42.095241+00:00"
   }
 ]
