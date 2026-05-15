@@ -4,12 +4,18 @@ Sourcing automation for the Conviva China TA team.
 
 This repository contains:
 
-- `conviva_signal_v4_2.html` — the browser-based sourcing & scoring tool (manual / interactive use).
-- `scripts/source.py` — the nightly automation engine that searches GitHub, HackerNews, and Product Hunt, scores candidates with Claude or DeepSeek, and posts a Slack digest.
-- `.github/workflows/source.yml` — the GitHub Actions schedule (08:00 Beijing on weekdays) plus manual trigger.
-- `roles.json` — your editable list of roles and search queries.
-- `data/candidates.json` — persistent candidate database (auto-updated by Actions).
-- `reports/` — daily HTML reports (auto-generated; also uploaded as artifacts).
+- `conviva_signal_v4_2.html` — browser-based sourcing & scoring (unchanged; manual / interactive).
+- `pipeline/` — **Python batch layer**: `utils.py` (hard filters before LLM), `scorer.py` (CLI alias), `calibrate.py` / `query_refresh.py` (stubs). See `pipeline/README.md`.
+- `pipeline/engine.py` — **canonical** nightly engine (GitHub + HN → hard filter → LLM → `data/candidates.json` + daily JSONL + `reports/`).
+- `scripts/source.py` — thin forwarder (same as `python -m pipeline.scorer` for CI / local habit).
+- `scripts/log_feedback.py` — append TA labels to `feedback/*.jsonl`.
+- `.github/workflows/source.yml` — weekday schedule + manual trigger.
+- `roles.json` — **legacy** fallback if `data/roles/` has no `.json` files.
+- `data/roles/*.json` — **preferred** one JSON file per open role (sorted load order).
+- `data/candidates.json` — canonical candidate DB; `data/candidates/YYYY-MM-DD.jsonl` — append-only run log.
+- `data/golden_set/` — golden examples for future calibration (`*.example` schema).
+- `feedback/` — TA judgement JSONL + optional `summary.json` from `python -m pipeline.calibrate`.
+- `reports/` — daily HTML reports.
 
 ---
 
@@ -54,7 +60,11 @@ In your GitHub repo, go to **Settings → Secrets and variables → Actions → 
 
 ### Editing the roles you source for
 
-Open `roles.json` in any editor and add / change entries. Each role accepts:
+**Preferred:** edit one file per role under `data/roles/` (e.g. `principal_product_builder.json`). Files are loaded in **sorted filename order**.
+
+**Legacy:** if `data/roles/` contains no `.json` files, the engine falls back to root `roles.json`.
+
+Each role JSON accepts:
 
 ```json
 {
@@ -105,7 +115,72 @@ The script writes to the same `data/` and `reports/` folders.
 
 ---
 
-## 4. What this tool deliberately does NOT do
+## 6. Feedback loop (HTML + Python “agent” path)
+
+**Goal:** your judgements improve the next run **without** fine-tuning a model.
+
+1. **Create** `feedback/entries.jsonl` (one JSON object per line). You can start from the example:
+   ```powershell
+   copy feedback\entries.jsonl.example feedback\entries.jsonl
+   ```
+2. **After** you review a daily report or `data/candidates.json`, log a label:
+   ```powershell
+   python scripts/log_feedback.py --source github --source-id 68322456 `
+     --role "Principal Product Builder" --label reject --reason "Activity volume only, not PM ownership"
+   ```
+   - **source**: `github` | `hackernews` (must match `pipeline.engine` / `data/candidates.json` keys).
+   - **source_id**: GitHub user **numeric** `id` (see `data/candidates.json` → `source_id`), or HN **username**.
+   - **role**: must **exactly match** the `title` field in `data/roles/*.json` (or legacy `roles.json`) for role-specific calibration.
+   - **label**: `reject` | `bad_fit` | `no` | `strong_fit` | `maybe`.
+3. **Run** `python scripts/source.py` or `python -m pipeline.scorer` again. The scorer will receive:
+   - Recent labels for **that role** + recent **rejections** across roles (few-shot style text).
+   - Optional hard skip for rejected identities (saves API cost).
+
+### Environment variables (feedback)
+
+| Variable | Default | Meaning |
+| --- | --- | --- |
+| `FEEDBACK_FILE` | `feedback/entries.jsonl` | Path to your JSONL log. |
+| `SKIP_REJECTED_CANDIDATES` | `0` | Set to `1` to **not score** candidates whose `source:source_id` was labelled `reject`, `bad_fit`, or `no`. They can still appear in search results; this avoids paying for another bad score. **Note:** removing a row from `data/candidates.json` alone does not block them — use this flag + feedback, or tighten queries. |
+
+### Suggested workflow (solo TA)
+
+| Step | Where |
+| --- | --- |
+| Morning triage | Open latest `reports/YYYY-MM-DD.html` or Slack digest |
+| Label bad fits | `python scripts/log_feedback.py ...` |
+| Commit feedback | `git add feedback/entries.jsonl && git commit -m "ta: feedback"` (private repo) |
+| Nightly run | Actions runs `scripts/source.py` → `pipeline.engine` with your new calibration text |
+
+### Layout (option 2 recap)
+
+```
+Conviva Signal/
+├── conviva_signal_v4_2.html   # interactive copilot
+├── pipeline/
+│   ├── engine.py              # canonical: sourcing + scoring
+│   ├── scorer.py              # CLI → engine.main()
+│   ├── utils.py               # hard filters, GitHub helpers
+│   └── …
+├── scripts/
+│   ├── source.py              # forwarder → pipeline.engine
+│   └── log_feedback.py      # append TA labels
+├── roles.json                 # legacy fallback
+├── data/
+│   ├── roles/*.json
+│   ├── candidates.json
+│   └── candidates/*.jsonl
+├── feedback/
+│   ├── entries.jsonl
+│   └── entries.jsonl.example
+└── reports/
+```
+
+If feedback reasons may contain **PII**, keep `feedback/entries.jsonl` local only (add that filename to `.gitignore`) and do not push it; the engine still works with an empty/missing file.
+
+---
+
+## 7. What this tool deliberately does NOT do
 
 - **LinkedIn / Boss直聘 / 脉脉 / 小红书** — these platforms block automation and require login + CAPTCHA. Use `conviva_signal_v4_2.html` in your browser for those (paste profiles in, get scoring out).
 - **Resume parsing from job-board APIs** — Naukri, Liepin, etc. do not expose candidate data publicly.
@@ -113,7 +188,7 @@ The script writes to the same `data/` and `reports/` folders.
 
 ---
 
-## 5. Troubleshooting
+## 8. Troubleshooting
 
 | Symptom | Likely cause | Fix |
 | --- | --- | --- |

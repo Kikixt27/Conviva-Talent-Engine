@@ -576,7 +576,7 @@ e.g. Liu Yi · Principal PM at ByteDance AI · 7yr PM · built LLM eval platform
 <!-- SEMI-AUTO ANALYZER -->
 <div class="panel" id="analyzerPanel" style="display:none">
   <div class="ph">
-    <div><span class="ph-title">Semi-Auto Profile Analyzer</span><span class="ph-sub" style="margin-left:8px">Upload resume or paste profile → AI scores vs clusters</span></div>
+    <div><span class="ph-title">Semi-Auto Profile Analyzer</span><span class="ph-sub" style="margin-left:8px">Upload resume or paste profile → AI scores vs clusters · <strong>GitHub</strong> tab fetches public API profile + repos</span></div>
     <button class="btn btn-ghost btn-sm" onclick="openTopSearch()" title="Open top 3 search links in new tabs">🚀 Top 3 Links</button>
   </div>
   <div class="atabs" id="analyzerTabs"></div>
@@ -1279,6 +1279,7 @@ function buildAnalyzer(){
   // ── Tab list: no Read.cv, no Polywork ──
   const tabDefs=[];
   tabDefs.push({id:'linkedin',label:'LinkedIn'});
+  tabDefs.push({id:'github',label:'GitHub'});
   // Boss直聘: for CN region or GTM/GA (all regions)
   if(region==='CN'||isGTM||isGA)tabDefs.push({id:'boss',label:'Boss直聘'});
   // XHS: CN region, or GTM (useful for brand/growth roles)
@@ -1300,6 +1301,8 @@ function buildAnalyzer(){
     let html='';
     if(t.id==='linkedin'){
       html=buildLinkedInPane();
+    }else if(t.id==='github'){
+      html=buildGitHubPane();
     }else if(t.id==='boss'){
       html=buildBossPane();
     }else if(t.id==='xhs'){
@@ -1391,6 +1394,149 @@ function buildLinkedInPane(){
     </div>`:'';
 
   return warn+`<div style="padding-bottom:10px">${linksHtml}</div>`+compChips+'<div style="height:1px;background:var(--bd);margin:12px 0"></div>'+buildPasteAnalyzer('li','linkedin','Paste LinkedIn About + Experience (not Google snippet)...');
+}
+
+function parseGitHubLogin(raw){
+  if(!raw)return'';
+  const s=String(raw).trim().replace(/^@/,'');
+  if(!s)return'';
+  if(/github\.com/i.test(s)){
+    try{
+      const u=new URL(/^https?:\/\//i.test(s)?s:'https://'+s);
+      const p=(u.pathname||'').split('/').filter(Boolean);
+      const skip=new Set(['pull','pulls','issues','settings','orgs','sponsors','topics','explore','account','login','features','marketplace','collections']);
+      if(!p.length)return'';
+      if(skip.has(p[0].toLowerCase()))return'';
+      return p[0].replace(/[^A-Za-z0-9-]/g,'').slice(0,39);
+    }catch(e){
+      const m=s.match(/github\.com\/([A-Za-z0-9-]{1,39})/i);
+      return m?m[1]:'';
+    }
+  }
+  const first=s.split(/[\s/?#]/)[0];
+  return first.replace(/[^A-Za-z0-9-]/g,'').slice(0,39);
+}
+
+function formatGitHubDigest(det,repos,readmeSnippet){
+  const lines=[];
+  lines.push('SOURCE: GitHub public REST API (user + repos — same core facts as the profile homepage).');
+  lines.push('LOGIN: '+(det.login||''));
+  lines.push('NAME: '+(det.name||''));
+  lines.push('BIO: '+(det.bio||'(empty)'));
+  lines.push('COMPANY (profile field): '+(det.company||'(empty)'));
+  lines.push('LOCATION: '+(det.location||'(empty)'));
+  lines.push('BLOG/URL: '+(det.blog||'(empty)'));
+  lines.push('FOLLOWERS: '+(det.followers||0)+' · FOLLOWING: '+(det.following||0)+' · PUBLIC_REPOS: '+(det.public_repos||0));
+  lines.push('ACCOUNT_CREATED: '+(det.created_at||''));
+  if(det.twitter_username)lines.push('TWITTER_X: @'+det.twitter_username);
+  const qs=quickSigs(det,repos||[]);
+  lines.push('HEURISTIC_SIGNALS: '+(qs.sigs||[]).join(', '));
+  lines.push('OWNED_NONFORK_IN_SAMPLE: '+(qs.ownedRepos||0));
+  lines.push('');
+  lines.push('TOP REPOS (sample, non-forks preferred, by stars then name):');
+  const list=(repos||[]).filter(r=>!r.fork).sort((a,b)=>(b.stargazers_count||0)-(a.stargazers_count||0)).slice(0,15);
+  for(const r of list){
+    const topics=(r.topics||[]).slice(0,6).join(', ');
+    lines.push(`- ${r.name} ★${r.stargazers_count||0} ${r.language||''} topics:[${topics}] ${(r.description||'').slice(0,160)}`);
+  }
+  if(readmeSnippet)lines.push('','README_EXCERPT (top starred original repo):',readmeSnippet.slice(0,2200));
+  return lines.join('\n');
+}
+
+function buildGitHubPane(){
+  const role=activeRole;
+  const isRND=role?.type==='RND';
+  const warn=!isRND?'<div class="warn-banner wb-gtm" style="margin-bottom:10px"><strong>Non-R&D role.</strong> GitHub is optional context — use signals with care for GTM/G&A.</div>':'';
+  return warn+`
+    <div style="font-size:11px;color:var(--tx2);background:var(--s2);border-radius:8px;padding:9px 12px;margin-bottom:10px;border:1px solid var(--bd);line-height:1.65">
+      Pulls <strong>username</strong> or <strong>profile URL</strong> via <span style="font-family:DM Mono,monospace;font-size:10px">api.github.com</span> (user + repos, same core data as the profile page), then scores against the <strong>current role + skill clusters</strong> with your AI provider.
+      Add an optional <strong>GitHub token</strong> in the sidebar for higher rate limits.
+    </div>
+    <div style="display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;margin-bottom:8px">
+      <div style="flex:1;min-width:220px">
+        <label class="mf-label">Username or profile URL</label>
+        <input type="text" id="gh_profile_inp" placeholder="torvalds or https://github.com/torvalds" style="width:100%;padding:8px 10px;border:1px solid var(--bd);border-radius:7px;font-size:12px;font-family:Poppins,sans-serif">
+      </div>
+      <button class="btn btn-g" onclick="analyzeGitHubProfile()" id="gh_an_btn"><span id="gh_an_icon">🐙</span> Fetch & analyze</button>
+      <a class="btn btn-ghost btn-sm" id="gh_open_lnk" style="display:none" href="#" target="_blank">Open profile →</a>
+    </div>
+    <div id="gh_api_card" style="display:none;margin-bottom:10px;font-size:11px;color:var(--tx2);padding:12px;background:var(--surface);border:1px solid var(--bd);border-radius:8px;line-height:1.6"></div>
+    <div id="gh_result"></div>
+    <div style="margin-top:8px">
+      <button class="btn btn-ghost btn-sm" onclick="exportGitHubReport()" id="gh_exp_btn" disabled>↓ Export HTML report</button>
+    </div>`;
+}
+
+async function analyzeGitHubProfile(){
+  if(!activeRole){alert('Select a role first');return;}
+  if(!generatedClusters.length){alert('Process the JD first to generate skill clusters');return;}
+  const rawIn=(document.getElementById('gh_profile_inp')?.value||'').trim();
+  const login=parseGitHubLogin(rawIn);
+  if(!login){alert('Enter a valid GitHub username or profile URL');return;}
+  const ghTok=document.getElementById('ghToken')?.value.trim()||'';
+  const btn=document.getElementById('gh_an_btn');
+  const icon=document.getElementById('gh_an_icon');
+  const card=document.getElementById('gh_api_card');
+  const openLnk=document.getElementById('gh_open_lnk');
+  const expBtn=document.getElementById('gh_exp_btn');
+  if(expBtn)expBtn.disabled=true;
+  window.__ghReportBundle=null;
+  btn.disabled=true;if(icon)icon.innerHTML='<span class="spin"></span>';
+  document.getElementById('gh_result').innerHTML='<div style="padding:12px;color:var(--tx3)"><span class="spin"></span> Fetching GitHub API…</div>';
+  if(card){card.style.display='none';card.innerHTML='';}
+  if(openLnk){openLnk.style.display='none';}
+  try{
+    const det=await ghFetch('https://api.github.com/users/'+encodeURIComponent(login),ghTok);
+    if(!det||det.message){throw new Error((det&&det.message)||'User not found or API error');}
+    const repos=await ghFetch('https://api.github.com/users/'+encodeURIComponent(login)+'/repos?per_page=24&sort=updated',ghTok)||[];
+    let readmeSnippet='';
+    const topOrig=repos.filter(r=>!r.fork&&(r.stargazers_count||0)>0).sort((a,b)=>(b.stargazers_count||0)-(a.stargazers_count||0))[0];
+    if(topOrig){
+      const readme=await ghFetch(`https://api.github.com/repos/${login}/${topOrig.name}/readme`,ghTok);
+      if(readme&&readme.content){
+        try{readmeSnippet=atob((readme.content||'').replace(/\s/g,'')).slice(0,2500);}catch(e){readmeSnippet='(readme decode failed)';}
+      }
+      await sleep(120);
+    }
+    const digest=formatGitHubDigest(det,repos,readmeSnippet);
+    if(card){
+      card.style.display='block';
+      card.innerHTML=`<strong>${(det.name||login).replace(/</g,'&lt;')}</strong> <span style="color:var(--tx3);font-family:DM Mono,monospace">@${login}</span><br>
+        <span style="color:var(--tx3)">${(det.bio||'No bio').slice(0,180)}${(det.bio||'').length>180?'…':''}</span><br>
+        <span style="font-size:10px;color:var(--tx3)">Followers ${det.followers||0} · Public repos ${det.public_repos||0} · ${(repos||[]).filter(r=>!r.fork).length} non-forks in sample</span>`;
+    }
+    if(openLnk){openLnk.href=det.html_url||('https://github.com/'+login);openLnk.style.display='inline-flex';}
+    document.getElementById('gh_result').innerHTML='<div style="padding:12px;color:var(--tx3)"><span class="spin"></span> Scoring with AI vs role clusters…</div>';
+    const displayName=det.name||login;
+    const raw=await claudeCall(buildScoringPrompt(digest,displayName,'github'),1400);
+    const parsed=JSON.parse(raw.replace(/```json|```/g,'').trim());
+    renderResult('gh_result',displayName,'github',parsed,login);
+    window.__ghReportBundle={login,name:displayName,role:activeRole.label,date:new Date().toISOString().slice(0,10),digest:digest.slice(0,8000),res:parsed,profileUrl:det.html_url||('https://github.com/'+login)};
+    if(expBtn)expBtn.disabled=false;
+    log('GitHub profile analyzed: @'+login,'l-ok');
+  }catch(e){
+    document.getElementById('gh_result').innerHTML='<div style="padding:10px;color:var(--co);font-size:12px">'+String(e.message||e).replace(/</g,'&lt;')+'</div>';
+  }
+  finally{btn.disabled=false;if(icon)icon.textContent='🐙';}
+}
+
+function exportGitHubReport(){
+  const b=window.__ghReportBundle;
+  if(!b||!b.res){alert('Run Fetch & analyze on a GitHub profile first');return;}
+  const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  const r=b.res;
+  const rows=[
+    ['Score',esc(r.score)],
+    ['Role',esc(b.role)],
+    ['GitHub',`<a href="${esc(b.profileUrl)}">${esc('@'+b.login)}</a>`],
+    ['Candidate',esc(b.name)],
+    ['Recommendation',esc(r.recommendation||'')],
+    ['Summary',esc(r.summary||'')],
+    ['Outreach',esc(r.outreach_angle||'')],
+  ];
+  const html='<!doctype html>\n<html lang="en"><head><meta charset="utf-8">\n<title>GitHub analysis — '+esc(b.login)+' — '+esc(b.date)+'</title>\n<style>body{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:32px;color:#111}h1{margin-bottom:4px}.meta{color:#666;margin-bottom:20px}table{border-collapse:collapse;width:100%}th,td{border-bottom:1px solid #eee;padding:10px 12px;text-align:left;vertical-align:top}th{background:#fafafa;width:140px}</style></head>\n<body>\n<h1>Conviva Signal — GitHub profile analysis</h1>\n<div class="meta">'+esc(b.date)+' · Exported from Talent Intelligence v4</div>\n<table>\n<tbody>'+rows.map(([k,v])=>'<tr><th>'+k+'</th><td>'+v+'</td></tr>').join('')+'</tbody></table>\n<h2 style="margin-top:28px;font-size:16px">Strengths</h2><ul>'+(r.strengths||[]).map(s=>'<li>'+esc(s)+'</li>').join('')+'</ul>\n<h2 style="margin-top:20px;font-size:16px">Gaps</h2><ul>'+(r.gaps||[]).map(s=>'<li>'+esc(s)+'</li>').join('')+'</ul>\n</body></html>';
+  dl('github_analysis_'+b.login+'_'+b.date+'.html','text/html;charset=utf-8',html);
+  log('Exported GitHub HTML report: '+b.login,'l-ok');
 }
 
 function refreshLinkedInSearches(){
@@ -1692,8 +1838,11 @@ async function analyzeChannel(id,ch){
   catch(e){rEl.innerHTML=`<div style="padding:10px;color:var(--co);font-size:12px">Failed: ${e.message}</div>`;}
 }
 
-function renderResult(elId,name,ch,res){
+function renderResult(elId,name,ch,res,ghLogin){
   const el=document.getElementById(elId);if(!el)return;
+  window.__analyzerResults=window.__analyzerResults||{};
+  try{window.__analyzerResults[elId]={name,ch,res:JSON.parse(JSON.stringify(res)),ghLogin:ghLogin||null};}
+  catch(e){window.__analyzerResults[elId]={name,ch,res,ghLogin:ghLogin||null};}
   const sc=res.score>=80?'s-hi':res.score>=60?'s-md':'s-lo';
   const recC={proceed:'var(--g2)',maybe:'var(--am)',skip:'var(--co)'}[res.recommendation]||'var(--tx3)';
   const recL={proceed:'✓ Proceed',maybe:'◐ Maybe',skip:'✗ Skip'}[res.recommendation]||'';
@@ -1708,8 +1857,7 @@ function renderResult(elId,name,ch,res){
   const gH=(res.gaps||[]).map(g=>`<li style="margin-bottom:3px;color:var(--am)">△ ${g}</li>`).join('');
   const dbH=(res.dealbreakers||[]).map(d=>`<li style="margin-bottom:3px;color:var(--co)">✗ ${d}</li>`).join('');
   const inH=(res.insufficient_info||[]).map(i=>`<li style="margin-bottom:3px;color:var(--bl)">? ${i}</li>`).join('');
-  const safeRes=JSON.stringify(res).replace(/\\/g,'\\\\').replace(/`/g,'\\`').replace(/\$/g,'\\$');
-  const safeName=(name||'Unknown').replace(/'/g,"\\'");
+  const safeElId=String(elId).replace(/\\/g,'\\\\').replace(/'/g,"\\'");
   el.innerHTML=`<div class="result-card">
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
       <span class="sp ${sc}" style="font-size:14px;padding:4px 12px">${res.score}/100</span>
@@ -1733,16 +1881,25 @@ function renderResult(elId,name,ch,res){
     ${inH?`<div style="background:var(--blbg);border:1px solid rgba(59,130,246,.2);border-radius:7px;padding:9px 11px;margin-bottom:9px"><div style="font-size:9px;font-weight:700;color:var(--bl);text-transform:uppercase;letter-spacing:.07em;margin-bottom:6px">? More Info Needed</div><ul style="list-style:none;font-size:11px;line-height:1.6">${inH}</ul></div>`:''}
     <div style="display:flex;align-items:center;gap:9px;margin-top:4px">
       ${res.outreach_angle?`<div style="flex:1;font-size:11px;font-style:italic;color:var(--g2);padding:6px 10px;background:var(--gbg);border-radius:6px">"${res.outreach_angle}"</div>`:''}
-      <button class="btn btn-ghost btn-sm" style="color:var(--g2);border-color:var(--g)" onclick="addManual('${safeName}','${ch}',\`${safeRes}\`)">+ Add to Pipeline</button>
+      <button class="btn btn-ghost btn-sm" style="color:var(--g2);border-color:var(--g)" onclick="addManualFromEl('${safeElId}')">+ Add to Pipeline</button>
     </div>
   </div>`;
 }
-function addManual(name,ch,resIn){
+function addManualFromEl(elId){
+  const p=(window.__analyzerResults||{})[elId];
+  if(!p){alert('Run analysis again, then add to pipeline.');return;}
+  addManual(p.name,p.ch,p.res,p.ghLogin||undefined);
+}
+function addManual(name,ch,resIn,ghLogin){
   let res=resIn;if(typeof res==='string'){try{res=JSON.parse(res);}catch(e){return;}}
-  const c={login:(name||'unknown').toLowerCase().replace(/\s+/g,'_').slice(0,28),name:name||'Unknown',channel:ch,src:'manual:'+ch,bio:res.summary||'',company:res.company_found||'',location:res.location_found||'',blog:'',followers:0,github_url:'',score:res.score||0,sig1:!!res.sig1,sig2:!!res.sig2,location_match:res.location_match||'unknown',matched_clusters:res.matched_clusters||[],strengths:res.strengths||[],gaps:res.gaps||[],dealbreakers:res.dealbreakers||[],reason:res.summary||'',outreach_angle:res.outreach_angle||'',linkedin_xray:'https://www.google.com/search?q='+encodeURIComponent(`site:linkedin.com/in "${name}"${res.company_found?' "'+res.company_found.trim()+'"':''}`)};
-  if(!isDupe(c.login)){registerCandidate(c.login);candidates.push(c);renderTable(candidates);saveState();setStat('sManual',(parseInt(document.getElementById('sManual')?.textContent)||0)+1);setStat('sbManual',(parseInt(document.getElementById('sbManual')?.textContent)||0)+1);}else{alert(name+' is already in your pipeline.');return;}
+  const isGh=ch==='github';
+  const loginKey=isGh&&ghLogin?String(ghLogin).toLowerCase().replace(/[^a-z0-9-]/g,'').slice(0,39):(name||'unknown').toLowerCase().replace(/\s+/g,'_').slice(0,28);
+  const displayName=isGh?(name||ghLogin||'Unknown'):(name||'Unknown');
+  const ghUrl=isGh&&ghLogin?'https://github.com/'+ghLogin:'';
+  const c={login:loginKey||'unknown',name:displayName,channel:isGh?'github':ch,src:'manual:'+(isGh?'github':ch),bio:res.summary||'',company:res.company_found||'',location:res.location_found||'',blog:'',followers:0,github_url:ghUrl,score:res.score||0,sig1:!!res.sig1,sig2:!!res.sig2,location_match:res.location_match||'unknown',matched_clusters:res.matched_clusters||[],strengths:res.strengths||[],gaps:res.gaps||[],dealbreakers:res.dealbreakers||[],reason:res.summary||'',outreach_angle:res.outreach_angle||'',linkedin_xray:'https://www.google.com/search?q='+encodeURIComponent(`site:linkedin.com/in "${displayName}"${res.company_found?' "'+res.company_found.trim()+'"':''}`)};
+  if(!isDupe(c.login)){registerCandidate(c.login);candidates.push(c);renderTable(candidates);saveState();setStat('sManual',(parseInt(document.getElementById('sManual')?.textContent)||0)+1);setStat('sbManual',(parseInt(document.getElementById('sbManual')?.textContent)||0)+1);}else{alert(displayName+' is already in your pipeline.');return;}
   document.getElementById('analyzerPanel').style.display='';
-  alert('Added to pipeline: '+name);
+  alert('Added to pipeline: '+displayName);
 }
 
 // ════════════════════════════════════════════════════════
@@ -2031,6 +2188,10 @@ async function startSourcing(){
     pbar(50+(i/raw.length)*48);await sleep(400);
   }
   pbar(100);log(`\nDone! Qualified: ${passed.length}`,'l-ok');
+  setStat('sPassed',passed.length);
+  setStat('sHigh',passed.filter(x=>x.score>=80).length);
+  setStat('sbPassed',passed.length);
+  setStat('sbHigh',passed.filter(x=>x.score>=80).length);
   candidates=[...candidates.filter(x=>x.src?.startsWith('manual')),...passed];
   renderTable(candidates);
   saveState(); // persist to localStorage

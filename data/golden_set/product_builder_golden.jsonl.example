@@ -1,0 +1,2 @@
+{"dedup_key": "github:123", "expected_band": "high", "note": "Strong 0-1 + LLM — should score >= 75"}
+{"dedup_key": "hackernews:someuser", "expected_band": "low", "note": "HN only, no GitHub — should be hard-filtered or low"}

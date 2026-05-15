@@ -1,0 +1,15 @@
+{
+  "title": "Senior MLE",
+  "language": "python",
+  "location": "China",
+  "requirements": "Senior machine-learning engineer with production experience deploying recommendation, ranking, or LLM systems at scale. PyTorch / Ray / vLLM background a plus.",
+  "github_queries": [
+    "machine learning engineer",
+    "vllm pytorch inference",
+    "recommendation system engineer"
+  ],
+  "hn_queries": [
+    "ml engineer hiring",
+    "vllm production"
+  ]
+}

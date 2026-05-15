@@ -1,0 +1,3 @@
+{"ts": "2026-05-13T08:00:00+00:00", "role": "Principal Product Builder", "source": "github", "source_id": "68322456", "label": "reject", "reason": "Volume-only GitHub activity, not product ownership fit for this level."}
+{"ts": "2026-05-13T08:05:00+00:00", "role": "Principal Product Builder", "source": "hackernews", "source_id": "najmuzzaman", "label": "strong_fit", "reason": "Validated founder + PM + AI infra story in screen."}
+{"ts": "2026-05-13T08:10:00+00:00", "role": "Senior MLE", "source": "github", "source_id": "12345678", "label": "maybe", "reason": "Strong CV unclear from GitHub alone — needs LinkedIn pass."}
