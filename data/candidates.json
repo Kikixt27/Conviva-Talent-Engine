@@ -326,5 +326,31 @@
       "top_signal": "Designed and shipped commercial LLM end-to-end with MLops"
     },
     "first_seen": "2026-05-15T03:35:42.095241+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "isoldex",
+    "name": "isoldex",
+    "profile_url": "https://news.ycombinator.com/user?id=isoldex",
+    "role": "Senior MLE",
+    "score": 72,
+    "reasoning": "Strong signal on LLM systems optimization (token efficiency, architectural decisions) and production deployment experience with browser agents, but limited evidence of Ray/PyTorch production scale or recommendation/ranking systems. Single HN post is weak corroboration—needs validation of actual production deployment scale and team leadership at a senior level.",
+    "signals": {
+      "top_signal": "LLM system architecture optimization with benchmark validation"
+    },
+    "first_seen": "2026-05-20T03:39:08.529837+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "zambelli",
+    "name": "zambelli",
+    "profile_url": "https://news.ycombinator.com/user?id=zambelli",
+    "role": "Senior MLE",
+    "score": 72,
+    "reasoning": "Strong LLM systems engineering signal with production reliability work (guardrails, error recovery, VRAM management) and demonstrated ability to improve agentic task performance at scale. However, limited evidence of PyTorch/Ray/vLLM specific experience, and single HN post lacks corroboration of broader ML infrastructure or recommendation/ranking systems deployment experience required for Senior MLE role.",
+    "signals": {
+      "top_signal": "LLM reliability systems engineering with measurable production improvements (53%→99%)"
+    },
+    "first_seen": "2026-05-20T03:39:10.328981+00:00"
   }
 ]
