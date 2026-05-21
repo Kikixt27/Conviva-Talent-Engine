@@ -352,5 +352,18 @@
       "top_signal": "LLM reliability systems engineering with measurable production improvements (53%→99%)"
     },
     "first_seen": "2026-05-20T03:39:10.328981+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "luodaint",
+    "name": "luodaint",
+    "profile_url": "https://news.ycombinator.com/user?id=luodaint",
+    "role": "Senior MLE",
+    "score": 72,
+    "reasoning": "Strong production ML experience with LLM systems (8B model guardrails, deduplication pipeline) and clear understanding of production failure modes beyond benchmarks. However, limited evidence of PyTorch/Ray/vLLM specifics, scale details, or ranking/recommendation system expertise. Single HN comment provides weak corroboration for depth of production deployment experience.",
+    "signals": {
+      "top_signal": "Production LLM guardrails and business logic pipeline experience"
+    },
+    "first_seen": "2026-05-21T03:46:44.105322+00:00"
   }
 ]
