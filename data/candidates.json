@@ -365,5 +365,18 @@
       "top_signal": "Production LLM guardrails and business logic pipeline experience"
     },
     "first_seen": "2026-05-21T03:46:44.105322+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "awattamw",
+    "name": "awattamw",
+    "profile_url": "https://news.ycombinator.com/user?id=awattamw",
+    "role": "Senior MLE",
+    "score": 78,
+    "reasoning": "Strong signal on production LLM systems and scale (Show HN project on LLM traffic testing aligns directly with role requirements). However, limited corroborating evidence in HN profile—single project post without demonstrated depth in PyTorch/Ray/vLLM specifics, recommendation/ranking systems, or sustained production ML engineering track record. Conservative scoring due to weak evidence threshold.",
+    "signals": {
+      "top_signal": "Production LLM traffic system at scale"
+    },
+    "first_seen": "2026-07-15T02:29:46.570195+00:00"
   }
 ]
