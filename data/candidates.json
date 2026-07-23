@@ -378,5 +378,35 @@
       "top_signal": "Production LLM traffic system at scale"
     },
     "first_seen": "2026-07-15T02:29:46.570195+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "36565076",
+    "name": "Keep Growing And Moving Forward",
+    "profile_url": "https://github.com/zcdliuwei",
+    "role": "Senior MLE",
+    "score": 72,
+    "reasoning": "Candidate has relevant ML credentials (Master's in Probability & Statistics, titled ML Research Engineer) and demonstrates technical activity (122 public repos), but profile provides insufficient evidence of production deployment experience with recommendation/ranking/LLM systems at scale or specific PyTorch/Ray/vLLM expertise. No verifiable track record of shipping systems in production environments.",
+    "signals": {
+      "top_signal": "ML Research Engineer with statistics background, but deployment scale unclear",
+      "followers": 48,
+      "public_repos": 122,
+      "company": "Geely-Zeeker",
+      "location": "HangZhou in China"
+    },
+    "first_seen": "2026-07-23T02:46:02.333897+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "HenryNdubuaku",
+    "name": "HenryNdubuaku",
+    "profile_url": "https://news.ycombinator.com/user?id=HenryNdubuaku",
+    "role": "Senior MLE",
+    "score": 72,
+    "reasoning": "Strong signal on LLM systems and inference optimization (confidence scoring, routing, model serving at scale), but limited evidence of production deployment at Conviva-scale or Ray/vLLM specifics. Single HN post shows technical depth in ranking/routing inference but lacks corroboration of full production ML pipeline experience.",
+    "signals": {
+      "top_signal": "LLM routing system with confidence calibration and cost optimization"
+    },
+    "first_seen": "2026-07-23T02:46:31.383951+00:00"
   }
 ]
