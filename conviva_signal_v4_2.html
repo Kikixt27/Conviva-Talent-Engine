@@ -604,17 +604,56 @@ const ROLES=[
   {id:'people_ops',label:'People Ops Coordinator',dept:'Human Resources',deptClass:'HR',office:'Foster City',region:'US',days:67,type:'GA'},
   {id:'product_builder',label:'Principal Product Builder',dept:'Product Management',deptClass:'Prod',office:'Foster City',region:'US',days:58,type:'RND'},
   {id:'pm_agent',label:'PM, Agent Analytics',dept:'Product Management',deptClass:'Prod',office:'Foster City',region:'US',days:88,type:'RND'},
+  {id:'ai_engineer_dpi',label:'AI Engineer, Agent Analytics & Optimization',dept:'Engineering',deptClass:'Eng',office:'Foster City',region:'US',days:null,type:'RND'},
   {id:'senior_am',label:'Senior Account Manager',dept:'Sales',deptClass:'Sales',office:'Foster City',region:'US',days:107,type:'GTM'},
-  {id:'senior_ds',label:'Senior Data Scientist — AI Alerts',dept:'Engineering',deptClass:'Eng',office:'Foster City',region:'US',days:201,type:'RND'},
+  {id:'senior_ds',label:'Senior Data Scientist',dept:'Engineering',deptClass:'Eng',office:'Foster City',region:'US',days:null,type:'RND'},
   {id:'senior_mle',label:'Senior ML Engineer',dept:'Engineering',deptClass:'Eng',office:'Foster City',region:'US',days:327,type:'RND'},
   {id:'swe_dist',label:'SWE, Distributed Systems',dept:'Engineering',deptClass:'Eng',office:'Foster City',region:'US',days:null,type:'RND'},
   // Beijing
-  {id:'bj_support',label:'Product Support Engineer',dept:'Customer Support',deptClass:'Sup',office:'Beijing',region:'CN',days:45,type:'RND'},
-  {id:'bj_pb',label:'Sr/Principal Product Builder',dept:'Product Management',deptClass:'Prod',office:'Beijing',region:'CN',days:54,type:'RND'},
+  {id:'bj_pb',label:'Principal Product Builder',dept:'Product Management',deptClass:'Prod',office:'Beijing',region:'CN',days:54,type:'RND'},
+  {id:'bj_tech_lead',label:'Staff SWE — Tech Lead, Backend',dept:'Engineering',deptClass:'Eng',office:'Beijing',region:'CN',days:null,type:'RND'},
   // Bengaluru
   {id:'in_pe',label:'Engineer, Principal',dept:'Engineering',deptClass:'Eng',office:'Bengaluru',region:'IN',days:90,type:'RND'},
   {id:'in_swe_rust',label:'Engineer, Senior (Rust/C++)',dept:'Engineering',deptClass:'Eng',office:'Bengaluru',region:'IN',days:157,type:'RND'},
 ];
+
+// Pre-loaded JD snippets for nightly-sourced roles (select role → auto-fill JD box)
+const ROLE_JD_PRESETS={
+  ai_engineer_dpi:`AI Engineer, Agent Analytics & Optimization (DPI) — Foster City, US
+
+PRIORITY: production engineering for AI agents on Conviva behavioral data — MCP servers, agentic workflows, AI connectors. Own build + runtime at scale. NOT Product Builder (roadmap/discovery). NOT research. NOT prompt-engineering-only.
+
+Build & Ship: MCP servers (auth, scoping, access control); multi-step agentic workflows (tool use, orchestration, human-in-the-loop); AI connectors to external agents/clients; full lifecycle API/tool design → deploy → monitor → harden.
+
+Reliability: evals before ship + regression debugging; observability/tracing (Langfuse, LangSmith, OpenTelemetry); tune latency/cost/reliability as models drift.
+
+Must have: 3–7+ yrs SWE; strong Python backend; LLM agents IN PRODUCTION with war stories; MCP or equivalent tool-use integrations; evals; GCP/AWS + containers + async Python.
+
+Bonus: LangGraph, Anthropic SDK, Pydantic-AI, CrewAI; agent observability; digital analytics/APM; LLM-ops; OSS/talks at eng∩AI.
+
+Salary: $180,000–$250,000 + equity.`,
+  senior_ds:`Senior Data Scientist — Foster City, US
+
+PRIORITY: hands-on DS for real-time digital performance analytics. AI-native (Claude, Cursor, Copilot daily). Ship POC → production ML. NOT slide-deck DS. NOT research-only.
+
+Success: traditional ML + deep learning (transformers/LSTMs/CNNs as needed); predictive modeling, anomaly detection, automated alerting on time series; Ray/Spark at scale; integrate models with eng/product; AI-driven alerts & AI roadmap contribution.
+
+Must have: PhD CS/Stats OR MS + 5yr applied ML; regression/ensembles/clustering + DL; statistical modeling; Python production; demonstrated POC→prod shipping.
+
+Bonus: streaming analytics; time series forecasting & change-point detection; AI alerting / intelligent monitoring; MLOps; LLM integration into analytical workflows.
+
+Salary: $180,000–$230,000 + equity.`,
+  bj_pb:`Principal Product Builder — Beijing, China
+
+Senior IC who architects AND ships product end-to-end. Deep coding DNA, prior 0→1 product experience, comfort with LLM/AI systems. Bonus: startup founder or principal engineer background.`,
+  bj_tech_lead:`Staff Software Engineer — Tech Lead, Backend — Beijing, China
+
+Tech Lead through technical excellence (not management authority). Own backend architecture for high-scale real-time data platform. Distributed systems, OLAP, streaming (ClickHouse, Kafka, Druid). AI-native baseline: Cursor, Claude Code, Copilot in daily workflow. Mentor engineers; set technical bar; partner cross-region in English.
+
+Must have: 8+ yrs SWE, 5+ yrs data platforms/high-scale backend; Python/Go/Java/Scala/Rust; design reviews, CI/CD, production monitoring.
+
+Bonus: LLM application backends, agentic systems, RAG, LangGraph/LangChain production patterns.`,
+};
 
 const ROLE_TYPE_META={
   RND:{label:'R&D',color:'var(--pu)',bg:'var(--pubg)',class:'rt-rnd'},
@@ -826,6 +865,12 @@ if(rqNote)rqNote.textContent=activeRole.type!=='RND'?'Note: GitHub is less relev
     'LinkedIn primary · GitHub disabled for G&A roles';
   // Build analyzer
   buildAnalyzer();
+  // Pre-fill JD when preset exists for this role
+  const jdEl=document.getElementById('jdText');
+  if(jdEl&&ROLE_JD_PRESETS[id]){
+    jdEl.value=ROLE_JD_PRESETS[id];
+    document.getElementById('processBtn').disabled=false;
+  }
   // Update filter labels
   const s1=activeRole.type==='GTM'?'Alliance Signal':activeRole.type==='GA'?'Domain Signal':'Tech Signal';
   const s2=activeRole.type==='GTM'?'Exec Signal':activeRole.type==='GA'?'Industry Signal':'LLM Signal';
@@ -910,6 +955,12 @@ function setMode(mode,btn){tagsMode=mode;document.querySelectorAll('.mode-btn').
 // ════════════════════════════════════════════════════════
 let aiProvider = 'claude'; // 'claude' | 'deepseek' | 'mix'
 
+// Anthropic model IDs — must match https://platform.claude.com/docs/en/about-claude/models/overview
+const ANTHROPIC_MODELS = {
+  quality: 'claude-sonnet-4-6',      // Process Tags, deep analysis
+  bulk: 'claude-haiku-4-5',          // candidate scoring (alias → latest Haiku 4.5 snapshot)
+};
+
 function setProvider(mode, btn) {
   aiProvider = mode;
   document.querySelectorAll('.provider-btn').forEach(b => b.classList.remove('on'));
@@ -971,13 +1022,13 @@ async function _deepseekFetch(prompt, maxTokens) {
 // claude: Sonnet | deepseek: DeepSeek V3 | mix: Claude Sonnet
 async function claudeCall(prompt, maxTokens = 1500) {
   if (aiProvider === 'deepseek') return _deepseekFetch(prompt, maxTokens);
-  return _anthropicFetch('claude-sonnet-4-20250514', prompt, maxTokens);
+  return _anthropicFetch(ANTHROPIC_MODELS.quality, prompt, maxTokens);
 }
 
 // Bulk scoring call — GitHub candidates, high-volume, lower stakes
 // claude: Haiku | deepseek: DeepSeek V3 | mix: DeepSeek V3
 async function haikuCall(prompt, maxTokens = 800) {
-  if (aiProvider === 'claude') return _anthropicFetch('claude-haiku-4-5-20251001', prompt, maxTokens);
+  if (aiProvider === 'claude') return _anthropicFetch(ANTHROPIC_MODELS.bulk, prompt, maxTokens);
   return _deepseekFetch(prompt, maxTokens); // deepseek or mix both use DeepSeek for bulk
 }
 
@@ -997,7 +1048,39 @@ async function processTags(){
   const roleCtx=activeRole?`Role: ${activeRole.label} (${activeRole.type} — ${activeRole.dept} · ${activeRole.office})\n`:'';
   const gpHeader=gp?`PRIMARY REFERENCE (Golden Profile — weight this more heavily than the JD):\n${gp.slice(0,2500)}`:'NO GOLDEN PROFILE PROVIDED — extract signals from JD only';
   const jdHeader=jd?`SECONDARY REFERENCE (Job Description):\n${jd.slice(0,3000)}`:'NO JD PROVIDED';
-  const prompt=`You are a Senior Technical Executive Search Consultant specializing in "Product Builders" and high-impact R&D roles. Convert the JD and Golden Profile into hyper-precise search parameters.
+  const roleId=activeRole?.id||'';
+  const isAgentEngineer=roleId==='ai_engineer_dpi'||(activeRole?.label||'').toLowerCase().includes('ai engineer');
+  const isDataScientist=roleId==='senior_ds'||(activeRole?.label||'').toLowerCase().includes('data scientist');
+  const isTechLead=roleId==='bj_tech_lead'||(activeRole?.label||'').toLowerCase().includes('tech lead');
+  const isProductBuilder=(activeRole?.label||'').toLowerCase().includes('product builder')||roleId==='bj_pb'||roleId==='product_builder';
+  const strategyLens=isAgentEngineer?`### CORE STRATEGY: AI ENGINEER / AGENT PLATFORM LENS
+This is a production engineering role — NOT Product Builder (no roadmap/discovery ownership) and NOT prompt-engineering-only.
+Prioritize candidates who show evidence of:
+- MCP servers or tool-use APIs shipped in production (auth, scoping, access control)
+- Agentic workflows: multi-step reasoning, orchestration, human-in-the-loop
+- Evals + observability/tracing for agent behavior (Langfuse, LangSmith, OpenTelemetry)
+- Python backend services deployed on GCP/AWS with war stories of what broke in prod`:
+  isDataScientist?`### CORE STRATEGY: SENIOR DATA SCIENTIST LENS
+Prioritize candidates who show evidence of:
+- ML shipped to production: traditional ML + deep learning as the problem demands
+- Time series, anomaly detection, forecasting, or intelligent alerting at scale
+- Ray/Spark or large-scale data pipelines; MLOps or model monitoring
+- AI-native coding workflow (repos/commits showing Cursor/Claude-accelerated iteration)`:
+  isTechLead?`### CORE STRATEGY: BACKEND TECH LEAD LENS
+Prioritize candidates who show evidence of:
+- High-scale backend / data platform architecture (streaming, OLAP, distributed systems)
+- ClickHouse, Kafka, Druid or equivalent stack fingerprints in repos or posts
+- Technical leadership through code and design reviews — NOT pure people-management
+- AI-native engineering (Cursor/Claude/Copilot as baseline workflow)
+- Mentoring signal: thorough PR reviews, architecture docs, team elevation stories`:
+  isProductBuilder?`### CORE STRATEGY: THE "PRODUCT BUILDER" LENS
+A "Product Builder" is not just a coder — they are full-stack owners. Prioritize candidates who show evidence of:
+- End-to-end ownership (Idea → Prototype → Ship)
+- Cross-functional DNA: Frontend (React/Next.js) + Backend (Python/FastAPI/Node)
+- Product Mindset: READMEs containing "Roadmaps", "Demo links", or "Architecture diagrams"`:
+  `### CORE STRATEGY: HIGH-IMPACT R&D ENGINEERING LENS
+Prioritize candidates with production shipping evidence, deep stack fingerprints from the JD/GP, and repos or posts showing real systems — not tutorials or coursework.`;
+  const prompt=`You are a Senior Technical Executive Search Consultant for high-impact R&D roles. Convert the JD and Golden Profile into hyper-precise search parameters.
 
 ${roleCtx}
 
@@ -1006,11 +1089,7 @@ ${roleCtx}
 
 2. ${gpHeader}
 
-### CORE STRATEGY: THE "PRODUCT BUILDER" LENS
-A "Product Builder" is not just a coder — they are full-stack owners. Prioritize candidates who show evidence of:
-- End-to-end ownership (Idea → Prototype → Ship)
-- Cross-functional DNA: Frontend (React/Next.js) + Backend (Python/FastAPI/Node)
-- Product Mindset: READMEs containing "Roadmaps", "Demo links", or "Architecture diagrams"
+${strategyLens}
 
 ### EXTRACTION RULES
 1. PRIMARY WEIGHTING (GP Focus):
@@ -1330,6 +1409,9 @@ function genLiXray(roleLabel,dept,office,region,clusters,comps){
   const roleMap={
     'Product Builder':['Founding Product Engineer','Product Engineer','Lead PM','Head of Product','VP Product'],
     'Product Manager':['Product Manager','Senior PM','Principal PM','Head of Product'],
+    'AI Engineer':['AI Engineer','Staff AI Engineer','ML Platform Engineer','Agent Engineer'],
+    'Data Scientist':['Senior Data Scientist','Staff Data Scientist','Applied Scientist','ML Scientist'],
+    'Tech Lead':['Staff Software Engineer','Tech Lead Backend','Backend Tech Lead','Principal Backend Engineer'],
     'ML Engineer':['Machine Learning Engineer','AI Engineer','ML Scientist','Research Engineer'],
     'Account Executive':['Account Executive','Enterprise AE','Senior AE','Regional Sales Manager'],
     'Strategic Partnerships':['VP Alliances','Alliance Director','Head of Partnerships','Global Alliance Director'],

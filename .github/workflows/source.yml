@@ -39,8 +39,8 @@ jobs:
           AI_PROVIDER: auto
           CLAUDE_MODEL: claude-haiku-4-5
           DEEPSEEK_MODEL: deepseek-chat
-          SCORE_THRESHOLD: "70"
-          MAX_CANDIDATES_PER_QUERY: "15"
+          SCORE_THRESHOLD: "65"
+          MAX_CANDIDATES_PER_QUERY: "20"
         run: python scripts/source.py
 
       - name: Upload daily report

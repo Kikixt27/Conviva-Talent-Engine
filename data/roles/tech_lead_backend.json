@@ -1,0 +1,18 @@
+{
+  "title": "Staff Software Engineer — Tech Lead, Backend",
+  "language": null,
+  "location": "China",
+  "requirements": "Beijing / China. Tech Lead who leads through technical excellence, NOT management authority. 8+ years software engineering, 5+ years data platforms or high-scale backend.\n\nMust own: backend architecture for high-scale real-time data platform; distributed systems, OLAP, streaming (ClickHouse, Kafka, Druid); design reviews and key technical decisions; mentoring via code review and design pairing; CI/CD, testing, code quality bar.\n\nAI-native baseline: fluent daily use of Cursor, Claude Code, Copilot for prototyping, review, design, docs — not optional. Integrate LLM pipelines, agent observability, intelligent data modeling.\n\nLanguages: Python, Go, Java, Scala, or Rust (proficient in at least one). Excellent English for cross-regional collaboration.\n\nDISQUALIFY: pure people-manager without hands-on architecture; tutorial/student profiles; no evidence of distributed/streaming/OLAP systems at scale; English-only posts with no backend depth.",
+  "github_queries": [
+    "ClickHouse",
+    "Kafka streaming",
+    "distributed systems",
+    "data platform engineer"
+  ],
+  "hn_queries": [
+    "ClickHouse production",
+    "Kafka streaming backend",
+    "distributed systems architect",
+    "real-time analytics platform"
+  ]
+}

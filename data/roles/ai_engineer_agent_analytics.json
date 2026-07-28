@@ -1,0 +1,22 @@
+{
+  "title": "AI Engineer, Agent Analytics & Optimization",
+  "language": "python",
+  "location": "California",
+  "requirements": "US Foster City / Bay Area preferred (California OK). PRIORITY HIRE — production AI Engineer, NOT Product Builder, NOT research, NOT prompt-engineering-only.\n\nCore job: build systems so AI agents can understand, query, and act on Conviva behavioral data — MCP servers, agentic workflows, AI connectors to clients/downstream systems. Own build + runtime at scale (Product Builders own discovery/roadmap).\n\nMust have (3–7+ yrs SWE):\n- Python backend services shipped end-to-end (design → deploy → monitor); fullstack a plus\n- LLM-powered agents IN PRODUCTION with concrete failure/fix stories\n- MCP servers or equivalent tool-use / AI connector integrations (auth, scoping, access control)\n- Agentic patterns: tool use, structured outputs, prompt chaining, multi-agent orchestration, human-in-the-loop when needed; knows when deterministic workflows win\n- Evals to validate agent behavior + catch regressions\n- Observability/tracing (Langfuse, LangSmith, OpenTelemetry, or homegrown)\n- Cloud (GCP/AWS), containers, async Python\n\nBonus: LangGraph, Anthropic SDK, Pydantic-AI, CrewAI; digital experience analytics / APM; LLM-ops; published OSS/talks at eng∩AI.\n\nScore HIGH when: MCP/tool servers, production agents, evals+tracing, Python services.\nScore LOW / DISQUALIFY: pure PM; tutorial/student/bootcamp; agents only in demos; no tool-use/MCP evidence; research-only papers without shipping.",
+  "github_queries": [
+    "MCP",
+    "LangGraph",
+    "LLM agent",
+    "agent framework",
+    "agent eval",
+    "AI engineer"
+  ],
+  "hn_queries": [
+    "MCP server",
+    "LangGraph",
+    "LLM agent production",
+    "agent evals",
+    "agent observability",
+    "tool use LLM"
+  ]
+}

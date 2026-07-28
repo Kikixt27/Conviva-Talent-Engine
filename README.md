@@ -60,7 +60,18 @@ In your GitHub repo, go to **Settings → Secrets and variables → Actions → 
 
 ### Editing the roles you source for
 
-**Preferred:** edit one file per role under `data/roles/` (e.g. `principal_product_builder.json`). Files are loaded in **sorted filename order**.
+**Preferred:** edit one file per role under `data/roles/` (e.g. `principal_product_builder.json`). Files are loaded in **sorted filename order** — the nightly job runs **all** `.json` files in that folder (Beijing + Foster City roles together).
+
+**Current pipeline roles** (as of latest config):
+
+| File | Title | Location |
+|------|--------|----------|
+| `ai_engineer_agent_analytics.json` | AI Engineer, Agent Analytics & Optimization | **California (priority US hire)** |
+| `senior_data_scientist.json` | Senior Data Scientist | **California (priority US hire)** |
+| `principal_product_builder.json` | Principal Product Builder | China (Beijing) |
+| `tech_lead_backend.json` | Staff Software Engineer — Tech Lead, Backend | China (Beijing) |
+
+Nightly focus: US **AI Engineer** and **Senior Data Scientist** use broader California location + 6 GitHub/HN queries each (previously San Francisco was too narrow — near-zero MCP/LangGraph hits). Workflow defaults: `SCORE_THRESHOLD=65`, `MAX_CANDIDATES_PER_QUERY=20`.
 
 **Legacy:** if `data/roles/` contains no `.json` files, the engine falls back to root `roles.json`.
 
@@ -83,8 +94,8 @@ Commit and push the change — the next scheduled run picks it up automatically.
 
 Edit `.github/workflows/source.yml` and adjust the `env:` block:
 
-- `SCORE_THRESHOLD` — minimum score (0–100) for a candidate to be saved. Default `70`.
-- `MAX_CANDIDATES_PER_QUERY` — search hits to enrich per query. Default `15`.
+- `SCORE_THRESHOLD` — minimum score (0–100) for a candidate to be saved. Default `65` (workflow).
+- `MAX_CANDIDATES_PER_QUERY` — search hits to enrich per query. Default `20` (workflow).
 - `AI_PROVIDER` — `claude`, `deepseek`, or `auto` (try Claude first, fall back to DeepSeek).
 - `CLAUDE_MODEL` — which Anthropic model to use. Default `claude-haiku-4-5` (cheapest, fastest). Other options: `claude-sonnet-4-5` (higher quality, ~5× cost), `claude-opus-4-5` (highest quality, ~25× cost).
 - `DEEPSEEK_MODEL` — which DeepSeek model to use. Default `deepseek-chat`. Other option: `deepseek-reasoner` (more thorough, slower).

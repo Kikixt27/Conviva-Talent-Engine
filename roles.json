@@ -1,5 +1,49 @@
 [
   {
+    "title": "AI Engineer, Agent Analytics & Optimization",
+    "language": "python",
+    "location": "California",
+    "requirements": "US Foster City / Bay Area. PRIORITY — production MCP/agent systems engineer. See data/roles/ai_engineer_agent_analytics.json.",
+    "github_queries": [
+      "MCP",
+      "LangGraph",
+      "LLM agent",
+      "agent framework",
+      "agent eval",
+      "AI engineer"
+    ],
+    "hn_queries": [
+      "MCP server",
+      "LangGraph",
+      "LLM agent production",
+      "agent evals",
+      "agent observability",
+      "tool use LLM"
+    ]
+  },
+  {
+    "title": "Senior Data Scientist",
+    "language": "python",
+    "location": "California",
+    "requirements": "US Foster City / Bay Area. PRIORITY — hands-on production DS for real-time analytics. See data/roles/senior_data_scientist.json.",
+    "github_queries": [
+      "data scientist",
+      "applied scientist",
+      "anomaly detection",
+      "time series",
+      "MLOps",
+      "Ray Spark"
+    ],
+    "hn_queries": [
+      "anomaly detection production",
+      "time series forecasting",
+      "Ray Spark ML",
+      "MLOps monitoring",
+      "streaming analytics ML",
+      "change point detection"
+    ]
+  },
+  {
     "title": "Principal Product Builder",
     "language": "python",
     "location": "China",
@@ -10,37 +54,27 @@
       "founding engineer"
     ],
     "hn_queries": [
-      "founding engineer hiring",
-      "principal engineer ai product"
+      "LLM agent shipped",
+      "RAG production engineer",
+      "founding engineer product"
     ]
   },
   {
-    "title": "Senior MLE",
-    "language": "python",
+    "title": "Staff Software Engineer — Tech Lead, Backend",
+    "language": null,
     "location": "China",
-    "requirements": "Senior machine-learning engineer with production experience deploying recommendation, ranking, or LLM systems at scale. PyTorch / Ray / vLLM background a plus.",
+    "requirements": "Beijing / China. Tech Lead who leads through technical excellence, NOT management authority. 8+ years software engineering, 5+ years data platforms or high-scale backend. Distributed systems, OLAP, streaming (ClickHouse, Kafka, Druid). AI-native engineering baseline (Cursor, Claude Code, Copilot). Mentors engineers; sets technical bar. Python/Go/Java/Scala/Rust. Excellent English.",
     "github_queries": [
-      "machine learning engineer",
-      "vllm pytorch inference",
-      "recommendation system engineer"
+      "ClickHouse",
+      "Kafka streaming",
+      "distributed systems",
+      "data platform engineer"
     ],
     "hn_queries": [
-      "ml engineer hiring",
-      "vllm production"
-    ]
-  },
-  {
-    "title": "Frontend Architect",
-    "language": "typescript",
-    "location": "China",
-    "requirements": "Lead frontend engineer with deep React/TypeScript expertise, micro-frontend architecture, design-system ownership, and an eye for performance and DX.",
-    "github_queries": [
-      "react architect",
-      "design system typescript",
-      "micro frontend"
-    ],
-    "hn_queries": [
-      "frontend architect hiring"
+      "ClickHouse production",
+      "Kafka streaming backend",
+      "distributed systems architect",
+      "real-time analytics platform"
     ]
   }
 ]

@@ -387,54 +387,64 @@ def collect_for_role(
     fresh: list[Candidate] = []
     feedback_tail = format_feedback_for_prompt(role["title"], feedback_entries)
 
+    # Prefer `locations` list when present; else single `location` (legacy).
+    gh_locations: list[str | None]
+    if role.get("locations"):
+        gh_locations = [str(x) for x in role["locations"] if x]
+    elif role.get("location"):
+        gh_locations = [str(role["location"])]
+    else:
+        gh_locations = [None]
+
     for query in role.get("github_queries", []):
-        for user in search_github(query, role.get("language"), role.get("location")):
-            key = f"github:{user.get('id')}"
-            if key in seen:
-                continue
-            if SKIP_REJECTED_CANDIDATES and key in reject_keys:
-                log.info("Skip (TA feedback): %s", key)
-                continue
-            gh_headers = github_auth_headers(GITHUB_TOKEN)
-            login = (user.get("login") or "").strip()
-            repos_preview: list[dict[str, Any]] | None = None
-            if login:
-                time.sleep(0.35)
-                repos_preview = fetch_owned_repos_preview(
-                    login, headers=gh_headers, timeout=HTTP_TIMEOUT
+        for loc in gh_locations:
+            for user in search_github(query, role.get("language"), loc):
+                key = f"github:{user.get('id')}"
+                if key in seen:
+                    continue
+                if SKIP_REJECTED_CANDIDATES and key in reject_keys:
+                    log.info("Skip (TA feedback): %s", key)
+                    continue
+                gh_headers = github_auth_headers(GITHUB_TOKEN)
+                login = (user.get("login") or "").strip()
+                repos_preview: list[dict[str, Any]] | None = None
+                if login:
+                    time.sleep(0.35)
+                    repos_preview = fetch_owned_repos_preview(
+                        login, headers=gh_headers, timeout=HTTP_TIMEOUT
+                    )
+                skip_hf, hf_reason = hard_filter_github(user, repos_preview)
+                if skip_hf:
+                    log.info("Skip (hard_filter) github:%s — %s", login or key, hf_reason)
+                    continue
+                blob = (
+                    f"Name: {user.get('name') or user.get('login')}\n"
+                    f"Bio: {user.get('bio') or '—'}\n"
+                    f"Location: {user.get('location') or '—'}\n"
+                    f"Company: {user.get('company') or '—'}\n"
+                    f"Public repos: {user.get('public_repos', 0)}\n"
+                    f"Followers: {user.get('followers', 0)}\n"
+                    f"Profile: {user.get('html_url')}"
                 )
-            skip_hf, hf_reason = hard_filter_github(user, repos_preview)
-            if skip_hf:
-                log.info("Skip (hard_filter) github:%s — %s", login or key, hf_reason)
-                continue
-            blob = (
-                f"Name: {user.get('name') or user.get('login')}\n"
-                f"Bio: {user.get('bio') or '—'}\n"
-                f"Location: {user.get('location') or '—'}\n"
-                f"Company: {user.get('company') or '—'}\n"
-                f"Public repos: {user.get('public_repos', 0)}\n"
-                f"Followers: {user.get('followers', 0)}\n"
-                f"Profile: {user.get('html_url')}"
-            )
-            scored = score_candidate(role, blob, feedback_tail=feedback_tail)
-            if not scored or scored.get("score", 0) < SCORE_THRESHOLD:
-                continue
-            fresh.append(Candidate(
-                source="github",
-                source_id=str(user.get("id")),
-                name=user.get("name") or user.get("login", "unknown"),
-                profile_url=user.get("html_url", ""),
-                role=role["title"],
-                score=int(scored["score"]),
-                reasoning=scored.get("reasoning", ""),
-                signals={
-                    "top_signal": scored.get("top_signal", ""),
-                    "followers": user.get("followers", 0),
-                    "public_repos": user.get("public_repos", 0),
-                    "company": user.get("company"),
-                    "location": user.get("location"),
-                },
-            ))
+                scored = score_candidate(role, blob, feedback_tail=feedback_tail)
+                if not scored or scored.get("score", 0) < SCORE_THRESHOLD:
+                    continue
+                fresh.append(Candidate(
+                    source="github",
+                    source_id=str(user.get("id")),
+                    name=user.get("name") or user.get("login", "unknown"),
+                    profile_url=user.get("html_url", ""),
+                    role=role["title"],
+                    score=int(scored["score"]),
+                    reasoning=scored.get("reasoning", ""),
+                    signals={
+                        "top_signal": scored.get("top_signal", ""),
+                        "followers": user.get("followers", 0),
+                        "public_repos": user.get("public_repos", 0),
+                        "company": user.get("company"),
+                        "location": user.get("location"),
+                    },
+                ))
 
     for query in role.get("hn_queries", []):
         for hit in search_hackernews(query):
