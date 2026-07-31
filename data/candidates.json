@@ -742,5 +742,65 @@
       "location": "Shanghai, China"
     },
     "first_seen": "2026-07-30T02:32:31.485489+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "ali110v",
+    "name": "ali110v",
+    "profile_url": "https://news.ycombinator.com/user?id=ali110v",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong production AI engineer signal: built and shipped ResiliReplay (chaos testing for AI agents + MCP servers), demonstrating hands-on MCP expertise, agent reliability patterns, and observability mindset. Python backend + agentic systems experience evident; located in Bay Area (ali110v suggests potential local tie). Primary concern: limited corroboration of production scale, evals rigor, and full end-to-end system ownership; single HN show submission is promising but not yet equivalent to 3–7yr shipping track record.",
+    "signals": {
+      "top_signal": "MCP + agent chaos testing shipped; production reliability mindset"
+    },
+    "first_seen": "2026-07-31T02:52:34.517359+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "Thomeras",
+    "name": "Thomeras",
+    "profile_url": "https://news.ycombinator.com/user?id=Thomeras",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 68,
+    "reasoning": "Strong signal on evals (core requirement) and OSS/published work (bonus), indicating production mindset and agent observability expertise. However, profile is extremely thin—single HN comment about an eval framework with no visible evidence of shipping production AI agents, MCP servers, Python backend services, or cloud deployment at scale. Cannot validate LLM-ops experience, tool-use patterns, or production failure/fix stories. Requires deep technical conversation to confirm SWE fundamentals (3–7+ yrs, design→deploy→monitor) and production agentic systems ownership.",
+    "signals": {
+      "top_signal": "Open source eval framework for agents"
+    },
+    "first_seen": "2026-07-31T02:53:01.753635+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "204246435",
+    "name": "Shakshi Richhariya",
+    "profile_url": "https://github.com/shakshi0701",
+    "role": "Senior Data Scientist",
+    "score": 72,
+    "reasoning": "Strong core technical fit: 5 years IBM experience with proven CNN+LSTM anomaly detection and production microservices delivery directly align with time-series/alerting and production ML requirements. However, profile lacks depth signals—no evidence of Spark/Ray, MLOps maturity, streaming analytics, or scalable real-time systems; limited public code (2 repos, 0 followers) prevents validation of hands-on depth and POC→production trajectory. Location is California (+), but thin GitHub presence raises execution-velocity and AI-native-developer adoption concerns for a PRIORITY HIRE role.",
+    "signals": {
+      "top_signal": "5yr IBM + anomaly detection (CNN+LSTM) + microservices production ship",
+      "followers": 0,
+      "public_repos": 2,
+      "company": null,
+      "location": "California"
+    },
+    "first_seen": "2026-07-31T02:56:06.341871+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "73147033",
+    "name": "Shirong Lu",
+    "profile_url": "https://github.com/happysnaker",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 72,
+    "reasoning": "Shirong demonstrates solid backend/systems engineering fundamentals with Go & Java infrastructure work and distributed systems exposure, meeting the language and technical depth baseline. However, there is insufficient public evidence of: (1) 8+ years professional experience verification, (2) hands-on ownership of high-scale OLAP/streaming platforms (ClickHouse, Kafka, Druid specifics), (3) tech lead mentoring track record via design reviews, and critically (4) AI-native fluency (Cursor, Claude Code, LLM pipeline integration) which is listed as non-optional. The qq-ai-bot flagship project suggests some AI exposure but lacks detail on scale, architecture decisions, or LLM integration depth. 70 repos and 41 followers suggest active contribution but without clear evidence of 5+ years data platform leadership.",
+    "signals": {
+      "top_signal": "Go/Java distributed systems engineer in Shanghai with OSS activity, but missing verification of scale leadership and mandatory AI-native fluency.",
+      "followers": 41,
+      "public_repos": 70,
+      "company": null,
+      "location": "Shanghai, China"
+    },
+    "first_seen": "2026-07-31T02:58:56.999715+00:00"
   }
 ]
