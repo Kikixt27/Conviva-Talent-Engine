@@ -802,5 +802,121 @@
       "location": "Shanghai, China"
     },
     "first_seen": "2026-07-31T02:58:56.999715+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "59925371",
+    "name": "Utsav Akhaury",
+    "profile_url": "https://github.com/utsav-akhaury",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong foundational signals: PhD EPFL + GSoC + AI Software Engineer title + SF location + 13 public repos suggest solid engineering fundamentals and potential LLM/agentic work. However, no visible evidence of production agent systems, MCP servers, evals/tracing, or tool-use integrations in public profile. Current role at Spot AI (computer vision) does not clearly map to agent analytics. Requires deep technical conversation to validate production agent shipping, observability patterns, and Python backend services at scale—cannot confirm core 'must-haves' from profile alone.",
+    "signals": {
+      "top_signal": "PhD + GSoC + AI title in Bay Area, but missing corroboration of production agents/MCP/evals shipped.",
+      "followers": 26,
+      "public_repos": 13,
+      "company": "Spot AI",
+      "location": "San Francisco, California"
+    },
+    "first_seen": "2026-08-03T02:50:18.438597+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "asgeiralbretsen",
+    "name": "asgeiralbretsen",
+    "profile_url": "https://news.ycombinator.com/user?id=asgeiralbretsen",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong signal: shipped MCP server (Gmail/IMAP) demonstrating tool-use, auth/access control, and production connector patterns—core to the role. Python backend + agent integration likely present. Gaps: no visible evidence of production agent orchestration, evals, observability/tracing, or scale stories; location unknown; limited public track record visible on HN. Conservative score reflects 'Show HN' shipping credibility but unverified depth in agent failure/fix narratives and production runtime ownership.",
+    "signals": {
+      "top_signal": "MCP server shipped (Gmail/IMAP connector) with tool-use + auth patterns"
+    },
+    "first_seen": "2026-08-03T02:51:08.462545+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "guzzul",
+    "name": "guzzul",
+    "profile_url": "https://news.ycombinator.com/user?id=guzzul",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong production signal: 'Show HN: MCP server' demonstrates hands-on MCP implementation and agentic tool-use (core requirement). Evidence of shipping end-to-end (design→deploy). However, limited corroboration—single HN post without visible deployment scale, observability/tracing details, or production failure/fix stories. No clear location data or 3-7yr SWE backend depth confirmation from profile alone. Not a false-positive PM/ops pattern, but needs conversation to validate production scale, Python services depth, and evals rigor.",
+    "signals": {
+      "top_signal": "Built & shipped MCP server for AI agents; tool-use + agentic patterns demonstrated"
+    },
+    "first_seen": "2026-08-03T02:51:13.418581+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "flowofcontrol",
+    "name": "flowofcontrol",
+    "profile_url": "https://news.ycombinator.com/user?id=flowofcontrol",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on evals + observability (Maverik benchmarking tool for agents, cost prediction, test suite definition) and demonstrated MCP server knowledge (understanding tool overhead). However, no concrete evidence of production agent deployment at scale, Python backend services shipping end-to-end, or operational observability (Langfuse/LangSmith/OpenTelemetry). Single HN Show post without corroborating work history, shipped systems, or failure/fix stories. High on the 'build evals tooling' dimension but unclear on core production engineering chops required for this PRIORITY HIRE role.",
+    "signals": {
+      "top_signal": "Built Maverik (MCP agent benchmarking + evals framework); understands tool-use patterns and cost tradeoffs"
+    },
+    "first_seen": "2026-08-03T02:51:18.916458+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "ducks_",
+    "name": "ducks_",
+    "profile_url": "https://news.ycombinator.com/user?id=ducks_",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on agent evaluation and infrastructure automation, with OSS/published work (Replaybook). However, profile lacks concrete evidence of: (1) production LLM-powered agents with failure/fix stories, (2) MCP servers or tool-use integrations, (3) Python backend services shipped end-to-end, (4) observability/tracing in production. Single HN Show post insufficient to validate core requirements without deeper technical depth on shipping agents at scale.",
+    "signals": {
+      "top_signal": "Published agent evaluation framework + infrastructure domain; needs production agent + tool-server + observability proof"
+    },
+    "first_seen": "2026-08-03T02:51:48.287170+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "raffisk",
+    "name": "raffisk",
+    "profile_url": "https://news.ycombinator.com/user?id=raffisk",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on agent evals + tool-use trajectory analysis (core requirement), and PyPI library release shows shipping. However, limited corroboration: single HN post with no evidence of production agents at scale, MCP servers, observability/tracing setup, backend services, or cloud deployment experience. No location info, no team/SWE depth visible. High-potential fit IF production work exists beyond this project, but insufficient evidence to score higher without validation.",
+    "signals": {
+      "top_signal": "Agent eval framework + tool-path reasoning (evals + tool-use); needs production agent + backend SWE validation"
+    },
+    "first_seen": "2026-08-03T02:51:50.890118+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "299785443",
+    "name": "NereusStream",
+    "profile_url": "https://github.com/nereusstream",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 72,
+    "reasoning": "Strong technical signal on streaming/lakehouse architecture (Pulsar, Kafka, compaction) with China location match, but critical gaps: no visible evidence of hands-on backend leadership at scale, no demonstrated mentoring/code review impact, AI-native fluency unverified, and sparse public profile (9 repos, 2 followers) lacks corroboration of 8+ years experience or OLAP/distributed systems depth. Profile reads as specialist contributor rather than tech lead with proven design authority.",
+    "signals": {
+      "top_signal": "Pulsar-native streaming + lakehouse expertise aligns with real-time data platform requirements",
+      "followers": 2,
+      "public_repos": 9,
+      "company": null,
+      "location": "China"
+    },
+    "first_seen": "2026-08-03T02:56:18.675151+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "6784823",
+    "name": "Kai",
+    "profile_url": "https://github.com/Kai-Zhang",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 72,
+    "reasoning": "Kai demonstrates relevant hands-on experience in distributed systems via Alluxio (a data orchestration platform), location match, and public GitHub activity suggesting active engineering. However, profile lacks explicit evidence of: (1) 8+ years tenure verification, (2) 5+ years in data platforms/high-scale backend, (3) hands-on experience with required stack (ClickHouse, Kafka, Druid, streaming), (4) mentoring/tech lead track record via design reviews, (5) AI-native fluency (Cursor, Claude, Copilot integration), and (6) English communication depth for cross-regional collaboration. Bio signal is too sparse to confirm Staff-level architecture ownership or leadership-through-technical-excellence pattern.",
+    "signals": {
+      "top_signal": "Alluxio distributed systems domain + Beijing location + GitHub activity; requires deep profile validation on tenure, OLAP/streaming depth, tech lead mentoring, and AI-native baseline.",
+      "followers": 49,
+      "public_repos": 19,
+      "company": "@alluxio",
+      "location": "Beijing, China"
+    },
+    "first_seen": "2026-08-03T02:57:01.234825+00:00"
   }
 ]
