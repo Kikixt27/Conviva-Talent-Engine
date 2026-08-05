@@ -944,5 +944,57 @@
       "top_signal": "Production time series anomaly detection with exogenous feature engineering"
     },
     "first_seen": "2026-08-04T02:38:27.430096+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "alex_akimov",
+    "name": "alex_akimov",
+    "profile_url": "https://news.ycombinator.com/user?id=alex_akimov",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "alex_akimov demonstrates direct MCP expertise by building and shipping mcpscore—a tool for validating MCP server compliance. This shows hands-on understanding of MCP internals, tool-use patterns, and production concerns (versioning, compliance). However, limited public evidence of full-stack Python backend services, production LLM agents with failure/fix stories, evals/tracing, or cloud/container deployments. Strong MCP signal warrants consideration, but requires validation on agent orchestration, observability, and end-to-end system ownership.",
+    "signals": {
+      "top_signal": "Built & shipped MCP validation tool; demonstrates MCP server architecture expertise."
+    },
+    "first_seen": "2026-08-05T02:33:55.971251+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "nunocoracao",
+    "name": "nunocoracao",
+    "profile_url": "https://news.ycombinator.com/user?id=nunocoracao",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal: built and shipped Watchfire (OSS control room for AI agents), explicitly implemented MCP server exposure, and demonstrates hands-on experience with agentic patterns (multi-agent orchestration, permission/access control). However, limited public evidence of production-scale Python backend services, evals/observability practices, or concrete failure/fix stories in production. Single HN post without corroboration of scale, monitoring depth, or team shipping history. Fits production engineer archetype but needs deeper validation on observability, evals, and production ops rigor.",
+    "signals": {
+      "top_signal": "MCP server implementation + multi-agent orchestration in shipped OSS project"
+    },
+    "first_seen": "2026-08-05T02:33:58.461213+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "Toby11",
+    "name": "Toby11",
+    "profile_url": "https://news.ycombinator.com/user?id=Toby11",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 82,
+    "reasoning": "Strong production AI/tool-systems signal: 'mcpvessel' demonstrates direct MCP server expertise, security-conscious design (auth/access control/egress), and shipping mindset. Python backend + containerization + observability patterns likely present given the sophisticated tool-sandboxing approach. Fits core job (MCP servers, AI connectors, runtime safety at scale). Limited by single data point (HN Show submission) without visible resume, production agent stories, or evals evidence—cannot confirm full 3–7yr SWE depth or LLM-agent-in-prod track record.",
+    "signals": {
+      "top_signal": "MCP server shipping + security/scoping primitives (auth, egress control)"
+    },
+    "first_seen": "2026-08-05T02:34:09.950552+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "scosman",
+    "name": "scosman",
+    "profile_url": "https://news.ycombinator.com/user?id=scosman",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong production AI signals: auto-research agents reading prod traces, tool synthesis/optimization, evals + val/test splits, and observability mindset. Clear evidence of shipping agentic patterns at scale with concrete optimization stories (token reduction, tool consolidation). However, limited corroborating evidence on full backend service ownership (design→deploy→monitor), MCP/connector integrations, cloud/async Python, or location/availability. Single HN comment without resume/portfolio makes it hard to validate core SWE depth, auth/scoping patterns, or exact production scale.",
+    "signals": {
+      "top_signal": "Production agent optimization via traces + evals; tool synthesis; knows when agents need guardrails"
+    },
+    "first_seen": "2026-08-05T02:34:20.028558+00:00"
   }
 ]
