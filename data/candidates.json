@@ -996,5 +996,18 @@
       "top_signal": "Production agent optimization via traces + evals; tool synthesis; knows when agents need guardrails"
     },
     "first_seen": "2026-08-05T02:34:20.028558+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "kennethtiller",
+    "name": "kennethtiller",
+    "profile_url": "https://news.ycombinator.com/user?id=kennethtiller",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Kenneth shows 23+ years of SWE experience and has built Lucidos, a self-hosted agentic platform with event sourcing, triggers, and dynamic app generation—demonstrating hands-on production agent systems and orchestration patterns. However, the single HN post lacks concrete evidence of MCP servers, production failure/fix stories, evals/tracing infrastructure, cloud deployment at scale, or Python backend shipping in enterprise contexts; the project appears personal/self-hosted rather than production-grade with observable monitoring and tool-use integrations validated in a business context.",
+    "signals": {
+      "top_signal": "Shipped agentic orchestration platform with event-sourced memory and multi-trigger workflows; 23yr SWE pedigree. Needs: MCP proof, prod ops evidence, evals/tracing, Python backend validation."
+    },
+    "first_seen": "2026-08-06T02:36:18.639672+00:00"
   }
 ]
