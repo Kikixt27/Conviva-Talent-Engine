@@ -1009,5 +1009,18 @@
       "top_signal": "Shipped agentic orchestration platform with event-sourced memory and multi-trigger workflows; 23yr SWE pedigree. Needs: MCP proof, prod ops evidence, evals/tracing, Python backend validation."
     },
     "first_seen": "2026-08-06T02:36:18.639672+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "dagni132",
+    "name": "dagni132",
+    "profile_url": "https://news.ycombinator.com/user?id=dagni132",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong signal: production MCP servers security audit demonstrates deep hands-on MCP expertise, tool-use patterns, and auth/access control knowledge—core must-haves. However, limited visibility into Python backend services, agentic workflows, evals/tracing, and whether this person ships end-to-end production AI systems vs. auditing/research. Single HN post without portfolio/GitHub corroboration leaves uncertainty on fullstack production agent ownership and observability chops.",
+    "signals": {
+      "top_signal": "MCP production security audit + auth/access control expertise"
+    },
+    "first_seen": "2026-08-07T02:42:29.346415+00:00"
   }
 ]
