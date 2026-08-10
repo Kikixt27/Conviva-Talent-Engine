@@ -1022,5 +1022,18 @@
       "top_signal": "MCP production security audit + auth/access control expertise"
     },
     "first_seen": "2026-08-07T02:42:29.346415+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "ytkoka",
+    "name": "ytkoka",
+    "profile_url": "https://news.ycombinator.com/user?id=ytkoka",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 82,
+    "reasoning": "Strong signal: shipped MCP server tooling (Show HN project demonstrates hands-on MCP implementation, observability, and security—core to the role). Evidence of production-mindedness (latency, token usage, security scanning). However, limited corroboration on full end-to-end Python services, agent orchestration patterns, evals, or production agent failure stories. No clear location confirmation or multi-agent/agentic workflow depth visible. Warrants phone screen to validate agent production experience and shipping velocity.",
+    "signals": {
+      "top_signal": "MCP server shipped + observability focus"
+    },
+    "first_seen": "2026-08-10T01:50:07.101747+00:00"
   }
 ]
