@@ -1048,5 +1048,18 @@
       "top_signal": "Published MCP server tooling; unclear on production agents + evals + observability depth"
     },
     "first_seen": "2026-08-11T01:46:33.753371+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "bignet",
+    "name": "bignet",
+    "profile_url": "https://news.ycombinator.com/user?id=bignet",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on MCP servers and production AI systems (HoneyMCP demonstrates deep MCP expertise and security-aware tool design). However, limited visibility into: Python backend services at scale, LLM-powered agents in production with failure/fix narratives, evals+tracing infrastructure, and observability practices. Single HN show demonstrates technical depth in MCP but lacks corroborating evidence of full end-to-end agent systems, cloud ops, and agentic patterns beyond tool-use.",
+    "signals": {
+      "top_signal": "MCP server expertise + security-aware tool design (honeypot pattern shows tool-use sophistication)"
+    },
+    "first_seen": "2026-08-12T01:58:36.472057+00:00"
   }
 ]
