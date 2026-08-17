@@ -1100,5 +1100,44 @@
       "top_signal": "MCP server shipping + stateless protocol ops work"
     },
     "first_seen": "2026-08-14T01:59:02.314225+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "vedaant00",
+    "name": "vedaant00",
+    "profile_url": "https://news.ycombinator.com/user?id=vedaant00",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong production AI engineer signals: ships MCP servers (PyScrappy), demonstrates tool-use/connector patterns, and shows hands-on systems building. However, limited visible evidence of production agent orchestration, evals/tracing infrastructure, or scale operations; single HN project insufficient to confirm 3–7+ yrs backend SWE depth, cloud/async patterns, or observability maturity. Recommend technical screen to validate production agent experience, Python service architecture, and deployment/monitoring patterns.",
+    "signals": {
+      "top_signal": "MCP server shipped + tool-use connector pattern"
+    },
+    "first_seen": "2026-08-17T01:17:59.582370+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "Raphael_Dev",
+    "name": "Raphael_Dev",
+    "profile_url": "https://news.ycombinator.com/user?id=Raphael_Dev",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong production signal: built and shipped Gnat, a self-hosted analytics system with MCP server integration—directly demonstrates MCP server ownership, systems thinking, and Go backend chops. However, critical gaps: no evidence of Python backend services, LLM-powered agents in production, evals/tracing infrastructure, or agentic patterns (tool-use chains, structured outputs, multi-agent orchestration). Go expertise doesn't map cleanly to Python requirement. Single HN project submission without corroborating production AI agent experience or team scale history limits confidence.",
+    "signals": {
+      "top_signal": "MCP server + self-hosted systems shipping; missing Python agents + evals + observability"
+    },
+    "first_seen": "2026-08-17T01:18:05.113451+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "guypod",
+    "name": "guypod",
+    "profile_url": "https://news.ycombinator.com/user?id=guypod",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Founder of Snyk (security/DevOps at scale) and Tessl shows strong systems-thinking and shipping track record. HN comment demonstrates deep understanding of agentic patterns (evals, consistency, guardrails, deterministic tool use, hooks) — exactly core job language. However, insufficient evidence of production LLM agents, MCP servers, or concrete failure/fix stories specific to AI systems. Single HN comment without portfolio/GitHub corroboration warrants conservative scoring despite strong founder signal.",
+    "signals": {
+      "top_signal": "Agentic architecture thinking + shipping discipline, but missing production agent/MCP evidence"
+    },
+    "first_seen": "2026-08-17T01:18:14.973254+00:00"
   }
 ]
