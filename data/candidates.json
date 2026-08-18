@@ -1139,5 +1139,61 @@
       "top_signal": "Agentic architecture thinking + shipping discipline, but missing production agent/MCP evidence"
     },
     "first_seen": "2026-08-17T01:18:14.973254+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "17043",
+    "name": "James",
+    "profile_url": "https://github.com/jaytoday",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "James shows strong surface signals (Bay Area location, 714 repos, multiple AI/MCP projects listed) but lack of verifiable evidence of production agent systems, evals/tracing, or shipping at scale. The portfolio sites and repos need validation—multiple projects listed but no clear evidence of end-to-end Python backend services, agent failures/fixes, or production observability. High repo count and MCP involvement are promising, but without concrete shipping stories or GitHub evidence of tool-use patterns and monitoring, scores below the 'clear must-have' threshold.",
+    "signals": {
+      "top_signal": "MCP-APP project and Bay Area location; critical gap: no visible production agent traces, evals, or deployment evidence.",
+      "followers": 89,
+      "public_repos": 714,
+      "company": null,
+      "location": "bay area, california"
+    },
+    "first_seen": "2026-08-18T01:12:24.656930+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "songrenchu",
+    "name": "songrenchu",
+    "profile_url": "https://news.ycombinator.com/user?id=songrenchu",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong production signals: HarnessRouter shows end-to-end agent system design with MCP tool integration, multi-agent orchestration, and downstream product integration (PPT, Spreadsheet agents). However, limited corroboration—single HN Show post without concrete evidence of scale, evals, observability, or full SWE depth (Python services, cloud deployment, monitoring). Profile suggests solid agentic patterns and tool-use thinking but lacks shipping stories, team scale, or observability instrumentation details needed to confirm production rigor.",
+    "signals": {
+      "top_signal": "MCP + agentic product backend architecture with multiple agent implementations"
+    },
+    "first_seen": "2026-08-18T01:14:48.486597+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "eventuallyacat",
+    "name": "eventuallyacat",
+    "profile_url": "https://news.ycombinator.com/user?id=eventuallyacat",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal: shipping production observability tooling (Grafana agent) for agentic systems shows hands-on systems engineering and production mindset. However, limited evidence of MCP servers, tool-use integrations, evals, or full agentic workflow ownership—appears more infrastructure/observability focused than core agent builder. Single HN post without corroboration of Python backend services, LLM-powered agents in production with failure/fix stories, or cloud-scale deployment experience keeps score below 75.",
+    "signals": {
+      "top_signal": "Production observability for agents + systems engineering credibility"
+    },
+    "first_seen": "2026-08-18T01:15:03.891870+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "suzyahyah",
+    "name": "suzyahyah",
+    "profile_url": "https://news.ycombinator.com/user?id=suzyahyah",
+    "role": "Senior Data Scientist",
+    "score": 72,
+    "reasoning": "Strong signal: HN handle and story title indicate deep engagement with time series forecasting—a core requirement for real-time analytics. However, without access to the full profile, GitHub, or production work samples, this is based on limited public evidence. The HN story alone suggests relevant technical depth, but cannot confirm hands-on production ML, team scale, or current location. Recommend phone screen to validate production shipping experience, Spark/Ray usage, and Bay Area fit before advancing.",
+    "signals": {
+      "top_signal": "Time series forecasting expertise demonstrated via public technical content"
+    },
+    "first_seen": "2026-08-18T01:18:44.247350+00:00"
   }
 ]
