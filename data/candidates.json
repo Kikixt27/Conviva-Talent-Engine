@@ -1195,5 +1195,61 @@
       "top_signal": "Time series forecasting expertise demonstrated via public technical content"
     },
     "first_seen": "2026-08-18T01:18:44.247350+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "10980722",
+    "name": "Shubham Aggarwal",
+    "profile_url": "https://github.com/shubh3794",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong foundational SWE credentials (Staff at LinkedIn AI Infra, CPython contributor, 39 public repos) and Bay Area location (Mountain View) tick location + senior eng level. However, profile lacks concrete evidence of production LLM agent systems, MCP servers, tool-use integrations, evals/tracing, or agentic workflows. No shipped agent projects, failure/fix narratives, or observability patterns visible. GitHub repos not detailed enough to verify agent-production work vs. infrastructure/research.",
+    "signals": {
+      "top_signal": "Senior infrastructure engineer in AI space, but no visible production agent systems or tool-integration work.",
+      "followers": 49,
+      "public_repos": 39,
+      "company": "Linkedin",
+      "location": "Mountain view, California"
+    },
+    "first_seen": "2026-08-19T01:16:13.993529+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "janwilmake",
+    "name": "janwilmake",
+    "profile_url": "https://news.ycombinator.com/user?id=janwilmake",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong direct signal: 'Show HN: Agent-codemode' demonstrates shipped MCP server integration where agent-written scripts call MCP endpoints—exactly the core job requirement. Evidence of production-grade tool-use patterns and MCP expertise is explicit. However, score capped at 78 due to limited corroborating evidence (single HN post, no visible GitHub, production scale/observability/evals details unclear, location/experience years unverified). Not disqualified—this is a real engineer shipping relevant work, not a PM/founder false positive.",
+    "signals": {
+      "top_signal": "Shipped MCP server + agent tool-use integration (Show HN project)"
+    },
+    "first_seen": "2026-08-19T01:16:22.704641+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "pitiflautico",
+    "name": "pitiflautico",
+    "profile_url": "https://news.ycombinator.com/user?id=pitiflautico",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong core signal: NeoBrowser is a shipped MCP server integrating real Chrome automation with agent workflows—directly matching the 'MCP servers, agentic patterns, tool-use' must-haves. Demonstrates production-grade thinking (session management, auth scoping). However, limited public evidence of full end-to-end Python backend services, evals/tracing infrastructure, or scale/observability narrative; single HN project without corroborating work history, team scale, or failure/fix war stories raises confidence ceiling. Profile fits the *builder* archetype but needs validation on depth of production SWE rigor (design→deploy→monitor→iterate) and whether this is hobby/demo vs. sustained production ownership.",
+    "signals": {
+      "top_signal": "Shipped MCP server + Chrome tool-use agent integration; production-adjacent architecture."
+    },
+    "first_seen": "2026-08-19T01:16:28.578131+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "Abhixhek",
+    "name": "Abhixhek",
+    "profile_url": "https://news.ycombinator.com/user?id=Abhixhek",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "Strong technical depth and AI/LLM system understanding demonstrated through thoughtful agent failure analysis and measurement-first approach. However, limited visible evidence of 0→1 product ownership, customer discovery, or full end-to-end shipping track record—appears to be early-stage builder rather than proven principal-level product architect.",
+    "signals": {
+      "top_signal": "Deep LLM/AI systems thinking with measurement-first product instinct"
+    },
+    "first_seen": "2026-08-19T01:17:15.001090+00:00"
   }
 ]
