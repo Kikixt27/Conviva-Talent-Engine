@@ -1251,5 +1251,31 @@
       "top_signal": "Deep LLM/AI systems thinking with measurement-first product instinct"
     },
     "first_seen": "2026-08-19T01:17:15.001090+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "daniele_dll",
+    "name": "daniele_dll",
+    "profile_url": "https://news.ycombinator.com/user?id=daniele_dll",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong production MCP server shipped end-to-end with tool-use optimization, auth/OAuth scoping, and multi-platform agent integration (Claude, ChatGPT). Demonstrates core agentic patterns (tool use, screen parsing, structured interactions) and observability mindset (token optimization). Single HN post limits corroboration of broader SWE depth, production scale, evals rigor, and backend services portfolio—cannot validate full 3–7yr SWE backend track record or cloud/async Python maturity. No disqualifying red flags; genuine production AI connector work.",
+    "signals": {
+      "top_signal": "Shipped MCP server with multi-agent tool-use, OAuth auth, token optimization."
+    },
+    "first_seen": "2026-08-20T01:15:11.809146+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "guyb3",
+    "name": "guyb3",
+    "profile_url": "https://news.ycombinator.com/user?id=guyb3",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal: shipping OSS agent harness with tool integrations (GitHub, Gmail, Notion, Dropbox), human-in-the-loop patterns, and team policy enforcement suggests production agentic systems experience. However, profile is thin—single HN Launch post with no evidence of backend Python services at scale, MCP servers specifically, production observability/evals, or cloud/container deployment. Cannot validate core SWE depth (3–7+ yrs) or failure/fix stories. YC founder pattern and agent harness architecture are positive, but lack corroborating work history, shipping scale, or concrete production incidents.",
+    "signals": {
+      "top_signal": "OSS agent harness w/ tool integrations & human-in-the-loop, but thin on proven backend systems at scale & observability."
+    },
+    "first_seen": "2026-08-20T01:15:29.487596+00:00"
   }
 ]
