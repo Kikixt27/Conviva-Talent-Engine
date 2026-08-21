@@ -1277,5 +1277,44 @@
       "top_signal": "OSS agent harness w/ tool integrations & human-in-the-loop, but thin on proven backend systems at scale & observability."
     },
     "first_seen": "2026-08-20T01:15:29.487596+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "mkvisher",
+    "name": "mkvisher",
+    "profile_url": "https://news.ycombinator.com/user?id=mkvisher",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on MCP server + agent action signing (core requirement), but single HN comment without corroboration of production scale, Python backend services, evals/tracing, or ops experience. No location info, GitHub, or evidence of end-to-end shipping at scale. Meets one critical must-have deeply; insufficient evidence on 5+ other must-haves.",
+    "signals": {
+      "top_signal": "MCP server + agent action instrumentation"
+    },
+    "first_seen": "2026-08-21T01:19:02.185251+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "rat_rad",
+    "name": "rat_rad",
+    "profile_url": "https://news.ycombinator.com/user?id=rat_rad",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong MCP server + agentic patterns evidence (custom global MCP, tool-use design, multi-agent orchestration with Claude/Cursor/Codex). However, no clear production deployment scale story, missing observability/evals/tracing evidence, no geographic/experience-level confirmation, and single HN comment limits verification. Profile shows solid technical depth but lacks concrete shipping + monitoring evidence at production scale.",
+    "signals": {
+      "top_signal": "MCP server + multi-agent orchestration design"
+    },
+    "first_seen": "2026-08-21T01:19:04.611974+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "sanspareilsmyn",
+    "name": "sanspareilsmyn",
+    "profile_url": "https://news.ycombinator.com/user?id=sanspareilsmyn",
+    "role": "Senior Data Scientist",
+    "score": 68,
+    "reasoning": "Strong signal on MLOps + real-time ML monitoring + feature pipeline quality (exact Conviva domain), but profile is a single HN Show thread with no corroborating evidence of: degree (MS/PhD), 5+ years applied ML track record, production deployment scale, Python proficiency, or hands-on data science depth beyond tooling. FeatureLens demonstrates relevant problem understanding and systems thinking, but lacks evidence of statistical modeling, traditional ML, time series forecasting, or large-scale data systems (Ray/Spark). Promising trajectory but insufficient validation for senior-level placement without deeper background check.",
+    "signals": {
+      "top_signal": "MLOps + real-time feature pipeline monitoring + alerting = domain fit; weak evidence of production ML depth & credentials."
+    },
+    "first_seen": "2026-08-21T01:22:35.954242+00:00"
   }
 ]
