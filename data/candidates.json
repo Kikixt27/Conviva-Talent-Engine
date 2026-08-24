@@ -1316,5 +1316,31 @@
       "top_signal": "MLOps + real-time feature pipeline monitoring + alerting = domain fit; weak evidence of production ML depth & credentials."
     },
     "first_seen": "2026-08-21T01:22:35.954242+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "hashhar",
+    "name": "hashhar",
+    "profile_url": "https://news.ycombinator.com/user?id=hashhar",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong production MCP server signal (Henka multi-tenant refactoring tool) demonstrates core requirement of building AI connectors at scale with tool-use patterns. Python backend + systems thinking evident, but limited corroborating evidence of LLM agents in production, evals/tracing setup, or behavioral data domain experience; HN handle alone insufficient without verifying shipping scale, observability rigor, and agentic workflow depth.",
+    "signals": {
+      "top_signal": "Production MCP server + multi-tenant architecture"
+    },
+    "first_seen": "2026-08-24T01:18:47.114825+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "forrestly",
+    "name": "forrestly",
+    "profile_url": "https://news.ycombinator.com/user?id=forrestly",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong production signal: shipping observability tooling (AgentSight with eBPF) for AI agents demonstrates hands-on systems engineering and agent monitoring expertise—a core bonus area. However, limited profile depth on HN alone; no corroborated evidence of MCP servers, production agent failures/fixes, evals, or full agentic workflow ownership. Must validate backend SWE depth, Python services end-to-end (design→deploy→monitor), and whether observability work included building agent connectors/tool-use systems vs. instrumentation-only.",
+    "signals": {
+      "top_signal": "Production eBPF observability for AI agents; systems-level thinking on agent monitoring."
+    },
+    "first_seen": "2026-08-24T01:18:57.616584+00:00"
   }
 ]
