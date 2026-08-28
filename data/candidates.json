@@ -1355,5 +1355,44 @@
       "top_signal": "MCP server builder + production cloud agents with real tool integrations (code search, Sentry, PR automation)"
     },
     "first_seen": "2026-08-26T01:19:33.868605+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "s1lv1up",
+    "name": "s1lv1up",
+    "profile_url": "https://news.ycombinator.com/user?id=s1lv1up",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on MCP servers (core requirement) and demonstrates hands-on tooling work, but profile lacks concrete evidence of production agent systems, evals/tracing implementation, and full backend service ownership at scale. Single HN story insufficient to validate 3–7+ yrs production SWE depth or agent failure/fix narratives.",
+    "signals": {
+      "top_signal": "MCP server expertise + infrastructure thinking"
+    },
+    "first_seen": "2026-08-28T09:57:10.907132+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "yesplease_boats",
+    "name": "yesplease_boats",
+    "profile_url": "https://news.ycombinator.com/user?id=yesplease_boats",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal: shipped MCP server in production with real-world use (mail aggregation), demonstrating tool-use and agentic patterns. However, profile lacks evidence of Python backend services at scale, production agent failure/fix stories, evals/tracing, cloud deployment, or async patterns. Single HN project insufficient to validate full SWE foundation (3–7+ yrs, design→deploy→monitor). Location unknown. Likely builder/hobbyist rather than production AI engineer.",
+    "signals": {
+      "top_signal": "MCP server shipped + tool-use pattern"
+    },
+    "first_seen": "2026-08-28T09:57:16.163142+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "smartwordworld",
+    "name": "smartwordworld",
+    "profile_url": "https://news.ycombinator.com/user?id=smartwordworld",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on evals + observability (built config-drift-checker to validate agent behavior across Claude upgrades using Anthropic eval format), demonstrating production-mindset testing rigor. However, profile is thin: single HN comment with no evidence of Python backend services, MCP servers, tool-use connectors, multi-agent orchestration, or shipped production systems at scale. Evals alone do not meet the 'production AI Engineer' bar without concrete shipping + infrastructure evidence.",
+    "signals": {
+      "top_signal": "Evals-first thinking + agent drift detection"
+    },
+    "first_seen": "2026-08-28T09:57:26.045867+00:00"
   }
 ]
