@@ -1407,5 +1407,22 @@
       "top_signal": "MCP servers + agent skills security tooling = direct role alignment"
     },
     "first_seen": "2026-08-31T04:04:55.489601+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "86072094",
+    "name": "Lasya Pamarthi",
+    "profile_url": "https://github.com/plasya",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong technical foundation: Python, LangGraph, AWS, and distributed systems align with core requirements. However, profile lacks concrete evidence of production LLM agents with failure/fix narratives, MCP server implementations, evals+tracing setup, or end-to-end shipped systems. SYFT role and public repos need verification for actual agentic patterns and tool-use in production; current signals are promising but incomplete for a 'production AI Engineer' bar.",
+    "signals": {
+      "top_signal": "LangGraph + Python + AWS stack; needs proof of production agents & MCP work",
+      "followers": 2,
+      "public_repos": 8,
+      "company": "SYFT",
+      "location": "California, United States"
+    },
+    "first_seen": "2026-09-01T03:53:11.411548+00:00"
   }
 ]
