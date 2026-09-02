@@ -621,15 +621,17 @@ const ROLES=[
 const ROLE_JD_PRESETS={
   ai_engineer_dpi:`AI Engineer, Agent Analytics & Optimization (DPI) — Foster City, US
 
-PRIORITY: production engineering for AI agents on Conviva behavioral data — MCP servers, agentic workflows, AI connectors. Own build + runtime at scale. NOT Product Builder (roadmap/discovery). NOT research. NOT prompt-engineering-only.
+PRIORITY: production engineering for agent flow / agent systems / agent observability on Conviva behavioral data. Own build + runtime at scale. NOT Product Builder (roadmap/discovery). NOT research. NOT prompt-engineering-only.
+
+PEDIGREE: Yan bar — top school (MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke) required for 70+. GitHub rarely has school → if missing, score ≤60 + flag school unverified (LinkedIn check). Bay Area/US required; Nigeria/India hard-filtered; other non-US ≤30. MCP+LangGraph alone ≠ high score.
 
 Build & Ship: MCP servers (auth, scoping, access control); multi-step agentic workflows (tool use, orchestration, human-in-the-loop); AI connectors to external agents/clients; full lifecycle API/tool design → deploy → monitor → harden.
 
-Reliability: evals before ship + regression debugging; observability/tracing (Langfuse, LangSmith, OpenTelemetry); tune latency/cost/reliability as models drift.
+Reliability: offline + online evals; regression debugging; observability/tracing (Langfuse, LangSmith, Arize Phoenix, Helicone, W&B Weave, OpenTelemetry gen_ai.*); tune latency/cost/reliability as models drift.
 
-Must have: 3–7+ yrs SWE; strong Python backend; LLM agents IN PRODUCTION with war stories; MCP or equivalent tool-use integrations; evals; GCP/AWS + containers + async Python.
+Must have: 3–7+ yrs SWE; strong Python backend; LLM agents IN PRODUCTION with war stories; MCP or equivalent tool-use; evals (prefer online / LLM-as-judge in prod); GCP/AWS + containers + async Python.
 
-Bonus: LangGraph, Anthropic SDK, Pydantic-AI, CrewAI; agent observability; digital analytics/APM; LLM-ops; OSS/talks at eng∩AI.
+Bonus: LangGraph, Anthropic SDK, Pydantic-AI, CrewAI; OSS contributions to Langfuse/Phoenix/RAGAS/DeepEval/Helicone/Weave; digital analytics/APM; LLM-ops.
 
 Salary: $180,000–$250,000 + equity.`,
   senior_ds:`Senior Data Scientist — Foster City, US
@@ -748,6 +750,48 @@ function isGTMRole(role){
 // ════════════════════════════════════════════════════════
 let activeRole=null,stopped=false,candidates=[],sortKey='score',sortAsc=false,activeFilter='all';
 let generatedClusters=[],generatedRepos=[],generatedQueries=[],generatedSearches={};
+
+// Yan's AI Engineer sourcing: each tool ≈ one public repo; contributors = production agent/eval talent.
+// Scarcity: 89% have agent obs (common) · 52% offline evals · 37% online evals (target) · 29% no eval (skip).
+const AGENT_OBS_SEED_REPOS=[
+  'langfuse/langfuse',
+  'langchain-ai/langsmith-sdk',
+  'Arize-ai/phoenix',
+  'mlflow/mlflow',
+  'helicone/helicone',
+  'wandb/weave',
+  'explodinggradients/ragas',
+  'confident-ai/deepeval',
+  'open-telemetry/semantic-conventions',
+  'modelcontextprotocol/python-sdk',
+];
+const AGENT_OBS_SEED_QUERIES=[
+  'online evaluation LLM',
+  'LLM observability',
+  'agent tracing',
+  'OpenTelemetry gen_ai',
+  'RAGAS evaluation',
+  'DeepEval',
+  'Langfuse',
+  'agent eval production',
+];
+function isAgentEngineerRole(role){
+  const id=role?.id||'';
+  const label=(role?.label||'').toLowerCase();
+  return id==='ai_engineer_dpi'||label.includes('ai engineer');
+}
+function mergeAgentObsSeeds(repos,queries){
+  if(!isAgentEngineerRole(activeRole))return{repos:repos||[],queries:queries||[]};
+  const mergeUnique=(seed,extra)=>{
+    const out=[];
+    for(const item of [...seed,...(extra||[])]){
+      const k=String(item||'').trim();
+      if(k&&!out.some(x=>x.toLowerCase()===k.toLowerCase()))out.push(k);
+    }
+    return out;
+  };
+  return{repos:mergeUnique(AGENT_OBS_SEED_REPOS,repos).slice(0,14),queries:mergeUnique(AGENT_OBS_SEED_QUERIES,queries).slice(0,10)};
+}
 let tagsMode='unified';
 
 // ── PERSISTENCE (localStorage) ──
@@ -1053,13 +1097,25 @@ async function processTags(){
   const isDataScientist=roleId==='senior_ds'||(activeRole?.label||'').toLowerCase().includes('data scientist');
   const isTechLead=roleId==='bj_tech_lead'||(activeRole?.label||'').toLowerCase().includes('tech lead');
   const isProductBuilder=(activeRole?.label||'').toLowerCase().includes('product builder')||roleId==='bj_pb'||roleId==='product_builder';
-  const strategyLens=isAgentEngineer?`### CORE STRATEGY: AI ENGINEER / AGENT PLATFORM LENS
-This is a production engineering role — NOT Product Builder (no roadmap/discovery ownership) and NOT prompt-engineering-only.
-Prioritize candidates who show evidence of:
-- MCP servers or tool-use APIs shipped in production (auth, scoping, access control)
-- Agentic workflows: multi-step reasoning, orchestration, human-in-the-loop
-- Evals + observability/tracing for agent behavior (Langfuse, LangSmith, OpenTelemetry)
-- Python backend services deployed on GCP/AWS with war stories of what broke in prod`:
+  const strategyLens=isAgentEngineer?`### CORE STRATEGY: AI ENGINEER / AGENT OBSERVABILITY LENS
+Production engineering for agent flow, agent systems, and agent observability — NOT Product Builder, NOT prompt-engineering-only.
+Yan’s thesis: each production LLM-obs/eval tool name = one public GitHub repo; contributors to those repos are the target pool. GitHub contributor mining is extremely high-value.
+
+ALWAYS put these repos FIRST in github_repos (real public repos — do not invent others ahead of this list):
+langfuse/langfuse, langchain-ai/langsmith-sdk, Arize-ai/phoenix, mlflow/mlflow, helicone/helicone, wandb/weave, explodinggradients/ragas, confident-ai/deepeval, open-telemetry/semantic-conventions, modelcontextprotocol/python-sdk
+
+SCARCITY TIERS — encode into scoring_dimensions + prefer as github_queries:
+- EXTREMELY SCARCE (top 37% — PRIORITIZE): online evals, LLM-as-judge in production, OpenTelemetry gen_ai.* spans, OTel GenAI semantic conventions
+- SCARCE (top 52%): RAGAS, DeepEval, LangSmith evals, offline eval rigor
+- COMMON: LangGraph, agent tracing, MCP, Langfuse usage
+- TOO BROAD (never primary query/tag): LLM, AI, ChatGPT
+- SKIP: no eval practice (≈29% of market)
+
+Prioritize evidence of:
+- Agent flows / multi-agent systems shipped in production with failure/fix war stories
+- Online + offline evals; obs/tracing (Langfuse, Phoenix, Helicone, Weave, OTel)
+- MCP or tool-use APIs in production (auth, scoping, access control)
+- Python backend services on GCP/AWS`:
   isDataScientist?`### CORE STRATEGY: SENIOR DATA SCIENTIST LENS
 Prioritize candidates who show evidence of:
 - ML shipped to production: traditional ML + deep learning as the problem demands
@@ -1104,9 +1160,10 @@ ${strategyLens}
 
 3. GITHUB QUERIES — "Inverse Mapping":
    - DO NOT use job titles or generic keywords
-   - Combine 1 Tech Stack + 1 Action word: e.g. "FastAPI shipped", "LangGraph production"
-   - Combine 1 Domain + 1 Evidence word: e.g. "agent eval roadmap", "RAG metrics deployed"
+   - Combine 1 Tech Stack + 1 Action word: e.g. "FastAPI shipped", "online evaluation"
+   - Combine 1 Domain + 1 Evidence word: e.g. "agent tracing production", "RAGAS evaluation"
    - NO location: filter (breaks GitHub search), MAX 2 keywords per query
+   - Prefer scarce fingerprints: online evals / gen_ai / OTel GenAI over vague "LLM agent"
    - For CN roles: use Chinese tech company alumni signals (字节跳动, 阿里, 百度) as context in xray_searches, NOT in github_queries
    - For CN roles: GitHub queries should use English technical fingerprints only (CN devs publish in English on GitHub)
 
@@ -1136,8 +1193,8 @@ Return JSON only (no markdown, no code block):
   ],
   "must_have": ["<10 words max — e.g. '5yr+ PM in SaaS analytics' not a sentence>"],
   "nice_have": ["<10 words max>"],
-  "github_repos": ["owner/repo — REAL public repos only, [] if GTM/GA role"],
-  "github_queries": ["max 2 keywords per query — NO location: filter — e.g. 'LLM observability' or 'founding product manager'"],
+  "github_repos": ["owner/repo — REAL public repos only, [] if GTM/GA role — for AI Engineer prefer langfuse/langfuse, Arize-ai/phoenix, confident-ai/deepeval, explodinggradients/ragas, helicone/helicone, wandb/weave, mlflow/mlflow, modelcontextprotocol/python-sdk first"],
+  "github_queries": ["max 2 keywords per query — NO location: filter — e.g. 'online evaluation' or 'LLM observability' — avoid bare LLM/AI/ChatGPT"],
   "xray_searches": [
     {"platform":"LinkedIn","desc":"inverse-mapped role synonym + company archetype","q":"site:linkedin.com/in 'Founding Engineer' OR 'Product Engineer' '0 to 1'","region":"US|CN|IN"},
     {"platform":"Read.cv","desc":"builders who document shipped work","q":"site:read.cv 'product builder' 'shipped'","region":"Global"},
@@ -1147,10 +1204,10 @@ Return JSON only (no markdown, no code block):
   "gsi_partners": [],
   "strict_filter": "<disqualifier — e.g. Pure engineer without product ownership = disqualified. For CN roles: candidate not based in Beijing/Shanghai/China = disqualified>",
   "scoring_dimensions": {
-    "sig1_name": "<primary signal name, e.g. 'Alliance Signal'>",
-    "sig1_desc": "<what sig1=true means>",
-    "sig2_name": "<secondary signal name>",
-    "sig2_desc": "<what sig2=true means>"
+    "sig1_name": "<primary signal name — for AI Engineer use 'Production Agents'>",
+    "sig1_desc": "<what sig1=true means — for AI Engineer: shipped agent flow/system in production>",
+    "sig2_name": "<secondary signal name — for AI Engineer use 'Online Eval / Agent Obs'>",
+    "sig2_desc": "<what sig2=true means — for AI Engineer: online evals / gen_ai spans / RAGAS-DeepEval / Langfuse-Phoenix>"
   },
   "outreach_hook": "<unique icebreaker referencing GP career trajectory — e.g. Your track record of shipping 0→1 data products combined with...>",
   "strategy_insight": {
@@ -1165,8 +1222,9 @@ Return JSON only (no markdown, no code block):
     const raw=await claudeCall(prompt,3000);
     const res=JSON.parse(raw.replace(/```json|```/g,'').trim());
     generatedClusters=res.clusters||[];
-    generatedRepos=res.github_repos||[];
-    generatedQueries=res.github_queries||[];
+    const seeded=mergeAgentObsSeeds(res.github_repos||[],res.github_queries||[]);
+    generatedRepos=seeded.repos;
+    generatedQueries=seeded.queries;
     // Handle both old li_searches and new xray_searches format
     const xray=res.xray_searches||[];
     const liSearches=xray.filter(x=>x.platform==='LinkedIn'||x.platform==='linkedin').concat(res.li_searches||[]);
@@ -1870,8 +1928,13 @@ function buildScoringPrompt(profileText,name,ch){
   const strict=role._strictFilter||'';
   const isGTM=role.type==='GTM';
   const isGA=role.type==='GA';
+  const isAgentEng=isAgentEngineerRole(role);
   const locRule=role.region==='CN'?'\nLOCATION RULE: Role is Beijing on-site. Candidates WITHOUT Beijing/Shanghai/China in self-reported location = location_match:"unknown", score CAPPED at 45 regardless of skills.\n':
     role.region==='IN'?'\nLOCATION RULE: Role is Bengaluru on-site. Candidates without India location = score capped at 45.\n':'';
+  const sig1Name=sc.sig1_name||(isAgentEng?'Production Agents':'Primary Signal');
+  const sig1Desc=sc.sig1_desc||(isAgentEng?'Shipped agent flow/system in production with war stories':'Primary qualification signal');
+  const sig2Name=sc.sig2_name||(isAgentEng?'Online Eval / Agent Obs':'Secondary Signal');
+  const sig2Desc=sc.sig2_desc||(isAgentEng?'Online evals / LLM-as-judge in prod / gen_ai.* OTel (top 37%); RAGAS/DeepEval/LangSmith evals (top 52%)':'Secondary qualification signal');
   return`Senior recruiter at Conviva. Score this candidate 0-100. Be evidence-based, transparent about gaps.
 ${locRule}
 ROLE: ${role.label} · ${role.dept} · ${role.office} (on-site)
@@ -1884,11 +1947,13 @@ SKILL CLUSTERS:
 ${clusters}
 
 SIGNALS TO CHECK:
-sig1 (${sc.sig1_name||'Primary Signal'}): ${sc.sig1_desc||'Primary qualification signal'}
-sig2 (${sc.sig2_name||'Secondary Signal'}): ${sc.sig2_desc||'Secondary qualification signal'}
+sig1 (${sig1Name}): ${sig1Desc}
+sig2 (${sig2Name}): ${sig2Desc}
 
 ${isGTM?`GTM RULES: sig1=true ONLY if verifiable revenue-producing partnership OR alliance experience with named companies. sig2=true ONLY if C-level/SVP external relationship management proven.`:''}
 ${isGA?`G&A RULES: sig1=true if direct domain experience in ${role.dept}. sig2=true if industry/sector knowledge matches.`:''}
+${isAgentEng?`AI ENGINEER RULES: Prefer production agent flow/system + observability/evals. Scarcity: online evals / gen_ai spans = top 37% (boost); RAGAS/DeepEval = top 52%; LangGraph/MCP/tracing = common; bare LLM/AI/ChatGPT = ignore as primary; no eval practice = skip/cap. Pure PM or demo-only agents = 40 MAX.
+PEDIGREE: Top school (MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke) required for 70+. If no school evidence → school_unverified=true, score CAP 60, flag LinkedIn school verification. MCP+LangGraph alone cannot push past 60 without school. Non-US (Nigeria/India/etc) → CAP 30.`:`SCHOOL RULE (all roles): If no top-school evidence in profile → school_unverified=true, score CAP 65, flag for manual LinkedIn verification. Do not reject solely for missing school — GitHub/HN rarely include education.`}
 
 CANDIDATE (from ${ch}):
 ${profileText.slice(0,3000)}
@@ -2001,12 +2066,18 @@ ${clusterSummary}
 TECHNIQUE 1 — Technical Fingerprinting (GitHub queries):
 - Use expert-only niche terms, NOT job titles
 - MAX 2 keywords per query, NO location: filter
-- Good: "LangGraph production", "multi-agent orchestration", "founding engineer shipped"
-- Bad: "product manager AI", "software engineer Python location:China"
-
+- Good: "online evaluation", "LLM observability", "OpenTelemetry gen_ai", "RAGAS evaluation", "agent tracing"
+- Bad: "AI engineer", "LLM", "ChatGPT", "software engineer Python location:China"
+${isAgentEngineerRole(role)?`
+TECHNIQUE 1b — Agent observability repo mining (REQUIRED for this role):
+Put these owner/repo FIRST in github_repos (contributors = production agent/eval engineers):
+langfuse/langfuse, langchain-ai/langsmith-sdk, Arize-ai/phoenix, mlflow/mlflow, helicone/helicone, wandb/weave, explodinggradients/ragas, confident-ai/deepeval, open-telemetry/semantic-conventions, modelcontextprotocol/python-sdk
+Prefer queries hitting scarce signals: online evals (top 37%), RAGAS/DeepEval (top 52%). Avoid vague LLM/AI.
+`:''}
 TECHNIQUE 2 — Inverse Mapping (LinkedIn X-Ray):
 - Instead of searching job titles, search by Company Archetypes + Role Synonyms
 - e.g. for Product Builder: use \`"Founding Engineer" OR "Product Engineer"\` + \`"0 to 1"\`
+- e.g. for AI Engineer: use \`"ML Engineer" OR "LLM Engineer" OR "AI Platform"\` + \`"observability" OR "evals"\`
 - e.g. for Partnerships: use \`"Alliance Director" OR "Channel Chief"\` + \`"GSI"\`
 - Include industry context (e.g. "high-concurrency" or "e-commerce" for TikTok-type companies)
 - Vary regions: US (Foster City/Bay Area), CN (Beijing/Shanghai), IN (Bengaluru) as applicable for ${role?.region}
@@ -2020,8 +2091,9 @@ Return JSON only (no markdown):
   try{
     const raw=await claudeCall(prompt,1500);
     const res=JSON.parse(raw.replace(/```json|```/g,'').trim());
-    generatedRepos=res.github_repos||[];
-    generatedQueries=res.github_queries||[];
+    const seeded=mergeAgentObsSeeds(res.github_repos||[],res.github_queries||[]);
+    generatedRepos=seeded.repos;
+    generatedQueries=seeded.queries;
     generatedSearches.li=res.li_searches||[];
     generatedSearches.competitors=res.competitor_companies||[];
     generatedSearches.gsi=res.gsi_partners||[];
@@ -2107,20 +2179,29 @@ async function scoreGHCandidate(c){
     CN:['beijing','北京','shanghai','上海','shenzhen','深圳','china','中国','hangzhou'],
     IN:['bengaluru','bangalore','india','hyderabad','pune','mumbai','chennai'],
   };
+  const EXCLUDED_LOCATIONS=['nigeria','lagos','abuja','india','bangalore','bengaluru','delhi','hyderabad','pune','mumbai','chennai','kolkata','pakistan','bangladesh','kenya','ghana','egypt','indonesia','philippines','vietnam'];
+  const TOP_SCHOOLS=['mit','stanford','cmu','carnegie mellon','berkeley','ucla','cornell','uiuc','university of illinois','university of michigan','umich','duke'];
   const cLoc=(c.location||'').toLowerCase();
+  const excludedTok=EXCLUDED_LOCATIONS.find(t=>cLoc.includes(t));
+  if((role.region||'US')==='US'&&excludedTok){
+    return{score:0,sig1:false,sig2:false,location_match:'unknown',location_found:c.location||'?',matched_clusters:[],reason:'Hard filter: excluded location ('+excludedTok+') — not US/Bay Area target.',dealbreakers:['excluded location: '+excludedTok],outreach_angle:'',school_unverified:true,flags:['excluded location']};
+  }
   const regionHints=LOC_HINTS[role.region||'US']||LOC_HINTS.US;
   const locMatch=!cLoc?'unknown':regionHints.some(h=>cLoc.includes(h))?'strong':
     Object.values(LOC_HINTS).flat().some(h=>cLoc.includes(h))?'possible':'unknown';
 
   // Fix 2: Role-specific signal dimensions — don't inherit from previous role
-  const sig1Name=sc.sig1_name||(isGTM?'Alliance Signal':isGA?'Domain Signal':'Product Ownership');
-  const sig2Name=sc.sig2_name||(isGTM?'Exec Relationship':isGA?'Industry Signal':'AI Builder Signal');
-  const sig1Desc=sc.sig1_desc||(isRND?'0 to 1 shipped PRODUCT ownership — PM title OR founding product role OR documented roadmap ownership. Engineering contributions alone = false.':isGTM?'Revenue-producing alliance with named GSI or hyperscaler':'Direct domain expertise in '+role.dept);
-  const sig2Desc=sc.sig2_desc||(isRND?'Expert-level niche AI fingerprint in production: LangGraph/DSPy/RAG eval/LLMOps — not tutorial or academic':'Secondary domain signal');
+  const isAgentEng=isAgentEngineerRole(role);
+  const sig1Name=sc.sig1_name||(isGTM?'Alliance Signal':isGA?'Domain Signal':isAgentEng?'Production Agents':'Product Ownership');
+  const sig2Name=sc.sig2_name||(isGTM?'Exec Relationship':isGA?'Industry Signal':isAgentEng?'Online Eval / Agent Obs':'AI Builder Signal');
+  const sig1Desc=sc.sig1_desc||(isAgentEng?'Shipped agent flow / agent system IN PRODUCTION with concrete failure/fix stories. MCP/tool-use or multi-agent orchestration. Demos/tutorials alone = false.':isRND?'0 to 1 shipped PRODUCT ownership — PM title OR founding product role OR documented roadmap ownership. Engineering contributions alone = false.':isGTM?'Revenue-producing alliance with named GSI or hyperscaler':'Direct domain expertise in '+role.dept);
+  const sig2Desc=sc.sig2_desc||(isAgentEng?'Agent observability or evals in production. PRIORITIZE (top 37%): online evals, LLM-as-judge in prod, gen_ai.* spans / OTel GenAI. SCARCE (top 52%): RAGAS, DeepEval, LangSmith evals. COMMON: LangGraph tracing, MCP, Langfuse usage. Ignore vague LLM/AI/ChatGPT as primary evidence.':isRND?'Expert-level niche AI fingerprint in production: LangGraph/DSPy/RAG eval/LLMOps — not tutorial or academic':'Secondary domain signal');
 
   // Fix 3: PM disqualifier rule
   const pmRule=isRND&&(role.label||'').toLowerCase().match(/product|pm |builder|manager/)?
     'HARD RULE: This is a PRODUCT role. Pure engineers without PM ownership = 40 pts MAX. "Sole architect" or "built the system" = ENGINEER not PM. Requires product roadmap ownership or founding PM evidence to exceed 40.':'';
+  const agentRule=isAgentEng?
+    'HARD RULE: This is a PRODUCTION AI ENGINEER role (agent flow / agent system / agent observability). Pure PM or Product Builder without shipping agents = 40 pts MAX. Tutorial/demo-only agents = 40 pts MAX. No eval or observability evidence = cap at 55. Online evals / LLM-as-judge in production / gen_ai.* OTel = strong uplift toward 80+. SCHOOL: MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke required for 70+. If no top-school evidence in bio → set school_unverified=true, score CAP 60, flag for LinkedIn school verification. MCP+LangGraph alone = COMMON — never 70+ without school or strong prod eval/obs + US location. Non-US location (Nigeria/India/etc) → score CAP 30.':'';
 
   // Fix 4: README is supporting evidence only — cannot drive score above 50 alone
   const readmeSigs=(c.sigs||[]).filter(s=>s.startsWith('readme:'));
@@ -2129,7 +2210,7 @@ async function scoreGHCandidate(c){
   const clusters=generatedClusters.map(cl=>`${cl.name}(w:${cl.weight}): must=[${(cl.must_tags||[]).slice(0,4).join(',')}]`).join(' | ');
   const must=(role._mustHave||[]).slice(0,4).join('; ');
 
-  const prompt='Senior recruiter at Conviva. Score this GitHub candidate STRICTLY.\n\nROLE: '+role.label+' ('+type+') | '+role.dept+' | '+role.office+'\nMUST-HAVE: '+(must||'see clusters')+'\nCLUSTERS: '+clusters+'\n'+(role._strictFilter?'DISQUALIFIER: '+role._strictFilter+'\n':'')+pmRule+'\n\nCANDIDATE:\n- Name: '+c.name+'\n- Self-reported location: "'+cLoc+'" <- USE ONLY THIS for location_match\n- Company: '+(c.company||'unknown')+'\n- Bio: '+(c.bio||'n/a').slice(0,200)+'\n- Signals: '+(c.sigs||[]).slice(0,6).join(', ')+'\n- Owned repos: '+(c.owned_repos||0)+' | Cross-stack: '+((c.cross_stack||[]).join('+')||'none')+'\n'+(readmeNote?readmeNote+'\n':'')+'\nSCORING:\n- sig1='+sig1Name+': '+sig1Desc+'\n- sig2='+sig2Name+': '+sig2Desc+'\n- 80-100: strong on must-have AND sig1\n- 60-79: strong on sig1 OR most must-have\n- 40-59: partial, notable gaps\n- <40: missing critical req or hard disqualifier\n\nReturn JSON only:\n{"score":<int>,"sig1":<bool>,"sig2":<bool>,"matched_clusters":["name"],"reason":"<2 evidence sentences>","dealbreakers":["if any"],"outreach_angle":"<1 sentence or empty>"}';
+  const prompt='Senior recruiter at Conviva. Score this GitHub candidate STRICTLY.\n\nROLE: '+role.label+' ('+type+') | '+role.dept+' | '+role.office+'\nMUST-HAVE: '+(must||'see clusters')+'\nCLUSTERS: '+clusters+'\n'+(role._strictFilter?'DISQUALIFIER: '+role._strictFilter+'\n':'')+pmRule+agentRule+'\n\nCANDIDATE:\n- Name: '+c.name+'\n- Self-reported location: "'+cLoc+'" <- USE ONLY THIS for location_match\n- Company: '+(c.company||'unknown')+'\n- Bio: '+(c.bio||'n/a').slice(0,200)+'\n- Signals: '+(c.sigs||[]).slice(0,6).join(', ')+'\n- Owned repos: '+(c.owned_repos||0)+' | Cross-stack: '+((c.cross_stack||[]).join('+')||'none')+'\n- Sourced from: '+(c.src||'n/a')+'\n'+(readmeNote?readmeNote+'\n':'')+'\nSCORING:\n- sig1='+sig1Name+': '+sig1Desc+'\n- sig2='+sig2Name+': '+sig2Desc+'\n- 80-100: strong on must-have AND sig1 AND (top school OR already LinkedIn-verified pedigree)\n- 60-79: strong on sig1 OR most must-have; school_unverified candidates MUST stay ≤60\n- 40-59: partial, notable gaps\n- <40: missing critical req or hard disqualifier\n\nReturn JSON only:\n{"score":<int>,"sig1":<bool>,"sig2":<bool>,"matched_clusters":["name"],"reason":"<2 evidence sentences>","dealbreakers":["if any"],"outreach_angle":"<1 sentence or empty>","school_unverified":<bool>,"flags":["school unverified"|...]}';
 
   try{
     const raw=await haikuCall(prompt,800);
@@ -2142,9 +2223,31 @@ async function scoreGHCandidate(c){
       if(!res.dealbreakers)res.dealbreakers=[];
       if(locMatch==='unknown')res.dealbreakers.push('Location not confirmed for on-site '+role.office+' role');
     }
+    // Deterministic school / US-location caps (GitHub rarely has school — cap, don't reject)
+    const profileBlob=((c.bio||'')+' '+(c.company||'')+' '+(c.name||'')).toLowerCase();
+    const hasSchool=TOP_SCHOOLS.some(s=>{
+      if(s.length<=4)return new RegExp('(?:^|[^a-z])'+s+'(?:[^a-z]|$)').test(profileBlob);
+      return profileBlob.includes(s);
+    });
+    res.school_unverified=!hasSchool;
+    res.flags=Array.isArray(res.flags)?res.flags:[];
+    if(res.school_unverified){
+      const schoolCap=isAgentEng?60:65;
+      res.score=Math.min(Number(res.score)||0,schoolCap);
+      if(!res.flags.some(f=>String(f).toLowerCase().includes('school')))res.flags.push('school unverified');
+      if(!res.flags.some(f=>String(f).toLowerCase().includes('linkedin')))res.flags.push('linkedin verify school');
+      if(res.reason&&!/school unverified|linkedin/i.test(res.reason))res.reason+=' Flag: school unverified — verify pedigree on LinkedIn before outreach.';
+    }
+    if((role.region||'US')==='US'&&cLoc&&locMatch!=='strong'){
+      const foreign=['nigeria','lagos','india','london','uk','berlin','toronto','singapore','sydney','europe'];
+      if(foreign.some(x=>cLoc.includes(x))){
+        res.score=Math.min(Number(res.score)||0,30);
+        res.flags.push('non-us location');
+      }
+    }
     return res;
   }catch(e){
-    return{score:0,sig1:false,sig2:false,location_match:locMatch,location_found:c.location||'?',matched_clusters:[],reason:'Score failed: '+e.message,dealbreakers:[],outreach_angle:''};
+    return{score:0,sig1:false,sig2:false,location_match:locMatch,location_found:c.location||'?',matched_clusters:[],reason:'Score failed: '+e.message,dealbreakers:[],outreach_angle:'',school_unverified:true,flags:[]};
   }
 }
 

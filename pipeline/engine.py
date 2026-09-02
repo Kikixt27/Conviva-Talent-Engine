@@ -13,6 +13,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import re
 import sys
 import time
 from dataclasses import dataclass, field, asdict
@@ -23,10 +24,13 @@ from typing import Any, Iterable
 import requests
 
 from pipeline.utils import (
+    enrich_github_user,
     fetch_owned_repos_preview,
+    fetch_repo_contributors,
     github_auth_headers,
     hard_filter_github,
     hard_filter_hackernews,
+    location_blob_excluded,
 )
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -345,19 +349,39 @@ def score_candidate(
     profile_blob: str,
     *,
     feedback_tail: str = "",
+    location: str | None = None,
 ) -> dict[str, Any] | None:
-    """Ask the configured LLM to rate this candidate from 0-100."""
+    """Ask the configured LLM to rate this candidate from 0-100.
+
+    Also applies deterministic caps from `scoring_notes` / pedigree rules:
+    - no top-school evidence → school_unverified, score capped (60 for AI Eng notes, else 65)
+    - US-focused roles + clearly non-US location → score capped at 30
+    """
+
+    scoring_notes = (role.get("scoring_notes") or "").strip()
+    notes_block = f"\nScoring notes (mandatory caps):\n{scoring_notes}\n" if scoring_notes else ""
 
     prompt = (
         "You are a senior technical recruiter at Conviva. Score this candidate "
         f"for the role '{role['title']}' from 0 to 100 based on the profile.\n\n"
         f"Role requirements:\n{role.get('requirements', '')}\n"
+        f"{notes_block}"
         f"{feedback_tail}\n"
         f"Candidate profile:\n{profile_blob}\n\n"
         "Be conservative: weak evidence (e.g. a single HN comment without corroboration) "
         "should not score above 75 unless requirements are clearly met.\n\n"
+        "SCHOOL / PEDIGREE (GitHub rarely has this — do not invent):\n"
+        "- Top schools for US priority roles: MIT, Stanford, CMU, Berkeley, UCLA, Cornell, "
+        "UIUC, Michigan, Duke (explicit mention in bio/company/education text only).\n"
+        "- If NO top-school evidence is present → set school_unverified=true and do not "
+        "score above 65 (or the lower cap in scoring_notes if specified). Flag for manual "
+        "LinkedIn school verification in reasoning. Do NOT reject solely for missing school.\n"
+        "- MCP/LangGraph/stack fingerprints alone must NOT push school-unverified candidates "
+        "into the 70+ band.\n\n"
         "Respond ONLY with a JSON object with keys: score (int 0-100), "
-        "reasoning (1-2 sentences), top_signal (one short phrase)."
+        "reasoning (1-2 sentences), top_signal (one short phrase), "
+        "school_unverified (bool), flags (array of short strings, e.g. "
+        "[\"school unverified\", \"linkedin verify school\"])."
     )
 
     providers = []
@@ -369,10 +393,127 @@ def score_candidate(
     for name, fn in providers:
         result = fn(prompt)
         if result and "score" in result:
-            log.info("Scored via %s: %s", name, result["score"])
+            result = apply_score_caps(role, result, location=location, profile_blob=profile_blob)
+            log.info(
+                "Scored via %s: %s (school_unverified=%s)",
+                name,
+                result["score"],
+                result.get("school_unverified"),
+            )
             return result
     log.warning("No AI provider returned a valid score — skipping candidate")
     return None
+
+
+_TOP_SCHOOL_TOKENS = (
+    "massachusetts institute of technology",
+    "stanford",
+    "carnegie mellon",
+    "uc berkeley",
+    "ucla",
+    "cornell",
+    "uiuc",
+    "university of illinois",
+    "university of michigan",
+    "u michigan",
+    "umich",
+    "duke university",
+    " duke",
+)
+
+# Short tokens need word-boundary matching to avoid false positives.
+_TOP_SCHOOL_SHORT = ("mit", "cmu", "berkeley")
+
+
+def _profile_has_top_school(text: str) -> bool:
+    blob = (text or "").lower()
+    for tok in _TOP_SCHOOL_TOKENS:
+        if tok.strip() in blob:
+            return True
+    for tok in _TOP_SCHOOL_SHORT:
+        if re.search(rf"(?<![a-z]){re.escape(tok)}(?![a-z])", blob):
+            return True
+    return False
+
+
+def apply_score_caps(
+    role: dict[str, Any],
+    scored: dict[str, Any],
+    *,
+    location: str | None = None,
+    profile_blob: str = "",
+) -> dict[str, Any]:
+    """Deterministic post-LLM caps so MCP/LangGraph cannot override pedigree/location bars."""
+
+    try:
+        score = int(scored.get("score", 0))
+    except (TypeError, ValueError):
+        score = 0
+
+    flags = list(scored.get("flags") or [])
+    school_unverified = bool(scored.get("school_unverified", False))
+    has_school = _profile_has_top_school(profile_blob)
+    if has_school:
+        school_unverified = False
+    else:
+        # Trust model flag, but also force unverified when profile text has no school tokens.
+        school_unverified = True
+
+    notes = (role.get("scoring_notes") or "").lower()
+    title = (role.get("title") or "").lower()
+    loc_field = role.get("location") or ""
+    is_us_priority = (
+        "california" in str(loc_field).lower()
+        or "san francisco" in str(loc_field).lower()
+        or "ai engineer" in title
+        or "data scientist" in title
+        or "bay area" in notes
+    )
+
+    # School cap: AI Eng notes say 60; general rule from TA playbook is 65.
+    school_cap = 60 if ("school" in notes and "60" in notes) or "ai engineer" in title else 65
+    if school_unverified:
+        if score > school_cap:
+            score = school_cap
+        flag_l = [f.lower() for f in flags]
+        if "school unverified" not in flag_l:
+            flags.append("school unverified")
+        if "linkedin verify school" not in flag_l:
+            flags.append("linkedin verify school")
+
+    # Non-US location soft cap for US priority roles (hard filter already drops Nigeria/India).
+    excluded, _tok = location_blob_excluded(location)
+    if is_us_priority and location:
+        loc_l = (location or "").strip().lower()
+        clearly_foreign = excluded or any(
+            x in loc_l
+            for x in (
+                "nigeria",
+                "lagos",
+                "india",
+                "london",
+                "uk",
+                "united kingdom",
+                "berlin",
+                "toronto",
+                "singapore",
+                "sydney",
+                "europe",
+                "remote - india",
+            )
+        )
+        if clearly_foreign and score > 30:
+            score = 30
+            if "non-us location" not in [f.lower() for f in flags]:
+                flags.append("non-us location")
+
+    scored["score"] = score
+    scored["school_unverified"] = school_unverified
+    scored["flags"] = flags
+    top = (scored.get("top_signal") or "").strip()
+    if school_unverified and "school unverified" not in top.lower():
+        scored["top_signal"] = (top + " | school unverified").strip(" |")
+    return scored
 
 
 def collect_for_role(
@@ -386,6 +527,67 @@ def collect_for_role(
 
     fresh: list[Candidate] = []
     feedback_tail = format_feedback_for_prompt(role["title"], feedback_entries)
+    gh_headers = github_auth_headers(GITHUB_TOKEN)
+    seen_this_run: set[str] = set()
+
+    def consider_github_user(user: dict[str, Any], *, via: str) -> None:
+        """Hard-filter + score one enriched GitHub user; append to `fresh` if above threshold."""
+
+        key = f"github:{user.get('id')}"
+        if key in seen or key in seen_this_run:
+            return
+        if SKIP_REJECTED_CANDIDATES and key in reject_keys:
+            log.info("Skip (TA feedback): %s", key)
+            return
+        seen_this_run.add(key)
+        login = (user.get("login") or "").strip()
+        repos_preview: list[dict[str, Any]] | None = None
+        if login:
+            time.sleep(0.35)
+            repos_preview = fetch_owned_repos_preview(
+                login, headers=gh_headers, timeout=HTTP_TIMEOUT
+            )
+        skip_hf, hf_reason = hard_filter_github(user, repos_preview)
+        if skip_hf:
+            log.info("Skip (hard_filter) github:%s — %s", login or key, hf_reason)
+            return
+        blob = (
+            f"Name: {user.get('name') or user.get('login')}\n"
+            f"Bio: {user.get('bio') or '—'}\n"
+            f"Location: {user.get('location') or '—'}\n"
+            f"Company: {user.get('company') or '—'}\n"
+            f"Public repos: {user.get('public_repos', 0)}\n"
+            f"Followers: {user.get('followers', 0)}\n"
+            f"Profile: {user.get('html_url')}\n"
+            f"Sourced via: {via}"
+        )
+        scored = score_candidate(
+            role,
+            blob,
+            feedback_tail=feedback_tail,
+            location=user.get("location"),
+        )
+        if not scored or scored.get("score", 0) < SCORE_THRESHOLD:
+            return
+        fresh.append(Candidate(
+            source="github",
+            source_id=str(user.get("id")),
+            name=user.get("name") or user.get("login", "unknown"),
+            profile_url=user.get("html_url", ""),
+            role=role["title"],
+            score=int(scored["score"]),
+            reasoning=scored.get("reasoning", ""),
+            signals={
+                "top_signal": scored.get("top_signal", ""),
+                "followers": user.get("followers", 0),
+                "public_repos": user.get("public_repos", 0),
+                "company": user.get("company"),
+                "location": user.get("location"),
+                "via": via,
+                "school_unverified": bool(scored.get("school_unverified")),
+                "flags": scored.get("flags") or [],
+            },
+        ))
 
     # Prefer `locations` list when present; else single `location` (legacy).
     gh_locations: list[str | None]
@@ -396,55 +598,31 @@ def collect_for_role(
     else:
         gh_locations = [None]
 
+    # Contributor mining: each curated tool repo ≈ production agent/eval talent pool.
+    for repo in role.get("github_repos", []) or []:
+        log.info("GitHub contributors: %s", repo)
+        for contrib in fetch_repo_contributors(
+            str(repo), headers=gh_headers, timeout=HTTP_TIMEOUT, per_page=20
+        ):
+            login = (contrib.get("login") or "").strip()
+            if not login:
+                continue
+            cid = contrib.get("id")
+            key = f"github:{cid}" if cid is not None else f"github:login:{login}"
+            if key in seen or key in seen_this_run:
+                continue
+            if SKIP_REJECTED_CANDIDATES and key in reject_keys:
+                continue
+            time.sleep(0.35)
+            user = enrich_github_user(login, headers=gh_headers, timeout=HTTP_TIMEOUT)
+            if not user:
+                continue
+            consider_github_user(user, via=f"contrib:{repo}")
+
     for query in role.get("github_queries", []):
         for loc in gh_locations:
             for user in search_github(query, role.get("language"), loc):
-                key = f"github:{user.get('id')}"
-                if key in seen:
-                    continue
-                if SKIP_REJECTED_CANDIDATES and key in reject_keys:
-                    log.info("Skip (TA feedback): %s", key)
-                    continue
-                gh_headers = github_auth_headers(GITHUB_TOKEN)
-                login = (user.get("login") or "").strip()
-                repos_preview: list[dict[str, Any]] | None = None
-                if login:
-                    time.sleep(0.35)
-                    repos_preview = fetch_owned_repos_preview(
-                        login, headers=gh_headers, timeout=HTTP_TIMEOUT
-                    )
-                skip_hf, hf_reason = hard_filter_github(user, repos_preview)
-                if skip_hf:
-                    log.info("Skip (hard_filter) github:%s — %s", login or key, hf_reason)
-                    continue
-                blob = (
-                    f"Name: {user.get('name') or user.get('login')}\n"
-                    f"Bio: {user.get('bio') or '—'}\n"
-                    f"Location: {user.get('location') or '—'}\n"
-                    f"Company: {user.get('company') or '—'}\n"
-                    f"Public repos: {user.get('public_repos', 0)}\n"
-                    f"Followers: {user.get('followers', 0)}\n"
-                    f"Profile: {user.get('html_url')}"
-                )
-                scored = score_candidate(role, blob, feedback_tail=feedback_tail)
-                if not scored or scored.get("score", 0) < SCORE_THRESHOLD:
-                    continue
-                fresh.append(Candidate(
-                    source="github",
-                    source_id=str(user.get("id")),
-                    name=user.get("name") or user.get("login", "unknown"),
-                    profile_url=user.get("html_url", ""),
-                    role=role["title"],
-                    score=int(scored["score"]),
-                    reasoning=scored.get("reasoning", ""),
-                    signals={
-                        "top_signal": scored.get("top_signal", ""),
-                        "followers": user.get("followers", 0),
-                        "public_repos": user.get("public_repos", 0),
-                        "company": user.get("company"),
-                        "location": user.get("location"),
-                    },
-                ))
+                consider_github_user(user, via=f"search:{query}")
 
     for query in role.get("hn_queries", []):
         for hit in search_hackernews(query):
@@ -467,7 +645,7 @@ def collect_for_role(
                 f"Comment / text: {(hit.get('comment_text') or hit.get('story_text') or '')[:600]}\n"
                 f"URL: https://news.ycombinator.com/user?id={author}"
             )
-            scored = score_candidate(role, blob, feedback_tail=feedback_tail)
+            scored = score_candidate(role, blob, feedback_tail=feedback_tail, location=None)
             if not scored or scored.get("score", 0) < SCORE_THRESHOLD:
                 continue
             fresh.append(Candidate(
@@ -478,7 +656,11 @@ def collect_for_role(
                 role=role["title"],
                 score=int(scored["score"]),
                 reasoning=scored.get("reasoning", ""),
-                signals={"top_signal": scored.get("top_signal", "")},
+                signals={
+                    "top_signal": scored.get("top_signal", ""),
+                    "school_unverified": bool(scored.get("school_unverified")),
+                    "flags": scored.get("flags") or [],
+                },
             ))
     return fresh
 

@@ -71,7 +71,7 @@ In your GitHub repo, go to **Settings → Secrets and variables → Actions → 
 | `principal_product_builder.json` | Principal Product Builder | China (Beijing) |
 | `tech_lead_backend.json` | Staff Software Engineer — Tech Lead, Backend | China (Beijing) |
 
-Nightly focus: US **AI Engineer** and **Senior Data Scientist** use broader California location + 6 GitHub/HN queries each (previously San Francisco was too narrow — near-zero MCP/LangGraph hits). Workflow defaults: `SCORE_THRESHOLD=65`, `MAX_CANDIDATES_PER_QUERY=20`.
+Nightly focus: US **AI Engineer** prioritizes **agent flow / agent system / agent observability** talent via curated OSS contributor mining (`github_repos`: Langfuse, Phoenix, RAGAS, DeepEval, Helicone, Weave, …) plus scarce-signal queries (online evals, gen_ai spans). Senior DS uses California location + domain queries. Workflow defaults: `SCORE_THRESHOLD=65`, `MAX_CANDIDATES_PER_QUERY=20`.
 
 **Legacy:** if `data/roles/` contains no `.json` files, the engine falls back to root `roles.json`.
 
@@ -83,6 +83,7 @@ Each role JSON accepts:
   "language": "github primary language filter (optional)",
   "location": "github location filter (optional)",
   "requirements": "free-text description used by the LLM scorer",
+  "github_repos": ["owner/repo — mine top contributors first"],
   "github_queries": ["query1", "query2"],
   "hn_queries": ["query1"]
 }

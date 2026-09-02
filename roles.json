@@ -3,22 +3,37 @@
     "title": "AI Engineer, Agent Analytics & Optimization",
     "language": "python",
     "location": "California",
-    "requirements": "US Foster City / Bay Area. PRIORITY — production MCP/agent systems engineer. See data/roles/ai_engineer_agent_analytics.json.",
+    "requirements": "US Foster City / Bay Area. PRIORITY — production agent flow / agent system / agent observability engineer. See data/roles/ai_engineer_agent_analytics.json.",
+    "scoring_notes": "School pedigree is critical: MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke required for 70+ scores. Without top school evidence in bio/profile text, cap score at 60 and flag school_unverified=true (manual LinkedIn verification). Bay Area / California / US location preferred — Nigeria/India/non-US self-reported locations cap at 30. MCP + LangGraph alone are COMMON — never score 70+ on stack fingerprints without school OR strong production eval/obs evidence plus US location.",
+    "github_repos": [
+      "langfuse/langfuse",
+      "langchain-ai/langsmith-sdk",
+      "Arize-ai/phoenix",
+      "mlflow/mlflow",
+      "helicone/helicone",
+      "wandb/weave",
+      "explodinggradients/ragas",
+      "confident-ai/deepeval",
+      "open-telemetry/semantic-conventions",
+      "modelcontextprotocol/python-sdk"
+    ],
     "github_queries": [
-      "MCP",
-      "LangGraph",
-      "LLM agent",
-      "agent framework",
-      "agent eval",
-      "AI engineer"
+      "online evaluation LLM",
+      "LLM observability",
+      "agent tracing",
+      "OpenTelemetry gen_ai",
+      "RAGAS evaluation",
+      "DeepEval",
+      "Langfuse",
+      "agent eval production"
     ],
     "hn_queries": [
-      "MCP server",
-      "LangGraph",
-      "LLM agent production",
-      "agent evals",
+      "LLM observability production",
+      "online evals LLM",
       "agent observability",
-      "tool use LLM"
+      "Langfuse OR Phoenix OR Helicone",
+      "LLM-as-judge production",
+      "OpenTelemetry gen_ai"
     ]
   },
   {

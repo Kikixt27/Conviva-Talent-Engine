@@ -15,9 +15,9 @@ Browser UI (`conviva_signal_v4_2.html`) is unchanged. This layer runs **batch** 
 ## Layout
 
 - **`engine.py`** — canonical nightly run (`main()`): search → hard filter → LLM → persist + report.
-- `utils.py` — `hard_filter_github`, `hard_filter_hackernews`, GitHub repo preview helpers.
-- `scorer.py` — CLI wrapper that calls `engine.main()`.
-- `calibrate.py` / `query_refresh.py` — stubs you can extend.
+- `utils.py` — `hard_filter_github` (incl. excluded non-US locations), `hard_filter_hackernews`, GitHub helpers.
+- `engine.py` — LLM scoring + deterministic caps (`school_unverified` ≤60/65; non-US ≤30 for US priority roles). Role JSON may include `scoring_notes`.
+
 
 ## Role config
 
