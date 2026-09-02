@@ -421,5 +421,1034 @@
       "top_signal": "LLM inference systems engineering with production workflow thinking"
     },
     "first_seen": "2026-07-28T02:33:53.922417+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "116468110",
+    "name": "Meghana B T",
+    "profile_url": "https://github.com/meghanabt",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Meghana shows strong signals on production AI systems (Forward Deployed AI Engineer, government-scale work, LangGraph expertise) and relevant tech stack (Python backend, LangGraph, RAG). However, profile lacks concrete evidence of MCP servers, agent evals/tracing infrastructure, tool-use integrations, or detailed production agent failure stories needed to validate the 'production AI Engineer' bar—LangGraph + RAG + AI Safety alone doesn't confirm she owns full build→deploy→monitor lifecycle for agentic systems at scale.",
+    "signals": {
+      "top_signal": "Production LangGraph + government-scale systems + forward-deployed context; needs MCP/tooling evidence to confirm.",
+      "followers": 1,
+      "public_repos": 16,
+      "company": "Ex-Accenture | Ex- Bosch Rexroth",
+      "location": "California"
+    },
+    "first_seen": "2026-07-29T02:38:18.235876+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "212168589",
+    "name": "Tim Moore",
+    "profile_url": "https://github.com/Tmmoore286",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Tim shows strong alignment on agentic systems, multi-LLM orchestration, and semantic routing—core technical depth for agent engineering. However, critical gaps prevent a higher score: no clear evidence of production shipping at scale, no demonstrated MCP server work, no mention of evals/observability, and limited public repos (5) with no linked evidence of end-to-end Python services, deployed agents with failure/fix stories, or tool-use integrations. Location (San Clemente) is California-adjacent but not Bay Area/Foster City. Profile reads as agentic research/architecture rather than production systems engineer; needs corroboration on shipped systems and observability before advancing.",
+    "signals": {
+      "top_signal": "Semantic MoE routing & multi-LLM orchestration expertise; need verification of production shipping, MCP, evals, tracing.",
+      "followers": 2,
+      "public_repos": 5,
+      "company": "Lunara AI",
+      "location": "San Clemente, California"
+    },
+    "first_seen": "2026-07-29T02:39:02.113712+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "125815156",
+    "name": "Ritvik Shrivastava",
+    "profile_url": "https://github.com/RitvikShrivastavaai",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong production AI/agent experience at Meta (Tech Lead, Multimodal AI) and Cisco (ML Lead) with 5+ yrs implied SWE tenure; multimodal LLMs and agentic AI directly relevant. However, limited public evidence: 5 repos with 0 followers suggests minimal OSS visibility or published work; no GitHub evidence of MCP servers, production agent shipping stories, evals/tracing setup, or Python backend services. Columbia MS CS + on-device agents shows depth but needs corroboration on production system design, observability, tool-use patterns, and full-stack ownership before high confidence.",
+    "signals": {
+      "top_signal": "Tech Lead at Meta shipping agentic AI systems; needs corroboration on MCP/evals/tracing and production agent details.",
+      "followers": 0,
+      "public_repos": 5,
+      "company": "Meta",
+      "location": "San Francisco, California, Amerika Serikat"
+    },
+    "first_seen": "2026-07-29T02:39:19.438288+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "jgo94",
+    "name": "jgo94",
+    "profile_url": "https://news.ycombinator.com/user?id=jgo94",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong production AI engineer signal: FastAPI + LangGraph shipping, multi-agent orchestration, self-hosted systems demonstrate end-to-end ownership and operational thinking. Python backend + agentic patterns (tool use, agent coordination) directly align with core role. Missing explicit evidence of MCP servers, production evals/tracing, and observability practices; location/tenure unknown from HN handle alone. Verify production scale, monitoring setup, and tool-integration depth in conversation before final offer.",
+    "signals": {
+      "top_signal": "LangGraph + FastAPI + multi-agent systems shipped"
+    },
+    "first_seen": "2026-07-29T02:40:59.875717+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "Brescou",
+    "name": "Brescou",
+    "profile_url": "https://news.ycombinator.com/user?id=Brescou",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on production LangGraph + agentic patterns (core requirement), but limited corroborating evidence in public profile. 'Production-grade LangGraph template' suggests hands-on agent systems work, but no concrete evidence of: deployed multi-agent systems at scale, evals/tracing infrastructure, tool-use/MCP implementations, or operational stories. Single HN Show post is not sufficient to confirm 3–7+ yrs SWE rigor, observability depth, or cloud/async Python production experience. Likely a competent engineer but needs technical depth validation before advancing.",
+    "signals": {
+      "top_signal": "Production LangGraph template + agentic patterns awareness"
+    },
+    "first_seen": "2026-07-29T02:41:05.618205+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "weirdguy",
+    "name": "weirdguy",
+    "profile_url": "https://news.ycombinator.com/user?id=weirdguy",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on agentic patterns (LangGraph, agent specs, orchestration thinking) and systems design mindset (Terraform-style IaC for agents). However, profile shows OSS/demo work without clear production shipping evidence, runtime scale experience, or MCP/tool-use stories. Single HN Show post + comment insufficient to confirm 3–7yr production SWE depth, evals/tracing practices, or cloud/async backend maturity. Promising direction but needs corroboration on production failures, scaling, and observability before advancing.",
+    "signals": {
+      "top_signal": "LangGraph + agentic orchestration thinking; unconfirmed production depth"
+    },
+    "first_seen": "2026-07-29T02:41:17.638471+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "insightits",
+    "name": "insightits",
+    "profile_url": "https://news.ycombinator.com/user?id=insightits",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on agentic patterns & runtime systems (ChorusGraph agent graph runtime with caching suggests deep production agent experience), but profile is thin—single HN post with no corroboration on Python backend services, production deployment scale, evals/tracing, cloud ops, or MCP/tool-use specifics. Published OSS project is a bonus; must validate shipping history, observability chops, and whether this is builder vs. researcher before advancing.",
+    "signals": {
+      "top_signal": "Built custom agent graph runtime (not wrapper); likely production agentic experience."
+    },
+    "first_seen": "2026-07-29T02:41:25.154383+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "r13i",
+    "name": "r13i",
+    "profile_url": "https://news.ycombinator.com/user?id=r13i",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "Strong 0->1 product signal (built and shipping Hail v0.15 with iterative releases), clear AI/LLM systems comfort, and demonstrated end-to-end shipping ability. However, limited evidence of PM ownership, customer discovery depth, or prior founder/principal engineer experience—appears to be primarily an engineer-builder rather than a product architect with business validation. Single HN post insufficient to fully calibrate against strong_fit baseline.",
+    "signals": {
+      "top_signal": "0->1 AI product builder with shipping velocity and LLM/agent system expertise"
+    },
+    "first_seen": "2026-07-29T02:42:24.340279+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "16046862",
+    "name": "Pratyush Kumar",
+    "profile_url": "https://github.com/pratyush19",
+    "role": "Senior Data Scientist",
+    "score": 72,
+    "reasoning": "Strong location fit (San Francisco) and current role as Senior Data Scientist at Tesla suggest production ML experience and potential time-series/real-time analytics exposure relevant to digital performance. However, profile lacks concrete evidence of specific technical depth (time series, anomaly detection, Ray/Spark, MLOps) and no GitHub activity visible to validate hands-on production capability; educational background (TAMU, IIT Roorkee) without stated degree level creates ambiguity on PhD/MS+5yr requirement.",
+    "signals": {
+      "top_signal": "Tesla DS role + Bay Area location; needs GitHub/portfolio validation.",
+      "followers": 6,
+      "public_repos": 21,
+      "company": "TAMU | IIT Roorkee",
+      "location": "San Francisco, California"
+    },
+    "first_seen": "2026-07-29T02:43:57.399254+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "10786134",
+    "name": "Peng",
+    "profile_url": "https://github.com/fastio",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 78,
+    "reasoning": "Strong technical foundation: Tencent backend engineer with proven contributions to ClickHouse and ScyllaDB (directly matching OLAP/distributed systems requirements), 26 public repos, and China-based location. However, limited evidence of: (1) 8+ years tenure verification, (2) high-scale real-time data platform architecture ownership, (3) tech lead mentoring/design review patterns, (4) AI-native tooling fluency (Cursor/Claude/Copilot daily use), (5) English proficiency for cross-regional collaboration. GitHub activity alone cannot confirm hands-on architecture leadership or recent LLM/agent work.",
+    "signals": {
+      "top_signal": "ClickHouse + ScyllaDB contributor at Tencent = distributed systems + OLAP credibility",
+      "followers": 237,
+      "public_repos": 26,
+      "company": "Tencent",
+      "location": "Cheng Du, China"
+    },
+    "first_seen": "2026-07-29T02:46:18.054380+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "22127746",
+    "name": "folly",
+    "profile_url": "https://github.com/ucasfl",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 78,
+    "reasoning": "Strong technical signal: ClickHouse expertise at Tencent WeChat (tier-1 scale, real-time data platform context) directly matches OLAP/streaming core requirement. 45 public repos and 279 followers suggest active open-source contributor. Location (Shenzhen) and company scale provide high-confidence distributed systems exposure. However, profile lacks explicit evidence of: (1) 8+ years tenure verification, (2) tech lead/mentoring track record, (3) AI-native tooling fluency (Cursor/Claude/Copilot), (4) backend architecture ownership, (5) English communication depth. Single bio line insufficient to validate hands-on architecture leadership vs. individual contributor. Recommend deep technical interview on ClickHouse architecture decisions, mentoring examples, and LLM integration experience before advancing.",
+    "signals": {
+      "top_signal": "ClickHouse at Tencent WeChat — direct OLAP/streaming systems experience at scale",
+      "followers": 279,
+      "public_repos": 45,
+      "company": "Tencent WeChat",
+      "location": "Shenzhen, China"
+    },
+    "first_seen": "2026-07-29T02:46:21.595052+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "4725158",
+    "name": "Du Chuan",
+    "profile_url": "https://github.com/spongedu",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 82,
+    "reasoning": "Du Chuan demonstrates strong distributed systems and database expertise as a TiDB Committer and ClickHouse Contributor at Tencent, with 113 public repos showing sustained technical depth in data platforms. Location (Chengdu, China) is ideal for Beijing role; however, profile lacks visible evidence of AI-native tool fluency, mentoring via code review/design pairing, or high-scale streaming architecture ownership (Kafka, OLAP pipelines), and no recent activity snapshot or English communication sample available for cross-regional collaboration assessment.",
+    "signals": {
+      "top_signal": "TiDB Committer + ClickHouse Contributor at scale (Tencent infrastructure)",
+      "followers": 93,
+      "public_repos": 113,
+      "company": "@Tencent",
+      "location": "Chengdu,China"
+    },
+    "first_seen": "2026-07-29T02:46:24.827417+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "32535939",
+    "name": "Weny Xu",
+    "profile_url": "https://github.com/WenyXu",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 78,
+    "reasoning": "Weny Xu demonstrates strong alignment with core technical requirements: works at GreptimeDB (time-series OLAP database), has deep distributed systems and database expertise matching the role's backend architecture focus, and the 117 public repos suggest active hands-on coding. However, critical gaps prevent a higher score: no visible evidence of AI-native tooling proficiency (Cursor, Claude, Copilot), no demonstrable mentoring/tech lead portfolio (design reviews, code review culture), unclear years of experience, and no public proof of large-scale streaming system ownership (Kafka, Druid) or cross-regional collaboration patterns. Location (Hangzhou) fits Beijing collaboration requirements but profile lacks English-language technical communication evidence.",
+    "signals": {
+      "top_signal": "GreptimeDB distributed time-series database expertise with 117 public repos",
+      "followers": 252,
+      "public_repos": 117,
+      "company": "@GreptimeTeam",
+      "location": "Hangzhou, China"
+    },
+    "first_seen": "2026-07-29T02:47:00.992484+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "46051144",
+    "name": "Kavinli",
+    "profile_url": "https://github.com/Super-long",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 78,
+    "reasoning": "Strong technical depth in distributed systems, databases, and kernel/eBPF—directly aligned with backend infrastructure. Tencent tenure suggests high-scale experience. However, no visible evidence of: (1) hands-on OLAP/streaming platforms (ClickHouse, Kafka, Druid), (2) AI-native tooling fluency (Cursor, Claude, Copilot), (3) mentoring via design pairing/code review at scale, or (4) English communication fluency. Public repos and follower count show credibility, but require validation on streaming/real-time data platform experience and AI tooling adoption before advancing.",
+    "signals": {
+      "top_signal": "Distributed systems + database + eBPF expertise at Tencent; missing: streaming platform depth, AI-native baseline, English fluency validation.",
+      "followers": 120,
+      "public_repos": 81,
+      "company": "Tencent",
+      "location": "China Shenzhen"
+    },
+    "first_seen": "2026-07-29T02:47:12.895332+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "22229230",
+    "name": "Bin Yan",
+    "profile_url": "https://github.com/YanB25",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 78,
+    "reasoning": "Strong distributed systems foundation (PhD from Tsinghua on high-performance systems, current Alibaba Cloud role) with 95 public repos suggests hands-on backend depth and Beijing location match. However, profile lacks explicit evidence of OLAP/streaming systems (ClickHouse, Kafka, Druid), AI-native tooling fluency (Cursor/Claude), or mentoring/code review leadership; no English communication samples to validate cross-regional collaboration requirement.",
+    "signals": {
+      "top_signal": "PhD distributed systems + Alibaba Cloud + 95 repos in Beijing",
+      "followers": 172,
+      "public_repos": 95,
+      "company": "Tsinghua University",
+      "location": "Beijing China"
+    },
+    "first_seen": "2026-07-29T02:47:39.880892+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "1411396",
+    "name": "zkmn73",
+    "profile_url": "https://github.com/zkmn73",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 72,
+    "reasoning": "Strong foundational fit: Beijing-based, 8+ years inferred from ByteDance seniority, demonstrated expertise across LLM/ML infra, search infra, and distributed systems. However, critical gaps prevent higher scoring: no visible evidence of hands-on OLAP/streaming platforms (ClickHouse, Kafka, Druid), no public repos to validate backend architecture depth or code quality leadership, no clear AI-native tool fluency signals, and no corroborating evidence of design review ownership or mentoring via code review. Profile reads as infrastructure generalist without validated Tech Lead track record on real-time data platforms.",
+    "signals": {
+      "top_signal": "ByteDance distributed systems experience + Beijing location match; no corroborating evidence of OLAP/streaming expertise or AI-native practices.",
+      "followers": 83,
+      "public_repos": 17,
+      "company": "@Bytedance Inc.",
+      "location": "Beijing, China"
+    },
+    "first_seen": "2026-07-29T02:47:45.375180+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "rough-sea",
+    "name": "rough-sea",
+    "profile_url": "https://news.ycombinator.com/user?id=rough-sea",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 72,
+    "reasoning": "Strong technical depth in distributed systems, security, and production infrastructure (Deno Deploy, Postgres, Kubernetes, GCP, ClickHouse) with hands-on architecture work. However, limited visible evidence of: (1) 8+ years backend engineering track record, (2) 5+ years specifically on data platforms/OLAP/streaming systems at scale, (3) AI-native fluency (Cursor/Claude/Copilot daily use), (4) mentoring/code review leadership, (5) English proficiency verification beyond this single HN post. Single data point without corroborating portfolio/GitHub/background makes it difficult to confirm senior tech lead capability.",
+    "signals": {
+      "top_signal": "Production agent infrastructure + ClickHouse + security-critical distributed systems design"
+    },
+    "first_seen": "2026-07-29T02:48:20.665209+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "agileAlligator",
+    "name": "agileAlligator",
+    "profile_url": "https://news.ycombinator.com/user?id=agileAlligator",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on MCP expertise and security awareness (Mcploitable project demonstrates deep understanding of MCP server vulnerabilities and agentic patterns). However, limited visible evidence of production shipping at scale, observability/tracing implementation, or end-to-end Python backend services. Single HN project without corroboration of deployed systems, evals, or runtime monitoring. Requires technical depth verification on production agent systems and full-stack deployment experience.",
+    "signals": {
+      "top_signal": "MCP server expertise + agentic security awareness"
+    },
+    "first_seen": "2026-07-30T02:27:38.117997+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "prithviseran",
+    "name": "prithviseran",
+    "profile_url": "https://news.ycombinator.com/user?id=prithviseran",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong MCP/tool-use signal (built production MCP server with benchmarking rigor) and demonstrated agentic patterns (LLM driving external systems, task completion evals). However, limited visibility into Python backend services at scale, production failure/fix stories, observability/tracing implementation, cloud deployment experience, or team shipping context. Single HN post lacks corroboration of sustained production ownership. High potential fit but needs deeper technical validation on backend services, observability, and production ops.",
+    "signals": {
+      "top_signal": "Built & benchmarked production MCP server with concrete task evals; clear tool-use/agent patterns."
+    },
+    "first_seen": "2026-07-30T02:28:24.508056+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "segmenta",
+    "name": "segmenta",
+    "profile_url": "https://news.ycombinator.com/user?id=segmenta",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "segmenta demonstrates strong product architecture thinking (local-first design, deliberate API/LLM tradeoffs, UX optimization for resource constraints) and shipping capability (Show HN project), plus LLM/AI systems comfort. However, evidence is limited to a single HN comment with no corroboration of 0→1 PM ownership, customer discovery, or prior startup/principal engineer background. The product sensibility is evident but PM ownership and scale track record remain unvalidated.",
+    "signals": {
+      "top_signal": "Shipped AI product with thoughtful architecture; LLM systems expertise; needs validation on PM ownership and scale"
+    },
+    "first_seen": "2026-07-30T02:28:53.613696+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "38288045",
+    "name": "Blylei",
+    "profile_url": "https://github.com/blylei",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 68,
+    "reasoning": "Strong technical foundation in databases (MySQL, Redis, MongoDB, ClickHouse) and Go/Python automation, with location match (Shanghai). However, critical gaps: no clear evidence of 8+ years backend engineering experience, no demonstrated ownership of high-scale distributed systems architecture or streaming platforms (Kafka, Druid), no portfolio evidence of design reviews/mentoring at scale, and no visible proof of AI-native tool fluency (Cursor, Claude, Copilot). Public repos (149) and followers (23) suggest active contributor but lack visibility into backend architecture depth required for Staff Tech Lead role.",
+    "signals": {
+      "top_signal": "ClickHouse + Golang + DBA expertise in right geography; insufficient evidence of distributed systems architecture or AI-native development.",
+      "followers": 23,
+      "public_repos": 149,
+      "company": "Frabit Labs",
+      "location": "Shanghai, China"
+    },
+    "first_seen": "2026-07-30T02:32:31.485489+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "ali110v",
+    "name": "ali110v",
+    "profile_url": "https://news.ycombinator.com/user?id=ali110v",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong production AI engineer signal: built and shipped ResiliReplay (chaos testing for AI agents + MCP servers), demonstrating hands-on MCP expertise, agent reliability patterns, and observability mindset. Python backend + agentic systems experience evident; located in Bay Area (ali110v suggests potential local tie). Primary concern: limited corroboration of production scale, evals rigor, and full end-to-end system ownership; single HN show submission is promising but not yet equivalent to 3–7yr shipping track record.",
+    "signals": {
+      "top_signal": "MCP + agent chaos testing shipped; production reliability mindset"
+    },
+    "first_seen": "2026-07-31T02:52:34.517359+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "Thomeras",
+    "name": "Thomeras",
+    "profile_url": "https://news.ycombinator.com/user?id=Thomeras",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 68,
+    "reasoning": "Strong signal on evals (core requirement) and OSS/published work (bonus), indicating production mindset and agent observability expertise. However, profile is extremely thin—single HN comment about an eval framework with no visible evidence of shipping production AI agents, MCP servers, Python backend services, or cloud deployment at scale. Cannot validate LLM-ops experience, tool-use patterns, or production failure/fix stories. Requires deep technical conversation to confirm SWE fundamentals (3–7+ yrs, design→deploy→monitor) and production agentic systems ownership.",
+    "signals": {
+      "top_signal": "Open source eval framework for agents"
+    },
+    "first_seen": "2026-07-31T02:53:01.753635+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "204246435",
+    "name": "Shakshi Richhariya",
+    "profile_url": "https://github.com/shakshi0701",
+    "role": "Senior Data Scientist",
+    "score": 72,
+    "reasoning": "Strong core technical fit: 5 years IBM experience with proven CNN+LSTM anomaly detection and production microservices delivery directly align with time-series/alerting and production ML requirements. However, profile lacks depth signals—no evidence of Spark/Ray, MLOps maturity, streaming analytics, or scalable real-time systems; limited public code (2 repos, 0 followers) prevents validation of hands-on depth and POC→production trajectory. Location is California (+), but thin GitHub presence raises execution-velocity and AI-native-developer adoption concerns for a PRIORITY HIRE role.",
+    "signals": {
+      "top_signal": "5yr IBM + anomaly detection (CNN+LSTM) + microservices production ship",
+      "followers": 0,
+      "public_repos": 2,
+      "company": null,
+      "location": "California"
+    },
+    "first_seen": "2026-07-31T02:56:06.341871+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "73147033",
+    "name": "Shirong Lu",
+    "profile_url": "https://github.com/happysnaker",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 72,
+    "reasoning": "Shirong demonstrates solid backend/systems engineering fundamentals with Go & Java infrastructure work and distributed systems exposure, meeting the language and technical depth baseline. However, there is insufficient public evidence of: (1) 8+ years professional experience verification, (2) hands-on ownership of high-scale OLAP/streaming platforms (ClickHouse, Kafka, Druid specifics), (3) tech lead mentoring track record via design reviews, and critically (4) AI-native fluency (Cursor, Claude Code, LLM pipeline integration) which is listed as non-optional. The qq-ai-bot flagship project suggests some AI exposure but lacks detail on scale, architecture decisions, or LLM integration depth. 70 repos and 41 followers suggest active contribution but without clear evidence of 5+ years data platform leadership.",
+    "signals": {
+      "top_signal": "Go/Java distributed systems engineer in Shanghai with OSS activity, but missing verification of scale leadership and mandatory AI-native fluency.",
+      "followers": 41,
+      "public_repos": 70,
+      "company": null,
+      "location": "Shanghai, China"
+    },
+    "first_seen": "2026-07-31T02:58:56.999715+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "59925371",
+    "name": "Utsav Akhaury",
+    "profile_url": "https://github.com/utsav-akhaury",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong foundational signals: PhD EPFL + GSoC + AI Software Engineer title + SF location + 13 public repos suggest solid engineering fundamentals and potential LLM/agentic work. However, no visible evidence of production agent systems, MCP servers, evals/tracing, or tool-use integrations in public profile. Current role at Spot AI (computer vision) does not clearly map to agent analytics. Requires deep technical conversation to validate production agent shipping, observability patterns, and Python backend services at scale—cannot confirm core 'must-haves' from profile alone.",
+    "signals": {
+      "top_signal": "PhD + GSoC + AI title in Bay Area, but missing corroboration of production agents/MCP/evals shipped.",
+      "followers": 26,
+      "public_repos": 13,
+      "company": "Spot AI",
+      "location": "San Francisco, California"
+    },
+    "first_seen": "2026-08-03T02:50:18.438597+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "asgeiralbretsen",
+    "name": "asgeiralbretsen",
+    "profile_url": "https://news.ycombinator.com/user?id=asgeiralbretsen",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong signal: shipped MCP server (Gmail/IMAP) demonstrating tool-use, auth/access control, and production connector patterns—core to the role. Python backend + agent integration likely present. Gaps: no visible evidence of production agent orchestration, evals, observability/tracing, or scale stories; location unknown; limited public track record visible on HN. Conservative score reflects 'Show HN' shipping credibility but unverified depth in agent failure/fix narratives and production runtime ownership.",
+    "signals": {
+      "top_signal": "MCP server shipped (Gmail/IMAP connector) with tool-use + auth patterns"
+    },
+    "first_seen": "2026-08-03T02:51:08.462545+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "guzzul",
+    "name": "guzzul",
+    "profile_url": "https://news.ycombinator.com/user?id=guzzul",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong production signal: 'Show HN: MCP server' demonstrates hands-on MCP implementation and agentic tool-use (core requirement). Evidence of shipping end-to-end (design→deploy). However, limited corroboration—single HN post without visible deployment scale, observability/tracing details, or production failure/fix stories. No clear location data or 3-7yr SWE backend depth confirmation from profile alone. Not a false-positive PM/ops pattern, but needs conversation to validate production scale, Python services depth, and evals rigor.",
+    "signals": {
+      "top_signal": "Built & shipped MCP server for AI agents; tool-use + agentic patterns demonstrated"
+    },
+    "first_seen": "2026-08-03T02:51:13.418581+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "flowofcontrol",
+    "name": "flowofcontrol",
+    "profile_url": "https://news.ycombinator.com/user?id=flowofcontrol",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on evals + observability (Maverik benchmarking tool for agents, cost prediction, test suite definition) and demonstrated MCP server knowledge (understanding tool overhead). However, no concrete evidence of production agent deployment at scale, Python backend services shipping end-to-end, or operational observability (Langfuse/LangSmith/OpenTelemetry). Single HN Show post without corroborating work history, shipped systems, or failure/fix stories. High on the 'build evals tooling' dimension but unclear on core production engineering chops required for this PRIORITY HIRE role.",
+    "signals": {
+      "top_signal": "Built Maverik (MCP agent benchmarking + evals framework); understands tool-use patterns and cost tradeoffs"
+    },
+    "first_seen": "2026-08-03T02:51:18.916458+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "ducks_",
+    "name": "ducks_",
+    "profile_url": "https://news.ycombinator.com/user?id=ducks_",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on agent evaluation and infrastructure automation, with OSS/published work (Replaybook). However, profile lacks concrete evidence of: (1) production LLM-powered agents with failure/fix stories, (2) MCP servers or tool-use integrations, (3) Python backend services shipped end-to-end, (4) observability/tracing in production. Single HN Show post insufficient to validate core requirements without deeper technical depth on shipping agents at scale.",
+    "signals": {
+      "top_signal": "Published agent evaluation framework + infrastructure domain; needs production agent + tool-server + observability proof"
+    },
+    "first_seen": "2026-08-03T02:51:48.287170+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "raffisk",
+    "name": "raffisk",
+    "profile_url": "https://news.ycombinator.com/user?id=raffisk",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on agent evals + tool-use trajectory analysis (core requirement), and PyPI library release shows shipping. However, limited corroboration: single HN post with no evidence of production agents at scale, MCP servers, observability/tracing setup, backend services, or cloud deployment experience. No location info, no team/SWE depth visible. High-potential fit IF production work exists beyond this project, but insufficient evidence to score higher without validation.",
+    "signals": {
+      "top_signal": "Agent eval framework + tool-path reasoning (evals + tool-use); needs production agent + backend SWE validation"
+    },
+    "first_seen": "2026-08-03T02:51:50.890118+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "299785443",
+    "name": "NereusStream",
+    "profile_url": "https://github.com/nereusstream",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 72,
+    "reasoning": "Strong technical signal on streaming/lakehouse architecture (Pulsar, Kafka, compaction) with China location match, but critical gaps: no visible evidence of hands-on backend leadership at scale, no demonstrated mentoring/code review impact, AI-native fluency unverified, and sparse public profile (9 repos, 2 followers) lacks corroboration of 8+ years experience or OLAP/distributed systems depth. Profile reads as specialist contributor rather than tech lead with proven design authority.",
+    "signals": {
+      "top_signal": "Pulsar-native streaming + lakehouse expertise aligns with real-time data platform requirements",
+      "followers": 2,
+      "public_repos": 9,
+      "company": null,
+      "location": "China"
+    },
+    "first_seen": "2026-08-03T02:56:18.675151+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "6784823",
+    "name": "Kai",
+    "profile_url": "https://github.com/Kai-Zhang",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 72,
+    "reasoning": "Kai demonstrates relevant hands-on experience in distributed systems via Alluxio (a data orchestration platform), location match, and public GitHub activity suggesting active engineering. However, profile lacks explicit evidence of: (1) 8+ years tenure verification, (2) 5+ years in data platforms/high-scale backend, (3) hands-on experience with required stack (ClickHouse, Kafka, Druid, streaming), (4) mentoring/tech lead track record via design reviews, (5) AI-native fluency (Cursor, Claude, Copilot integration), and (6) English communication depth for cross-regional collaboration. Bio signal is too sparse to confirm Staff-level architecture ownership or leadership-through-technical-excellence pattern.",
+    "signals": {
+      "top_signal": "Alluxio distributed systems domain + Beijing location + GitHub activity; requires deep profile validation on tenure, OLAP/streaming depth, tech lead mentoring, and AI-native baseline.",
+      "followers": 49,
+      "public_repos": 19,
+      "company": "@alluxio",
+      "location": "Beijing, China"
+    },
+    "first_seen": "2026-08-03T02:57:01.234825+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "behat",
+    "name": "behat",
+    "profile_url": "https://news.ycombinator.com/user?id=behat",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "Strong technical execution and shipping ability demonstrated through Show HN project (Tuneloop CLI), with clear coding DNA and product thinking around AI/LLM systems. However, limited evidence of 0→1 product ownership, customer discovery, or PM-level strategic thinking; appears primarily engineer-founder rather than PM-founder. No corroborating evidence of prior startup or principal engineer background.",
+    "signals": {
+      "top_signal": "Built and shipped AI-native product (Tuneloop); understands LLM systems deeply"
+    },
+    "first_seen": "2026-08-04T02:35:15.193967+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "giyanani",
+    "name": "giyanani",
+    "profile_url": "https://news.ycombinator.com/user?id=giyanani",
+    "role": "Senior Data Scientist",
+    "score": 68,
+    "reasoning": "Strong technical signal on time series + anomaly detection + production incident detection (directly relevant to real-time analytics role). Clear hands-on ML depth, not slide-deck. However, single HN comment provides limited corroboration of full scope: no evidence of deep learning, Ray/Spark scale, MLOps depth, or geographic fit. Profile shows genuine practitioner mindset but insufficient breadth validation for senior level.",
+    "signals": {
+      "top_signal": "Production time series anomaly detection with exogenous feature engineering"
+    },
+    "first_seen": "2026-08-04T02:38:27.430096+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "alex_akimov",
+    "name": "alex_akimov",
+    "profile_url": "https://news.ycombinator.com/user?id=alex_akimov",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "alex_akimov demonstrates direct MCP expertise by building and shipping mcpscore—a tool for validating MCP server compliance. This shows hands-on understanding of MCP internals, tool-use patterns, and production concerns (versioning, compliance). However, limited public evidence of full-stack Python backend services, production LLM agents with failure/fix stories, evals/tracing, or cloud/container deployments. Strong MCP signal warrants consideration, but requires validation on agent orchestration, observability, and end-to-end system ownership.",
+    "signals": {
+      "top_signal": "Built & shipped MCP validation tool; demonstrates MCP server architecture expertise."
+    },
+    "first_seen": "2026-08-05T02:33:55.971251+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "nunocoracao",
+    "name": "nunocoracao",
+    "profile_url": "https://news.ycombinator.com/user?id=nunocoracao",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal: built and shipped Watchfire (OSS control room for AI agents), explicitly implemented MCP server exposure, and demonstrates hands-on experience with agentic patterns (multi-agent orchestration, permission/access control). However, limited public evidence of production-scale Python backend services, evals/observability practices, or concrete failure/fix stories in production. Single HN post without corroboration of scale, monitoring depth, or team shipping history. Fits production engineer archetype but needs deeper validation on observability, evals, and production ops rigor.",
+    "signals": {
+      "top_signal": "MCP server implementation + multi-agent orchestration in shipped OSS project"
+    },
+    "first_seen": "2026-08-05T02:33:58.461213+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "Toby11",
+    "name": "Toby11",
+    "profile_url": "https://news.ycombinator.com/user?id=Toby11",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 82,
+    "reasoning": "Strong production AI/tool-systems signal: 'mcpvessel' demonstrates direct MCP server expertise, security-conscious design (auth/access control/egress), and shipping mindset. Python backend + containerization + observability patterns likely present given the sophisticated tool-sandboxing approach. Fits core job (MCP servers, AI connectors, runtime safety at scale). Limited by single data point (HN Show submission) without visible resume, production agent stories, or evals evidence—cannot confirm full 3–7yr SWE depth or LLM-agent-in-prod track record.",
+    "signals": {
+      "top_signal": "MCP server shipping + security/scoping primitives (auth, egress control)"
+    },
+    "first_seen": "2026-08-05T02:34:09.950552+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "scosman",
+    "name": "scosman",
+    "profile_url": "https://news.ycombinator.com/user?id=scosman",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong production AI signals: auto-research agents reading prod traces, tool synthesis/optimization, evals + val/test splits, and observability mindset. Clear evidence of shipping agentic patterns at scale with concrete optimization stories (token reduction, tool consolidation). However, limited corroborating evidence on full backend service ownership (design→deploy→monitor), MCP/connector integrations, cloud/async Python, or location/availability. Single HN comment without resume/portfolio makes it hard to validate core SWE depth, auth/scoping patterns, or exact production scale.",
+    "signals": {
+      "top_signal": "Production agent optimization via traces + evals; tool synthesis; knows when agents need guardrails"
+    },
+    "first_seen": "2026-08-05T02:34:20.028558+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "kennethtiller",
+    "name": "kennethtiller",
+    "profile_url": "https://news.ycombinator.com/user?id=kennethtiller",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Kenneth shows 23+ years of SWE experience and has built Lucidos, a self-hosted agentic platform with event sourcing, triggers, and dynamic app generation—demonstrating hands-on production agent systems and orchestration patterns. However, the single HN post lacks concrete evidence of MCP servers, production failure/fix stories, evals/tracing infrastructure, cloud deployment at scale, or Python backend shipping in enterprise contexts; the project appears personal/self-hosted rather than production-grade with observable monitoring and tool-use integrations validated in a business context.",
+    "signals": {
+      "top_signal": "Shipped agentic orchestration platform with event-sourced memory and multi-trigger workflows; 23yr SWE pedigree. Needs: MCP proof, prod ops evidence, evals/tracing, Python backend validation."
+    },
+    "first_seen": "2026-08-06T02:36:18.639672+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "dagni132",
+    "name": "dagni132",
+    "profile_url": "https://news.ycombinator.com/user?id=dagni132",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong signal: production MCP servers security audit demonstrates deep hands-on MCP expertise, tool-use patterns, and auth/access control knowledge—core must-haves. However, limited visibility into Python backend services, agentic workflows, evals/tracing, and whether this person ships end-to-end production AI systems vs. auditing/research. Single HN post without portfolio/GitHub corroboration leaves uncertainty on fullstack production agent ownership and observability chops.",
+    "signals": {
+      "top_signal": "MCP production security audit + auth/access control expertise"
+    },
+    "first_seen": "2026-08-07T02:42:29.346415+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "ytkoka",
+    "name": "ytkoka",
+    "profile_url": "https://news.ycombinator.com/user?id=ytkoka",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 82,
+    "reasoning": "Strong signal: shipped MCP server tooling (Show HN project demonstrates hands-on MCP implementation, observability, and security—core to the role). Evidence of production-mindedness (latency, token usage, security scanning). However, limited corroboration on full end-to-end Python services, agent orchestration patterns, evals, or production agent failure stories. No clear location confirmation or multi-agent/agentic workflow depth visible. Warrants phone screen to validate agent production experience and shipping velocity.",
+    "signals": {
+      "top_signal": "MCP server shipped + observability focus"
+    },
+    "first_seen": "2026-08-10T01:50:07.101747+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "ghosts_",
+    "name": "ghosts_",
+    "profile_url": "https://news.ycombinator.com/user?id=ghosts_",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "ghosts_ demonstrates solid MCP expertise and published tooling in the agent ecosystem, directly addressing a core requirement. However, no evidence of production agent systems with failure/fix stories, evals, tracing, or Python backend services shipped end-to-end at scale; a single HN Show post about MCP infrastructure is insufficient without corroboration of production shipping, observability, and agentic orchestration experience.",
+    "signals": {
+      "top_signal": "Published MCP server tooling; unclear on production agents + evals + observability depth"
+    },
+    "first_seen": "2026-08-11T01:46:33.753371+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "bignet",
+    "name": "bignet",
+    "profile_url": "https://news.ycombinator.com/user?id=bignet",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on MCP servers and production AI systems (HoneyMCP demonstrates deep MCP expertise and security-aware tool design). However, limited visibility into: Python backend services at scale, LLM-powered agents in production with failure/fix narratives, evals+tracing infrastructure, and observability practices. Single HN show demonstrates technical depth in MCP but lacks corroborating evidence of full end-to-end agent systems, cloud ops, and agentic patterns beyond tool-use.",
+    "signals": {
+      "top_signal": "MCP server expertise + security-aware tool design (honeypot pattern shows tool-use sophistication)"
+    },
+    "first_seen": "2026-08-12T01:58:36.472057+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "MPIsaac-Per",
+    "name": "MPIsaac-Per",
+    "profile_url": "https://news.ycombinator.com/user?id=MPIsaac-Per",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signals: production agent (Claude Code sessions on local machine), MCP servers integration, Linear OAuth connector with auth/scoping, tool-use patterns, agentic workflows with session continuity and human-in-the-loop. Weak signals: single HN Show post without evidence of Python backend services at scale, production observability/tracing setup, evals framework, or multi-agent orchestration. No location data, no SWE tenure confirmation. This reads as a solid side project / proof-of-concept rather than proven production systems ownership.",
+    "signals": {
+      "top_signal": "MCP + agent + connector integration shipped; needs backend scale evidence"
+    },
+    "first_seen": "2026-08-13T02:00:49.850084+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "stammanif",
+    "name": "stammanif",
+    "profile_url": "https://news.ycombinator.com/user?id=stammanif",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong MCP signal—shipped a production Rust MCP server (MCP-stama) with focus on performance and zero dependencies, directly matching core job requirement. However, critical gap: no visible evidence of Python backend services, LLM-powered agents in production, evals, observability/tracing, or agentic patterns (tool use, structured outputs, orchestration). Profile shows infrastructure/tooling builder, not full-stack AI engineer—needs validation on agent ownership, end-to-end Python shipping, and production failures/fixes before advancing.",
+    "signals": {
+      "top_signal": "Shipped MCP server; lacks agent + Python + observability proof"
+    },
+    "first_seen": "2026-08-14T01:58:54.487752+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "bazmou",
+    "name": "bazmou",
+    "profile_url": "https://news.ycombinator.com/user?id=bazmou",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong signal: shipping MCP servers in production (Show HN post on stateless protocol upgrade for legacy MCP), demonstrating hands-on tool-use/connector infrastructure work. Clear evidence of systems engineering at runtime scale. However, limited corroboration on full agent orchestration patterns, evals/tracing, and Python backend services breadth—single HN post without linked code/resume. Location and full SWE depth (3–7+ yrs) unconfirmed. High-confidence match on MCP/tooling core, needs validation on agent patterns and observability depth before final offer.",
+    "signals": {
+      "top_signal": "MCP server shipping + stateless protocol ops work"
+    },
+    "first_seen": "2026-08-14T01:59:02.314225+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "vedaant00",
+    "name": "vedaant00",
+    "profile_url": "https://news.ycombinator.com/user?id=vedaant00",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong production AI engineer signals: ships MCP servers (PyScrappy), demonstrates tool-use/connector patterns, and shows hands-on systems building. However, limited visible evidence of production agent orchestration, evals/tracing infrastructure, or scale operations; single HN project insufficient to confirm 3–7+ yrs backend SWE depth, cloud/async patterns, or observability maturity. Recommend technical screen to validate production agent experience, Python service architecture, and deployment/monitoring patterns.",
+    "signals": {
+      "top_signal": "MCP server shipped + tool-use connector pattern"
+    },
+    "first_seen": "2026-08-17T01:17:59.582370+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "Raphael_Dev",
+    "name": "Raphael_Dev",
+    "profile_url": "https://news.ycombinator.com/user?id=Raphael_Dev",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong production signal: built and shipped Gnat, a self-hosted analytics system with MCP server integration—directly demonstrates MCP server ownership, systems thinking, and Go backend chops. However, critical gaps: no evidence of Python backend services, LLM-powered agents in production, evals/tracing infrastructure, or agentic patterns (tool-use chains, structured outputs, multi-agent orchestration). Go expertise doesn't map cleanly to Python requirement. Single HN project submission without corroborating production AI agent experience or team scale history limits confidence.",
+    "signals": {
+      "top_signal": "MCP server + self-hosted systems shipping; missing Python agents + evals + observability"
+    },
+    "first_seen": "2026-08-17T01:18:05.113451+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "guypod",
+    "name": "guypod",
+    "profile_url": "https://news.ycombinator.com/user?id=guypod",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Founder of Snyk (security/DevOps at scale) and Tessl shows strong systems-thinking and shipping track record. HN comment demonstrates deep understanding of agentic patterns (evals, consistency, guardrails, deterministic tool use, hooks) — exactly core job language. However, insufficient evidence of production LLM agents, MCP servers, or concrete failure/fix stories specific to AI systems. Single HN comment without portfolio/GitHub corroboration warrants conservative scoring despite strong founder signal.",
+    "signals": {
+      "top_signal": "Agentic architecture thinking + shipping discipline, but missing production agent/MCP evidence"
+    },
+    "first_seen": "2026-08-17T01:18:14.973254+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "17043",
+    "name": "James",
+    "profile_url": "https://github.com/jaytoday",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "James shows strong surface signals (Bay Area location, 714 repos, multiple AI/MCP projects listed) but lack of verifiable evidence of production agent systems, evals/tracing, or shipping at scale. The portfolio sites and repos need validation—multiple projects listed but no clear evidence of end-to-end Python backend services, agent failures/fixes, or production observability. High repo count and MCP involvement are promising, but without concrete shipping stories or GitHub evidence of tool-use patterns and monitoring, scores below the 'clear must-have' threshold.",
+    "signals": {
+      "top_signal": "MCP-APP project and Bay Area location; critical gap: no visible production agent traces, evals, or deployment evidence.",
+      "followers": 89,
+      "public_repos": 714,
+      "company": null,
+      "location": "bay area, california"
+    },
+    "first_seen": "2026-08-18T01:12:24.656930+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "songrenchu",
+    "name": "songrenchu",
+    "profile_url": "https://news.ycombinator.com/user?id=songrenchu",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong production signals: HarnessRouter shows end-to-end agent system design with MCP tool integration, multi-agent orchestration, and downstream product integration (PPT, Spreadsheet agents). However, limited corroboration—single HN Show post without concrete evidence of scale, evals, observability, or full SWE depth (Python services, cloud deployment, monitoring). Profile suggests solid agentic patterns and tool-use thinking but lacks shipping stories, team scale, or observability instrumentation details needed to confirm production rigor.",
+    "signals": {
+      "top_signal": "MCP + agentic product backend architecture with multiple agent implementations"
+    },
+    "first_seen": "2026-08-18T01:14:48.486597+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "eventuallyacat",
+    "name": "eventuallyacat",
+    "profile_url": "https://news.ycombinator.com/user?id=eventuallyacat",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal: shipping production observability tooling (Grafana agent) for agentic systems shows hands-on systems engineering and production mindset. However, limited evidence of MCP servers, tool-use integrations, evals, or full agentic workflow ownership—appears more infrastructure/observability focused than core agent builder. Single HN post without corroboration of Python backend services, LLM-powered agents in production with failure/fix stories, or cloud-scale deployment experience keeps score below 75.",
+    "signals": {
+      "top_signal": "Production observability for agents + systems engineering credibility"
+    },
+    "first_seen": "2026-08-18T01:15:03.891870+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "suzyahyah",
+    "name": "suzyahyah",
+    "profile_url": "https://news.ycombinator.com/user?id=suzyahyah",
+    "role": "Senior Data Scientist",
+    "score": 72,
+    "reasoning": "Strong signal: HN handle and story title indicate deep engagement with time series forecasting—a core requirement for real-time analytics. However, without access to the full profile, GitHub, or production work samples, this is based on limited public evidence. The HN story alone suggests relevant technical depth, but cannot confirm hands-on production ML, team scale, or current location. Recommend phone screen to validate production shipping experience, Spark/Ray usage, and Bay Area fit before advancing.",
+    "signals": {
+      "top_signal": "Time series forecasting expertise demonstrated via public technical content"
+    },
+    "first_seen": "2026-08-18T01:18:44.247350+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "10980722",
+    "name": "Shubham Aggarwal",
+    "profile_url": "https://github.com/shubh3794",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong foundational SWE credentials (Staff at LinkedIn AI Infra, CPython contributor, 39 public repos) and Bay Area location (Mountain View) tick location + senior eng level. However, profile lacks concrete evidence of production LLM agent systems, MCP servers, tool-use integrations, evals/tracing, or agentic workflows. No shipped agent projects, failure/fix narratives, or observability patterns visible. GitHub repos not detailed enough to verify agent-production work vs. infrastructure/research.",
+    "signals": {
+      "top_signal": "Senior infrastructure engineer in AI space, but no visible production agent systems or tool-integration work.",
+      "followers": 49,
+      "public_repos": 39,
+      "company": "Linkedin",
+      "location": "Mountain view, California"
+    },
+    "first_seen": "2026-08-19T01:16:13.993529+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "janwilmake",
+    "name": "janwilmake",
+    "profile_url": "https://news.ycombinator.com/user?id=janwilmake",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong direct signal: 'Show HN: Agent-codemode' demonstrates shipped MCP server integration where agent-written scripts call MCP endpoints—exactly the core job requirement. Evidence of production-grade tool-use patterns and MCP expertise is explicit. However, score capped at 78 due to limited corroborating evidence (single HN post, no visible GitHub, production scale/observability/evals details unclear, location/experience years unverified). Not disqualified—this is a real engineer shipping relevant work, not a PM/founder false positive.",
+    "signals": {
+      "top_signal": "Shipped MCP server + agent tool-use integration (Show HN project)"
+    },
+    "first_seen": "2026-08-19T01:16:22.704641+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "pitiflautico",
+    "name": "pitiflautico",
+    "profile_url": "https://news.ycombinator.com/user?id=pitiflautico",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong core signal: NeoBrowser is a shipped MCP server integrating real Chrome automation with agent workflows—directly matching the 'MCP servers, agentic patterns, tool-use' must-haves. Demonstrates production-grade thinking (session management, auth scoping). However, limited public evidence of full end-to-end Python backend services, evals/tracing infrastructure, or scale/observability narrative; single HN project without corroborating work history, team scale, or failure/fix war stories raises confidence ceiling. Profile fits the *builder* archetype but needs validation on depth of production SWE rigor (design→deploy→monitor→iterate) and whether this is hobby/demo vs. sustained production ownership.",
+    "signals": {
+      "top_signal": "Shipped MCP server + Chrome tool-use agent integration; production-adjacent architecture."
+    },
+    "first_seen": "2026-08-19T01:16:28.578131+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "Abhixhek",
+    "name": "Abhixhek",
+    "profile_url": "https://news.ycombinator.com/user?id=Abhixhek",
+    "role": "Principal Product Builder",
+    "score": 72,
+    "reasoning": "Strong technical depth and AI/LLM system understanding demonstrated through thoughtful agent failure analysis and measurement-first approach. However, limited visible evidence of 0→1 product ownership, customer discovery, or full end-to-end shipping track record—appears to be early-stage builder rather than proven principal-level product architect.",
+    "signals": {
+      "top_signal": "Deep LLM/AI systems thinking with measurement-first product instinct"
+    },
+    "first_seen": "2026-08-19T01:17:15.001090+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "daniele_dll",
+    "name": "daniele_dll",
+    "profile_url": "https://news.ycombinator.com/user?id=daniele_dll",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong production MCP server shipped end-to-end with tool-use optimization, auth/OAuth scoping, and multi-platform agent integration (Claude, ChatGPT). Demonstrates core agentic patterns (tool use, screen parsing, structured interactions) and observability mindset (token optimization). Single HN post limits corroboration of broader SWE depth, production scale, evals rigor, and backend services portfolio—cannot validate full 3–7yr SWE backend track record or cloud/async Python maturity. No disqualifying red flags; genuine production AI connector work.",
+    "signals": {
+      "top_signal": "Shipped MCP server with multi-agent tool-use, OAuth auth, token optimization."
+    },
+    "first_seen": "2026-08-20T01:15:11.809146+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "guyb3",
+    "name": "guyb3",
+    "profile_url": "https://news.ycombinator.com/user?id=guyb3",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal: shipping OSS agent harness with tool integrations (GitHub, Gmail, Notion, Dropbox), human-in-the-loop patterns, and team policy enforcement suggests production agentic systems experience. However, profile is thin—single HN Launch post with no evidence of backend Python services at scale, MCP servers specifically, production observability/evals, or cloud/container deployment. Cannot validate core SWE depth (3–7+ yrs) or failure/fix stories. YC founder pattern and agent harness architecture are positive, but lack corroborating work history, shipping scale, or concrete production incidents.",
+    "signals": {
+      "top_signal": "OSS agent harness w/ tool integrations & human-in-the-loop, but thin on proven backend systems at scale & observability."
+    },
+    "first_seen": "2026-08-20T01:15:29.487596+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "mkvisher",
+    "name": "mkvisher",
+    "profile_url": "https://news.ycombinator.com/user?id=mkvisher",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on MCP server + agent action signing (core requirement), but single HN comment without corroboration of production scale, Python backend services, evals/tracing, or ops experience. No location info, GitHub, or evidence of end-to-end shipping at scale. Meets one critical must-have deeply; insufficient evidence on 5+ other must-haves.",
+    "signals": {
+      "top_signal": "MCP server + agent action instrumentation"
+    },
+    "first_seen": "2026-08-21T01:19:02.185251+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "rat_rad",
+    "name": "rat_rad",
+    "profile_url": "https://news.ycombinator.com/user?id=rat_rad",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong MCP server + agentic patterns evidence (custom global MCP, tool-use design, multi-agent orchestration with Claude/Cursor/Codex). However, no clear production deployment scale story, missing observability/evals/tracing evidence, no geographic/experience-level confirmation, and single HN comment limits verification. Profile shows solid technical depth but lacks concrete shipping + monitoring evidence at production scale.",
+    "signals": {
+      "top_signal": "MCP server + multi-agent orchestration design"
+    },
+    "first_seen": "2026-08-21T01:19:04.611974+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "sanspareilsmyn",
+    "name": "sanspareilsmyn",
+    "profile_url": "https://news.ycombinator.com/user?id=sanspareilsmyn",
+    "role": "Senior Data Scientist",
+    "score": 68,
+    "reasoning": "Strong signal on MLOps + real-time ML monitoring + feature pipeline quality (exact Conviva domain), but profile is a single HN Show thread with no corroborating evidence of: degree (MS/PhD), 5+ years applied ML track record, production deployment scale, Python proficiency, or hands-on data science depth beyond tooling. FeatureLens demonstrates relevant problem understanding and systems thinking, but lacks evidence of statistical modeling, traditional ML, time series forecasting, or large-scale data systems (Ray/Spark). Promising trajectory but insufficient validation for senior-level placement without deeper background check.",
+    "signals": {
+      "top_signal": "MLOps + real-time feature pipeline monitoring + alerting = domain fit; weak evidence of production ML depth & credentials."
+    },
+    "first_seen": "2026-08-21T01:22:35.954242+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "hashhar",
+    "name": "hashhar",
+    "profile_url": "https://news.ycombinator.com/user?id=hashhar",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong production MCP server signal (Henka multi-tenant refactoring tool) demonstrates core requirement of building AI connectors at scale with tool-use patterns. Python backend + systems thinking evident, but limited corroborating evidence of LLM agents in production, evals/tracing setup, or behavioral data domain experience; HN handle alone insufficient without verifying shipping scale, observability rigor, and agentic workflow depth.",
+    "signals": {
+      "top_signal": "Production MCP server + multi-tenant architecture"
+    },
+    "first_seen": "2026-08-24T01:18:47.114825+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "forrestly",
+    "name": "forrestly",
+    "profile_url": "https://news.ycombinator.com/user?id=forrestly",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong production signal: shipping observability tooling (AgentSight with eBPF) for AI agents demonstrates hands-on systems engineering and agent monitoring expertise—a core bonus area. However, limited profile depth on HN alone; no corroborated evidence of MCP servers, production agent failures/fixes, evals, or full agentic workflow ownership. Must validate backend SWE depth, Python services end-to-end (design→deploy→monitor), and whether observability work included building agent connectors/tool-use systems vs. instrumentation-only.",
+    "signals": {
+      "top_signal": "Production eBPF observability for AI agents; systems-level thinking on agent monitoring."
+    },
+    "first_seen": "2026-08-24T01:18:57.616584+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "xwil",
+    "name": "xwil",
+    "profile_url": "https://news.ycombinator.com/user?id=xwil",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on MCP servers, tool-use patterns, and production agent deployment (cloud agents, Slack integration, Sentry MCP). Demonstrates hands-on build of agentic workflows with security/auth thinking (unprivileged agent loop, secure PR handling). However, single HN post limits corroboration of full backend SWE depth, production scale experience, evals/observability rigor, and concrete failure/fix stories. No location data, tenure clarity, or evidence of owned end-to-end services (design→deploy→monitor). Warrants phone screen to validate 3–7yr SWE foundation and production reliability patterns.",
+    "signals": {
+      "top_signal": "MCP server builder + production cloud agents with real tool integrations (code search, Sentry, PR automation)"
+    },
+    "first_seen": "2026-08-26T01:19:33.868605+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "s1lv1up",
+    "name": "s1lv1up",
+    "profile_url": "https://news.ycombinator.com/user?id=s1lv1up",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on MCP servers (core requirement) and demonstrates hands-on tooling work, but profile lacks concrete evidence of production agent systems, evals/tracing implementation, and full backend service ownership at scale. Single HN story insufficient to validate 3–7+ yrs production SWE depth or agent failure/fix narratives.",
+    "signals": {
+      "top_signal": "MCP server expertise + infrastructure thinking"
+    },
+    "first_seen": "2026-08-28T09:57:10.907132+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "yesplease_boats",
+    "name": "yesplease_boats",
+    "profile_url": "https://news.ycombinator.com/user?id=yesplease_boats",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal: shipped MCP server in production with real-world use (mail aggregation), demonstrating tool-use and agentic patterns. However, profile lacks evidence of Python backend services at scale, production agent failure/fix stories, evals/tracing, cloud deployment, or async patterns. Single HN project insufficient to validate full SWE foundation (3–7+ yrs, design→deploy→monitor). Location unknown. Likely builder/hobbyist rather than production AI engineer.",
+    "signals": {
+      "top_signal": "MCP server shipped + tool-use pattern"
+    },
+    "first_seen": "2026-08-28T09:57:16.163142+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "smartwordworld",
+    "name": "smartwordworld",
+    "profile_url": "https://news.ycombinator.com/user?id=smartwordworld",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong signal on evals + observability (built config-drift-checker to validate agent behavior across Claude upgrades using Anthropic eval format), demonstrating production-mindset testing rigor. However, profile is thin: single HN comment with no evidence of Python backend services, MCP servers, tool-use connectors, multi-agent orchestration, or shipped production systems at scale. Evals alone do not meet the 'production AI Engineer' bar without concrete shipping + infrastructure evidence.",
+    "signals": {
+      "top_signal": "Evals-first thinking + agent drift detection"
+    },
+    "first_seen": "2026-08-28T09:57:26.045867+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "saikatsg",
+    "name": "saikatsg",
+    "profile_url": "https://news.ycombinator.com/user?id=saikatsg",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 78,
+    "reasoning": "Strong production AI/agent signal: security scanner for MCP servers and agent skills directly targets the core job (MCP, tool-use, agent safety). Profile shows hands-on engineering focus, not PM/research. However, limited visibility into full scope of production systems, evals/tracing setup, or Python backend services shipping end-to-end; single HN story without corroboration keeps score conservative per guidelines.",
+    "signals": {
+      "top_signal": "MCP servers + agent skills security tooling = direct role alignment"
+    },
+    "first_seen": "2026-08-31T04:04:55.489601+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "86072094",
+    "name": "Lasya Pamarthi",
+    "profile_url": "https://github.com/plasya",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong technical foundation: Python, LangGraph, AWS, and distributed systems align with core requirements. However, profile lacks concrete evidence of production LLM agents with failure/fix narratives, MCP server implementations, evals+tracing setup, or end-to-end shipped systems. SYFT role and public repos need verification for actual agentic patterns and tool-use in production; current signals are promising but incomplete for a 'production AI Engineer' bar.",
+    "signals": {
+      "top_signal": "LangGraph + Python + AWS stack; needs proof of production agents & MCP work",
+      "followers": 2,
+      "public_repos": 8,
+      "company": "SYFT",
+      "location": "California, United States"
+    },
+    "first_seen": "2026-09-01T03:53:11.411548+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "banuakman",
+    "name": "banuakman",
+    "profile_url": "https://news.ycombinator.com/user?id=banuakman",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong MCP/tool-use signal from extensible-mcp OSS project with demonstrated understanding of production agent security, policy enforcement, and deterministic workflows. However, limited visible evidence of: (1) Python backend services shipped end-to-end at scale, (2) production LLM agents with concrete failure/fix stories, (3) evals+tracing infrastructure, (4) cloud/container/async patterns. Cofounder role suggests ownership but lacks specifics on runtime scale, observability, and full stack depth required. Single HN Show post insufficient to validate production agent experience; requires detailed technical vetting.",
+    "signals": {
+      "top_signal": "MCP proxy architecture + policy-layer security thinking; production-grade concern for access control and deterministic policies."
+    },
+    "first_seen": "2026-09-02T03:14:46.597081+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "JoaquinAmat",
+    "name": "JoaquinAmat",
+    "profile_url": "https://news.ycombinator.com/user?id=JoaquinAmat",
+    "role": "Senior Data Scientist",
+    "score": 72,
+    "reasoning": "JoaquinAmat shows strong signal on time series forecasting (core requirement) and Python-native tooling via skforecast project, indicating hands-on ML depth beyond slides. However, profile lacks clear evidence of production deployment at scale, Ray/Spark experience, MLOps maturity, or deep statistical modeling breadth—and single HN handle without corroborating work history limits confidence to conservative range despite solid foundational fit.",
+    "signals": {
+      "top_signal": "Time series forecasting + agentic AI + Python open-source = right problem domain, needs production & scale validation"
+    },
+    "first_seen": "2026-09-02T03:17:58.585306+00:00"
   }
 ]

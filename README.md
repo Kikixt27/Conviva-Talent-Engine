@@ -1,6 +1,6 @@
 # Conviva Signal
 
-Sourcing automation for the Conviva China TA team.
+Sourcing automation for the Conviva TA team.
 
 This repository contains:
 
