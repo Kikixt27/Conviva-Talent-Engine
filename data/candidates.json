@@ -1424,5 +1424,31 @@
       "location": "California, United States"
     },
     "first_seen": "2026-09-01T03:53:11.411548+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "banuakman",
+    "name": "banuakman",
+    "profile_url": "https://news.ycombinator.com/user?id=banuakman",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 72,
+    "reasoning": "Strong MCP/tool-use signal from extensible-mcp OSS project with demonstrated understanding of production agent security, policy enforcement, and deterministic workflows. However, limited visible evidence of: (1) Python backend services shipped end-to-end at scale, (2) production LLM agents with concrete failure/fix stories, (3) evals+tracing infrastructure, (4) cloud/container/async patterns. Cofounder role suggests ownership but lacks specifics on runtime scale, observability, and full stack depth required. Single HN Show post insufficient to validate production agent experience; requires detailed technical vetting.",
+    "signals": {
+      "top_signal": "MCP proxy architecture + policy-layer security thinking; production-grade concern for access control and deterministic policies."
+    },
+    "first_seen": "2026-09-02T03:14:46.597081+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "JoaquinAmat",
+    "name": "JoaquinAmat",
+    "profile_url": "https://news.ycombinator.com/user?id=JoaquinAmat",
+    "role": "Senior Data Scientist",
+    "score": 72,
+    "reasoning": "JoaquinAmat shows strong signal on time series forecasting (core requirement) and Python-native tooling via skforecast project, indicating hands-on ML depth beyond slides. However, profile lacks clear evidence of production deployment at scale, Ray/Spark experience, MLOps maturity, or deep statistical modeling breadth—and single HN handle without corroborating work history limits confidence to conservative range despite solid foundational fit.",
+    "signals": {
+      "top_signal": "Time series forecasting + agentic AI + Python open-source = right problem domain, needs production & scale validation"
+    },
+    "first_seen": "2026-09-02T03:17:58.585306+00:00"
   }
 ]
