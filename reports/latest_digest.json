@@ -1,0 +1,49 @@
+{
+  "date": "2026-09-03",
+  "count": 2,
+  "threshold": 65,
+  "report_file": "2026-09-03.html",
+  "top": [
+    {
+      "name": "winshining",
+      "score": 65,
+      "role": "Staff Software Engineer — Tech Lead, Backend",
+      "profile_url": "https://github.com/winshining",
+      "source": "github",
+      "top_signal": "Distributed systems + high-concurrency nginx expertise + Beijing location | school unverified",
+      "flags": [
+        "school unverified — linkedin verify education",
+        "no evidence of OLAP/streaming/Kafka/Druid at scale",
+        "no evidence of AI-native tooling (Cursor, Claude, Copilot) fluency",
+        "no evidence of tech-lead mentorship (design reviews, code pairing)",
+        "github repos require manual inspection for backend depth",
+        "english fluency unverified — no written comms in profile",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "school_unverified": true
+    },
+    {
+      "name": "Ziop",
+      "score": 65,
+      "role": "Staff Software Engineer — Tech Lead, Backend",
+      "profile_url": "https://github.com/wangpi26",
+      "source": "github",
+      "top_signal": "Data platform engineer in Beijing with Ray, Lance, Go, Python — right domain and location | school unverified",
+      "flags": [
+        "school_unverified — no educational background provided",
+        "github_signal_weak — 0 followers, no public contribution narrative",
+        "ai_native_fluency_unverified — no Cursor/Claude/Copilot evidence in bio",
+        "architecture_ownership_unverified — must inspect repos for scale/design leadership",
+        "english_proficiency_unverified — bio is minimal, no cross-regional collab signals",
+        "streaming_olap_depth_unclear — Ray/Lance mentioned but Kafka/ClickHouse/Druid absent from bio",
+        "mentoring_signal_missing — no code review or design pairing evidence",
+        "linkedin_verify_school",
+        "github_repos_audit_required — inspect 32 repos for distributed systems depth",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "school_unverified": true
+    }
+  ]
+}
