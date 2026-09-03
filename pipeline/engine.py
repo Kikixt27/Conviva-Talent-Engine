@@ -709,18 +709,69 @@ def render_report(new_candidates: list[Candidate]) -> Path:
 
 
 def post_slack_digest(new_candidates: list[Candidate], report_path: Path) -> None:
+    """Write digest JSON for post-push notify; optionally post a short Slack preview.
+
+    Set SKIP_SLACK_IN_ENGINE=1 in Actions so the clickable report link is sent
+    *after* git push (see scripts/notify_report.py). Local runs still Slack here.
+    """
+
+    today = report_path.stem
+    ranked = sorted(new_candidates, key=lambda c: c.score, reverse=True)
+    digest = {
+        "date": today,
+        "count": len(ranked),
+        "threshold": SCORE_THRESHOLD,
+        "report_file": report_path.name,
+        "top": [
+            {
+                "name": c.name,
+                "score": c.score,
+                "role": c.role,
+                "profile_url": c.profile_url,
+                "source": c.source,
+                "top_signal": (c.signals or {}).get("top_signal", ""),
+                "flags": (c.signals or {}).get("flags") or [],
+                "school_unverified": bool((c.signals or {}).get("school_unverified")),
+            }
+            for c in ranked[:15]
+        ],
+    }
+    digest_path = REPORTS_DIR / "latest_digest.json"
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    digest_path.write_text(json.dumps(digest, ensure_ascii=False, indent=2), encoding="utf-8")
+    log.info("Wrote Slack digest stub: %s", digest_path)
+
+    if os.environ.get("SKIP_SLACK_IN_ENGINE", "").strip().lower() in {"1", "true", "yes"}:
+        log.info("SKIP_SLACK_IN_ENGINE set — Slack will run after git push")
+        return
     if not SLACK_WEBHOOK_URL:
         log.info("SLACK_WEBHOOK_URL not set — skipping Slack notification")
         return
-    if not new_candidates:
-        text = "Conviva Signal: no new candidates today."
-    else:
-        top = max(new_candidates, key=lambda c: c.score)
+
+    repo = os.environ.get("GITHUB_REPOSITORY", "").strip() or "Kikixt27/Conviva-Talent-Engine"
+    report_url = f"https://github.com/{repo}/blob/main/reports/{today}.html"
+
+    if not ranked:
         text = (
-            f":mag: Conviva Signal — {len(new_candidates)} new candidate(s).\n"
-            f"Top: *{top.name}* ({top.role}) — score {top.score}.\n"
-            f"Report artifact: `{report_path.name}`"
+            f":mag: Conviva Signal — no new candidates today ({today}).\n"
+            f"<{report_url}|Open report on GitHub>"
         )
+    else:
+        lines = [
+            f":mag: *Conviva Signal — {len(ranked)} new candidate(s)* ({today})",
+            f"<{report_url}|Open HTML report on GitHub>",
+            "",
+        ]
+        for c in ranked[:8]:
+            flags = (c.signals or {}).get("flags") or []
+            flag_s = f" · {', '.join(flags[:2])}" if flags else ""
+            lines.append(
+                f"• *{c.score}* <{c.profile_url}|{c.name}> — {c.role}{flag_s}"
+            )
+        if len(ranked) > 8:
+            lines.append(f"_…and {len(ranked) - 8} more in the report_")
+        text = "\n".join(lines)
+
     try:
         requests.post(SLACK_WEBHOOK_URL, json={"text": text}, timeout=HTTP_TIMEOUT)
     except requests.RequestException as exc:

@@ -36,6 +36,8 @@ jobs:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
           DS_API_KEY: ${{ secrets.DS_API_KEY }}
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          SKIP_SLACK_IN_ENGINE: "1"
           AI_PROVIDER: auto
           CLAUDE_MODEL: claude-haiku-4-5
           DEEPSEEK_MODEL: deepseek-chat
@@ -64,3 +66,17 @@ jobs:
             git commit -m "data: nightly sourcing run $(date -u +'%Y-%m-%d')"
             git push
           fi
+
+      - name: Slack + optional email with report link
+        if: success()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          NOTIFY_EMAIL_TO: ${{ secrets.NOTIFY_EMAIL_TO }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM: ${{ secrets.RESEND_FROM }}
+        run: |
+          export REPORT_DATE="$(date -u +'%Y-%m-%d')"
+          export REPORT_PATH="reports/${REPORT_DATE}.html"
+          export DIGEST_JSON="reports/latest_digest.json"
+          python scripts/notify_report.py

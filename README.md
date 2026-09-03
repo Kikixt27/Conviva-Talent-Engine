@@ -40,7 +40,10 @@ In your GitHub repo, go to **Settings → Secrets and variables → Actions → 
 | --- | --- | --- |
 | `CLAUDE_API_KEY` | At least one of these | <https://console.anthropic.com> |
 | `DS_API_KEY`     | At least one of these | <https://platform.deepseek.com> |
-| `SLACK_WEBHOOK_URL` | Optional | <https://api.slack.com/apps> → Incoming Webhooks |
+| `SLACK_WEBHOOK_URL` | Optional | <https://api.slack.com/apps> → Incoming Webhooks. After each nightly run you get a Slack message with **top candidates + a clickable GitHub report link**. |
+| `NOTIFY_EMAIL_TO` | Optional | Comma-separated emails (e.g. `you@conviva.com`). Requires `RESEND_API_KEY`. |
+| `RESEND_API_KEY` | Optional | <https://resend.com> — emails the daily digest + HTML attachment. |
+| `RESEND_FROM` | Optional | Verified Resend from-address (default sandbox from may only reach your Resend signup email). |
 
 `GITHUB_TOKEN` is provided automatically — you do **not** need to create one.
 
@@ -50,9 +53,9 @@ In your GitHub repo, go to **Settings → Secrets and variables → Actions → 
 2. Pick **Conviva Signal — Nightly Sourcing**.
 3. Click **Run workflow → Run workflow**.
 4. Wait 5–10 minutes, then:
-   - Watch the live log.
-   - Download the `signal-report` artifact from the run summary to view the HTML report.
-   - Check your Slack channel if you wired up the webhook.
+   - Check **Slack** — you should see top candidates and an **Open HTML report on GitHub** link (no artifact download needed).
+   - Optional: download the `signal-report` artifact if you want an offline copy.
+   - Optional email: set secrets `NOTIFY_EMAIL_TO` + `RESEND_API_KEY` to also receive the report by email.
 
 ---
 
