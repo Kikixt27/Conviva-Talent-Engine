@@ -95,8 +95,11 @@ def main() -> int:
     lines = [
         f":page_facing_up: *Conviva Signal report — {date}*",
         f"<{url}|Open HTML report on GitHub>",
-        f"New candidates: *{n}* (score ≥ {digest.get('threshold', '?')})",
+        f":white_check_mark: Ready: *{n}* · :warning: Needs validation: *{digest.get('needs_validation_count', 0)}* "
+        f"(score ≥ {digest.get('threshold', '?')} for ready)",
     ]
+    if digest.get("top"):
+        lines.append("*Ready*")
     for row in (digest.get("top") or [])[:8]:
         name = row.get("name", "?")
         score = row.get("score", "?")
@@ -108,6 +111,18 @@ def main() -> int:
             lines.append(f"• *{score}* <{profile}|{name}> — {role}{flag_s}")
         else:
             lines.append(f"• *{score}* {name} — {role}{flag_s}")
+    needs = digest.get("needs_validation") or []
+    if needs:
+        lines.append("*Needs validation* (school) — resume with validate_agent.py")
+        for row in needs[:8]:
+            name = row.get("name", "?")
+            score = row.get("score", "?")
+            key = row.get("dedup_key", "")
+            profile = row.get("profile_url", "")
+            if profile:
+                lines.append(f"• *{score}* <{profile}|{name}> · `{key}`")
+            else:
+                lines.append(f"• *{score}* {name} · `{key}`")
 
     if not report_path.exists():
         lines.append("_Note: local report file missing in this runner; link still points at main after push._")

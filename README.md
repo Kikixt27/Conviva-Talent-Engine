@@ -104,11 +104,27 @@ Edit `.github/workflows/source.yml` and adjust the `env:` block:
 - `CLAUDE_MODEL` — which Anthropic model to use. Default `claude-haiku-4-5` (cheapest, fastest). Other options: `claude-sonnet-4-5` (higher quality, ~5× cost), `claude-opus-4-5` (highest quality, ~25× cost).
 - `DEEPSEEK_MODEL` — which DeepSeek model to use. Default `deepseek-chat`. Other option: `deepseek-reasoner` (more thorough, slower).
 
-### Reading results
+### Validation Agent (ReAct — not a flat workflow)
 
-- Latest data lives in `data/candidates.json` (committed by the bot after each run).
-- Daily HTML reports live in `reports/YYYY-MM-DD.html`.
-- Slack digest gives you the top hit and the count.
+After scoring, each candidate runs through `pipeline/validation_agent.py`:
+
+```
+reason (Thought) → act (Action) → observe → reason …
+```
+
+- **Ready** — school evidence OK (or not required) and score ≥ threshold → Slack / report Ready
+- **Needs validation** — interesting score but `school_unverified` → agent **pauses**, writes `data/validation_queue.json`
+- **Rejected** — below bar
+
+Resume after you paste LinkedIn education:
+
+```powershell
+python scripts/validate_agent.py list
+python scripts/validate_agent.py resume github:SOURCE_ID --education "MIT EECS B.S. 2018; …"
+```
+
+Uses **LangGraph** when installed (`pip install -r requirements.txt`); otherwise the same ReAct node loop runs without LangGraph so nightly never bricks.
+
 
 ---
 

@@ -14,9 +14,11 @@ Browser UI (`conviva_signal_v4_2.html`) is unchanged. This layer runs **batch** 
 
 ## Layout
 
-- **`engine.py`** — canonical nightly run (`main()`): search → hard filter → LLM → persist + report.
+- **`engine.py`** — canonical nightly run (`main()`): search → hard filter → LLM → **Validation Agent** → persist + report.
+- `validation_agent.py` — ReAct agent (LangGraph): Thought → Action → Observe; pauses on `school_unverified` for LinkedIn human-in-the-loop.
 - `utils.py` — `hard_filter_github` (incl. excluded non-US locations), `hard_filter_hackernews`, GitHub helpers.
-- `engine.py` — LLM scoring + deterministic caps (`school_unverified` ≤60/65; non-US ≤30 for US priority roles). Role JSON may include `scoring_notes`.
+- `scorer.py` — CLI wrapper that calls `engine.main()`.
+- `calibrate.py` / `query_refresh.py` — stubs you can extend.
 
 
 ## Role config

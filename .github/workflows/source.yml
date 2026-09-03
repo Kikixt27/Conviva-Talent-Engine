@@ -59,6 +59,8 @@ jobs:
           shopt -s nullglob
           git add data/candidates.json reports/ data/roles/ pipeline/
           git add data/candidates/*.jsonl
+          if [ -f data/validation_queue.json ]; then git add data/validation_queue.json; fi
+          if [ -d data/agent_traces ]; then git add data/agent_traces/; fi
           if [ -f feedback/summary.json ]; then git add feedback/summary.json; fi
           if git diff --cached --quiet; then
             echo "No new candidates to commit."

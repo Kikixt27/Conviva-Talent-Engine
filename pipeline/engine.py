@@ -567,7 +567,17 @@ def collect_for_role(
             feedback_tail=feedback_tail,
             location=user.get("location"),
         )
-        if not scored or scored.get("score", 0) < SCORE_THRESHOLD:
+        if not scored:
+            return
+        score_i = int(scored.get("score", 0))
+        school_uv = bool(scored.get("school_unverified"))
+        # Floor: keep school-unverified talent for the Validation Agent even if
+        # deterministic school-cap pulled them under SCORE_THRESHOLD.
+        from pipeline.validation_agent import VALIDATION_INTEREST_SCORE
+
+        if score_i < SCORE_THRESHOLD and not (
+            school_uv and score_i >= VALIDATION_INTEREST_SCORE
+        ):
             return
         fresh.append(Candidate(
             source="github",
@@ -575,7 +585,7 @@ def collect_for_role(
             name=user.get("name") or user.get("login", "unknown"),
             profile_url=user.get("html_url", ""),
             role=role["title"],
-            score=int(scored["score"]),
+            score=score_i,
             reasoning=scored.get("reasoning", ""),
             signals={
                 "top_signal": scored.get("top_signal", ""),
@@ -584,7 +594,7 @@ def collect_for_role(
                 "company": user.get("company"),
                 "location": user.get("location"),
                 "via": via,
-                "school_unverified": bool(scored.get("school_unverified")),
+                "school_unverified": school_uv,
                 "flags": scored.get("flags") or [],
             },
         ))
@@ -646,7 +656,15 @@ def collect_for_role(
                 f"URL: https://news.ycombinator.com/user?id={author}"
             )
             scored = score_candidate(role, blob, feedback_tail=feedback_tail, location=None)
-            if not scored or scored.get("score", 0) < SCORE_THRESHOLD:
+            if not scored:
+                continue
+            score_i = int(scored.get("score", 0))
+            school_uv = bool(scored.get("school_unverified"))
+            from pipeline.validation_agent import VALIDATION_INTEREST_SCORE
+
+            if score_i < SCORE_THRESHOLD and not (
+                school_uv and score_i >= VALIDATION_INTEREST_SCORE
+            ):
                 continue
             fresh.append(Candidate(
                 source="hackernews",
@@ -654,53 +672,134 @@ def collect_for_role(
                 name=author,
                 profile_url=f"https://news.ycombinator.com/user?id={author}",
                 role=role["title"],
-                score=int(scored["score"]),
+                score=score_i,
                 reasoning=scored.get("reasoning", ""),
                 signals={
                     "top_signal": scored.get("top_signal", ""),
-                    "school_unverified": bool(scored.get("school_unverified")),
+                    "school_unverified": school_uv,
                     "flags": scored.get("flags") or [],
                 },
             ))
     return fresh
 
 
-def render_report(new_candidates: list[Candidate]) -> Path:
+def _profile_blob_from_candidate(cand: Candidate) -> str:
+    sig = cand.signals or {}
+    return (
+        f"Name: {cand.name}\n"
+        f"Source: {cand.source}\n"
+        f"Profile: {cand.profile_url}\n"
+        f"Location: {sig.get('location') or '—'}\n"
+        f"Company: {sig.get('company') or '—'}\n"
+        f"Prior score: {cand.score}\n"
+        f"Prior reasoning: {cand.reasoning}\n"
+        f"Flags: {sig.get('flags') or []}\n"
+        f"Top signal: {sig.get('top_signal') or '—'}\n"
+    )
+
+
+def run_agents_on_candidates(
+    fresh: list[Candidate],
+    roles: list[dict[str, Any]],
+) -> tuple[list[Candidate], list[Candidate], list[Candidate]]:
+    """ReAct validation agent: Ready / Needs validation / Rejected."""
+
+    from pipeline.validation_agent import run_validation_agent
+
+    by_title = {r["title"]: r for r in roles}
+    ready: list[Candidate] = []
+    needs: list[Candidate] = []
+    rejected: list[Candidate] = []
+
+    for cand in fresh:
+        role = by_title.get(cand.role) or {"title": cand.role, "requirements": ""}
+        blob = _profile_blob_from_candidate(cand)
+        final = run_validation_agent(
+            candidate=asdict(cand),
+            role=role,
+            profile_blob=blob,
+        )
+        status = final.get("status") or "rejected"
+        updated = final.get("candidate") or asdict(cand)
+        out = Candidate(
+            source=updated.get("source", cand.source),
+            source_id=str(updated.get("source_id", cand.source_id)),
+            name=updated.get("name", cand.name),
+            profile_url=updated.get("profile_url", cand.profile_url),
+            role=updated.get("role", cand.role),
+            score=int(updated.get("score", cand.score)),
+            reasoning=updated.get("reasoning", cand.reasoning),
+            signals={
+                **(updated.get("signals") or cand.signals or {}),
+                "validation_status": status,
+                "agent_thought": final.get("thought", ""),
+                "agent_trace_steps": len(final.get("trace") or []),
+            },
+            first_seen=cand.first_seen,
+        )
+        if status == "ready":
+            ready.append(out)
+        elif status == "needs_validation":
+            needs.append(out)
+        else:
+            rejected.append(out)
+    return ready, needs, rejected
+
+
+def render_report(
+    ready: list[Candidate],
+    needs_validation: list[Candidate] | None = None,
+) -> Path:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     report_path = REPORTS_DIR / f"{today}.html"
+    needs_validation = needs_validation or []
 
-    rows = []
-    for cand in sorted(new_candidates, key=lambda c: c.score, reverse=True):
-        rows.append(
-            "<tr>"
-            f"<td>{cand.score}</td>"
-            f"<td>{cand.role}</td>"
-            f"<td><a href='{cand.profile_url}' target='_blank'>{cand.name}</a></td>"
-            f"<td>{cand.source}</td>"
-            f"<td>{cand.signals.get('top_signal', '')}</td>"
-            f"<td>{cand.reasoning}</td>"
-            "</tr>"
-        )
+    def rows_for(cands: list[Candidate]) -> str:
+        rows = []
+        for cand in sorted(cands, key=lambda c: c.score, reverse=True):
+            flags = ", ".join((cand.signals or {}).get("flags") or [])
+            rows.append(
+                "<tr>"
+                f"<td>{cand.score}</td>"
+                f"<td>{cand.role}</td>"
+                f"<td><a href='{cand.profile_url}' target='_blank'>{cand.name}</a></td>"
+                f"<td>{cand.source}</td>"
+                f"<td>{cand.signals.get('top_signal', '')}</td>"
+                f"<td>{flags}</td>"
+                f"<td>{cand.reasoning}</td>"
+                "</tr>"
+            )
+        return "".join(rows) or "<tr><td colspan=7>None</td></tr>"
 
     html = f"""<!doctype html>
 <html lang=\"en\"><head><meta charset=\"utf-8\">
 <title>Conviva Signal — {today}</title>
 <style>
   body{{font-family:-apple-system,Segoe UI,Roboto,sans-serif;margin:32px;color:#111}}
-  h1{{margin-bottom:4px}}
+  h1{{margin-bottom:4px}} h2{{margin-top:32px}}
   .meta{{color:#666;margin-bottom:24px}}
-  table{{border-collapse:collapse;width:100%}}
+  table{{border-collapse:collapse;width:100%;margin-bottom:12px}}
   th,td{{border-bottom:1px solid #eee;padding:10px 12px;text-align:left;vertical-align:top}}
   th{{background:#fafafa;font-weight:600}}
   tr:hover{{background:#f7f9fc}}
+  .tag-ready{{color:#15803d}} .tag-need{{color:#b45309}}
 </style></head>
 <body>
 <h1>Conviva Signal — {today}</h1>
-<div class=\"meta\">{len(new_candidates)} new candidate(s) at score &ge; {SCORE_THRESHOLD}</div>
+<div class=\"meta\">Validation Agent: <span class=\"tag-ready\">{len(ready)} ready</span> ·
+<span class=\"tag-need\">{len(needs_validation)} needs validation</span> · score floor ≥ {SCORE_THRESHOLD} for ready</div>
+<h2 class=\"tag-ready\">Ready (outreach)</h2>
 <table>
-  <thead><tr><th>Score</th><th>Role</th><th>Candidate</th><th>Source</th><th>Top signal</th><th>Reasoning</th></tr></thead>
-  <tbody>{''.join(rows) or '<tr><td colspan=6>No new candidates today.</td></tr>'}</tbody>
+  <thead><tr><th>Score</th><th>Role</th><th>Candidate</th><th>Source</th><th>Top signal</th><th>Flags</th><th>Reasoning</th></tr></thead>
+  <tbody>{rows_for(ready)}</tbody>
+</table>
+<h2 class=\"tag-need\">Needs validation (school / LinkedIn)</h2>
+<p class=\"meta\">Paused by ReAct agent — resume with
+<code>python scripts/validate_agent.py resume &lt;source:id&gt; --education \"…\"</code></p>
+<table>
+  <thead><tr><th>Score</th><th>Role</th><th>Candidate</th><th>Source</th><th>Top signal</th><th>Flags</th><th>Reasoning</th></tr></thead>
+  <tbody>{rows_for(needs_validation)}</tbody>
 </table>
 </body></html>"""
     report_path.write_text(html, encoding="utf-8")
@@ -708,21 +807,20 @@ def render_report(new_candidates: list[Candidate]) -> Path:
     return report_path
 
 
-def post_slack_digest(new_candidates: list[Candidate], report_path: Path) -> None:
-    """Write digest JSON for post-push notify; optionally post a short Slack preview.
+def post_slack_digest(
+    ready: list[Candidate],
+    report_path: Path,
+    needs_validation: list[Candidate] | None = None,
+) -> None:
+    """Write digest JSON for post-push notify; optionally post a short Slack preview."""
 
-    Set SKIP_SLACK_IN_ENGINE=1 in Actions so the clickable report link is sent
-    *after* git push (see scripts/notify_report.py). Local runs still Slack here.
-    """
-
+    needs_validation = needs_validation or []
     today = report_path.stem
-    ranked = sorted(new_candidates, key=lambda c: c.score, reverse=True)
-    digest = {
-        "date": today,
-        "count": len(ranked),
-        "threshold": SCORE_THRESHOLD,
-        "report_file": report_path.name,
-        "top": [
+    ranked_ready = sorted(ready, key=lambda c: c.score, reverse=True)
+    ranked_needs = sorted(needs_validation, key=lambda c: c.score, reverse=True)
+
+    def pack(cands: list[Candidate]) -> list[dict[str, Any]]:
+        return [
             {
                 "name": c.name,
                 "score": c.score,
@@ -732,9 +830,20 @@ def post_slack_digest(new_candidates: list[Candidate], report_path: Path) -> Non
                 "top_signal": (c.signals or {}).get("top_signal", ""),
                 "flags": (c.signals or {}).get("flags") or [],
                 "school_unverified": bool((c.signals or {}).get("school_unverified")),
+                "validation_status": (c.signals or {}).get("validation_status", ""),
+                "dedup_key": c.dedup_key,
             }
-            for c in ranked[:15]
-        ],
+            for c in cands[:15]
+        ]
+
+    digest = {
+        "date": today,
+        "count": len(ranked_ready),
+        "needs_validation_count": len(ranked_needs),
+        "threshold": SCORE_THRESHOLD,
+        "report_file": report_path.name,
+        "top": pack(ranked_ready),
+        "needs_validation": pack(ranked_needs),
     }
     digest_path = REPORTS_DIR / "latest_digest.json"
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -751,26 +860,26 @@ def post_slack_digest(new_candidates: list[Candidate], report_path: Path) -> Non
     repo = os.environ.get("GITHUB_REPOSITORY", "").strip() or "Kikixt27/Conviva-Talent-Engine"
     report_url = f"https://github.com/{repo}/blob/main/reports/{today}.html"
 
-    if not ranked:
-        text = (
-            f":mag: Conviva Signal — no new candidates today ({today}).\n"
-            f"<{report_url}|Open report on GitHub>"
-        )
-    else:
-        lines = [
-            f":mag: *Conviva Signal — {len(ranked)} new candidate(s)* ({today})",
-            f"<{report_url}|Open HTML report on GitHub>",
-            "",
-        ]
-        for c in ranked[:8]:
-            flags = (c.signals or {}).get("flags") or []
-            flag_s = f" · {', '.join(flags[:2])}" if flags else ""
+    lines = [
+        f":mag: *Conviva Signal — {today}*",
+        f"<{report_url}|Open HTML report on GitHub>",
+        f":white_check_mark: *Ready:* {len(ranked_ready)} · :warning: *Needs validation:* {len(ranked_needs)}",
+        "",
+    ]
+    if ranked_ready:
+        lines.append("*Ready*")
+        for c in ranked_ready[:6]:
+            lines.append(f"• *{c.score}* <{c.profile_url}|{c.name}> — {c.role}")
+    if ranked_needs:
+        lines.append("*Needs validation (paste LinkedIn education)*")
+        for c in ranked_needs[:6]:
             lines.append(
-                f"• *{c.score}* <{c.profile_url}|{c.name}> — {c.role}{flag_s}"
+                f"• *{c.score}* <{c.profile_url}|{c.name}> — `{c.dedup_key}`"
             )
-        if len(ranked) > 8:
-            lines.append(f"_…and {len(ranked) - 8} more in the report_")
-        text = "\n".join(lines)
+        lines.append("_Resume: `python scripts/validate_agent.py resume <key> --education \"…\"`_")
+    if not ranked_ready and not ranked_needs:
+        lines.append("_No new candidates today._")
+    text = "\n".join(lines)
 
     try:
         requests.post(SLACK_WEBHOOK_URL, json={"text": text}, timeout=HTTP_TIMEOUT)
@@ -806,14 +915,29 @@ def main() -> int:
             reject_keys=reject_keys,
         )
         log.info("Found %d new candidate(s) for %s", len(fresh), role["title"])
-        for cand in fresh:
-            seen[cand.dedup_key] = asdict(cand)
         new_candidates.extend(fresh)
+
+    # ReAct Validation Agent — Ready vs Needs validation vs Rejected
+    ready, needs, rejected = run_agents_on_candidates(new_candidates, roles)
+    log.info(
+        "Validation agent: ready=%d needs_validation=%d rejected=%d",
+        len(ready),
+        len(needs),
+        len(rejected),
+    )
+
+    for cand in ready + needs:
+        seen[cand.dedup_key] = asdict(cand)
+    # Rejected still recorded lightly so we don't re-score forever
+    for cand in rejected:
+        row = asdict(cand)
+        row.setdefault("signals", {})["validation_status"] = "rejected"
+        seen[cand.dedup_key] = row
 
     save_candidates(seen)
     day = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    append_daily_candidates_jsonl(day, new_candidates)
-    report = render_report(new_candidates)
-    post_slack_digest(new_candidates, report)
+    append_daily_candidates_jsonl(day, ready + needs)
+    report = render_report(ready, needs)
+    post_slack_digest(ready, report, needs)
     log.info("Done. Total stored candidates: %d", len(seen))
     return 0
