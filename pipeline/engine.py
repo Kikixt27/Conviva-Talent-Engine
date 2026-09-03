@@ -794,9 +794,10 @@ def render_report(
   <thead><tr><th>Score</th><th>Role</th><th>Candidate</th><th>Source</th><th>Top signal</th><th>Flags</th><th>Reasoning</th></tr></thead>
   <tbody>{rows_for(ready)}</tbody>
 </table>
-<h2 class=\"tag-need\">Needs validation (school / LinkedIn)</h2>
-<p class=\"meta\">Paused by ReAct agent — resume with
-<code>python scripts/validate_agent.py resume &lt;source:id&gt; --education \"…\"</code></p>
+<h2 class=\"tag-need\">Needs validation (school / identity)</h2>
+<p class=\"meta\">GitHub often has nicknames only — use LinkedIn X-Ray (login/company), then
+<code>python scripts/validate_agent.py resume &lt;n&gt;</code> and paste Education in English.
+If unfindable, paste <code>LinkedIn not found. Nickname-only GitHub.</code></p>
 <table>
   <thead><tr><th>Score</th><th>Role</th><th>Candidate</th><th>Source</th><th>Top signal</th><th>Flags</th><th>Reasoning</th></tr></thead>
   <tbody>{rows_for(needs_validation)}</tbody>
@@ -820,21 +821,36 @@ def post_slack_digest(
     ranked_needs = sorted(needs_validation, key=lambda c: c.score, reverse=True)
 
     def pack(cands: list[Candidate]) -> list[dict[str, Any]]:
-        return [
-            {
+        from pipeline.validation_agent import build_identity_search_links
+
+        out = []
+        for c in cands[:15]:
+            sig = c.signals or {}
+            enrich = sig.get("enrichment") or {}
+            row = {
                 "name": c.name,
                 "score": c.score,
                 "role": c.role,
                 "profile_url": c.profile_url,
                 "source": c.source,
-                "top_signal": (c.signals or {}).get("top_signal", ""),
-                "flags": (c.signals or {}).get("flags") or [],
-                "school_unverified": bool((c.signals or {}).get("school_unverified")),
-                "validation_status": (c.signals or {}).get("validation_status", ""),
+                "top_signal": sig.get("top_signal", ""),
+                "flags": sig.get("flags") or [],
+                "school_unverified": bool(sig.get("school_unverified")),
+                "validation_status": sig.get("validation_status", ""),
                 "dedup_key": c.dedup_key,
+                "identity_search": build_identity_search_links(asdict(c)),
+                "enrichment": {
+                    "confidence": enrich.get("confidence"),
+                    "school_hits": enrich.get("school_hits") or [],
+                    "edu_emails": enrich.get("edu_emails") or [],
+                    "clues": (enrich.get("clues") or [])[:6],
+                    "links": (enrich.get("links") or [])[:5],
+                }
+                if enrich
+                else {},
             }
-            for c in cands[:15]
-        ]
+            out.append(row)
+        return out
 
     digest = {
         "date": today,
@@ -871,12 +887,29 @@ def post_slack_digest(
         for c in ranked_ready[:6]:
             lines.append(f"• *{c.score}* <{c.profile_url}|{c.name}> — {c.role}")
     if ranked_needs:
-        lines.append("*Needs validation (paste LinkedIn education)*")
+        lines.append("*Needs validation* (enrichment ran; check clues, then LinkedIn if needed)")
         for c in ranked_needs[:6]:
-            lines.append(
-                f"• *{c.score}* <{c.profile_url}|{c.name}> — `{c.dedup_key}`"
-            )
-        lines.append("_Resume: `python scripts/validate_agent.py resume <key> --education \"…\"`_")
+            from pipeline.validation_agent import build_identity_search_links
+
+            search = build_identity_search_links(asdict(c))
+            primary = (search.get("searches") or [{}])[0]
+            xray = primary.get("url") or ""
+            nick = " · nickname?" if search.get("nickname_likely") else ""
+            enrich = (c.signals or {}).get("enrichment") or {}
+            line = f"• *{c.score}* <{c.profile_url}|{c.name}>{nick} — `{c.dedup_key}`"
+            if enrich.get("confidence"):
+                schools = ", ".join(enrich.get("school_hits") or []) or "—"
+                line += f"\n  enrich={enrich.get('confidence')} · schools={schools}"
+            for lk in (enrich.get("links") or [])[:2]:
+                if lk.get("url"):
+                    line += f"\n  <{lk['url']}|{lk.get('label') or 'enrich'}>"
+            if xray:
+                line += f"\n  <{xray}|Open LinkedIn X-Ray (GitHub login)>"
+            lines.append(line)
+        lines.append(
+            "_Then: `python scripts/validate_agent.py resume <n>` and paste Education "
+            "(or `LinkedIn not found. Nickname-only GitHub. Enrichment found no school.`)_"
+        )
     if not ranked_ready and not ranked_needs:
         lines.append("_No new candidates today._")
     text = "\n".join(lines)

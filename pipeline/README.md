@@ -15,7 +15,8 @@ Browser UI (`conviva_signal_v4_2.html`) is unchanged. This layer runs **batch** 
 ## Layout
 
 - **`engine.py`** — canonical nightly run (`main()`): search → hard filter → LLM → **Validation Agent** → persist + report.
-- `validation_agent.py` — ReAct agent (LangGraph): Thought → Action → Observe; pauses on `school_unverified` for LinkedIn human-in-the-loop.
+- `validation_agent.py` — ReAct agent (LangGraph): Thought → Action → Observe; **ENRICH_IDENTITY** before human pause; LinkedIn paste via CLI.
+- `identity_enrich.py` — GitHub / Kaggle / Stack Overflow identity clues (blog, twitter, `.edu` emails, school tokens).
 - `utils.py` — `hard_filter_github` (incl. excluded non-US locations), `hard_filter_hackernews`, GitHub helpers.
 - `scorer.py` — CLI wrapper that calls `engine.main()`.
 - `calibrate.py` / `query_refresh.py` — stubs you can extend.

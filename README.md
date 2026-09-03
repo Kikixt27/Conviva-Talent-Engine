@@ -109,18 +109,20 @@ Edit `.github/workflows/source.yml` and adjust the `env:` block:
 After scoring, each candidate runs through `pipeline/validation_agent.py`:
 
 ```
-reason (Thought) → act (Action) → observe → reason …
+reason → ENRICH_IDENTITY (GitHub/Kaggle/SO) → RESCORE if strong → else pause → human paste → RESCORE …
 ```
 
-- **Ready** — school evidence OK (or not required) and score ≥ threshold → Slack / report Ready
-- **Needs validation** — interesting score but `school_unverified` → agent **pauses**, writes `data/validation_queue.json`
+- **Auto-enrichment** (`pipeline/identity_enrich.py`) — before asking a human: GitHub API (blog, twitter, emails), Kaggle `/{login}`, Stack Overflow by login. `.edu` / school tokens → auto re-score.
+- **Ready** — school evidence OK (or enrichment pedigree hit) and score ≥ threshold → Slack / report Ready
+- **Needs validation** — enrichment weak / still `school_unverified` → pause → `data/validation_queue.json` (clues + links)
 - **Rejected** — below bar
 
 Resume after you paste LinkedIn education:
 
 ```powershell
 python scripts/validate_agent.py list
-python scripts/validate_agent.py resume github:SOURCE_ID --education "MIT EECS B.S. 2018; …"
+python scripts/validate_agent.py resume 1
+# Ctrl+V Education, or: --education "MIT EECS B.S. 2018; …"
 ```
 
 Uses **LangGraph** when installed (`pip install -r requirements.txt`); otherwise the same ReAct node loop runs without LangGraph so nightly never bricks.

@@ -1,13 +1,14 @@
-"""Validation Agent — TA-friendly CLI (paste LinkedIn school info).
+"""Validation Agent — TA CLI (English). Paste LinkedIn Education after X-Ray search.
 
-最常用:
+Common:
   python scripts/validate_agent.py list
   python scripts/validate_agent.py resume 1
-      → 按提示粘贴 LinkedIn「教育经历」文字，空一行结束
+      → Ctrl+V paste Education text, blank line to finish
 
-也可:
-  python scripts/validate_agent.py resume github:123 --education "Stanford BS CS 2019"
+Also:
+  python scripts/validate_agent.py resume 1 --education "Stanford BS CS 2019"
   python scripts/validate_agent.py resume 1 --file school.txt
+  python scripts/validate_agent.py how
 """
 
 from __future__ import annotations
@@ -20,7 +21,12 @@ ROOT = Path(__file__).resolve().parent.parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from pipeline.validation_agent import list_pending, load_queue, resume_validation
+from pipeline.validation_agent import (
+    build_identity_search_links,
+    list_pending,
+    load_queue,
+    resume_validation,
+)
 
 
 def _pending_sorted() -> list[dict]:
@@ -31,48 +37,80 @@ def _pending_sorted() -> list[dict]:
 
 
 def _resolve_key(key_or_num: str) -> str:
-    """Allow '1' from list numbering, or full 'github:123' key."""
-
     key_or_num = (key_or_num or "").strip()
     pending = _pending_sorted()
     if key_or_num.isdigit():
         idx = int(key_or_num)
         if idx < 1 or idx > len(pending):
-            raise KeyError(f"序号 {idx} 不存在。请先运行 list，看清 1、2、3…")
+            raise KeyError(f"Index {idx} not found. Run `list` first.")
         return str(pending[idx - 1].get("dedup_key"))
-    if any(p.get("dedup_key") == key_or_num for p in pending):
-        return key_or_num
-    # still allow resume of exact key even if missing? resume_validation will KeyError
     return key_or_num
+
+
+def _print_search_links(item: dict) -> None:
+    search = item.get("identity_search") or build_identity_search_links(item.get("candidate") or {})
+    enrichment = item.get("enrichment") or (item.get("candidate") or {}).get("signals", {}).get(
+        "enrichment"
+    ) or {}
+    if search.get("nickname_likely"):
+        print("      NOTE: Display name looks like a NICKNAME/handle — not a legal name.")
+        print("            Do not Google the nickname as a real person name alone.")
+    print(f"      GitHub login: {search.get('github_login') or '—'}")
+
+    conf = enrichment.get("confidence") or search.get("enrichment_confidence")
+    clues = enrichment.get("clues") or search.get("enrichment_clues") or []
+    links = enrichment.get("links") or search.get("enrichment_links") or []
+    schools = enrichment.get("school_hits") or search.get("enrichment_schools") or []
+    edu_emails = enrichment.get("edu_emails") or search.get("enrichment_edu_emails") or []
+    if conf or clues or links:
+        print(f"      Auto-enrichment: confidence={conf or 'n/a'}")
+        if schools:
+            print(f"        Schools: {', '.join(schools)}")
+        if edu_emails:
+            print(f"        Edu emails: {', '.join(edu_emails)}")
+        for c in clues[:8]:
+            print(f"        · {c}")
+        if links:
+            print("      Enrichment links (check these first):")
+            for lk in links[:8]:
+                print(f"        • {lk.get('label')}: {lk.get('url')}")
+
+    print(f"      Tip: {search.get('tip')}")
+    print("      LinkedIn X-Ray (if enrichment insufficient):")
+    for s in search.get("searches") or []:
+        print(f"        • {s.get('label')}")
+        print(f"          {s.get('url')}")
 
 
 def _read_education_interactive(candidate_name: str) -> str:
     print()
     print("=" * 60)
-    print(f"  为 【{candidate_name}】 粘贴学校 / 教育信息")
+    print(f"  Paste school / Education text for: {candidate_name}")
     print("=" * 60)
     print()
-    print("从哪里复制？")
-    print("  1. 打开对方 LinkedIn")
-    print("  2. 找到「教育经历 Education」区块（也可带一点 About）")
-    print("  3. 用鼠标选中文字 → Ctrl+C 复制")
+    print("Where to copy from:")
+    print("  1. Use the Google/LinkedIn X-Ray links from `list` (especially GitHub login)")
+    print("  2. Open the LinkedIn profile → Education section")
+    print("  3. Select text → Ctrl+C")
     print()
-    print("粘贴到哪里？")
-    print("  → 就粘贴在下面这个黑窗口里（Ctrl+V）")
-    print("  → 可以贴多行")
-    print("  → 贴完后：空一行，再按一次回车；或单独一行打 END 再回车")
+    print("If you cannot find LinkedIn (nickname-only GitHub):")
+    print("  Paste something honest, e.g.")
+    print("  LinkedIn not found. Nickname-only GitHub. No edu email on profile.")
     print()
-    print("示例（直接粘贴类似内容即可）:")
+    print("Where to paste:")
+    print("  → This terminal (Ctrl+V). Multi-line OK.")
+    print("  → Finish with a blank line + Enter, or a line with END")
+    print()
+    print("Example Education paste:")
     print("  Stanford University")
-    print("  Bachelor of Science, Computer Science")
+    print("  B.S. Computer Science")
     print("  2015 – 2019")
     print()
     print("-" * 60)
-    print("开始粘贴 ↓")
+    print("Paste below ↓")
     print("-" * 60)
 
     lines: list[str] = []
-    empty_streak = 0
     while True:
         try:
             line = input()
@@ -81,16 +119,14 @@ def _read_education_interactive(candidate_name: str) -> str:
         if line.strip().upper() == "END":
             break
         if line.strip() == "":
-            empty_streak += 1
-            if empty_streak >= 1 and lines:
+            if lines:
                 break
             continue
-        empty_streak = 0
         lines.append(line)
 
     text = "\n".join(lines).strip()
     if not text:
-        print("\n没有读到内容。请重新运行 resume，并粘贴教育经历。")
+        print("\nNothing received. Re-run resume and paste Education (or 'LinkedIn not found').")
     return text
 
 
@@ -98,14 +134,14 @@ def cmd_list(_: argparse.Namespace) -> int:
     pending = _pending_sorted()
     if not pending:
         print()
-        print("目前没有「待验证学校」的候选人。")
-        print("等 nightly / Actions 跑完后，有 school unverified 的人会出现在这里。")
+        print("No candidates awaiting school/identity validation.")
+        print("After nightly/Actions, school-unverified hits show up here.")
         print()
         return 0
 
     print()
-    print(f"待你验证学校的候选人：共 {len(pending)} 人")
-    print("（Agent 已暂停，等你从 LinkedIn 贴教育经历）")
+    print(f"Needs validation: {len(pending)} candidate(s)")
+    print("(Agent already ran GitHub/Kaggle/SO enrichment — check clues, then LinkedIn if needed)")
     print()
     for i, item in enumerate(pending, start=1):
         cand = item.get("candidate") or {}
@@ -115,14 +151,17 @@ def cmd_list(_: argparse.Namespace) -> int:
         url = cand.get("profile_url") or ""
         key = item.get("dedup_key") or ""
         print(f"  [{i}] {name}")
-        print(f"      分数: {score}  |  职位: {role}")
-        print(f"      主页: {url}")
-        print(f"      编号: {key}")
-        print(f"      下一步: 打开 LinkedIn 查教育经历，然后运行:")
-        print(f"             python scripts/validate_agent.py resume {i}")
+        print(f"      Score: {score}  |  Role: {role}")
+        print(f"      GitHub: {url}")
+        print(f"      Key: {key}")
+        _print_search_links(item)
+        print("      Next:")
+        print(f"        1) Open enrichment / X-Ray links → find Education")
+        print(f"        2) python scripts/validate_agent.py resume {i}")
+        print(f"        3) Ctrl+V paste Education (or 'LinkedIn not found …')")
         print()
 
-    print("提示: resume 后面写列表里的序号即可，例如 resume 1")
+    print("Tip: use the list index, e.g. resume 1")
     print()
     return 0
 
@@ -133,20 +172,20 @@ def cmd_show(args: argparse.Namespace) -> int:
     except KeyError as exc:
         print(exc)
         return 1
-    q = load_queue()
-    item = q.get("pending", {}).get(key)
+    item = load_queue().get("pending", {}).get(key)
     if not item:
-        print(f"队列里找不到: {key}")
+        print(f"Not in pending queue: {key}")
         return 1
     cand = item.get("candidate") or {}
     print()
-    print(f"姓名: {cand.get('name')}")
-    print(f"分数: {item.get('score')}")
-    print(f"职位: {item.get('role_title')}")
-    print(f"主页: {cand.get('profile_url')}")
-    print(f"编号: {key}")
-    print(f"Agent 想法: {item.get('thought', '')}")
-    print(f"请你提供: {item.get('question', '')}")
+    print(f"Name: {cand.get('name')}")
+    print(f"Score: {item.get('score')}")
+    print(f"Role: {item.get('role_title')}")
+    print(f"GitHub: {cand.get('profile_url')}")
+    print(f"Key: {key}")
+    print(f"Agent thought: {item.get('thought', '')}")
+    print(f"Ask: {item.get('question', '')}")
+    _print_search_links(item)
     print()
     return 0
 
@@ -158,11 +197,10 @@ def cmd_resume(args: argparse.Namespace) -> int:
         print(exc)
         return 1
 
-    q = load_queue()
-    item = q.get("pending", {}).get(key)
+    item = load_queue().get("pending", {}).get(key)
     if not item:
-        print(f"队列里找不到: {key}")
-        print("先运行: python scripts/validate_agent.py list")
+        print(f"Not in pending queue: {key}")
+        print("Run: python scripts/validate_agent.py list")
         return 1
 
     name = (item.get("candidate") or {}).get("name") or key
@@ -171,19 +209,21 @@ def cmd_resume(args: argparse.Namespace) -> int:
     if args.file:
         path = Path(args.file)
         if not path.exists():
-            print(f"找不到文件: {path}")
-            print("可以新建一个 school.txt，把 LinkedIn 教育经历粘贴进文件再保存。")
+            print(f"File not found: {path}")
+            print("Create school.txt, paste Education, save, then --file school.txt")
             return 1
         education = path.read_text(encoding="utf-8").strip()
 
     if not education:
+        print()
+        _print_search_links(item)
         education = _read_education_interactive(name)
 
     if not education:
         return 2
 
     print()
-    print(f"正在交给 Agent 验证【{name}】的学校信息…")
+    print(f"Submitting Education text to Validation Agent for [{name}]…")
     try:
         final = resume_validation(key, education)
     except KeyError as exc:
@@ -195,16 +235,16 @@ def cmd_resume(args: argparse.Namespace) -> int:
     print()
     print("-" * 40)
     if status == "ready":
-        print(f"结果: 通过验证 ✅  新分数 {score}")
-        print("可以按 Ready 候选人跟进 / outreach。")
+        print(f"Result: READY  score={score}")
+        print("OK to prioritize for outreach.")
     elif status == "rejected":
-        print(f"结果: 仍未达标 ❌  新分数 {score}")
-        print("学校信息补上后仍不够 bar，先不要优先推。")
+        print(f"Result: REJECTED  score={score}")
+        print("Still below bar after validation — do not prioritize.")
     elif status == "needs_validation":
-        print("结果: 还需要更多信息（例如更完整的教育经历）。")
+        print("Result: still needs more identity/school evidence.")
     else:
-        print(f"结果: {status}  分数 {score}")
-    print(f"Agent 说明: {final.get('thought', '')}")
+        print(f"Result: {status}  score={score}")
+    print(f"Agent: {final.get('thought', '')}")
     print("-" * 40)
     print()
     return 0
@@ -213,36 +253,29 @@ def cmd_resume(args: argparse.Namespace) -> int:
 def cmd_how(_: argparse.Namespace) -> int:
     print(
         """
-══════════════════════════════════════════
-  学校信息贴在哪里？怎么贴？（给 TA）
-══════════════════════════════════════════
+============================================================
+  How to find school when GitHub has no LinkedIn (English)
+============================================================
 
-【从哪里复制】
-  打开候选人 LinkedIn → 找到「教育经历 / Education」
-  把学校名、学位、时间选中，Ctrl+C 复制
-  （有名校关键词最好：MIT / Stanford / CMU / Berkeley / UCLA /
-   Cornell / UIUC / Michigan / Duke 等）
+GitHub often shows ONLY a nickname — no legal name, no LinkedIn, no school.
+That is expected. Do NOT search the nickname as if it were a real full name.
 
-【贴到哪里】—— 三种方式任选
+1) Run:  python scripts/validate_agent.py list
+2) Agent already auto-enriched (GitHub blog/twitter/edu email, Kaggle, StackOverflow)
+3) Open enrichment links first; use LinkedIn X-Ray only if still needed
+4) If you find LinkedIn → copy Education → resume N → paste in terminal
+5) If you cannot find anyone:
+     resume N
+     paste: LinkedIn not found. Nickname-only GitHub. Enrichment found no school.
+   Agent will keep them unverified / reject for outreach priority.
 
-  方式 A（推荐，最简单）
-    1) python scripts/validate_agent.py list
-    2) python scripts/validate_agent.py resume 1
-    3) 在黑窗口里 Ctrl+V 粘贴，空一行再回车
+Where to paste Education:
+  → Terminal after `resume` (Ctrl+V), OR --education "...", OR --file school.txt
+Where NOT to paste:
+  → Not into the GitHub website, not only into Slack
 
-  方式 B（一行命令）
-    python scripts/validate_agent.py resume 1 --education "Stanford BS CS 2019"
-
-  方式 C（先贴进记事本）
-    1) 新建 school.txt，粘贴教育经历，保存
-    2) python scripts/validate_agent.py resume 1 --file school.txt
-
-【不要贴在】
-  ✗ 不要贴进 GitHub 网页
-  ✗ 不要贴进报告 HTML
-  ✗ 不要只发 Slack 却不跑命令（Agent 读不到）
-
-贴完后 Agent 会自动重新打分，并告诉你 Ready 还是未达标。
+Target schools (Yan bar): MIT, Stanford, CMU, Berkeley, UCLA, Cornell,
+UIUC, Michigan, Duke (or clear equivalent evidence).
 """
     )
     return 0
@@ -250,29 +283,25 @@ def cmd_how(_: argparse.Namespace) -> int:
 
 def main() -> int:
     p = argparse.ArgumentParser(
-        description="验证候选人学校信息（LinkedIn 教育经历）— Validation Agent",
+        description="Validation Agent — find identity via X-Ray, paste LinkedIn Education",
     )
     sub = p.add_subparsers(dest="cmd", required=True)
 
-    sub.add_parser("list", help="查看待验证名单").set_defaults(func=cmd_list)
-    sub.add_parser("how", help="说明：学校信息贴在哪里").set_defaults(func=cmd_how)
+    sub.add_parser("list", help="List candidates needing validation + X-Ray links").set_defaults(
+        func=cmd_list
+    )
+    sub.add_parser("how", help="How to find school when GitHub is nickname-only").set_defaults(
+        func=cmd_how
+    )
 
-    p_show = sub.add_parser("show", help="查看某个人的详情")
-    p_show.add_argument("key", help="列表序号 1 或 github:123")
+    p_show = sub.add_parser("show", help="Show one pending item")
+    p_show.add_argument("key", help="List index 1 or github:123")
     p_show.set_defaults(func=cmd_show)
 
-    p_res = sub.add_parser("resume", help="粘贴学校信息并让 Agent 继续")
-    p_res.add_argument("key", help="列表序号 1 或 github:123")
-    p_res.add_argument(
-        "--education",
-        default="",
-        help="可选：一行写完教育经历；不填则进入粘贴模式",
-    )
-    p_res.add_argument(
-        "--file",
-        default="",
-        help="可选：从文本文件读取教育经历（如 school.txt）",
-    )
+    p_res = sub.add_parser("resume", help="Paste Education / 'LinkedIn not found' and continue")
+    p_res.add_argument("key", help="List index 1 or github:123")
+    p_res.add_argument("--education", default="", help="One-line Education text (optional)")
+    p_res.add_argument("--file", default="", help="Read Education from a text file")
     p_res.set_defaults(func=cmd_resume)
 
     args = p.parse_args()

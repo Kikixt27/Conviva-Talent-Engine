@@ -113,16 +113,33 @@ def main() -> int:
             lines.append(f"• *{score}* {name} — {role}{flag_s}")
     needs = digest.get("needs_validation") or []
     if needs:
-        lines.append("*Needs validation* (school) — resume with validate_agent.py")
+        lines.append("*Needs validation* — check enrichment links first, then LinkedIn X-Ray")
         for row in needs[:8]:
             name = row.get("name", "?")
             score = row.get("score", "?")
             key = row.get("dedup_key", "")
             profile = row.get("profile_url", "")
+            searches = (row.get("identity_search") or {}).get("searches") or []
+            xray = (searches[0].get("url") if searches else "") or ""
+            nick = " · nickname?" if (row.get("identity_search") or {}).get("nickname_likely") else ""
+            enrich = row.get("enrichment") or {}
+            conf = enrich.get("confidence")
+            elinks = enrich.get("links") or []
             if profile:
-                lines.append(f"• *{score}* <{profile}|{name}> · `{key}`")
+                lines.append(f"• *{score}* <{profile}|{name}>{nick} · `{key}`")
             else:
-                lines.append(f"• *{score}* {name} · `{key}`")
+                lines.append(f"• *{score}* {name}{nick} · `{key}`")
+            if conf:
+                schools = ", ".join(enrich.get("school_hits") or []) or "—"
+                lines.append(f"  enrich={conf} · schools={schools}")
+            for lk in elinks[:2]:
+                if lk.get("url"):
+                    lines.append(f"  <{lk['url']}|{lk.get('label') or 'enrich link'}>")
+            if xray:
+                lines.append(f"  <{xray}|LinkedIn X-Ray>")
+        lines.append(
+            "_Resume: `python scripts/validate_agent.py list` then `resume N` — paste Education in English_"
+        )
 
     if not report_path.exists():
         lines.append("_Note: local report file missing in this runner; link still points at main after push._")
