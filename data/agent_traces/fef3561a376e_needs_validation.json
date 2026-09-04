@@ -1,0 +1,197 @@
+{
+  "run_id": "fef3561a376e",
+  "dedup_key": "github:3676938",
+  "candidate": {
+    "source": "github",
+    "source_id": "3676938",
+    "name": "邢",
+    "profile_url": "https://github.com/xingdl2007",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 65,
+    "reasoning": "Strong distributed systems and infrastructure foundation with 86 public repos and current role at Kuaishou (high-scale Chinese platform), suggesting real-world experience with backend systems at scale. However, critical gaps: no visible evidence of OLAP/streaming systems (ClickHouse, Kafka, Druid), AI-native tooling fluency, or hands-on tech lead mentorship patterns; GitHub profile lacks project documentation, code review leadership, or design decision artifacts that would confirm 5+ years data platforms experience and architecture ownership.",
+    "signals": {
+      "top_signal": "Kuaishou backend engineer with distributed systems focus | school unverified",
+      "followers": 142,
+      "public_repos": 86,
+      "company": "kuaishou",
+      "location": "Shenzhen, China",
+      "via": "search:distributed systems",
+      "school_unverified": true,
+      "flags": [
+        "school unverified — linkedin verify education",
+        "no OLAP/streaming/Kafka visible in repos",
+        "no AI-native tooling evidence (Cursor/Claude/Copilot)",
+        "no design docs or architecture decisions in public work",
+        "insufficient mentorship/code review leadership signals",
+        "cannot verify 5+ years data platforms depth from profile alone",
+        "location match (Shenzhen near Beijing) but role location not confirmed",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: 邢",
+          "GitHub company: kuaishou",
+          "Blog/site: http://xingdl2007.top",
+          "Public email: xingdl2007@gmail.com",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: xingdl2007 (rep 3) https://stackoverflow.com/users/4039185/xingdl2007",
+          "SO location: 中国广东省Shenzhen Shi"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "http://xingdl2007.top"
+          },
+          {
+            "label": "SO · xingdl2007",
+            "url": "https://stackoverflow.com/users/4039185/xingdl2007"
+          }
+        ],
+        "strong_pedigree_signal": false
+      }
+    },
+    "first_seen": "2026-09-04T03:34:20.042556+00:00"
+  },
+  "role": {
+    "title": "Staff Software Engineer — Tech Lead, Backend",
+    "language": null,
+    "location": "China",
+    "requirements": "Beijing / China. Tech Lead who leads through technical excellence, NOT management authority. 8+ years software engineering, 5+ years data platforms or high-scale backend.\n\nMust own: backend architecture for high-scale real-time data platform; distributed systems, OLAP, streaming (ClickHouse, Kafka, Druid); design reviews and key technical decisions; mentoring via code review and design pairing; CI/CD, testing, code quality bar.\n\nAI-native baseline: fluent daily use of Cursor, Claude Code, Copilot for prototyping, review, design, docs — not optional. Integrate LLM pipelines, agent observability, intelligent data modeling.\n\nLanguages: Python, Go, Java, Scala, or Rust (proficient in at least one). Excellent English for cross-regional collaboration.\n\nDISQUALIFY: pure people-manager without hands-on architecture; tutorial/student profiles; no evidence of distributed/streaming/OLAP systems at scale; English-only posts with no backend depth.",
+    "github_queries": [
+      "ClickHouse",
+      "Kafka streaming",
+      "distributed systems",
+      "data platform engineer"
+    ],
+    "hn_queries": [
+      "ClickHouse production",
+      "Kafka streaming backend",
+      "distributed systems architect",
+      "real-time analytics platform"
+    ]
+  },
+  "profile_blob": "Name: 邢\nSource: github\nProfile: https://github.com/xingdl2007\nLocation: Shenzhen, China\nCompany: kuaishou\nPrior score: 65\nPrior reasoning: Strong distributed systems and infrastructure foundation with 86 public repos and current role at Kuaishou (high-scale Chinese platform), suggesting real-world experience with backend systems at scale. However, critical gaps: no visible evidence of OLAP/streaming systems (ClickHouse, Kafka, Druid), AI-native tooling fluency, or hands-on tech lead mentorship patterns; GitHub profile lacks project documentation, code review leadership, or design decision artifacts that would confirm 5+ years data platforms experience and architecture ownership.\nFlags: ['school unverified — linkedin verify education', 'no OLAP/streaming/Kafka visible in repos', 'no AI-native tooling evidence (Cursor/Claude/Copilot)', 'no design docs or architecture decisions in public work', 'insufficient mentorship/code review leadership signals', 'cannot verify 5+ years data platforms depth from profile alone', 'location match (Shenzhen near Beijing) but role location not confirmed', 'school unverified', 'linkedin verify school']\nTop signal: Kuaishou backend engineer with distributed systems focus | school unverified\n",
+  "thought": "Enrichment done (confidence=medium, clues=7) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+  "action": "REQUEST_SCHOOL",
+  "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 7. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22xingdl2007%22. Resume: python scripts/validate_agent.py resume github:3676938",
+  "human_education": "",
+  "score": 65,
+  "school_unverified": true,
+  "flags": [
+    "school unverified — linkedin verify education",
+    "no OLAP/streaming/Kafka visible in repos",
+    "no AI-native tooling evidence (Cursor/Claude/Copilot)",
+    "no design docs or architecture decisions in public work",
+    "insufficient mentorship/code review leadership signals",
+    "cannot verify 5+ years data platforms depth from profile alone",
+    "location match (Shenzhen near Beijing) but role location not confirmed",
+    "school unverified",
+    "linkedin verify school"
+  ],
+  "status": "needs_validation",
+  "trace": [
+    {
+      "ts": "2026-09-04T03:37:12.742470+00:00",
+      "thought": "Score=65 interesting but school unverified (flags=['school unverified — linkedin verify education', 'no OLAP/streaming/Kafka visible in repos', 'no AI-native tooling evidence (Cursor/Claude/Copilot)', 'no design docs or architecture decisions in public work', 'insufficient mentorship/code review leadership signals', 'cannot verify 5+ years data platforms depth from profile alone', 'location match (Shenzhen near Beijing) but role location not confirmed', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:37:14.027155+00:00",
+      "thought": "Score=65 interesting but school unverified (flags=['school unverified — linkedin verify education', 'no OLAP/streaming/Kafka visible in repos', 'no AI-native tooling evidence (Cursor/Claude/Copilot)', 'no design docs or architecture decisions in public work', 'insufficient mentorship/code review leadership signals', 'cannot verify 5+ years data platforms depth from profile alone', 'location match (Shenzhen near Beijing) but role location not confirmed', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": "Enrichment complete for login=xingdl2007: confidence=medium, schools=[], edu_emails=[], clues=7."
+    },
+    {
+      "ts": "2026-09-04T03:37:14.027796+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=7) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:37:14.059724+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=7) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 7. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22xingdl2007%22. Resume: python scripts/validate_agent.py resume github:3676938",
+      "queue_key": "github:3676938"
+    }
+  ],
+  "reasoning": "Strong distributed systems and infrastructure foundation with 86 public repos and current role at Kuaishou (high-scale Chinese platform), suggesting real-world experience with backend systems at scale. However, critical gaps: no visible evidence of OLAP/streaming systems (ClickHouse, Kafka, Druid), AI-native tooling fluency, or hands-on tech lead mentorship patterns; GitHub profile lacks project documentation, code review leadership, or design decision artifacts that would confirm 5+ years data platforms experience and architecture ownership.",
+  "top_signal": "Kuaishou backend engineer with distributed systems focus | school unverified",
+  "enriched": true,
+  "enrichment": {
+    "clues": [
+      "GitHub name field: 邢",
+      "GitHub company: kuaishou",
+      "Blog/site: http://xingdl2007.top",
+      "Public email: xingdl2007@gmail.com",
+      "Kaggle: no profile for this exact login",
+      "StackOverflow: xingdl2007 (rep 3) https://stackoverflow.com/users/4039185/xingdl2007",
+      "SO location: 中国广东省Shenzhen Shi"
+    ],
+    "school_hits": [],
+    "edu_emails": [],
+    "links": [
+      {
+        "label": "Personal site / blog",
+        "url": "http://xingdl2007.top"
+      },
+      {
+        "label": "SO · xingdl2007",
+        "url": "https://stackoverflow.com/users/4039185/xingdl2007"
+      }
+    ],
+    "strong_pedigree_signal": false,
+    "confidence": "medium",
+    "education_blob": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: 邢\n- GitHub company: kuaishou\n- Blog/site: http://xingdl2007.top\n- Public email: xingdl2007@gmail.com\n- Kaggle: no profile for this exact login\n- StackOverflow: xingdl2007 (rep 3) https://stackoverflow.com/users/4039185/xingdl2007\n- SO location: 中国广东省Shenzhen Shi",
+    "raw": {
+      "github": {
+        "source": "github",
+        "login": "xingdl2007",
+        "ok": true,
+        "name": "邢",
+        "company": "kuaishou",
+        "blog": "http://xingdl2007.top",
+        "bio": "Interested in distributed systems, storage and infrastructure.",
+        "location": "Shenzhen, China",
+        "twitter": "",
+        "email": "xingdl2007@gmail.com",
+        "hireable": null,
+        "html_url": "https://github.com/xingdl2007",
+        "emails": [
+          "xingdl2007@gmail.com"
+        ],
+        "edu_emails": [],
+        "blog_url": "http://xingdl2007.top",
+        "blog_school_hits": [],
+        "bio_school_hits": []
+      },
+      "kaggle": {
+        "source": "kaggle",
+        "login": "xingdl2007",
+        "exists": false,
+        "url": "https://www.kaggle.com/xingdl2007"
+      },
+      "stackoverflow": {
+        "source": "stackoverflow",
+        "login": "xingdl2007",
+        "matches": [
+          {
+            "user_id": 4039185,
+            "display_name": "xingdl2007",
+            "link": "https://stackoverflow.com/users/4039185/xingdl2007",
+            "reputation": 3,
+            "location": "中国广东省Shenzhen Shi"
+          }
+        ]
+      }
+    },
+    "login": "xingdl2007"
+  },
+  "auto_education": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: 邢\n- GitHub company: kuaishou\n- Blog/site: http://xingdl2007.top\n- Public email: xingdl2007@gmail.com\n- Kaggle: no profile for this exact login\n- StackOverflow: xingdl2007 (rep 3) https://stackoverflow.com/users/4039185/xingdl2007\n- SO location: 中国广东省Shenzhen Shi",
+  "backend": "langgraph"
+}

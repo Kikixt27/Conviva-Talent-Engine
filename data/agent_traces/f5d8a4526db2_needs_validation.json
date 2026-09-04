@@ -1,0 +1,183 @@
+{
+  "run_id": "f5d8a4526db2",
+  "dedup_key": "github:47517645",
+  "candidate": {
+    "source": "github",
+    "source_id": "47517645",
+    "name": "Ben Boby",
+    "profile_url": "https://github.com/benbobyabraham",
+    "role": "Senior Data Scientist",
+    "score": 58,
+    "reasoning": "Ben shows relevant SF location and ML/DS title mix, but GitHub profile alone provides insufficient evidence of production ML depth, time series/anomaly detection work, or hands-on real-time analytics experience. No verifiable education pedigree; repos require manual code-quality review to confirm shipped production systems vs. tutorials/hobby projects. Bio is generic 'full stack' positioning without specific technical artifacts (Ray, Spark, MLOps, streaming, anomaly detection) visible at surface level.",
+    "signals": {
+      "top_signal": "SF-based, 67 repos, ML engineer title | school unverified",
+      "followers": 165,
+      "public_repos": 67,
+      "company": null,
+      "location": "San Francisco, California",
+      "via": "search:data scientist",
+      "school_unverified": true,
+      "flags": [
+        "school unverified — linkedin verify education",
+        "github repos unreviewed — require code audit for production depth",
+        "no visible time series / anomaly / alerting signals in profile",
+        "no spark / ray / mlops evidence visible",
+        "generic bio — validate real-time analytics & shipping depth before advance",
+        "manual verification required before phone screen",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Ben Boby",
+          "Twitter/X: @BenBoby5",
+          "Blog/site: https://benboby.com/",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/BenBoby5"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://benboby.com/"
+          }
+        ],
+        "strong_pedigree_signal": false
+      }
+    },
+    "first_seen": "2026-09-04T03:29:45.021212+00:00"
+  },
+  "role": {
+    "title": "Senior Data Scientist",
+    "language": "python",
+    "location": "California",
+    "requirements": "US Foster City / Bay Area preferred (California OK). PRIORITY HIRE — hands-on Senior Data Scientist for real-time digital performance analytics. NOT slide-deck DS, NOT research-only, NOT pure SWE without ML depth.\n\nMust have: PhD in CS/Stats/related OR MS + 5+ years applied ML/data science.\n\nTechnical foundation:\n- Traditional ML: regression, classification, ensembles, clustering, dimensionality reduction\n- Deep learning: CNNs, RNNs/LSTMs, Transformers, attention — as the problem demands\n- Statistical modeling: optimization, Bayesian / probabilistic methods\n- Time series: forecasting, change-point detection, seasonality; anomaly detection & automated alerting\n- Python (primary) production code; Scala a plus\n- Ship POC → scalable integrated ML in production systems\n- Large-scale data: Ray and/or Spark\n\nAI-native developer: habitual Claude / Cursor / Copilot use for coding, debugging, design — not just awareness.\n\nBonus: streaming / real-time analytics; AI-powered alerting / intelligent monitoring; MLOps (versioning, monitoring, retraining); LLM/foundation models in analytical workflows.\n\nScore HIGH when: production ML + time series/anomaly/alerting + Ray/Spark or MLOps.\nScore LOW / DISQUALIFY: pure analyst dashboards; academic-only with no production; tutorial/student; SWE with no modeling depth; generic 'AI enthusiast' bios.",
+    "github_queries": [
+      "data scientist",
+      "applied scientist",
+      "anomaly detection",
+      "time series",
+      "MLOps",
+      "Ray Spark"
+    ],
+    "hn_queries": [
+      "anomaly detection production",
+      "time series forecasting",
+      "Ray Spark ML",
+      "MLOps monitoring",
+      "streaming analytics ML",
+      "change point detection"
+    ]
+  },
+  "profile_blob": "Name: Ben Boby\nSource: github\nProfile: https://github.com/benbobyabraham\nLocation: San Francisco, California\nCompany: —\nPrior score: 58\nPrior reasoning: Ben shows relevant SF location and ML/DS title mix, but GitHub profile alone provides insufficient evidence of production ML depth, time series/anomaly detection work, or hands-on real-time analytics experience. No verifiable education pedigree; repos require manual code-quality review to confirm shipped production systems vs. tutorials/hobby projects. Bio is generic 'full stack' positioning without specific technical artifacts (Ray, Spark, MLOps, streaming, anomaly detection) visible at surface level.\nFlags: ['school unverified — linkedin verify education', 'github repos unreviewed — require code audit for production depth', 'no visible time series / anomaly / alerting signals in profile', 'no spark / ray / mlops evidence visible', 'generic bio — validate real-time analytics & shipping depth before advance', 'manual verification required before phone screen', 'school unverified', 'linkedin verify school']\nTop signal: SF-based, 67 repos, ML engineer title | school unverified\n",
+  "thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+  "action": "REQUEST_SCHOOL",
+  "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 4. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22benbobyabraham%22. Resume: python scripts/validate_agent.py resume github:47517645",
+  "human_education": "",
+  "score": 58,
+  "school_unverified": true,
+  "flags": [
+    "school unverified — linkedin verify education",
+    "github repos unreviewed — require code audit for production depth",
+    "no visible time series / anomaly / alerting signals in profile",
+    "no spark / ray / mlops evidence visible",
+    "generic bio — validate real-time analytics & shipping depth before advance",
+    "manual verification required before phone screen",
+    "school unverified",
+    "linkedin verify school"
+  ],
+  "status": "needs_validation",
+  "trace": [
+    {
+      "ts": "2026-09-04T03:37:04.244945+00:00",
+      "thought": "Score=58 interesting but school unverified (flags=['school unverified — linkedin verify education', 'github repos unreviewed — require code audit for production depth', 'no visible time series / anomaly / alerting signals in profile', 'no spark / ray / mlops evidence visible', 'generic bio — validate real-time analytics & shipping depth before advance', 'manual verification required before phone screen', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:37:05.081388+00:00",
+      "thought": "Score=58 interesting but school unverified (flags=['school unverified — linkedin verify education', 'github repos unreviewed — require code audit for production depth', 'no visible time series / anomaly / alerting signals in profile', 'no spark / ray / mlops evidence visible', 'generic bio — validate real-time analytics & shipping depth before advance', 'manual verification required before phone screen', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": "Enrichment complete for login=benbobyabraham: confidence=medium, schools=[], edu_emails=[], clues=4."
+    },
+    {
+      "ts": "2026-09-04T03:37:05.081989+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:37:05.111679+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 4. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22benbobyabraham%22. Resume: python scripts/validate_agent.py resume github:47517645",
+      "queue_key": "github:47517645"
+    }
+  ],
+  "reasoning": "Ben shows relevant SF location and ML/DS title mix, but GitHub profile alone provides insufficient evidence of production ML depth, time series/anomaly detection work, or hands-on real-time analytics experience. No verifiable education pedigree; repos require manual code-quality review to confirm shipped production systems vs. tutorials/hobby projects. Bio is generic 'full stack' positioning without specific technical artifacts (Ray, Spark, MLOps, streaming, anomaly detection) visible at surface level.",
+  "top_signal": "SF-based, 67 repos, ML engineer title | school unverified",
+  "enriched": true,
+  "enrichment": {
+    "clues": [
+      "GitHub name field: Ben Boby",
+      "Twitter/X: @BenBoby5",
+      "Blog/site: https://benboby.com/",
+      "Kaggle: no profile for this exact login"
+    ],
+    "school_hits": [],
+    "edu_emails": [],
+    "links": [
+      {
+        "label": "Twitter/X",
+        "url": "https://twitter.com/BenBoby5"
+      },
+      {
+        "label": "Personal site / blog",
+        "url": "https://benboby.com/"
+      }
+    ],
+    "strong_pedigree_signal": false,
+    "confidence": "medium",
+    "education_blob": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Ben Boby\n- Twitter/X: @BenBoby5\n- Blog/site: https://benboby.com/\n- Kaggle: no profile for this exact login",
+    "raw": {
+      "github": {
+        "source": "github",
+        "login": "benbobyabraham",
+        "ok": true,
+        "name": "Ben Boby",
+        "company": "",
+        "blog": "https://benboby.com/",
+        "bio": "Machine Learning Engineer / Full stack Data Scientist / AI Engineer",
+        "location": "San Francisco, California",
+        "twitter": "BenBoby5",
+        "email": "",
+        "hireable": true,
+        "html_url": "https://github.com/benbobyabraham",
+        "emails": [],
+        "edu_emails": [],
+        "blog_url": "https://benboby.com/",
+        "blog_school_hits": [],
+        "bio_school_hits": []
+      },
+      "kaggle": {
+        "source": "kaggle",
+        "login": "benbobyabraham",
+        "exists": false,
+        "url": "https://www.kaggle.com/benbobyabraham"
+      },
+      "stackoverflow": {
+        "source": "stackoverflow",
+        "login": "benbobyabraham",
+        "matches": []
+      }
+    },
+    "login": "benbobyabraham"
+  },
+  "auto_education": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Ben Boby\n- Twitter/X: @BenBoby5\n- Blog/site: https://benboby.com/\n- Kaggle: no profile for this exact login",
+  "backend": "langgraph"
+}

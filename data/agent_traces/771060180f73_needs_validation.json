@@ -1,0 +1,174 @@
+{
+  "run_id": "771060180f73",
+  "dedup_key": "github:87939854",
+  "candidate": {
+    "source": "github",
+    "source_id": "87939854",
+    "name": "Reuben Chatterjee",
+    "profile_url": "https://github.com/ReubenChatterjee",
+    "role": "Senior Data Scientist",
+    "score": 58,
+    "reasoning": "Candidate has relevant MS Data Science and current DS role at Applied Materials (semiconductor/real-time analytics context is promising), but GitHub profile shows only 11 public repos with no visible evidence of production ML systems, time series work, anomaly detection, or MLOps. No corroborating evidence of hands-on shipped systems, Ray/Spark scale, or depth in traditional ML + deep learning + statistical modeling required for this senior role. School pedigree (UC San Diego) is relevant but unverified from profile alone. Requires LinkedIn/GitHub deep-dive to validate production experience claim.",
+    "signals": {
+      "top_signal": "Applied Materials DS role in relevant domain; MS Data Science from solid school | school unverified",
+      "followers": 4,
+      "public_repos": 11,
+      "company": "Applied Materials",
+      "location": "Mountain View, California",
+      "via": "search:applied scientist",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified—UC San Diego not explicitly verified in linked profile",
+        "github_sparse—only 11 public repos; no visible production ML/time-series/anomaly work",
+        "no_corroborating_evidence—unclear if hands-on shipped systems or slide-deck role",
+        "must_verify_linkedin—validate production ML depth, time-series/alerting work, Ray/Spark scale",
+        "applied_materials_context_positive—semiconductor real-time analytics aligns with role; drill deeper on actual scope",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Reuben Chatterjee",
+          "GitHub company: Applied Materials",
+          "Blog/site: https://gigantic-millennium-c3f.notion.site/Reuben-Chatterjee-a407e00a599646ad92b45a45a851e6ae",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://gigantic-millennium-c3f.notion.site/Reuben-Chatterjee-a407e00a599646ad92b45a45a851e6ae"
+          }
+        ],
+        "strong_pedigree_signal": false
+      }
+    },
+    "first_seen": "2026-09-04T03:31:12.391719+00:00"
+  },
+  "role": {
+    "title": "Senior Data Scientist",
+    "language": "python",
+    "location": "California",
+    "requirements": "US Foster City / Bay Area preferred (California OK). PRIORITY HIRE — hands-on Senior Data Scientist for real-time digital performance analytics. NOT slide-deck DS, NOT research-only, NOT pure SWE without ML depth.\n\nMust have: PhD in CS/Stats/related OR MS + 5+ years applied ML/data science.\n\nTechnical foundation:\n- Traditional ML: regression, classification, ensembles, clustering, dimensionality reduction\n- Deep learning: CNNs, RNNs/LSTMs, Transformers, attention — as the problem demands\n- Statistical modeling: optimization, Bayesian / probabilistic methods\n- Time series: forecasting, change-point detection, seasonality; anomaly detection & automated alerting\n- Python (primary) production code; Scala a plus\n- Ship POC → scalable integrated ML in production systems\n- Large-scale data: Ray and/or Spark\n\nAI-native developer: habitual Claude / Cursor / Copilot use for coding, debugging, design — not just awareness.\n\nBonus: streaming / real-time analytics; AI-powered alerting / intelligent monitoring; MLOps (versioning, monitoring, retraining); LLM/foundation models in analytical workflows.\n\nScore HIGH when: production ML + time series/anomaly/alerting + Ray/Spark or MLOps.\nScore LOW / DISQUALIFY: pure analyst dashboards; academic-only with no production; tutorial/student; SWE with no modeling depth; generic 'AI enthusiast' bios.",
+    "github_queries": [
+      "data scientist",
+      "applied scientist",
+      "anomaly detection",
+      "time series",
+      "MLOps",
+      "Ray Spark"
+    ],
+    "hn_queries": [
+      "anomaly detection production",
+      "time series forecasting",
+      "Ray Spark ML",
+      "MLOps monitoring",
+      "streaming analytics ML",
+      "change point detection"
+    ]
+  },
+  "profile_blob": "Name: Reuben Chatterjee\nSource: github\nProfile: https://github.com/ReubenChatterjee\nLocation: Mountain View, California\nCompany: Applied Materials\nPrior score: 58\nPrior reasoning: Candidate has relevant MS Data Science and current DS role at Applied Materials (semiconductor/real-time analytics context is promising), but GitHub profile shows only 11 public repos with no visible evidence of production ML systems, time series work, anomaly detection, or MLOps. No corroborating evidence of hands-on shipped systems, Ray/Spark scale, or depth in traditional ML + deep learning + statistical modeling required for this senior role. School pedigree (UC San Diego) is relevant but unverified from profile alone. Requires LinkedIn/GitHub deep-dive to validate production experience claim.\nFlags: ['school_unverified—UC San Diego not explicitly verified in linked profile', 'github_sparse—only 11 public repos; no visible production ML/time-series/anomaly work', 'no_corroborating_evidence—unclear if hands-on shipped systems or slide-deck role', 'must_verify_linkedin—validate production ML depth, time-series/alerting work, Ray/Spark scale', 'applied_materials_context_positive—semiconductor real-time analytics aligns with role; drill deeper on actual scope', 'school unverified', 'linkedin verify school']\nTop signal: Applied Materials DS role in relevant domain; MS Data Science from solid school | school unverified\n",
+  "thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+  "action": "REQUEST_SCHOOL",
+  "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 4. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22ReubenChatterjee%22. Resume: python scripts/validate_agent.py resume github:87939854",
+  "human_education": "",
+  "score": 58,
+  "school_unverified": true,
+  "flags": [
+    "school_unverified—UC San Diego not explicitly verified in linked profile",
+    "github_sparse—only 11 public repos; no visible production ML/time-series/anomaly work",
+    "no_corroborating_evidence—unclear if hands-on shipped systems or slide-deck role",
+    "must_verify_linkedin—validate production ML depth, time-series/alerting work, Ray/Spark scale",
+    "applied_materials_context_positive—semiconductor real-time analytics aligns with role; drill deeper on actual scope",
+    "school unverified",
+    "linkedin verify school"
+  ],
+  "status": "needs_validation",
+  "trace": [
+    {
+      "ts": "2026-09-04T03:37:07.537648+00:00",
+      "thought": "Score=58 interesting but school unverified (flags=['school_unverified—UC San Diego not explicitly verified in linked profile', 'github_sparse—only 11 public repos; no visible production ML/time-series/anomaly work', 'no_corroborating_evidence—unclear if hands-on shipped systems or slide-deck role', 'must_verify_linkedin—validate production ML depth, time-series/alerting work, Ray/Spark scale', 'applied_materials_context_positive—semiconductor real-time analytics aligns with role; drill deeper on actual scope', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:37:08.783141+00:00",
+      "thought": "Score=58 interesting but school unverified (flags=['school_unverified—UC San Diego not explicitly verified in linked profile', 'github_sparse—only 11 public repos; no visible production ML/time-series/anomaly work', 'no_corroborating_evidence—unclear if hands-on shipped systems or slide-deck role', 'must_verify_linkedin—validate production ML depth, time-series/alerting work, Ray/Spark scale', 'applied_materials_context_positive—semiconductor real-time analytics aligns with role; drill deeper on actual scope', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": "Enrichment complete for login=ReubenChatterjee: confidence=medium, schools=[], edu_emails=[], clues=4."
+    },
+    {
+      "ts": "2026-09-04T03:37:08.783789+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:37:08.810751+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 4. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22ReubenChatterjee%22. Resume: python scripts/validate_agent.py resume github:87939854",
+      "queue_key": "github:87939854"
+    }
+  ],
+  "reasoning": "Candidate has relevant MS Data Science and current DS role at Applied Materials (semiconductor/real-time analytics context is promising), but GitHub profile shows only 11 public repos with no visible evidence of production ML systems, time series work, anomaly detection, or MLOps. No corroborating evidence of hands-on shipped systems, Ray/Spark scale, or depth in traditional ML + deep learning + statistical modeling required for this senior role. School pedigree (UC San Diego) is relevant but unverified from profile alone. Requires LinkedIn/GitHub deep-dive to validate production experience claim.",
+  "top_signal": "Applied Materials DS role in relevant domain; MS Data Science from solid school | school unverified",
+  "enriched": true,
+  "enrichment": {
+    "clues": [
+      "GitHub name field: Reuben Chatterjee",
+      "GitHub company: Applied Materials",
+      "Blog/site: https://gigantic-millennium-c3f.notion.site/Reuben-Chatterjee-a407e00a599646ad92b45a45a851e6ae",
+      "Kaggle: no profile for this exact login"
+    ],
+    "school_hits": [],
+    "edu_emails": [],
+    "links": [
+      {
+        "label": "Personal site / blog",
+        "url": "https://gigantic-millennium-c3f.notion.site/Reuben-Chatterjee-a407e00a599646ad92b45a45a851e6ae"
+      }
+    ],
+    "strong_pedigree_signal": false,
+    "confidence": "medium",
+    "education_blob": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Reuben Chatterjee\n- GitHub company: Applied Materials\n- Blog/site: https://gigantic-millennium-c3f.notion.site/Reuben-Chatterjee-a407e00a599646ad92b45a45a851e6ae\n- Kaggle: no profile for this exact login",
+    "raw": {
+      "github": {
+        "source": "github",
+        "login": "ReubenChatterjee",
+        "ok": true,
+        "name": "Reuben Chatterjee",
+        "company": "Applied Materials",
+        "blog": "https://gigantic-millennium-c3f.notion.site/Reuben-Chatterjee-a407e00a599646ad92b45a45a851e6ae",
+        "bio": "Data Scientist @ Applied Materials | \r\nEx Data Scientist @ Alcamo Marketing |\r\nMS Data Science @ UC San Diego ",
+        "location": "Mountain View, California",
+        "twitter": "",
+        "email": "",
+        "hireable": null,
+        "html_url": "https://github.com/ReubenChatterjee",
+        "emails": [],
+        "edu_emails": [],
+        "blog_url": "https://gigantic-millennium-c3f.notion.site/Reuben-Chatterjee-a407e00a599646ad92b45a45a851e6ae",
+        "blog_text_preview": " Notion JavaScript must be enabled in order to use Notion. Please enable JavaScript to continue. ",
+        "blog_school_hits": [],
+        "bio_school_hits": []
+      },
+      "kaggle": {
+        "source": "kaggle",
+        "login": "ReubenChatterjee",
+        "exists": false,
+        "url": "https://www.kaggle.com/ReubenChatterjee"
+      },
+      "stackoverflow": {
+        "source": "stackoverflow",
+        "login": "ReubenChatterjee",
+        "matches": []
+      }
+    },
+    "login": "ReubenChatterjee"
+  },
+  "auto_education": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Reuben Chatterjee\n- GitHub company: Applied Materials\n- Blog/site: https://gigantic-millennium-c3f.notion.site/Reuben-Chatterjee-a407e00a599646ad92b45a45a851e6ae\n- Kaggle: no profile for this exact login",
+  "backend": "langgraph"
+}

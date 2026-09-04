@@ -1,0 +1,164 @@
+{
+  "run_id": "b20e9ebf0fc3",
+  "dedup_key": "github:130475295",
+  "candidate": {
+    "source": "github",
+    "source_id": "130475295",
+    "name": "Mery ",
+    "profile_url": "https://github.com/MeryVar",
+    "role": "Senior Data Scientist",
+    "score": 58,
+    "reasoning": "Mery shows relevant MLOps and ML engineering experience at SuperNomicsAI with a production-focused title, which aligns with the 'hands-on' and 'ship to production' requirements. However, the GitHub profile is extremely sparse (9 public repos, 1 follower) with no visible evidence of deep technical work in time series, anomaly detection, alerting, or large-scale systems (Spark/Ray). No educational pedigree evident. Profile lacks concrete proof of hands-on production ML depth across the required technical foundations (traditional ML, deep learning, statistical modeling, streaming analytics). Location (Glendale, CA) is acceptable but not Bay Area/Foster City preferred.",
+    "signals": {
+      "top_signal": "MLOps title + production systems experience | school unverified",
+      "followers": 1,
+      "public_repos": 9,
+      "company": "SuperNomics",
+      "location": "Glendale, California, United States",
+      "via": "search:MLOps",
+      "school_unverified": true,
+      "flags": [
+        "school unverified — linkedin verify education",
+        "github repos sparse and not publicly visible — verify portfolio depth",
+        "no evidence of time series / anomaly detection / alerting systems",
+        "no evidence of Spark / Ray / large-scale data systems",
+        "no evidence of deep learning or statistical modeling projects",
+        "weak corroboration of hands-on depth — title alone insufficient",
+        "location acceptable but not preferred (Glendale vs Bay Area)",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Mery ",
+          "GitHub company: SuperNomics",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      }
+    },
+    "first_seen": "2026-09-04T03:32:28.761044+00:00"
+  },
+  "role": {
+    "title": "Senior Data Scientist",
+    "language": "python",
+    "location": "California",
+    "requirements": "US Foster City / Bay Area preferred (California OK). PRIORITY HIRE — hands-on Senior Data Scientist for real-time digital performance analytics. NOT slide-deck DS, NOT research-only, NOT pure SWE without ML depth.\n\nMust have: PhD in CS/Stats/related OR MS + 5+ years applied ML/data science.\n\nTechnical foundation:\n- Traditional ML: regression, classification, ensembles, clustering, dimensionality reduction\n- Deep learning: CNNs, RNNs/LSTMs, Transformers, attention — as the problem demands\n- Statistical modeling: optimization, Bayesian / probabilistic methods\n- Time series: forecasting, change-point detection, seasonality; anomaly detection & automated alerting\n- Python (primary) production code; Scala a plus\n- Ship POC → scalable integrated ML in production systems\n- Large-scale data: Ray and/or Spark\n\nAI-native developer: habitual Claude / Cursor / Copilot use for coding, debugging, design — not just awareness.\n\nBonus: streaming / real-time analytics; AI-powered alerting / intelligent monitoring; MLOps (versioning, monitoring, retraining); LLM/foundation models in analytical workflows.\n\nScore HIGH when: production ML + time series/anomaly/alerting + Ray/Spark or MLOps.\nScore LOW / DISQUALIFY: pure analyst dashboards; academic-only with no production; tutorial/student; SWE with no modeling depth; generic 'AI enthusiast' bios.",
+    "github_queries": [
+      "data scientist",
+      "applied scientist",
+      "anomaly detection",
+      "time series",
+      "MLOps",
+      "Ray Spark"
+    ],
+    "hn_queries": [
+      "anomaly detection production",
+      "time series forecasting",
+      "Ray Spark ML",
+      "MLOps monitoring",
+      "streaming analytics ML",
+      "change point detection"
+    ]
+  },
+  "profile_blob": "Name: Mery \nSource: github\nProfile: https://github.com/MeryVar\nLocation: Glendale, California, United States\nCompany: SuperNomics\nPrior score: 58\nPrior reasoning: Mery shows relevant MLOps and ML engineering experience at SuperNomicsAI with a production-focused title, which aligns with the 'hands-on' and 'ship to production' requirements. However, the GitHub profile is extremely sparse (9 public repos, 1 follower) with no visible evidence of deep technical work in time series, anomaly detection, alerting, or large-scale systems (Spark/Ray). No educational pedigree evident. Profile lacks concrete proof of hands-on production ML depth across the required technical foundations (traditional ML, deep learning, statistical modeling, streaming analytics). Location (Glendale, CA) is acceptable but not Bay Area/Foster City preferred.\nFlags: ['school unverified — linkedin verify education', 'github repos sparse and not publicly visible — verify portfolio depth', 'no evidence of time series / anomaly detection / alerting systems', 'no evidence of Spark / Ray / large-scale data systems', 'no evidence of deep learning or statistical modeling projects', 'weak corroboration of hands-on depth — title alone insufficient', 'location acceptable but not preferred (Glendale vs Bay Area)', 'school unverified', 'linkedin verify school']\nTop signal: MLOps title + production systems experience | school unverified\n",
+  "thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+  "action": "REQUEST_SCHOOL",
+  "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 3. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22MeryVar%22. Resume: python scripts/validate_agent.py resume github:130475295",
+  "human_education": "",
+  "score": 58,
+  "school_unverified": true,
+  "flags": [
+    "school unverified — linkedin verify education",
+    "github repos sparse and not publicly visible — verify portfolio depth",
+    "no evidence of time series / anomaly detection / alerting systems",
+    "no evidence of Spark / Ray / large-scale data systems",
+    "no evidence of deep learning or statistical modeling projects",
+    "weak corroboration of hands-on depth — title alone insufficient",
+    "location acceptable but not preferred (Glendale vs Bay Area)",
+    "school unverified",
+    "linkedin verify school"
+  ],
+  "status": "needs_validation",
+  "trace": [
+    {
+      "ts": "2026-09-04T03:37:10.273785+00:00",
+      "thought": "Score=58 interesting but school unverified (flags=['school unverified — linkedin verify education', 'github repos sparse and not publicly visible — verify portfolio depth', 'no evidence of time series / anomaly detection / alerting systems', 'no evidence of Spark / Ray / large-scale data systems', 'no evidence of deep learning or statistical modeling projects', 'weak corroboration of hands-on depth — title alone insufficient', 'location acceptable but not preferred (Glendale vs Bay Area)', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:37:11.105513+00:00",
+      "thought": "Score=58 interesting but school unverified (flags=['school unverified — linkedin verify education', 'github repos sparse and not publicly visible — verify portfolio depth', 'no evidence of time series / anomaly detection / alerting systems', 'no evidence of Spark / Ray / large-scale data systems', 'no evidence of deep learning or statistical modeling projects', 'weak corroboration of hands-on depth — title alone insufficient', 'location acceptable but not preferred (Glendale vs Bay Area)', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": "Enrichment complete for login=MeryVar: confidence=medium, schools=[], edu_emails=[], clues=3."
+    },
+    {
+      "ts": "2026-09-04T03:37:11.106137+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:37:11.137028+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 3. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22MeryVar%22. Resume: python scripts/validate_agent.py resume github:130475295",
+      "queue_key": "github:130475295"
+    }
+  ],
+  "reasoning": "Mery shows relevant MLOps and ML engineering experience at SuperNomicsAI with a production-focused title, which aligns with the 'hands-on' and 'ship to production' requirements. However, the GitHub profile is extremely sparse (9 public repos, 1 follower) with no visible evidence of deep technical work in time series, anomaly detection, alerting, or large-scale systems (Spark/Ray). No educational pedigree evident. Profile lacks concrete proof of hands-on production ML depth across the required technical foundations (traditional ML, deep learning, statistical modeling, streaming analytics). Location (Glendale, CA) is acceptable but not Bay Area/Foster City preferred.",
+  "top_signal": "MLOps title + production systems experience | school unverified",
+  "enriched": true,
+  "enrichment": {
+    "clues": [
+      "GitHub name field: Mery ",
+      "GitHub company: SuperNomics",
+      "Kaggle: no profile for this exact login"
+    ],
+    "school_hits": [],
+    "edu_emails": [],
+    "links": [],
+    "strong_pedigree_signal": false,
+    "confidence": "medium",
+    "education_blob": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Mery \n- GitHub company: SuperNomics\n- Kaggle: no profile for this exact login",
+    "raw": {
+      "github": {
+        "source": "github",
+        "login": "MeryVar",
+        "ok": true,
+        "name": "Mery ",
+        "company": "SuperNomics",
+        "blog": "",
+        "bio": "Senior AI/ML Engineer – Intelligent Systems & MLOps @SuperNomicsAI ",
+        "location": "Glendale, California, United States",
+        "twitter": "",
+        "email": "",
+        "hireable": true,
+        "html_url": "https://github.com/MeryVar",
+        "emails": [],
+        "edu_emails": [],
+        "blog_school_hits": [],
+        "bio_school_hits": []
+      },
+      "kaggle": {
+        "source": "kaggle",
+        "login": "MeryVar",
+        "exists": false,
+        "url": "https://www.kaggle.com/MeryVar"
+      },
+      "stackoverflow": {
+        "source": "stackoverflow",
+        "login": "MeryVar",
+        "matches": []
+      }
+    },
+    "login": "MeryVar"
+  },
+  "auto_education": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Mery \n- GitHub company: SuperNomics\n- Kaggle: no profile for this exact login",
+  "backend": "langgraph"
+}

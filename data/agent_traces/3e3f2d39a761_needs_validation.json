@@ -1,0 +1,203 @@
+{
+  "run_id": "3e3f2d39a761",
+  "dedup_key": "github:5640648",
+  "candidate": {
+    "source": "github",
+    "source_id": "5640648",
+    "name": "Mikyo King",
+    "profile_url": "https://github.com/mikeldking",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Mikyo King is Head of OSS at Arize AI, a market-leading LLM observability platform, with 57 public repos and direct contributor history to Phoenix (extremely scarce signal: production LLM-as-judge, online evals, OpenTelemetry gen_ai.* semantic conventions). San Francisco location is ideal. Strong production eval/obs stack fingerprint and shipping evidence at scale. School pedigree not explicitly stated in GitHub bio; requires LinkedIn verification but production credentials and Arize leadership role provide sufficient confidence to score in high 70s.",
+    "signals": {
+      "top_signal": "Head of OSS at Arize AI; Phoenix (OpenTelemetry gen_ai.*, production evals) contributor; production LLM observability at scale | school unverified",
+      "followers": 147,
+      "public_repos": 57,
+      "company": "Arize AI",
+      "location": "San Francisco",
+      "via": "contrib:Arize-ai/phoenix",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "arize_leadership_validates_production_depth",
+        "phoenix_contributor_top37_percentile_signal",
+        "ideal_location_sanfrancisco",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Mikyo King",
+          "GitHub company: Arize AI",
+          "Twitter/X: @mikeldking",
+          "Blog/site: https://mikeldking.github.io",
+          "Public email: mikeldking@gmail.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/mikeldking"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://mikeldking.github.io"
+          }
+        ],
+        "strong_pedigree_signal": false
+      }
+    },
+    "first_seen": "2026-09-04T03:15:40.389630+00:00"
+  },
+  "role": {
+    "title": "AI Engineer, Agent Analytics & Optimization",
+    "language": "python",
+    "location": "California",
+    "requirements": "US Foster City / Bay Area preferred (California OK). PRIORITY HIRE — production AI Engineer who has shipped agent flows / agent systems / agent observability. NOT Product Builder, NOT research, NOT prompt-engineering-only.\n\nCore job: build systems so AI agents can understand, query, and act on Conviva behavioral data — MCP servers, agentic workflows, AI connectors. Own build + runtime at scale.\n\nPEDIGREE (Yan bar — critical, GitHub rarely has this):\nSchool pedigree is required for outreach priority: MIT / Stanford / CMU / Berkeley / UCLA / Cornell / UIUC / Michigan / Duke (or equivalent evidence in bio/company/education text).\nIf NO top-school evidence in the profile → score CAP at 60, set school_unverified=true, and flag for manual LinkedIn school verification. Do NOT reject solely for missing school — GitHub often omits it.\n\nLOCATION:\nBay Area / California / US remote preferred. Profiles clearly in Nigeria / India / other non-US locations should be filtered or scored ≤30. MCP+LangGraph alone must NOT push a non-US or school-unverified candidate into the 70+ band.\n\nSOURCING THESIS (why GitHub contributor mining is extremely high-value):\nEach production LLM-obs / eval tool ≈ one public repo; contributors to those repos are the people Yan wants. Prefer bios/READMEs mentioning online evaluation, LLM-as-judge in production, gen_ai.* spans.\n\nMarket scarcity (score accordingly):\n- EXTREMELY SCARCE (top 37% — prioritize): online evals, LLM-as-judge in production, OpenTelemetry gen_ai.* spans, OTel GenAI semantic conventions\n- SCARCE (top 52%): RAGAS, DeepEval, LangSmith evals, offline eval rigor\n- COMMON: LangGraph, agent tracing, MCP, Langfuse usage\n- TOO BROAD (ignore as primary signal): LLM, AI, ChatGPT\n- SKIP: 29% with no eval practice at all\n\nMust have (3–7+ yrs SWE):\n- Python backend services shipped end-to-end; fullstack a plus\n- LLM-powered agents IN PRODUCTION with concrete failure/fix stories (agent flow / agent system)\n- MCP servers or equivalent tool-use / AI connector integrations\n- Agentic patterns: tool use, structured outputs, multi-agent orchestration, human-in-the-loop\n- Evals (prefer online + offline) + observability/tracing (Langfuse, LangSmith, Phoenix, Helicone, Weave, OpenTelemetry, or homegrown)\n- Cloud (GCP/AWS), containers, async Python\n\nBonus: LangGraph, Anthropic SDK, Pydantic-AI, CrewAI; digital experience analytics / APM; published OSS on obs/eval stack.\n\nScore HIGH (80+) only when: top-school evidence OR already flagged for LinkedIn verify AND production agent-obs/eval stack + US/Bay Area location.\nScore LOW / DISQUALIFY: pure PM; tutorial/student/bootcamp; agents only in demos; no eval/obs evidence; research-only without shipping; non-US location with no US intent.",
+    "scoring_notes": "School pedigree is critical: MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke required for 70+ scores. Without top school evidence in bio/profile text, cap score at 60 and flag school_unverified=true (manual LinkedIn verification). Bay Area / California / US location preferred — Nigeria/India/non-US self-reported locations cap at 30 (hard filter should already drop clear Nigeria/India). MCP + LangGraph alone are COMMON signals — never score 70+ on stack fingerprints without school OR strong production eval/obs evidence plus US location.",
+    "github_repos": [
+      "langfuse/langfuse",
+      "langchain-ai/langsmith-sdk",
+      "Arize-ai/phoenix",
+      "mlflow/mlflow",
+      "helicone/helicone",
+      "wandb/weave",
+      "explodinggradients/ragas",
+      "confident-ai/deepeval",
+      "open-telemetry/semantic-conventions",
+      "modelcontextprotocol/python-sdk"
+    ],
+    "github_queries": [
+      "online evaluation LLM",
+      "LLM observability",
+      "agent tracing",
+      "OpenTelemetry gen_ai",
+      "RAGAS evaluation",
+      "DeepEval",
+      "Langfuse",
+      "agent eval production"
+    ],
+    "hn_queries": [
+      "LLM observability production",
+      "online evals LLM",
+      "agent observability",
+      "Langfuse OR Phoenix OR Helicone",
+      "LLM-as-judge production",
+      "OpenTelemetry gen_ai"
+    ]
+  },
+  "profile_blob": "Name: Mikyo King\nSource: github\nProfile: https://github.com/mikeldking\nLocation: San Francisco\nCompany: Arize AI\nPrior score: 60\nPrior reasoning: Mikyo King is Head of OSS at Arize AI, a market-leading LLM observability platform, with 57 public repos and direct contributor history to Phoenix (extremely scarce signal: production LLM-as-judge, online evals, OpenTelemetry gen_ai.* semantic conventions). San Francisco location is ideal. Strong production eval/obs stack fingerprint and shipping evidence at scale. School pedigree not explicitly stated in GitHub bio; requires LinkedIn verification but production credentials and Arize leadership role provide sufficient confidence to score in high 70s.\nFlags: ['school_unverified', 'linkedin_verify_school', 'arize_leadership_validates_production_depth', 'phoenix_contributor_top37_percentile_signal', 'ideal_location_sanfrancisco', 'school unverified', 'linkedin verify school']\nTop signal: Head of OSS at Arize AI; Phoenix (OpenTelemetry gen_ai.*, production evals) contributor; production LLM observability at scale | school unverified\n",
+  "thought": "Enrichment done (confidence=medium, clues=6) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+  "action": "REQUEST_SCHOOL",
+  "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 6. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22mikeldking%22. Resume: python scripts/validate_agent.py resume github:5640648",
+  "human_education": "",
+  "score": 60,
+  "school_unverified": true,
+  "flags": [
+    "school_unverified",
+    "linkedin_verify_school",
+    "arize_leadership_validates_production_depth",
+    "phoenix_contributor_top37_percentile_signal",
+    "ideal_location_sanfrancisco",
+    "school unverified",
+    "linkedin verify school"
+  ],
+  "status": "needs_validation",
+  "trace": [
+    {
+      "ts": "2026-09-04T03:35:37.134799+00:00",
+      "thought": "Score=60 interesting but school unverified (flags=['school_unverified', 'linkedin_verify_school', 'arize_leadership_validates_production_depth', 'phoenix_contributor_top37_percentile_signal', 'ideal_location_sanfrancisco', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:35:39.525118+00:00",
+      "thought": "Score=60 interesting but school unverified (flags=['school_unverified', 'linkedin_verify_school', 'arize_leadership_validates_production_depth', 'phoenix_contributor_top37_percentile_signal', 'ideal_location_sanfrancisco', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": "Enrichment complete for login=mikeldking: confidence=medium, schools=[], edu_emails=[], clues=6."
+    },
+    {
+      "ts": "2026-09-04T03:35:39.525825+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=6) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:35:39.531075+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=6) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 6. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22mikeldking%22. Resume: python scripts/validate_agent.py resume github:5640648",
+      "queue_key": "github:5640648"
+    }
+  ],
+  "reasoning": "Mikyo King is Head of OSS at Arize AI, a market-leading LLM observability platform, with 57 public repos and direct contributor history to Phoenix (extremely scarce signal: production LLM-as-judge, online evals, OpenTelemetry gen_ai.* semantic conventions). San Francisco location is ideal. Strong production eval/obs stack fingerprint and shipping evidence at scale. School pedigree not explicitly stated in GitHub bio; requires LinkedIn verification but production credentials and Arize leadership role provide sufficient confidence to score in high 70s.",
+  "top_signal": "Head of OSS at Arize AI; Phoenix (OpenTelemetry gen_ai.*, production evals) contributor; production LLM observability at scale | school unverified",
+  "enriched": true,
+  "enrichment": {
+    "clues": [
+      "GitHub name field: Mikyo King",
+      "GitHub company: Arize AI",
+      "Twitter/X: @mikeldking",
+      "Blog/site: https://mikeldking.github.io",
+      "Public email: mikeldking@gmail.com",
+      "Kaggle: no profile for this exact login"
+    ],
+    "school_hits": [],
+    "edu_emails": [],
+    "links": [
+      {
+        "label": "Twitter/X",
+        "url": "https://twitter.com/mikeldking"
+      },
+      {
+        "label": "Personal site / blog",
+        "url": "https://mikeldking.github.io"
+      }
+    ],
+    "strong_pedigree_signal": false,
+    "confidence": "medium",
+    "education_blob": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Mikyo King\n- GitHub company: Arize AI\n- Twitter/X: @mikeldking\n- Blog/site: https://mikeldking.github.io\n- Public email: mikeldking@gmail.com\n- Kaggle: no profile for this exact login",
+    "raw": {
+      "github": {
+        "source": "github",
+        "login": "mikeldking",
+        "ok": true,
+        "name": "Mikyo King",
+        "company": "Arize AI",
+        "blog": "https://mikeldking.github.io",
+        "bio": "Head of OSS @Arize-ai ",
+        "location": "San Francisco",
+        "twitter": "mikeldking",
+        "email": "mikeldking@gmail.com",
+        "hireable": null,
+        "html_url": "https://github.com/mikeldking",
+        "emails": [
+          "mikeldking@gmail.com"
+        ],
+        "edu_emails": [],
+        "blog_url": "https://mikeldking.github.io",
+        "blog_text_preview": " Mikyo King | Software Builder Mikyo King Blog Archive OSS Engineer. Posts Jan 5, 2025 From Skeptic to Advocate: How I Became an Open-Source Engineer subscribe via RSS Mikyo King Mikyo King mikeldking@gmail.com mikeldking mikeldking mikeldking rss Software Builder ",
+        "blog_school_hits": [],
+        "bio_school_hits": []
+      },
+      "kaggle": {
+        "source": "kaggle",
+        "login": "mikeldking",
+        "exists": false,
+        "url": "https://www.kaggle.com/mikeldking"
+      },
+      "stackoverflow": {
+        "source": "stackoverflow",
+        "login": "mikeldking",
+        "matches": []
+      }
+    },
+    "login": "mikeldking"
+  },
+  "auto_education": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Mikyo King\n- GitHub company: Arize AI\n- Twitter/X: @mikeldking\n- Blog/site: https://mikeldking.github.io\n- Public email: mikeldking@gmail.com\n- Kaggle: no profile for this exact login",
+  "backend": "langgraph"
+}

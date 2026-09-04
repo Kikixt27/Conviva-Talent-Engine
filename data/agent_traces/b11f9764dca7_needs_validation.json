@@ -1,0 +1,220 @@
+{
+  "run_id": "b11f9764dca7",
+  "dedup_key": "github:25397938",
+  "candidate": {
+    "source": "github",
+    "source_id": "25397938",
+    "name": "Connor Loi",
+    "profile_url": "https://github.com/connortbot",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Connor demonstrates strong production AI observability/eval stack credentials (Helicone contributor, LLM-as-judge in production context), Python backend SWE foundation, and ideal Bay Area location. However, school pedigree is unverified (UW is not a target tier-1), capping score below 70 pending LinkedIn verification. Production agent-system/MCP evidence is not yet explicit in public profile.",
+    "signals": {
+      "top_signal": "Helicone production LLM observability contributor + Bay Area location | school unverified",
+      "followers": 37,
+      "public_repos": 21,
+      "company": "University of Waterloo",
+      "location": "San Francisco, CA",
+      "via": "contrib:helicone/helicone",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — UW not in priority tier",
+        "linkedin_verify_school — manual check required",
+        "production_eval_stack_strong — Helicone is high-scarcity signal",
+        "agent_system_evidence_needed — verify MCP/agent flows in LinkedIn or code",
+        "good_location_fit — San Francisco, CA",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Connor Loi",
+          "GitHub company: University of Waterloo",
+          "Blog/site: https://connort.me",
+          "Public email: loiconnor8@gmail.com",
+          "Kaggle profile exists: https://www.kaggle.com/connortbot",
+          "StackOverflow: connortbot (rep 3) https://stackoverflow.com/users/16236142/connortbot"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://connort.me"
+          },
+          {
+            "label": "Kaggle profile",
+            "url": "https://www.kaggle.com/connortbot"
+          },
+          {
+            "label": "SO · connortbot",
+            "url": "https://stackoverflow.com/users/16236142/connortbot"
+          }
+        ],
+        "strong_pedigree_signal": false
+      }
+    },
+    "first_seen": "2026-09-04T03:18:41.681833+00:00"
+  },
+  "role": {
+    "title": "AI Engineer, Agent Analytics & Optimization",
+    "language": "python",
+    "location": "California",
+    "requirements": "US Foster City / Bay Area preferred (California OK). PRIORITY HIRE — production AI Engineer who has shipped agent flows / agent systems / agent observability. NOT Product Builder, NOT research, NOT prompt-engineering-only.\n\nCore job: build systems so AI agents can understand, query, and act on Conviva behavioral data — MCP servers, agentic workflows, AI connectors. Own build + runtime at scale.\n\nPEDIGREE (Yan bar — critical, GitHub rarely has this):\nSchool pedigree is required for outreach priority: MIT / Stanford / CMU / Berkeley / UCLA / Cornell / UIUC / Michigan / Duke (or equivalent evidence in bio/company/education text).\nIf NO top-school evidence in the profile → score CAP at 60, set school_unverified=true, and flag for manual LinkedIn school verification. Do NOT reject solely for missing school — GitHub often omits it.\n\nLOCATION:\nBay Area / California / US remote preferred. Profiles clearly in Nigeria / India / other non-US locations should be filtered or scored ≤30. MCP+LangGraph alone must NOT push a non-US or school-unverified candidate into the 70+ band.\n\nSOURCING THESIS (why GitHub contributor mining is extremely high-value):\nEach production LLM-obs / eval tool ≈ one public repo; contributors to those repos are the people Yan wants. Prefer bios/READMEs mentioning online evaluation, LLM-as-judge in production, gen_ai.* spans.\n\nMarket scarcity (score accordingly):\n- EXTREMELY SCARCE (top 37% — prioritize): online evals, LLM-as-judge in production, OpenTelemetry gen_ai.* spans, OTel GenAI semantic conventions\n- SCARCE (top 52%): RAGAS, DeepEval, LangSmith evals, offline eval rigor\n- COMMON: LangGraph, agent tracing, MCP, Langfuse usage\n- TOO BROAD (ignore as primary signal): LLM, AI, ChatGPT\n- SKIP: 29% with no eval practice at all\n\nMust have (3–7+ yrs SWE):\n- Python backend services shipped end-to-end; fullstack a plus\n- LLM-powered agents IN PRODUCTION with concrete failure/fix stories (agent flow / agent system)\n- MCP servers or equivalent tool-use / AI connector integrations\n- Agentic patterns: tool use, structured outputs, multi-agent orchestration, human-in-the-loop\n- Evals (prefer online + offline) + observability/tracing (Langfuse, LangSmith, Phoenix, Helicone, Weave, OpenTelemetry, or homegrown)\n- Cloud (GCP/AWS), containers, async Python\n\nBonus: LangGraph, Anthropic SDK, Pydantic-AI, CrewAI; digital experience analytics / APM; published OSS on obs/eval stack.\n\nScore HIGH (80+) only when: top-school evidence OR already flagged for LinkedIn verify AND production agent-obs/eval stack + US/Bay Area location.\nScore LOW / DISQUALIFY: pure PM; tutorial/student/bootcamp; agents only in demos; no eval/obs evidence; research-only without shipping; non-US location with no US intent.",
+    "scoring_notes": "School pedigree is critical: MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke required for 70+ scores. Without top school evidence in bio/profile text, cap score at 60 and flag school_unverified=true (manual LinkedIn verification). Bay Area / California / US location preferred — Nigeria/India/non-US self-reported locations cap at 30 (hard filter should already drop clear Nigeria/India). MCP + LangGraph alone are COMMON signals — never score 70+ on stack fingerprints without school OR strong production eval/obs evidence plus US location.",
+    "github_repos": [
+      "langfuse/langfuse",
+      "langchain-ai/langsmith-sdk",
+      "Arize-ai/phoenix",
+      "mlflow/mlflow",
+      "helicone/helicone",
+      "wandb/weave",
+      "explodinggradients/ragas",
+      "confident-ai/deepeval",
+      "open-telemetry/semantic-conventions",
+      "modelcontextprotocol/python-sdk"
+    ],
+    "github_queries": [
+      "online evaluation LLM",
+      "LLM observability",
+      "agent tracing",
+      "OpenTelemetry gen_ai",
+      "RAGAS evaluation",
+      "DeepEval",
+      "Langfuse",
+      "agent eval production"
+    ],
+    "hn_queries": [
+      "LLM observability production",
+      "online evals LLM",
+      "agent observability",
+      "Langfuse OR Phoenix OR Helicone",
+      "LLM-as-judge production",
+      "OpenTelemetry gen_ai"
+    ]
+  },
+  "profile_blob": "Name: Connor Loi\nSource: github\nProfile: https://github.com/connortbot\nLocation: San Francisco, CA\nCompany: University of Waterloo\nPrior score: 60\nPrior reasoning: Connor demonstrates strong production AI observability/eval stack credentials (Helicone contributor, LLM-as-judge in production context), Python backend SWE foundation, and ideal Bay Area location. However, school pedigree is unverified (UW is not a target tier-1), capping score below 70 pending LinkedIn verification. Production agent-system/MCP evidence is not yet explicit in public profile.\nFlags: ['school_unverified — UW not in priority tier', 'linkedin_verify_school — manual check required', 'production_eval_stack_strong — Helicone is high-scarcity signal', 'agent_system_evidence_needed — verify MCP/agent flows in LinkedIn or code', 'good_location_fit — San Francisco, CA', 'school unverified', 'linkedin verify school']\nTop signal: Helicone production LLM observability contributor + Bay Area location | school unverified\n",
+  "thought": "Enrichment done (confidence=medium, clues=6) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+  "action": "REQUEST_SCHOOL",
+  "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 6. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22connortbot%22. Resume: python scripts/validate_agent.py resume github:25397938",
+  "human_education": "",
+  "score": 60,
+  "school_unverified": true,
+  "flags": [
+    "school_unverified — UW not in priority tier",
+    "linkedin_verify_school — manual check required",
+    "production_eval_stack_strong — Helicone is high-scarcity signal",
+    "agent_system_evidence_needed — verify MCP/agent flows in LinkedIn or code",
+    "good_location_fit — San Francisco, CA",
+    "school unverified",
+    "linkedin verify school"
+  ],
+  "status": "needs_validation",
+  "trace": [
+    {
+      "ts": "2026-09-04T03:35:56.901157+00:00",
+      "thought": "Score=60 interesting but school unverified (flags=['school_unverified — UW not in priority tier', 'linkedin_verify_school — manual check required', 'production_eval_stack_strong — Helicone is high-scarcity signal', 'agent_system_evidence_needed — verify MCP/agent flows in LinkedIn or code', 'good_location_fit — San Francisco, CA', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:35:58.158476+00:00",
+      "thought": "Score=60 interesting but school unverified (flags=['school_unverified — UW not in priority tier', 'linkedin_verify_school — manual check required', 'production_eval_stack_strong — Helicone is high-scarcity signal', 'agent_system_evidence_needed — verify MCP/agent flows in LinkedIn or code', 'good_location_fit — San Francisco, CA', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": "Enrichment complete for login=connortbot: confidence=medium, schools=[], edu_emails=[], clues=6."
+    },
+    {
+      "ts": "2026-09-04T03:35:58.159165+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=6) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:35:58.168879+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=6) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 6. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22connortbot%22. Resume: python scripts/validate_agent.py resume github:25397938",
+      "queue_key": "github:25397938"
+    }
+  ],
+  "reasoning": "Connor demonstrates strong production AI observability/eval stack credentials (Helicone contributor, LLM-as-judge in production context), Python backend SWE foundation, and ideal Bay Area location. However, school pedigree is unverified (UW is not a target tier-1), capping score below 70 pending LinkedIn verification. Production agent-system/MCP evidence is not yet explicit in public profile.",
+  "top_signal": "Helicone production LLM observability contributor + Bay Area location | school unverified",
+  "enriched": true,
+  "enrichment": {
+    "clues": [
+      "GitHub name field: Connor Loi",
+      "GitHub company: University of Waterloo",
+      "Blog/site: https://connort.me",
+      "Public email: loiconnor8@gmail.com",
+      "Kaggle profile exists: https://www.kaggle.com/connortbot",
+      "StackOverflow: connortbot (rep 3) https://stackoverflow.com/users/16236142/connortbot"
+    ],
+    "school_hits": [],
+    "edu_emails": [],
+    "links": [
+      {
+        "label": "Personal site / blog",
+        "url": "https://connort.me"
+      },
+      {
+        "label": "Kaggle profile",
+        "url": "https://www.kaggle.com/connortbot"
+      },
+      {
+        "label": "SO · connortbot",
+        "url": "https://stackoverflow.com/users/16236142/connortbot"
+      }
+    ],
+    "strong_pedigree_signal": false,
+    "confidence": "medium",
+    "education_blob": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Connor Loi\n- GitHub company: University of Waterloo\n- Blog/site: https://connort.me\n- Public email: loiconnor8@gmail.com\n- Kaggle profile exists: https://www.kaggle.com/connortbot\n- StackOverflow: connortbot (rep 3) https://stackoverflow.com/users/16236142/connortbot",
+    "raw": {
+      "github": {
+        "source": "github",
+        "login": "connortbot",
+        "ok": true,
+        "name": "Connor Loi",
+        "company": "University of Waterloo",
+        "blog": "connort.me",
+        "bio": "happy @ helicone. cs at uw",
+        "location": "San Francisco, CA",
+        "twitter": "",
+        "email": "loiconnor8@gmail.com",
+        "hireable": true,
+        "html_url": "https://github.com/connortbot",
+        "emails": [
+          "loiconnor8@gmail.com"
+        ],
+        "edu_emails": [],
+        "blog_url": "https://connort.me",
+        "blog_text_preview": " Connor Loi You need to enable JavaScript to run this app. ",
+        "blog_school_hits": [],
+        "bio_school_hits": []
+      },
+      "kaggle": {
+        "source": "kaggle",
+        "login": "connortbot",
+        "exists": true,
+        "url": "https://www.kaggle.com/connortbot",
+        "school_hits": []
+      },
+      "stackoverflow": {
+        "source": "stackoverflow",
+        "login": "connortbot",
+        "matches": [
+          {
+            "user_id": 16236142,
+            "display_name": "connortbot",
+            "link": "https://stackoverflow.com/users/16236142/connortbot",
+            "reputation": 3,
+            "location": null
+          }
+        ]
+      }
+    },
+    "login": "connortbot"
+  },
+  "auto_education": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Connor Loi\n- GitHub company: University of Waterloo\n- Blog/site: https://connort.me\n- Public email: loiconnor8@gmail.com\n- Kaggle profile exists: https://www.kaggle.com/connortbot\n- StackOverflow: connortbot (rep 3) https://stackoverflow.com/users/16236142/connortbot",
+  "backend": "langgraph"
+}

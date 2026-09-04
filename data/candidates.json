@@ -1892,5 +1892,3816 @@
       ]
     },
     "first_seen": "2026-09-03T04:27:59.508524+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "3250749",
+    "name": "Nirant",
+    "profile_url": "https://github.com/NirantK",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 68,
+    "reasoning": "Nirant is a core RAGAS contributor (top-tier eval scarcity signal) with strong production systems experience at Qdrant and 1427 GitHub followers demonstrating sustained OSS credibility. However, location is confirmed as Bangalore, India (hard filter for Bay Area/US preference role), and while Stanford appears in enrichment data, school pedigree is not explicitly stated in GitHub bio; manual LinkedIn verification required before outreach. Production eval expertise lifts score above strict cap, but India location + unverified school prevent 70+ band.",
+    "signals": {
+      "top_signal": "RAGAS core contributor (LLM-as-judge production eval, top-tier scarcity) + Qdrant production systems | location India (hard filter) | school unverified",
+      "followers": 1427,
+      "public_repos": 108,
+      "company": null,
+      "location": null,
+      "via": "contrib:explodinggradients/ragas",
+      "school_unverified": false,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "location_india_hard_filter",
+        "no_us_location_stated",
+        "no_mcp_or_agent_flow_evidence",
+        "eval_strong_but_agent_systems_unclear",
+        "production_eval_does_not_offset_location_mismatch",
+        "enrichment pedigree hit"
+      ],
+      "enrichment": {
+        "confidence": "high",
+        "school_hits": [
+          "stanford"
+        ],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Nirant",
+          "Twitter/X: @NirantK",
+          "Blog/site: https://nirantk.com",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: nirantk (rep 1) https://stackoverflow.com/users/7617332/nirantk",
+          "SO location: Bangalore, Karnataka, India",
+          "StackOverflow: nirantk83 (rep 1) https://stackoverflow.com/users/19811775/nirantk83"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/NirantK"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://nirantk.com"
+          },
+          {
+            "label": "SO · nirantk",
+            "url": "https://stackoverflow.com/users/7617332/nirantk"
+          },
+          {
+            "label": "SO · nirantk83",
+            "url": "https://stackoverflow.com/users/19811775/nirantk83"
+          }
+        ],
+        "strong_pedigree_signal": true
+      },
+      "validation": "auto_enrichment_applied",
+      "validation_status": "ready",
+      "agent_thought": "Re-score=68 after auto-enrichment; school verified. Accept as ready.",
+      "agent_trace_steps": 6
+    },
+    "first_seen": "2026-09-04T03:21:36.025448+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "2834609",
+    "name": "Marc Klingen",
+    "profile_url": "https://github.com/marcklingen",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Marc is co-founder of Langfuse, a production LLM observability/tracing platform — one of the top signals in the sourcing thesis and an EXTREMELY SCARCE skill (online evals, LLM-as-judge, production observability stack). He has shipped end-to-end and owns both build and runtime. However, school pedigree is not evident in GitHub bio, location is not stated, and no explicit mention of agent flows/MCP work in public profile. Strong production obs/eval credentials warrant 78, but lack of stated US location and unverified school prevents higher score.",
+    "signals": {
+      "top_signal": "Co-founder of production LLM observability platform (Langfuse); extremely rare obs/eval stack expertise | school unverified",
+      "followers": 477,
+      "public_repos": 51,
+      "company": "@langfuse (part of @ClickHouse)",
+      "location": null,
+      "via": "contrib:langfuse/langfuse",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "location_not_stated_in_github",
+        "verify_us_location_and_bay_area_eligibility",
+        "verify_agent_flow_mcp_production_experience",
+        "high_production_obs_signal_but_agent_systems_not_confirmed_in_bio",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Marc Klingen",
+          "GitHub company: @langfuse (part of @ClickHouse)",
+          "Twitter/X: @marcklingen",
+          "Blog/site: https://marcklingen.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/marcklingen"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://marcklingen.com"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=5) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:12:45.036878+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "1880943",
+    "name": "Niklas Semmler",
+    "profile_url": "https://github.com/niklassemmler",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Niklas shows production engagement with Langfuse (LLM observability stack), a highly relevant signal for agent analytics & observability work. However, profile lacks concrete evidence of shipped agent flows/systems, MCP servers, or agentic workflows in production. No top-school pedigree evident in GitHub bio, location is missing entirely, and public repos (14) suggest early/mid-career rather than senior depth. Requires manual verification of school, location, and production agent system experience before advancement.",
+    "signals": {
+      "top_signal": "Langfuse contributor (production LLM observability) | school unverified",
+      "followers": 11,
+      "public_repos": 14,
+      "company": null,
+      "location": null,
+      "via": "contrib:langfuse/langfuse",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "location_missing",
+        "linkedin_verify_school_location",
+        "no_visible_agent_system_shipping",
+        "no_mcp_server_evidence",
+        "early_career_signal_likely",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Niklas Semmler",
+          "Blog/site: https://niklas-semmler.net",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://niklas-semmler.net"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:13:37.805796+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "15179255",
+    "name": "Michael Fröhlich",
+    "profile_url": "https://github.com/FroeMic",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Michael shows strong production signals: Langfuse contributor (LLM observability), 101 public repos, and clear focus on eval/obs stack—exactly the scarce signal Yan wants. However, school pedigree is absent from GitHub bio, location is vague ('The Internet'), and no explicit evidence of shipped agent systems, MCP servers, or agentic workflows in production. Cap at 58 pending LinkedIn verification of education and Bay Area intent.",
+    "signals": {
+      "top_signal": "Langfuse contributor + LLM observability focus (scarce pedigree) | school unverified",
+      "followers": 33,
+      "public_repos": 101,
+      "company": "Something New ✨",
+      "location": "The Internet",
+      "via": "contrib:langfuse/langfuse",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — manual LinkedIn verification required",
+        "location_vague — 'The Internet' does not confirm Bay Area/US intent",
+        "no_explicit_agent_production_evidence — Langfuse contrib is strong obs signal, but no shipped agent flows/MCP servers documented on GitHub profile",
+        "linkedin_verify_required — confirm school (MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke) and US/Bay Area location before advancing",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Michael Fröhlich",
+          "GitHub company: Something New ✨",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:13:44.660317+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "48529566",
+    "name": "Jannik Maierhöfer",
+    "profile_url": "https://github.com/jannikmaierhoefer",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Jannik is a core contributor to Langfuse (production LLM observability/evals platform), demonstrating deep shipping experience with eval + observability stack—a scarcity signal. However, no top-school pedigree evident in GitHub profile, no explicit US/Bay Area location confirmed, and no public evidence of agent systems/MCP work beyond Langfuse contribution. Strong production eval-obs stack compensates for pedigree gap, but location and agent-specific shipping remain unverified.",
+    "signals": {
+      "top_signal": "Langfuse core contributor — production evals + LLM observability at scale | school unverified",
+      "followers": 65,
+      "public_repos": 83,
+      "company": "Langfuse",
+      "location": null,
+      "via": "contrib:langfuse/langfuse",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — manual LinkedIn verification required",
+        "location_unverified — no explicit US/Bay Area stated on GitHub",
+        "agent_systems_unknown — Langfuse contributor but no evidence of shipped agent flows/MCP",
+        "linkedin_verify_required — confirm school pedigree and agent shipping history",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Jannik Maierhöfer",
+          "GitHub company: Langfuse",
+          "Blog/site: https://github.com/langfuse/langfuse",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://github.com/langfuse/langfuse"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:13:49.753905+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "13333726",
+    "name": "William FH",
+    "profile_url": "https://github.com/hinthornw",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "William is an Engineering @ LangChain contributor with 99 public repos and 837 followers, sourced directly from langsmith-sdk contributions—strong production LLM observability signal and core to the evaluation/tracing stack Conviva needs. However, school pedigree is absent from GitHub profile, location is unlisted, and no explicit evidence of shipped agent flows/agentic systems in production (vs. infrastructure/SDK work); manual LinkedIn verification required to confirm top-school background and US location before advancing to 80+.",
+    "signals": {
+      "top_signal": "LangChain Engineering + LangSmith SDK contributor; production eval/obs infrastructure experience | school unverified",
+      "followers": 837,
+      "public_repos": 99,
+      "company": "LangChain",
+      "location": null,
+      "via": "contrib:langchain-ai/langsmith-sdk",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — flag for manual LinkedIn verification",
+        "location_not_listed — confirm US/Bay Area",
+        "agent_systems_not_explicit — verify shipped agentic workflows vs. SDK/infra-only work",
+        "langsmith_evals_signal_strong — but needs agent production evidence",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: William FH",
+          "GitHub company: LangChain",
+          "Twitter/X: @WHinthorn",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/WHinthorn"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:14:21.236996+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "6952323",
+    "name": "Jacob Lee",
+    "profile_url": "https://github.com/jacoblee93",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Jacob Lee is a core LangChain contributor with strong production AI/agent infrastructure credentials (LangSmith SDK, observability tooling) and San Francisco location. No top-school evidence detected in GitHub profile, but production eval/obs stack work and Bay Area location warrant flagging for manual LinkedIn verification rather than hard cap; if school pedigree confirmed, score likely 82+.",
+    "signals": {
+      "top_signal": "Production LLM observability & eval stack (LangSmith) + core LangChain contributor + Bay Area | school unverified",
+      "followers": 1370,
+      "public_repos": 100,
+      "company": "@langchain-ai",
+      "location": "San Francisco",
+      "via": "contrib:langchain-ai/langsmith-sdk",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke mentioned in GitHub bio",
+        "linkedin_verify_school — manual verification required before final offer",
+        "strong_production_signal — LangSmith SDK + LangChain core team suggests real agent-obs shipping",
+        "common_stack_not_differentiating — LangGraph/MCP without eval rigor detail visible on GitHub",
+        "verify_agent_flow_production_depth — confirm concrete shipped agent failures/fixes and multi-agent orchestration",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Jacob Lee",
+          "GitHub company: @langchain-ai",
+          "Twitter/X: @hacubu",
+          "Blog/site: https://jacobscript.dev",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/hacubu"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://jacobscript.dev"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=5) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:14:28.653948+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "22008038",
+    "name": "Bagatur",
+    "profile_url": "https://github.com/baskaryan",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Bagatur is a significant LangSmith SDK contributor with strong evidence of production LLM observability / eval tooling work—LangSmith is a core eval+tracing platform widely used in production agent systems. However, no school pedigree is evident in the GitHub profile, and location is unconfirmed; this caps the score at 72 pending LinkedIn verification. If school is verified as top-tier (MIT/Stanford/CMU/Berkeley/CMU/Cornell/UIUC/Michigan/Duke) and Bay Area location confirmed, score could reach 78–82.",
+    "signals": {
+      "top_signal": "LangSmith SDK core contributor — production LLM observability + eval stack | school unverified",
+      "followers": 498,
+      "public_repos": 12,
+      "company": null,
+      "location": null,
+      "via": "contrib:langchain-ai/langsmith-sdk",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school evidence in GitHub bio",
+        "location_unconfirmed — no US/Bay Area location stated",
+        "linkedin_verify_required — confirm school pedigree and US location before 75+ offer",
+        "high_value_sourcing_thesis — LangSmith is on-topic for agent obs/eval stack",
+        "note: strong contribution signal but must validate school + location to unlock 78–82 band",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Bagatur",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=2) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:14:40.577744+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "9536492",
+    "name": "Ankush Gola",
+    "profile_url": "https://github.com/agola11",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Ankush shows strong production signals: Bay Area location (✓), LangSmith SDK contributor (✓), 18 public repos suggest active shipping. However, NO top-school pedigree evident in GitHub bio/profile, capping score at 65 baseline. Production agent-obs/eval work not yet validated from public profile alone—requires LinkedIn verification of school + deeper agent/MCP shipping evidence to unlock 75+.",
+    "signals": {
+      "top_signal": "LangSmith SDK contributor, Bay Area, 18 repos | school unverified",
+      "followers": 188,
+      "public_repos": 18,
+      "company": null,
+      "location": "San Francisco, CA",
+      "via": "contrib:langchain-ai/langsmith-sdk",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke evident in GitHub bio",
+        "linkedin_verify_school — manual school verification required before advancing",
+        "validate_production_agents — confirm shipped agent systems / agent observability projects from LangSmith work",
+        "validate_mcp_or_connectors — confirm MCP servers or AI connector integrations beyond LangSmith SDK contribution",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Ankush Gola",
+          "Blog/site: https://ankushgola.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://ankushgola.com"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:14:47.049910+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "2348618",
+    "name": "Predrag Gruevski",
+    "profile_url": "https://github.com/obi1kenobi",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Strong production AI/LLM systems engineer with 111 public repos, 769 followers, and direct contributions to LangSmith SDK (core eval/obs infrastructure). Demonstrates shipping at scale on observability and agentic tooling; however, school pedigree is not evident in GitHub bio, and location is unspecified. Flag for LinkedIn verification to confirm Bay Area presence and educational background before final offer.",
+    "signals": {
+      "top_signal": "LangSmith SDK contributor + production LLM observability systems | school unverified",
+      "followers": 769,
+      "public_repos": 111,
+      "company": null,
+      "location": null,
+      "via": "contrib:langchain-ai/langsmith-sdk",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school evidence in GitHub bio",
+        "location_unverified — no Bay Area / US location stated",
+        "linkedin_verify_school — critical before 75+",
+        "linkedin_verify_location — critical for Bay Area preference",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Predrag Gruevski",
+          "Twitter/X: @PredragGruevski",
+          "Blog/site: https://predr.ag/",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: obi1kenobi2 (rep 43) https://stackoverflow.com/users/4036034/obi1kenobi2",
+          "SO location: Milwaukee, WI"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/PredragGruevski"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://predr.ag/"
+          },
+          {
+            "label": "SO · obi1kenobi2",
+            "url": "https://stackoverflow.com/users/4036034/obi1kenobi2"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=6) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:15:04.539695+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "6432132",
+    "name": "SN",
+    "profile_url": "https://github.com/samnoyes",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Contributor to langsmith-sdk shows familiarity with LLM observability stack, but GitHub profile lacks evidence of shipped production agent systems, eval/obs implementations, or top-school pedigree. No bio, company, or education details visible; school status cannot be verified from public profile. Single repo contribution signal is insufficient without demonstrated end-to-end agent shipping or production eval/obs work.",
+    "signals": {
+      "top_signal": "langsmith-sdk contributor (observability adjacent) | school unverified",
+      "followers": 9,
+      "public_repos": 19,
+      "company": null,
+      "location": "United States",
+      "via": "contrib:langchain-ai/langsmith-sdk",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "no_production_agent_evidence",
+        "no_eval_obs_shipping_story",
+        "minimal_bio_detail",
+        "require_portfolio_review",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: SN",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=2) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:15:09.086162+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "78627776",
+    "name": "Isaac Francisco",
+    "profile_url": "https://github.com/isahers1",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Isaac shows meaningful LangSmith SDK contrib history (LangChain ecosystem), but profile lacks verifiable school pedigree, explicit location data, and concrete production agent-obs/eval shipping evidence. No bio details, company affiliation, or GitHub README mentions of agentic systems, evals, or observability stack in production. Contribution to LangSmith is a positive signal for eval awareness, but insufficient alone without school verification and clearer production impact.",
+    "signals": {
+      "top_signal": "LangSmith SDK contributor (LangChain ecosystem eval tooling) | school unverified",
+      "followers": 34,
+      "public_repos": 37,
+      "company": null,
+      "location": null,
+      "via": "contrib:langchain-ai/langsmith-sdk",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school pedigree in GitHub bio",
+        "location_unknown — no US/Bay Area self-reported location",
+        "production_agent_obs_unconfirmed — no README or profile evidence of shipped agent systems with evals/observability",
+        "requires_linkedin_verification — manual check needed for school, location, employment, and production agent work history",
+        "weak_bio — empty or minimal GitHub bio reduces signal clarity",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Isaac Francisco",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=2) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:15:24.187535+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "270434257",
+    "name": "Ramon Nogueira",
+    "profile_url": "https://github.com/ramon-langchain",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Ramon is a LangChain contributor with direct production exposure to agent observability/tracing infrastructure (LangSmith SDK), strong US/Bay Area location match, and 4 public repos suggesting hands-on shipping experience. However, no top-school pedigree is evident in the GitHub profile, and public repos lack detail on production agent flows, MCP servers, or eval rigor—requiring LinkedIn verification to confirm depth of agentic systems work and educational background.",
+    "signals": {
+      "top_signal": "LangChain + LangSmith SDK contributor; SF-based; production observability/tracing exposure | school unverified",
+      "followers": 19,
+      "public_repos": 4,
+      "company": "LangChain",
+      "location": "SF",
+      "via": "contrib:langchain-ai/langsmith-sdk",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "linkedin_verify_production_agent_systems",
+        "verify_eval_practice",
+        "verify_mcp_or_connector_work",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Ramon Nogueira",
+          "GitHub company: LangChain",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:15:28.870782+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "5640648",
+    "name": "Mikyo King",
+    "profile_url": "https://github.com/mikeldking",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Mikyo King is Head of OSS at Arize AI, a market-leading LLM observability platform, with 57 public repos and direct contributor history to Phoenix (extremely scarce signal: production LLM-as-judge, online evals, OpenTelemetry gen_ai.* semantic conventions). San Francisco location is ideal. Strong production eval/obs stack fingerprint and shipping evidence at scale. School pedigree not explicitly stated in GitHub bio; requires LinkedIn verification but production credentials and Arize leadership role provide sufficient confidence to score in high 70s.",
+    "signals": {
+      "top_signal": "Head of OSS at Arize AI; Phoenix (OpenTelemetry gen_ai.*, production evals) contributor; production LLM observability at scale | school unverified",
+      "followers": 147,
+      "public_repos": 57,
+      "company": "Arize AI",
+      "location": "San Francisco",
+      "via": "contrib:Arize-ai/phoenix",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "arize_leadership_validates_production_depth",
+        "phoenix_contributor_top37_percentile_signal",
+        "ideal_location_sanfrancisco",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Mikyo King",
+          "GitHub company: Arize AI",
+          "Twitter/X: @mikeldking",
+          "Blog/site: https://mikeldking.github.io",
+          "Public email: mikeldking@gmail.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/mikeldking"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://mikeldking.github.io"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=6) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:15:40.389630+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "80478925",
+    "name": "Roger Yang",
+    "profile_url": "https://github.com/RogerHYang",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Roger Yang is sourced as a contributor to Arize-ai/phoenix (production LLM observability), which is an extremely scarce signal—he has production eval/obs stack experience. Based in San Francisco (Bay Area preferred). However, no top-school pedigree evident in GitHub profile, and public repos (13) and followers (55) suggest early-to-mid-career stage with limited shipping portfolio visibility. No explicit production agent-flow, MCP, or multi-agent orchestration evidence in available profile. School unverified—manual LinkedIn check required before 70+ consideration.",
+    "signals": {
+      "top_signal": "Phoenix (Arize) observability contributor—production LLM-obs stack | school unverified",
+      "followers": 55,
+      "public_repos": 13,
+      "company": null,
+      "location": "San Francisco, CA",
+      "via": "contrib:Arize-ai/phoenix",
+      "school_unverified": true,
+      "flags": [
+        "school unverified—manual LinkedIn verify required",
+        "production obs signal (Phoenix) is strong but no explicit agent-flow/MCP shipping evidence in GitHub profile",
+        "limited public repo/follower footprint—verify depth of production ownership",
+        "recommend LinkedIn outreach to confirm school pedigree and production agent system experience",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Roger Yang",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=2) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:15:45.907929+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "15664869",
+    "name": "Xander Song",
+    "profile_url": "https://github.com/axiomofjoy",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Xander is a strong production AI engineer signal: Eng + DevRel at Arize AI (market-leading LLM observability platform), contributor to Phoenix (OpenTelemetry-based gen_ai tracing — EXTREMELY SCARCE pedigree), San Francisco location, 58 public repos. However, NO top-school evidence in GitHub bio/profile text. Meets core production obs/eval stack + US/Bay Area location, but school_unverified cap prevents 75+. Verify MIT/Stanford/CMU/Berkeley pedigree via LinkedIn before final offer consideration.",
+    "signals": {
+      "top_signal": "Production LLM observability (Arize/Phoenix contributor) + Bay Area + proven gen_ai.* semantic convention work | school unverified",
+      "followers": 56,
+      "public_repos": 58,
+      "company": null,
+      "location": "San Francisco, CA",
+      "via": "contrib:Arize-ai/phoenix",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke mention in bio",
+        "linkedin_verify_school — required before 75+ scoring",
+        "arize_ai_pedigree_strong — observability stack expert",
+        "phoenix_contributor — gen_ai semantic conventions (EXTREMELY SCARCE)",
+        "score_capped_at_72_pending_school_verification",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Xander Song",
+          "Blog/site: https://www.linkedin.com/in/xandersong/",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: axiomofjoy (rep 1) https://stackoverflow.com/users/12855594/axiomofjoy"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://www.linkedin.com/in/xandersong/"
+          },
+          {
+            "label": "SO · axiomofjoy",
+            "url": "https://stackoverflow.com/users/12855594/axiomofjoy"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:15:51.657275+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "1688064",
+    "name": "Dustin Ngo",
+    "profile_url": "https://github.com/anticorrelator",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Dustin is a Phoenix (Arize) contributor with demonstrated production observability/eval stack experience — a top 37% scarce signal. However, no school pedigree is evident in GitHub profile, location is undisclosed, and public repo count (15) suggests early/mid-career rather than 5+ yrs SWE depth. Strong technical alignment on LLM observability offsets missing location/school signals, but manual verification required before final offer.",
+    "signals": {
+      "top_signal": "Phoenix/Arize contributor — production LLM observability & eval stack (top 37% scarcity) | school unverified",
+      "followers": 28,
+      "public_repos": 15,
+      "company": null,
+      "location": null,
+      "via": "contrib:Arize-ai/phoenix",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — manual LinkedIn school verification required",
+        "location_undisclosed — must confirm Bay Area / US location intent",
+        "production_agent_evidence_unclear — verify shipped agent flows / agent systems (not just evals)",
+        "experience_depth_unclear — 15 public repos suggests mid-career; validate 3–7+ yrs SWE backend",
+        "mcp_langraph_not_evident — no public MCP servers or agentic orchestration repos visible",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Dustin Ngo",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: anticorrelator (rep 1) https://stackoverflow.com/users/2544230/anticorrelator"
+        ],
+        "links": [
+          {
+            "label": "SO · anticorrelator",
+            "url": "https://stackoverflow.com/users/2544230/anticorrelator"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:16:00.173287+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "8948924",
+    "name": "Tony Powell",
+    "profile_url": "https://github.com/cephalization",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Tony Powell is a contributor to Arize Phoenix (production LLM observability/evals stack — top 37% scarcity signal) with 115 public repos, strong signal of shipping at scale. Located in Ann Arbor, Michigan (within preferred US/eligible region). However, NO top-school pedigree evident in bio/profile text, and no explicit production agent-flow or MCP server evidence in GitHub summary. School unverified; recommend LinkedIn verification before final offer.",
+    "signals": {
+      "top_signal": "Arize Phoenix contrib (production LLM-as-judge + evals stack, top 37% scarcity) | school unverified",
+      "followers": 70,
+      "public_repos": 115,
+      "company": "@Arize-ai",
+      "location": "Ann Arbor, Michigan",
+      "via": "contrib:Arize-ai/phoenix",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — manually verify MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke on LinkedIn",
+        "location_eligible — Michigan within US preferred; verify Bay Area relocation intent",
+        "no_explicit_agent_production_evidence — confirm agent flows / agentic workflows shipped in role at Arize",
+        "mcp_not_evident — MCP server / connector work not visible in bio; verify in conversation",
+        "production_eval_obs_strong — Arize Phoenix is production-grade; strong compensating signal",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Tony Powell",
+          "GitHub company: @Arize-ai",
+          "Twitter/X: @cephalization",
+          "Blog/site: https://anthonypowell.me/",
+          "Public email: powell.anthonyd@proton.me",
+          "Kaggle profile exists: https://www.kaggle.com/cephalization",
+          "StackOverflow: cephalization11 (rep 1) https://stackoverflow.com/users/3871139/cephalization11"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/cephalization"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://anthonypowell.me/"
+          },
+          {
+            "label": "Kaggle profile",
+            "url": "https://www.kaggle.com/cephalization"
+          },
+          {
+            "label": "SO · cephalization11",
+            "url": "https://stackoverflow.com/users/3871139/cephalization11"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=7) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:16:06.343679+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "42793432",
+    "name": "Elizabeth Hutton",
+    "profile_url": "https://github.com/ehutt",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Elizabeth has strong production eval/obs signal via Arize Phoenix OSS contributions (extremely scarce skill), Applied Math + Cognitive Science background, and California location—all positive. However, no top-school pedigree evident in bio (lists only 'Applied Math; Cognitive Science' with USC affiliation, which is not a priority tier school), no concrete evidence of shipped agent systems/flows in production, no MCP or agentic workflow ownership demonstrated, and GitHub profile shows only 19 repos with minimal follower engagement—suggesting early-career or limited production shipping at scale. School pedigree unverified; manual LinkedIn verification required before advancing to 70+ band.",
+    "signals": {
+      "top_signal": "Arize Phoenix OSS evals contributor (extremely scarce); Applied Math/Cognitive Science; Los Angeles, CA | school unverified",
+      "followers": 6,
+      "public_repos": 19,
+      "company": "University of Southern California",
+      "location": "Los Angeles, CA",
+      "via": "contrib:Arize-ai/phoenix",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified—USC is not top-tier; manual LinkedIn verification required",
+        "no demonstrated production agent systems/flows shipped",
+        "no MCP server or agentic workflow ownership evident",
+        "low GitHub engagement (6 followers, 19 repos) suggests possible early-career or limited scale",
+        "eval/obs signal is strong but insufficient alone to overcome missing agent production pedigree and school verification",
+        "flag for LinkedIn deep-dive: confirm school, production agent projects, and end-to-end shipping at scale",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Elizabeth Hutton",
+          "GitHub company: University of Southern California",
+          "Twitter/X: @ehutt_",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: AdamTheHutt (rep 8733) https://stackoverflow.com/users/1103/adamthehutt",
+          "SO location: New York, New York, United States",
+          "StackOverflow: benthehutt (rep 530) https://stackoverflow.com/users/1011280/benthehutt",
+          "StackOverflow: JavvaTheHutt (rep 195) https://stackoverflow.com/users/5340936/javvathehutt"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/ehutt_"
+          },
+          {
+            "label": "SO · AdamTheHutt",
+            "url": "https://stackoverflow.com/users/1103/adamthehutt"
+          },
+          {
+            "label": "SO · benthehutt",
+            "url": "https://stackoverflow.com/users/1011280/benthehutt"
+          },
+          {
+            "label": "SO · JavvaTheHutt",
+            "url": "https://stackoverflow.com/users/5340936/javvathehutt"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=8) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:16:15.540505+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "77590974",
+    "name": "Donny Li",
+    "profile_url": "https://github.com/GeLi2001",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Donny Li shows relevant location (San Francisco, CA) and is positioned as an AI Agents Manager with Phoenix (Arize) contribution history, indicating observability/tracing exposure. However, no top-school pedigree is evident in the GitHub profile, no concrete production agent-system shipping stories are visible from public repos/bio, no evidence of MCP servers or LLM-as-judge eval practice, and the 'Manager' title suggests potential non-IC trajectory. School pedigree unverified; requires manual LinkedIn verification to assess actual SWE depth, production agent deployments, and eval/obs stack rigor before advancing.",
+    "signals": {
+      "top_signal": "Phoenix/Arize observability exposure + Bay Area location | school unverified",
+      "followers": 25,
+      "public_repos": 20,
+      "company": null,
+      "location": "San Francisco, CA",
+      "via": "contrib:Arize-ai/phoenix",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school mention in profile",
+        "linkedin_verify_school — required before 70+ consideration",
+        "title_concern — 'Manager' suggests non-IC or product/ops trajectory; validate SWE depth",
+        "no_visible_production_agent_evidence — verify shipped agent systems with failure/fix stories",
+        "no_eval_stack_signal — RAGAS, DeepEval, LangSmith, or online evals not evident in public repos",
+        "repos_not_inspected — 20 public repos; must audit for MCP, agent flows, and eval tooling",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Donny Li",
+          "Twitter/X: @DonnyLi2001",
+          "Blog/site: https://runclaw.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/DonnyLi2001"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://runclaw.com"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:16:23.464324+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "37153406",
+    "name": "Nancy Chauhan ",
+    "profile_url": "https://github.com/Nancy-Chauhan",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Nancy is a production AI engineer at Arize AI (market leader in LLM observability) with direct contributions to Phoenix (OpenTelemetry gen_ai semantic conventions — EXTREMELY SCARCE signal) and is actively building agentjail.io (agent observability/safety tooling). SF location is ideal. However, school pedigree is not evident in GitHub bio, capping score slightly below 80 pending LinkedIn verification. Clear production eval/obs stack + shipping agent systems + US location override the school gap materially.",
+    "signals": {
+      "top_signal": "Phoenix/OpenTelemetry gen_ai contributor + Arize production observability stack + agentjail.io agent tooling | school unverified",
+      "followers": 182,
+      "public_repos": 113,
+      "company": null,
+      "location": "SF, USA",
+      "via": "contrib:Arize-ai/phoenix",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke mention in GitHub bio",
+        "linkedin_verify_school — manual verification required to unlock 80+ band",
+        "priority_outreach — Arize AI + Phoenix gen_ai contrib + SF location + agent observability work matches sourcing thesis exactly",
+        "strong_production_signal — observability/eval stack + agent systems + shipping status override missing pedigree in score",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Nancy Chauhan ",
+          "Twitter/X: @_nancychauhan",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/_nancychauhan"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:16:39.876687+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "8853560",
+    "name": "JohnGilhuly",
+    "profile_url": "https://github.com/Jgilhuly",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "JohnGilhuly is a Phoenix (Arize) contributor in San Francisco—excellent location match and sourced from a production LLM-observability repo, a strong signal. However, no top-school pedigree is evident in the GitHub profile, no shipped agent flows/systems/observability are documented in bio or public repos, and no concrete production agentic patterns, evals, or eval/obs stack evidence is visible. School unverified and production agent-shipping track record unvalidated; score capped per requirements.",
+    "signals": {
+      "top_signal": "Phoenix/Arize contrib, Bay Area location | school unverified",
+      "followers": 19,
+      "public_repos": 60,
+      "company": null,
+      "location": "San Francisco",
+      "via": "contrib:Arize-ai/phoenix",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke evidence",
+        "linkedin_verify_school — manual verification required",
+        "no_production_agent_evidence — bio/repos do not document shipped agent flows or agentic systems",
+        "no_eval_obs_stack_evidence — no mention of evals, observability, tracing, or LLM-as-judge",
+        "github_bio_empty — insufficient detail to validate core requirements; full LinkedIn review critical",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: JohnGilhuly",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=2) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:16:45.468762+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "46332835",
+    "name": "Prithvi Kannan",
+    "profile_url": "https://github.com/prithvikannan",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Prithvi shows strong production experience (Databricks, Harvey AI) and Bay Area location, but no evidence of top-school pedigree in GitHub profile. MLflow contribution indicates infrastructure/data systems work, but no clear signals of production agent flows, agent observability, eval/tracing stacks (RAGAS, LangSmith, Langfuse, LLM-as-judge), or agentic patterns. Profile lacks concrete evidence of shipped LLM agents, MCP servers, or observability infrastructure — core differentiators for this role. School verification needed; without top-school pedigree or strong production agent-obs evidence, cannot score above 60 cap.",
+    "signals": {
+      "top_signal": "Databricks + Harvey AI backend experience (potential), but no visible agent/eval/obs shipping evidence | school unverified",
+      "followers": 34,
+      "public_repos": 38,
+      "company": "@harveyai",
+      "location": "San Francisco",
+      "via": "contrib:mlflow/mlflow",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school evidence in profile",
+        "linkedin_verify_school — critical for 70+ consideration",
+        "no_agent_observability_evidence — no mention of evals, tracing, or LLM-as-judge",
+        "no_mcp_or_agentic_patterns — stack not visible in public repos or bio",
+        "mlflow_contrib_suggests_data_eng_not_agent_eng — need to validate Harvey AI role scope",
+        "38_public_repos_low_signal — no README/bio detail on production agent systems",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Prithvi Kannan",
+          "GitHub company: @harveyai",
+          "Blog/site: https://www.linkedin.com/in/prithvikannan",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://www.linkedin.com/in/prithvikannan"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:18:03.889608+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "26822232",
+    "name": "Justin Torre",
+    "profile_url": "https://github.com/chitalian",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Justin Torre is a core contributor to Helicone, a production LLM observability platform—exactly the rare, high-signal profile Yan targets. He demonstrates end-to-end shipped AI observability/eval infrastructure (top 37% scarcity tier), strong Python backend systems work, and deep experience with production LLM tracing and agent monitoring. Location (San Francisco) and company pedigree (Helicone = proven LLM-obs builder) are strong signals. School pedigree not evident in GitHub profile; flag for LinkedIn verification but do not reject—company + production observability stack + US location + 90 public repos justify 78 despite school uncertainty.",
+    "signals": {
+      "top_signal": "Helicone core contributor; production LLM observability & eval infrastructure shipped at scale | school unverified",
+      "followers": 253,
+      "public_repos": 90,
+      "company": "Helicone ",
+      "location": "San Francisco",
+      "via": "contrib:helicone/helicone",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "high_signal_production_obs_stack",
+        "us_location_confirmed",
+        "strong_company_pedigree_substitute",
+        "verify_agent_systems_experience_on_linkedin",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Justin Torre",
+          "GitHub company: Helicone ",
+          "Twitter/X: @justinstorre",
+          "Blog/site: https://justintorre.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/justinstorre"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://justintorre.com"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=5) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:18:26.956878+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "25397938",
+    "name": "Connor Loi",
+    "profile_url": "https://github.com/connortbot",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Connor demonstrates strong production AI observability/eval stack credentials (Helicone contributor, LLM-as-judge in production context), Python backend SWE foundation, and ideal Bay Area location. However, school pedigree is unverified (UW is not a target tier-1), capping score below 70 pending LinkedIn verification. Production agent-system/MCP evidence is not yet explicit in public profile.",
+    "signals": {
+      "top_signal": "Helicone production LLM observability contributor + Bay Area location | school unverified",
+      "followers": 37,
+      "public_repos": 21,
+      "company": "University of Waterloo",
+      "location": "San Francisco, CA",
+      "via": "contrib:helicone/helicone",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — UW not in priority tier",
+        "linkedin_verify_school — manual check required",
+        "production_eval_stack_strong — Helicone is high-scarcity signal",
+        "agent_system_evidence_needed — verify MCP/agent flows in LinkedIn or code",
+        "good_location_fit — San Francisco, CA",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Connor Loi",
+          "GitHub company: University of Waterloo",
+          "Blog/site: https://connort.me",
+          "Public email: loiconnor8@gmail.com",
+          "Kaggle profile exists: https://www.kaggle.com/connortbot",
+          "StackOverflow: connortbot (rep 3) https://stackoverflow.com/users/16236142/connortbot"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://connort.me"
+          },
+          {
+            "label": "Kaggle profile",
+            "url": "https://www.kaggle.com/connortbot"
+          },
+          {
+            "label": "SO · connortbot",
+            "url": "https://stackoverflow.com/users/16236142/connortbot"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=6) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:18:41.681833+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "38397684",
+    "name": "Stefan Bokarev",
+    "profile_url": "https://github.com/maamalama",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Stefan is a strong production signal: San Francisco–based, contributed to Helicone (production LLM observability at scale), 31 public repos suggest active shipping, and bio/company omission is neutral. However, no top-school pedigree in GitHub profile and sparse public contribution history to eval/obs stack repos cap score below 75. Flag for LinkedIn verification of school and depth of agent-systems production work.",
+    "signals": {
+      "top_signal": "Helicone contrib + SF-based + production obs/tracing stack familiarity | school unverified",
+      "followers": 38,
+      "public_repos": 31,
+      "company": null,
+      "location": "San Francisco",
+      "via": "contrib:helicone/helicone",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — LinkedIn verify MIT/Stanford/CMU/Berkeley/etc.",
+        "sparse GitHub history — review 31 repos for agent-flow/MCP/eval depth",
+        "no explicit agent-system or MCP server production claim in bio",
+        "recommend LinkedIn deep-dive: confirm production agent observability ownership and eval framework hands-on work",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Stefan Bokarev",
+          "Twitter/X: @stefanbkv",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/stefanbkv"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:18:47.674879+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "15788108",
+    "name": "Devin Ersoy",
+    "profile_url": "https://github.com/devinat1",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Devin is a contributor to Helicone (production LLM observability stack — extremely scarce signal), but profile lacks school pedigree, location data, employment history, and concrete evidence of shipped agent systems/flows at scale. No bio, no company affiliation visible, no demonstrated production agentic patterns beyond potential Helicone work. School unverified and location unknown; capped at 60 per policy, then downscored for thin profile depth.",
+    "signals": {
+      "top_signal": "Helicone contributor (production LLM-obs stack — extremely scarce) | school unverified",
+      "followers": 10,
+      "public_repos": 46,
+      "company": null,
+      "location": null,
+      "via": "contrib:helicone/helicone",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "location_unknown",
+        "no_bio_or_company_text",
+        "thin_public_profile",
+        "linkedin_verify_school_and_location",
+        "verify_helicone_contrib_depth_and_agent_shipping",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Devin Ersoy",
+          "Twitter/X: @DevinErsoy496",
+          "Blog/site: https://mydevin.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/DevinErsoy496"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://mydevin.com"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:19:00.965732+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "39514133",
+    "name": "Umut Hope YILDIRIM",
+    "profile_url": "https://github.com/umuthopeyildirim",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Umut shows strong production signals: Helicone contributor (production LLM observability—extremely scarce), 33 public repos, and employment at Superposition.ai (agentic AI systems). However, location is New York (not Bay Area), school pedigree is entirely absent from GitHub profile, and no explicit evidence of agent flows, MCP servers, or multi-agent orchestration in bio. Production observability stack (Helicone) elevates score above 60 cap, but school_unverified and non-preferred location prevent 75+. Recommend immediate LinkedIn verification of school and Bay Area relocation intent.",
+    "signals": {
+      "top_signal": "Helicone (production LLM observability) contributor + Superposition.ai employment | school unverified",
+      "followers": 77,
+      "public_repos": 33,
+      "company": "Superposition.ai",
+      "location": "New York",
+      "via": "contrib:helicone/helicone",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school evidence in GitHub profile; manual LinkedIn verification required",
+        "location_not_preferred — New York, not Bay Area/California; relocation intent unknown",
+        "missing_agent_flow_evidence — no explicit mention of shipped agent systems, MCP servers, or multi-agent patterns in bio",
+        "linkedin_verify_school_and_location — critical for 75+ advancement",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Umut Hope YILDIRIM",
+          "GitHub company: Superposition.ai",
+          "Blog/site: https://umutyildirim.com",
+          "Public email: hope@umutyildirim.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://umutyildirim.com"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=5) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:19:38.275706+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "2142768",
+    "name": "Tim Sweeney",
+    "profile_url": "https://github.com/tssweeney",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Tim is a contributor to Wandb/Weave (production LLM observability stack — excellent signal), demonstrating hands-on eval/obs work. However, no school pedigree, location, or employment context visible in GitHub profile; no evidence of shipped agent systems, MCP servers, or production agentic workflows. Cannot verify US/Bay Area presence or depth of production agent-flow ownership. Requires LinkedIn verification for school and current role before advancement.",
+    "signals": {
+      "top_signal": "Weave (wandb) LLM observability contributor — production eval/obs stack | school unverified",
+      "followers": 26,
+      "public_repos": 18,
+      "company": null,
+      "location": null,
+      "via": "contrib:wandb/weave",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "location_unverified",
+        "no_agent_system_evidence",
+        "no_mcp_or_connector_evidence",
+        "linkedin_verify_required",
+        "verify_employment_and_shipping_history",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Tim Sweeney",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=2) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:19:43.786146+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "19414170",
+    "name": "Griffin Tarpenning",
+    "profile_url": "https://github.com/gtarpenning",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Strong production signal: contributor to Weights & Biases Weave (LLM observability stack), 45 public repos indicate shipping velocity. However, NO top-school pedigree detected in GitHub bio/profile text, and location is undisclosed — both require manual LinkedIn verification before advancing to 80+. Production eval/obs stack engagement is the primary strength; must confirm US/Bay Area location and educational background.",
+    "signals": {
+      "top_signal": "Weave (W&B LLM-obs) contributor — production evals/observability stack | school unverified",
+      "followers": 12,
+      "public_repos": 45,
+      "company": null,
+      "location": null,
+      "via": "contrib:wandb/weave",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — manual LinkedIn verification required",
+        "location_undisclosed — confirm US/Bay Area residency",
+        "weave_contrib_is_strong_but_insufficient_alone — must validate production agent systems shipped + evals rigor",
+        "45_repos_suggest_shipping_velocity — sample top 5-10 for agent/eval work",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Griffin Tarpenning",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=2) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:19:49.136589+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "499383",
+    "name": "Shawn",
+    "profile_url": "https://github.com/shawnlewis",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Contributor to Weights & Biases Weave (production LLM observability tool) signals strong eval/obs stack experience—a top 37% scarcity marker. However, profile lacks location, company, education/school pedigree, and work history details. Cannot verify production agent shipping, MCP/agentic patterns, or US/Bay Area eligibility. School unverified + missing location context caps score at 58; requires LinkedIn verification before prioritization.",
+    "signals": {
+      "top_signal": "W&B Weave contributor (production LLM-as-judge / observability) | school unverified",
+      "followers": 42,
+      "public_repos": 43,
+      "company": null,
+      "location": null,
+      "via": "contrib:wandb/weave",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "location_missing",
+        "linkedin_verify_school",
+        "linkedin_verify_location",
+        "linkedin_verify_production_agent_shipping",
+        "no_company_history_visible",
+        "no_bio_details",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Shawn",
+          "Public email: shlewis@gmail.com",
+          "Kaggle profile exists: https://www.kaggle.com/shawnlewis"
+        ],
+        "links": [
+          {
+            "label": "Kaggle profile",
+            "url": "https://www.kaggle.com/shawnlewis"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:20:05.821919+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "2769632",
+    "name": "Danny Goldstein",
+    "profile_url": "https://github.com/dannygoldstein",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Danny is a strong production AI engineer at Weights & Biases with direct contributions to Weave (LLM observability/eval stack), demonstrating concrete shipping experience in the exact domain Conviva needs—LLM tracing, evals, and agent observability. However, no top-school pedigree is evident in the GitHub profile, location is NYC (not Bay Area/CA preferred), and specific agent flow/MCP production evidence is not explicitly corroborated in the bio. Manual LinkedIn verification of school and US relocation intent is required before advancing.",
+    "signals": {
+      "top_signal": "Production LLM observability engineer at W&B; Weave contributor (eval/tracing stack); exactly matches sourcing thesis for online evals + agent obs | school unverified",
+      "followers": 29,
+      "public_repos": 46,
+      "company": "Weights & Biases",
+      "location": "NYC",
+      "via": "contrib:wandb/weave",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school mention in GitHub bio; manual LinkedIn verification required",
+        "location_mismatch — NYC-based, not Bay Area/CA preferred; confirm US remote/relocation intent",
+        "agent_flow_not_explicit — Weave contribution is strong signal but specific agent flow / MCP / agentic workflow shipping stories need LinkedIn corroboration",
+        "linkedin_verify_required — confirm pedigree, agent production shipping narrative, and location flexibility before phone screen",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Danny Goldstein",
+          "GitHub company: Weights & Biases",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: dannygoldstein (rep 275) https://stackoverflow.com/users/1387992/dannygoldstein"
+        ],
+        "links": [
+          {
+            "label": "SO · dannygoldstein",
+            "url": "https://stackoverflow.com/users/1387992/dannygoldstein"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:20:12.285446+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "11450487",
+    "name": "Ben Sherman",
+    "profile_url": "https://github.com/bcsherma",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Ben Sherman is a contributor to wandb/weave (production LLM observability stack—extremely scarce signal), currently at Weights & Biases, and based in San Francisco (Bay Area preferred location). Strong production eval/obs evidence via Weave (LangSmith alternative) and 20 public repos suggest shipped infrastructure work. School pedigree unverified in GitHub bio; requires LinkedIn confirmation, but production observability credentials + Bay Area location + W&B tenure partially offset this gap.",
+    "signals": {
+      "top_signal": "weave contributor at W&B; production LLM observability stack | school unverified",
+      "followers": 9,
+      "public_repos": 20,
+      "company": "Weights & Biases",
+      "location": "San Francisco, CA",
+      "via": "contrib:wandb/weave",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified—manual LinkedIn verification required",
+        "no explicit agent flow/system shipping evidence in public repos (verify in conversation)",
+        "no MCP server evidence yet (confirm current project scope)",
+        "weave is obs + eval—strong fit for observability role, verify agent-systems shipping",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Ben Sherman",
+          "GitHub company: Weights & Biases",
+          "Public email: bcanfieldsherman@gmail.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:20:23.756932+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "32016110",
+    "name": "Zach Birenbaum",
+    "profile_url": "https://github.com/zbirenbaum",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Zach is a strong production engineer with 87 public repos, San Francisco location, and direct contribution to Weights & Biases Weave (production LLM observability/eval stack) — hitting the 'extremely scarce' sourcing thesis. CoreWeave is an infrastructure play suggesting cloud/systems depth. However, school pedigree is not evident in GitHub bio, and while Weave contribution is strong signal, we lack explicit evidence of shipped agent flows, MCP servers, or multi-agent orchestration in the profile itself. Recommend LinkedIn verification of education and portfolio deep-dive on agent systems work.",
+    "signals": {
+      "top_signal": "Weave (W&B LLM-obs) contributor + SF-based infrastructure engineer | school unverified",
+      "followers": 189,
+      "public_repos": 87,
+      "company": "CoreWeave",
+      "location": "San Francisco, CA",
+      "via": "contrib:wandb/weave",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school_and_agent_systems_shipping",
+        "weave_contrib_is_high_value_but_need_agent_flow_details",
+        "strong_location_and_prod_obs_stack_signal",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Zach Birenbaum",
+          "GitHub company: CoreWeave",
+          "Public email: zacharyobirenbaum@gmail.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:20:42.198300+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "1477672",
+    "name": "Roman Pushkin",
+    "profile_url": "https://github.com/ro31337",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Roman is a strong production AI/ML engineer based in San Francisco with 115 public repos and 888 followers, demonstrating deep open-source engagement. Contributor to Weights & Biases Weave (production LLM observability stack — extremely scarce signal per sourcing thesis) signals real production eval/obs work; however, school pedigree is absent from GitHub profile, capping score at 72 pending LinkedIn verification. Location and Weave contribution are strong positive signals for the Agent Analytics role.",
+    "signals": {
+      "top_signal": "Weave (W&B) contributor — production LLM observability + San Francisco location | school unverified",
+      "followers": 888,
+      "public_repos": 115,
+      "company": null,
+      "location": "San Francisco",
+      "via": "contrib:wandb/weave",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school_and_agent_production_work",
+        "weave_contrib_is_strong_but_must_verify_agent_system_shipping",
+        "check_for_agent_flows_agentic_patterns_in_bio_or_repos",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Roman Pushkin",
+          "Kaggle profile exists: https://www.kaggle.com/ro31337"
+        ],
+        "links": [
+          {
+            "label": "Kaggle profile",
+            "url": "https://www.kaggle.com/ro31337"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=2) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:20:53.764211+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "682653",
+    "name": "Leonardo Axel Setyanto",
+    "profile_url": "https://github.com/laxels",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Leonardo shows solid location (San Francisco) and sourced via wandb/weave contrib (strong eval-obs signal), but no top-school evidence in GitHub bio/profile. No explicit production agent-flow/agent-system shipping evidence visible; contribution to Weave (observability tool) is positive but insufficient alone to overcome school gap. Capped at 58 pending manual LinkedIn school verification and confirmation of production agentic systems work.",
+    "signals": {
+      "top_signal": "wandb/weave observability contributor, Bay Area | school unverified",
+      "followers": 6,
+      "public_repos": 41,
+      "company": "@matrices-app ",
+      "location": "San Francisco, CA",
+      "via": "contrib:wandb/weave",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke mentioned",
+        "linkedin_verify_school — manual verification required before 70+ scoring",
+        "production_agent_systems_unclear — no explicit shipping evidence in GitHub bio (agent flows, agent observability, MCP servers not mentioned)",
+        "verify_matrices_app_role — confirm if AI agent / agentic systems work or product-only",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Leonardo Axel Setyanto",
+          "GitHub company: @matrices-app ",
+          "Twitter/X: @laxels25",
+          "Public email: laxels@gmail.com",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: emilaxelsson (rep 96) https://stackoverflow.com/users/1105347/emilaxelsson"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/laxels25"
+          },
+          {
+            "label": "SO · emilaxelsson",
+            "url": "https://stackoverflow.com/users/1105347/emilaxelsson"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=6) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:21:06.394084+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "17",
+    "name": "Chris Van Pelt (CVP)",
+    "profile_url": "https://github.com/vanpelt",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Chris Van Pelt is a core contributor to Weights & Biases (Weave), the leading LLM observability and evaluation platform. He has shipped production eval/obs infrastructure at scale with 70 public repos and 531 followers, demonstrating strong systems engineering chops. Located in San Francisco (Bay Area), which meets location preference. However, school pedigree is not evident in GitHub bio, capping score slightly below 80.",
+    "signals": {
+      "top_signal": "Production LLM observability/eval stack (Weave) + Bay Area location + 70 repos shipping systems | school unverified",
+      "followers": 531,
+      "public_repos": 70,
+      "company": "wandb.com",
+      "location": "San Francisco",
+      "via": "contrib:wandb/weave",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school_pedigree",
+        "strong_obs_eval_signal_at_wandb",
+        "confirm_agent_flows_shipping_experience",
+        "verify_mcp_server_or_ai_connector_work",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Chris Van Pelt (CVP)",
+          "GitHub company: wandb.com",
+          "Blog/site: https://wandb.com",
+          "Public email: vanpelt@wandb.com",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: vanPelt2 (rep 929) https://stackoverflow.com/users/7407967/vanpelt2",
+          "StackOverflow: vvanpelt (rep 819) https://stackoverflow.com/users/13272497/vvanpelt",
+          "StackOverflow: JMVanPelt (rep 113) https://stackoverflow.com/users/4744709/jmvanpelt"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://wandb.com"
+          },
+          {
+            "label": "SO · vanPelt2",
+            "url": "https://stackoverflow.com/users/7407967/vanpelt2"
+          },
+          {
+            "label": "SO · vvanpelt",
+            "url": "https://stackoverflow.com/users/13272497/vvanpelt"
+          },
+          {
+            "label": "SO · JMVanPelt",
+            "url": "https://stackoverflow.com/users/4744709/jmvanpelt"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=8) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:21:12.645694+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "5261489",
+    "name": "Jithin James",
+    "profile_url": "https://github.com/jjmachan",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Jithin is a strong production AI engineer with direct RAGAS contributor history (extremely scarce signal for eval-in-production expertise) and 163 public repos indicating shipping velocity. San Francisco location + ML Engineer title + vibrantlabsai context suggest active agent/eval stack work. However, no top-school pedigree evident in GitHub bio, capping score at 72 pending LinkedIn verification of educational background.",
+    "signals": {
+      "top_signal": "RAGAS contributor (production LLM-as-judge eval) + San Francisco + shipping velocity | school unverified",
+      "followers": 243,
+      "public_repos": 163,
+      "company": "@vibrantlabsai ",
+      "location": "San Francisco",
+      "via": "contrib:explodinggradients/ragas",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "verify_production_agent_systems_shipped",
+        "confirm_observability_stack_depth",
+        "check_mcp_or_connector_experience",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Jithin James",
+          "GitHub company: @vibrantlabsai ",
+          "Twitter/X: @jjmachan",
+          "Blog/site: https://jjmachan.in",
+          "Public email: jamesjithin97@gmail.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/jjmachan"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://jjmachan.in"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=6) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:21:18.184587+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "25312635",
+    "name": "ikka",
+    "profile_url": "https://github.com/shahules786",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Strong production signal: core contributor to RAGAS (extremely scarce eval stack per sourcing thesis), 96 public repos indicate serious shipping volume, and bio suggests deep technical conviction. However, location 'Terra' is ambiguous/non-standard (unclear if US-based), and NO top-school pedigree evident in profile text. School unverified + location ambiguity prevent 75+; production eval work + RAGAS contributor status and GitHub activity density justify 72 pending verification.",
+    "signals": {
+      "top_signal": "RAGAS core contributor (extremely scarce LLM eval stack production experience) | school unverified",
+      "followers": 278,
+      "public_repos": 96,
+      "company": null,
+      "location": "Terra",
+      "via": "contrib:explodinggradients/ragas",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — manual LinkedIn verification required",
+        "location ambiguous ('Terra') — confirm US/Bay Area eligibility before outreach",
+        "verify: production agent systems shipped (RAGAS contributor role alone does not confirm end-to-end agent-obs ownership)",
+        "confirm: MCP server or AI connector integration experience",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: ikka",
+          "Twitter/X: @shahules786",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/shahules786"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:21:23.714483+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "112792547",
+    "name": "Siddharth Sahu",
+    "profile_url": "https://github.com/sahusiddharth",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Siddharth is a contributor to RAGAS (extremely scarce eval signal — top 37%), demonstrating production LLM evaluation practice, which is a strong technical match for agent observability work. However, no school pedigree is evident in GitHub profile, location is undisclosed, and there is insufficient evidence of shipped agent flows/systems, MCP servers, or production observability at scale — the core job requirements. School verification and LinkedIn/portfolio review are critical before advancing.",
+    "signals": {
+      "top_signal": "RAGAS contributor; production eval stack exposure | school unverified",
+      "followers": 31,
+      "public_repos": 59,
+      "company": null,
+      "location": null,
+      "via": "contrib:explodinggradients/ragas",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "location_unverified",
+        "no_disclosed_agent_systems_shipped",
+        "no_mcp_or_tool_use_evidence",
+        "no_production_observability_evidence",
+        "linkedin_verify_school_and_location",
+        "requires_portfolio_review_for_agent_depth",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Siddharth Sahu",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=2) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:21:30.515408+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "26576205",
+    "name": "Tino Max Thayil",
+    "profile_url": "https://github.com/tinomaxthayil",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Tino is a RAGAS contributor (extremely scarce eval signal — top 37% market scarcity), indicating hands-on LLM evaluation rigor in production observability stack. However, no school pedigree is evident in bio/GitHub profile, location is undisclosed (critical blocker for Bay Area/US preference), no corroborating evidence of shipped agent systems, MCP servers, or production agentic workflows visible in public repos or bio. Strong eval foundation but insufficient location clarity and no verifiable production agent-system shipping.",
+    "signals": {
+      "top_signal": "RAGAS contributor (online eval/LLM-as-judge production stack scarcity) | school unverified",
+      "followers": 20,
+      "public_repos": 17,
+      "company": null,
+      "location": null,
+      "via": "contrib:explodinggradients/ragas",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school evidence in bio/profile; flag for manual LinkedIn verification",
+        "location_undisclosed — no location in GitHub profile; must verify Bay Area/US intent before advancing",
+        "no_visible_agent_shipping — repos and bio lack evidence of production agent flows, agent systems, or agentic observability; verify shipping history via LinkedIn",
+        "eval_signal_strong_but_insufficient — RAGAS contribution shows eval rigor but alone cannot push into 70+ without school pedigree + US location + agent-system shipping",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Tino Max Thayil",
+          "Public email: tinothayil@gmail.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:21:50.805641+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "24922003",
+    "name": "Alex Graber",
+    "profile_url": "https://github.com/ahgraber",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Alex is a RAGAS contributor (extremely scarce eval signal in top 37%), demonstrating production LLM-obs rigor—a strong match for the Agent Analytics & Optimization role. However, no school pedigree, location, or company details are visible in the GitHub profile, and the contribution history alone does not confirm shipped production agent systems, MCP servers, or end-to-end agentic workflows at scale. School unverified and location unknown cap score at 58 pending LinkedIn verification.",
+    "signals": {
+      "top_signal": "RAGAS contributor (production LLM-as-judge eval stack) | school unverified",
+      "followers": 18,
+      "public_repos": 35,
+      "company": null,
+      "location": null,
+      "via": "contrib:explodinggradients/ragas",
+      "school_unverified": true,
+      "flags": [
+        "school unverified — manual LinkedIn verification required",
+        "location unknown — confirm US/Bay Area presence",
+        "no visible company/employment history in GitHub bio",
+        "RAGAS contribution is extremely scarce and valuable, but insufficient alone without production agent system evidence",
+        "must verify: shipped agent flows, MCP servers, observability at scale",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Alex Graber",
+          "Blog/site: https://aimlbling-about.ninerealmlabs.com/blog/hello-world/",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: ahgraber (rep 1) https://stackoverflow.com/users/15292433/ahgraber"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://aimlbling-about.ninerealmlabs.com/blog/hello-world/"
+          },
+          {
+            "label": "SO · ahgraber",
+            "url": "https://stackoverflow.com/users/15292433/ahgraber"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:21:56.289856+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "182092",
+    "name": "Ganesh Rathinavel Medayil",
+    "profile_url": "https://github.com/ganeshrvel",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Ganesh is a contributor to Exploding Gradients (RAGAS), a SCARCE eval signal indicating production eval stack familiarity. However, no top-school pedigree is evident in the GitHub bio, location is listed as 'Remote' (not US/Bay Area confirmed), and there is no public evidence of shipped production agent systems, MCP servers, agent observability, or agentic workflows. RAGAS contribution alone is insufficient to overcome missing school verification and lack of concrete production agent/observability shipping evidence.",
+    "signals": {
+      "top_signal": "RAGAS eval framework contributor (SCARCE signal), but production agent+obs shipping unclear. | school unverified",
+      "followers": 266,
+      "public_repos": 76,
+      "company": "@explodinggradients ",
+      "location": "Remote",
+      "via": "contrib:explodinggradients/ragas",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "location_unconfirmed (Remote with no US/Bay Area claim)",
+        "no_production_agent_systems_evidence",
+        "no_agent_observability_evidence",
+        "no_mcp_server_shipping",
+        "ragas_contrib_alone_insufficient_without_school_or_agent_prod",
+        "linkedin_verify_school_and_agent_shipping",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Ganesh Rathinavel Medayil",
+          "GitHub company: @explodinggradients ",
+          "Twitter/X: @ganeshrvel",
+          "Blog/site: https://www.ganeshrvel.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/ganeshrvel"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://www.ganeshrvel.com"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=5) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:22:01.916940+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "84656834",
+    "name": "Aakash",
+    "profile_url": "https://github.com/sky-2002",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Strong production signal: RAGAS contributor (extremely scarce eval stack), ML Engineer at needl.ai shipping LLM agents for enterprise data with retrieval/search focus. However, no US location stated, no top-school pedigree evident in GitHub bio, and limited public repo depth (12 repos, 24 followers) suggest junior-mid level. School verification required before advancement; location ambiguity is a blocker for Bay Area/US preference.",
+    "signals": {
+      "top_signal": "RAGAS contributor + production LLM agents at needl.ai | school unverified",
+      "followers": 24,
+      "public_repos": 12,
+      "company": "needl.ai",
+      "location": null,
+      "via": "contrib:explodinggradients/ragas",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — manual LinkedIn verification required",
+        "location_unstated — must verify US/Bay Area intent before advancement",
+        "junior_signal — 12 public repos, 24 followers suggest mid-level, not senior",
+        "eval_stack_strong — RAGAS is extremely scarce pedigree, but insufficient alone without school + location + production narrative",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Aakash",
+          "GitHub company: needl.ai",
+          "Twitter/X: @aakash_thatte",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/aakash_thatte"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:22:17.151025+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "10637462",
+    "name": "Trevor Wilson",
+    "profile_url": "https://github.com/BloggerBust",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Trevor is a contributor to confident-ai/deepeval, a core eval tool (EXTREMELY SCARCE signal), demonstrating production eval stack experience. However, no school pedigree is evident in the GitHub profile, no clear location data, no portfolio evidence of shipped agent systems/MCP servers, and no production agent observability/tracing work is documented. Without top-school verification or explicit production agentic workflow shipping evidence, score capped at 60 per rubric; further reduced to 58 due to sparse public profile detail (5 followers, 27 repos with no clear flagship agent/obs projects visible).",
+    "signals": {
+      "top_signal": "DeepEval contributor (extremely scarce eval signal) | school unverified",
+      "followers": 5,
+      "public_repos": 27,
+      "company": null,
+      "location": null,
+      "via": "contrib:confident-ai/deepeval",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "location_unverified",
+        "no_agent_system_shipping_evident",
+        "no_mcp_or_agent_obs_portfolio_visible",
+        "sparse_github_profile_detail",
+        "require_manual_verification_before_outreach",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Trevor Wilson",
+          "Blog/site: https://bloggerbust.ca",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://bloggerbust.ca"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:23:06.678613+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "114291962",
+    "name": "Tanay",
+    "profile_url": "https://github.com/tanayvaswani",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Tanay is a Founding Software Engineer at Confident AI (YC W25), the company behind DeepEval—a production LLM evaluation framework used at scale. Direct contributor to deepeval repo signals hands-on ownership of eval infrastructure, a core scarcity signal for this role. Strong production shipping pedigree in the LLM-obs stack, though school pedigree is not evident in GitHub profile and location is unstated—both require manual verification before final offer.",
+    "signals": {
+      "top_signal": "Founding engineer on DeepEval (production LLM eval framework); direct repo contributor to core observability/eval stack | school unverified",
+      "followers": 183,
+      "public_repos": 137,
+      "company": "Confident AI, Inc. (YC W25)",
+      "location": null,
+      "via": "contrib:confident-ai/deepeval",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — manual LinkedIn verification required",
+        "location_unstated — confirm US/Bay Area eligibility before final scoring",
+        "deepeval_founder_signal_strong — production eval stack ownership validates core role requirement",
+        "verify: confirm agent system / agent observability shipping (not just eval framework); MCP/agentic patterns in production",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Tanay",
+          "GitHub company: Confident AI, Inc. (YC W25)",
+          "Twitter/X: @iTanayVaswani",
+          "Blog/site: https://dub.sh/tanay",
+          "Kaggle profile exists: https://www.kaggle.com/tanayvaswani"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/iTanayVaswani"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://dub.sh/tanay"
+          },
+          {
+            "label": "Kaggle profile",
+            "url": "https://www.kaggle.com/tanayvaswani"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=5) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:23:12.296742+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "11920339",
+    "name": "lplcor",
+    "profile_url": "https://github.com/Peilun-Li",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "lplcor shows solid production ML/Gen AI experience at Zillow (major APM/data company) and is sourced from DeepEval contributions—a SCARCE eval signal. However, no top-school pedigree is evident in the GitHub bio, location is Seattle (not Bay Area), and public repos/follower count are modest. Production agent-obs/eval stack depth cannot be confirmed from GitHub alone. School unverified status and location preference mismatch prevent higher scoring despite DeepEval contributor status.",
+    "signals": {
+      "top_signal": "DeepEval contributor + Zillow ML production experience | school unverified",
+      "followers": 18,
+      "public_repos": 13,
+      "company": "Zillow",
+      "location": "Seattle, WA",
+      "via": "contrib:confident-ai/deepeval",
+      "school_unverified": true,
+      "flags": [
+        "school unverified — manual LinkedIn verification required",
+        "location: Seattle WA, not Bay Area (preference mismatch)",
+        "deepeval eval practice is SCARCE signal but insufficient alone without school or Bay Area location",
+        "requires LinkedIn validation: school pedigree, production agent-obs/eval stack shipping evidence, willingness to relocate",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: lplcor",
+          "GitHub company: Zillow",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:23:52.721496+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "39641663",
+    "name": "Song Luar",
+    "profile_url": "https://github.com/luarss",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Song Luar is a confident-ai/deepeval contributor, which is a strong production eval signal and extremely scarce expertise. However, no school pedigree is evident in the GitHub profile, no explicit US/Bay Area location stated, and minimal public bio information to verify production agent systems, MCP servers, or end-to-end shipping at scale. Profile requires manual LinkedIn verification for school, location intent, and concrete production agent-obs work before advancing.",
+    "signals": {
+      "top_signal": "DeepEval production eval contributor (extremely scarce skill) | school unverified",
+      "followers": 12,
+      "public_repos": 46,
+      "company": null,
+      "location": null,
+      "via": "contrib:confident-ai/deepeval",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "location_not_stated",
+        "linkedin_verify_required",
+        "verify_production_agent_systems",
+        "verify_mcp_or_agent_observability_shipping",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Song Luar",
+          "Blog/site: https://luarss.dev",
+          "Public email: me@luarss.dev",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://luarss.dev"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:24:02.480453+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "218610",
+    "name": "Trask Stalnaker",
+    "profile_url": "https://github.com/trask",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Strong production signal: core contributor to OpenTelemetry semantic-conventions (EXTREMELY SCARCE — top 37% for gen_ai.* observability spans), 270 public repos, 825 followers indicate deep systems expertise. However, location is Portland OR (not Bay Area/California), school pedigree unverified in GitHub profile, and no explicit evidence of shipped agent flows/MCP servers/agent observability systems in bio. Production OpenTelemetry GenAI observability work is directly relevant and high-value, but missing concrete agent-system shipping stories and US Bay Area location prevent higher score.",
+    "signals": {
+      "top_signal": "OpenTelemetry semantic-conventions core contributor (gen_ai.* observability — extremely scarce) | school unverified",
+      "followers": 825,
+      "public_repos": 270,
+      "company": "Microsoft",
+      "location": "Portland, OR",
+      "via": "contrib:open-telemetry/semantic-conventions",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — manual LinkedIn verification required",
+        "location: Portland OR, not Bay Area — verify US remote / relocation intent",
+        "no explicit agent flow / MCP / agent observability shipping evidence in bio",
+        "strong observability/tracing pedigree but must validate agent-systems shipping at Microsoft",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Trask Stalnaker",
+          "GitHub company: Microsoft",
+          "Public email: trask.stalnaker@gmail.com",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: Dominik Traskowski (rep 1219) https://stackoverflow.com/users/1245258/dominik-traskowski",
+          "StackOverflow: traskjd (rep 1008) https://stackoverflow.com/users/32682/traskjd",
+          "SO location: New Zealand",
+          "StackOverflow: trask (rep 744) https://stackoverflow.com/users/295416/trask",
+          "SO location: Portland, OR"
+        ],
+        "links": [
+          {
+            "label": "SO · Dominik Traskowski",
+            "url": "https://stackoverflow.com/users/1245258/dominik-traskowski"
+          },
+          {
+            "label": "SO · traskjd",
+            "url": "https://stackoverflow.com/users/32682/traskjd"
+          },
+          {
+            "label": "SO · trask",
+            "url": "https://stackoverflow.com/users/295416/trask"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=9) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:24:10.228810+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "5938087",
+    "name": "Joao Grassi",
+    "profile_url": "https://github.com/joaopgrassi",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Joao shows EXTREMELY SCARCE production signal (OpenTelemetry GenAI semantic conventions maintainer at Dynatrace) directly aligned with Conviva's observability stack needs. However, no clear evidence of shipped agent flows, MCP servers, or agentic systems in production; no top-school pedigree visible in GitHub bio; location unspecified (critical blocker for Bay Area priority hire). Strong OTel gen_ai.* domain expertise is a major plus, but missing agent-systems shipping and US location confirmation cap score below 65.",
+    "signals": {
+      "top_signal": "OTel GenAI semconv maintainer (extremely scarce); production observability expertise | school unverified",
+      "followers": 135,
+      "public_repos": 81,
+      "company": "SWE @Dynatrace",
+      "location": null,
+      "via": "contrib:open-telemetry/semantic-conventions",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "location_unspecified",
+        "no_agent_flows_or_mcp_evidence",
+        "no_agentic_systems_shipping_confirmed",
+        "linkedin_verify_school_and_location",
+        "manual_review_obs_eval_depth",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Joao Grassi",
+          "GitHub company: SWE @Dynatrace",
+          "Blog/site: https://blog.joaograssi.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://blog.joaograssi.com"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:24:15.658559+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "2347409",
+    "name": "Liudmila Molkova",
+    "profile_url": "https://github.com/lmolkova",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Liudmila is a production OpenTelemetry contributor with deep expertise in semantic conventions and GenAI observability signals—exactly the scarcity tier (top 37%) Conviva needs for agent observability at scale. However, no school pedigree is evident in the GitHub profile, no explicit US/Bay Area location is stated, and no evidence of shipped agent flows, MCP servers, or LLM-as-judge evals in her public work. Strong technical fit on the observability/tracing half of the role, but missing agent systems and AI connector shipping evidence.",
+    "signals": {
+      "top_signal": "OpenTelemetry semantic-conventions contributor; GenAI observability (rare, top 37%) | school unverified",
+      "followers": 162,
+      "public_repos": 121,
+      "company": "@open-telemetry @google",
+      "location": null,
+      "via": "contrib:open-telemetry/semantic-conventions",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school pedigree in GitHub bio",
+        "location_unverified — no explicit US/Bay Area location stated",
+        "linkedin_verify_school — manual verification required before 70+ consideration",
+        "missing_agent_systems — no evidence of shipped agent flows, MCP servers, or multi-agent orchestration",
+        "missing_evals — no LLM-as-judge, RAGAS, DeepEval, or offline eval evidence in public repos",
+        "obs_only — observability/tracing expertise strong, but agent systems/AI connectors underrepresented",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Liudmila Molkova",
+          "GitHub company: @open-telemetry @google",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:24:21.958850+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "17327289",
+    "name": "Reiley Yang",
+    "profile_url": "https://github.com/reyang",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Reiley Yang is a production infrastructure engineer at Microsoft with deep OpenTelemetry contributions, including semantic-conventions work—a top-tier signal for observability and LLM-agent instrumentation. Strong Python backend + async systems foundation. However, school pedigree is absent from GitHub profile, location is Seattle (not Bay Area), and no explicit evidence of shipped agent flows, MCP servers, or LLM-as-judge evals in bio. High technical credibility on observability stack mitigates location penalty slightly, but caps score below 75 pending school verification.",
+    "signals": {
+      "top_signal": "OpenTelemetry semantic-conventions contributor; production infrastructure at Microsoft | school unverified",
+      "followers": 108,
+      "public_repos": 8,
+      "company": "Microsoft",
+      "location": "Seattle, WA",
+      "via": "contrib:open-telemetry/semantic-conventions",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school mention in GitHub bio; manual LinkedIn verification required",
+        "location: Seattle, not Bay Area — preference mismatch",
+        "no explicit agent flow / agent system shipping evidence in public profile",
+        "no MCP server or LLM evals evidence in bio",
+        "observability credibility strong, but agent-systems shipping unconfirmed",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Reiley Yang",
+          "GitHub company: Microsoft",
+          "Public email: reyang@microsoft.com",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: Shreyangi Saxena (rep 1155) https://stackoverflow.com/users/10576533/shreyangi-saxena",
+          "StackOverflow: DareYang (rep 369) https://stackoverflow.com/users/10171000/dareyang",
+          "SO location: France",
+          "StackOverflow: Greyangel (rep 11) https://stackoverflow.com/users/14410384/greyangel"
+        ],
+        "links": [
+          {
+            "label": "SO · Shreyangi Saxena",
+            "url": "https://stackoverflow.com/users/10576533/shreyangi-saxena"
+          },
+          {
+            "label": "SO · DareYang",
+            "url": "https://stackoverflow.com/users/10171000/dareyang"
+          },
+          {
+            "label": "SO · Greyangel",
+            "url": "https://stackoverflow.com/users/14410384/greyangel"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=8) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:25:29.560405+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "156136903",
+    "name": "Jerome",
+    "profile_url": "https://github.com/jerome3o-anthropic",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Jerome is a confirmed MCP Python SDK contributor (high-signal sourcing via modelcontextprotocol repo), indicating hands-on agent systems work. However, no top-school pedigree is evident in GitHub bio, no explicit production eval/obs stack mentioned, and location is undisclosed—capping at 72 pending LinkedIn verification of school and US location. Strong on MCP (core requirement) but missing corroborating evidence of production agent observability / evals and Bay Area presence.",
+    "signals": {
+      "top_signal": "MCP Python SDK contributor; hands-on agent tooling | school unverified",
+      "followers": 141,
+      "public_repos": 4,
+      "company": null,
+      "location": null,
+      "via": "contrib:modelcontextprotocol/python-sdk",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified—linkedin verify",
+        "location_undisclosed—verify bay_area_us",
+        "no_eval_obs_stack_evident",
+        "no_production_agent_flow_stories_visible",
+        "4_public_repos_only—shallow_portfolio",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Jerome",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=2) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:25:59.934168+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "1828968",
+    "name": "Henry Mao",
+    "profile_url": "https://github.com/calclavia",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Henry Mao is a strong production AI engineer with 63 public repos and direct MCP SDK contributions—a core requirement signal. Co-founder of Jenni.ai (LLM product) and current builder at Smithery.ai demonstrate shipping agentic systems end-to-end. However, no school pedigree is evident in GitHub bio, location is unlisted (not clearly US/Bay Area), and no explicit eval/observability (evals, tracing, LLM-as-judge) work is mentioned in the profile. MCP + founder track record push score above 65, but missing school verification and location clarity cap at 72 pending LinkedIn manual check.",
+    "signals": {
+      "top_signal": "MCP SDK contributor + co-founder of LLM product (Jenni.ai) shipping agents | school unverified",
+      "followers": 565,
+      "public_repos": 63,
+      "company": "Smithery AI",
+      "location": null,
+      "via": "contrib:modelcontextprotocol/python-sdk",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school evidence in GitHub bio, flag for LinkedIn verification",
+        "location_unclear — no listed location; must verify Bay Area / US residency",
+        "no_eval_obs_signal — no mention of evals, observability, tracing, or LLM-as-judge in profile; verify production observability stack",
+        "founder_path — co-founder experience is positive, but must confirm end-to-end agent shipping + production observability rigor during interview",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Henry Mao",
+          "GitHub company: Smithery AI",
+          "Twitter/X: @Calclavia",
+          "Blog/site: https://calclavia.com",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: calclavia (rep 331) https://stackoverflow.com/users/2254679/calclavia",
+          "StackOverflow: Calclavia (rep 11) https://stackoverflow.com/users/3205077/calclavia"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/Calclavia"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://calclavia.com"
+          },
+          {
+            "label": "SO · calclavia",
+            "url": "https://stackoverflow.com/users/2254679/calclavia"
+          },
+          {
+            "label": "SO · Calclavia",
+            "url": "https://stackoverflow.com/users/3205077/calclavia"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=7) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:26:06.643686+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "131398524",
+    "name": "Luca Chang",
+    "profile_url": "https://github.com/LucaButBoring",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Luca is a current AWS SDE with direct MCP SDK contribution (Python), meeting a core production signal for agent tooling and connectors. However, no top-school pedigree is evident in GitHub bio, and location is Seattle (not Bay Area/CA preferred). School unverified status caps score; strong MCP shipping evidence + AWS backend context pushes into lower 70s pending LinkedIn verification.",
+    "signals": {
+      "top_signal": "Active MCP Python SDK contributor at AWS SDE role | school unverified",
+      "followers": 24,
+      "public_repos": 29,
+      "company": "@aws",
+      "location": "Seattle",
+      "via": "contrib:modelcontextprotocol/python-sdk",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school mention in bio, manual LinkedIn verification required",
+        "location: Seattle, not Bay Area — California/remote OK but verify US relocation intent",
+        "MCP contribution is strong, but no visible eval/observability/LLM-as-judge signals in public profile",
+        "limited GitHub follower count (24) and profile visibility — verify production agent shipping via LinkedIn",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Luca Chang",
+          "GitHub company: @aws",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:26:13.435466+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "704663",
+    "name": "Paul Carleton",
+    "profile_url": "https://github.com/pcarleton",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Paul is a contributor to the MCP Python SDK, which is a strong signal for tool-use / AI connector familiarity—a COMMON signal but relevant to the role. However, no GitHub bio, location, company, or school pedigree is visible; no evidence of production agent systems, eval/obs stack work, or shipped agentic workflows; and no corroborating signals (published OSS, production LLM-as-judge, online evals, or Bay Area residency). Without top-school evidence or production shipping stories, score capped at 60; deduct 2 for lack of any visible location/company context. Flag for urgent LinkedIn verification of school, location, and production agent experience.",
+    "signals": {
+      "top_signal": "MCP Python SDK contributor (tool-use / AI connector familiarity) | school unverified",
+      "followers": 68,
+      "public_repos": 49,
+      "company": null,
+      "location": null,
+      "via": "contrib:modelcontextprotocol/python-sdk",
+      "school_unverified": true,
+      "flags": [
+        "school unverified",
+        "location unverified",
+        "no production agent/eval/obs evidence on GitHub",
+        "github bio empty",
+        "linkedin verification required",
+        "require production shipping stories + school before advance",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Paul Carleton",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=2) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:26:20.421589+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "6026418",
+    "name": "Allen Porter",
+    "profile_url": "https://github.com/allenporter",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Allen Porter is a direct contributor to modelcontextprotocol/python-sdk (MCP is a core requirement) at Google, demonstrating production-level agent systems work. Los Angeles, CA meets location preference. However, no top-school pedigree is evident in the GitHub bio, and the profile lacks explicit evidence of shipped agent observability/eval stack (RAGAS, DeepEval, LangSmith, online evals, or OpenTelemetry gen_ai spans). The MCP contributor signal is extremely strong and rare, but without school verification or detailed production eval/obs shipping evidence, the score is capped below 80.",
+    "signals": {
+      "top_signal": "Direct contributor to modelcontextprotocol/python-sdk at Google; rare MCP production signal | school unverified",
+      "followers": 232,
+      "public_repos": 141,
+      "company": null,
+      "location": "Los Angeles, CA",
+      "via": "contrib:modelcontextprotocol/python-sdk",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — manual LinkedIn verification required",
+        "missing explicit eval/obs stack evidence (RAGAS, DeepEval, LangSmith, OTel gen_ai, online evals)",
+        "no agent observability/tracing framework mentioned in public repos",
+        "verify production agent flow / agent systems shipping story via LinkedIn or direct conversation",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Allen Porter",
+          "Public email: allen.porter@gmail.com",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: allenporter (rep 361) https://stackoverflow.com/users/101106/allenporter",
+          "SO location: San Jose, CA"
+        ],
+        "links": [
+          {
+            "label": "SO · allenporter",
+            "url": "https://stackoverflow.com/users/101106/allenporter"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=5) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:26:49.279526+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "153965",
+    "name": "Jeremiah Lowin",
+    "profile_url": "https://github.com/jlowin",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Jeremiah Lowin is CEO of Prefect and actively building FastMCP, demonstrating strong production systems experience with MCP (core requirement). However, no top-school pedigree is evident in the GitHub profile, and location is Washington, DC (not Bay Area/California preferred). The MCP contribution + CEO-level shipping credibility and Prefect's workflow/agent orchestration background push the score above the school_unverified cap, but lack of explicit top-school evidence and non-Bay Area location prevent scoring higher.",
+    "signals": {
+      "top_signal": "CEO shipping FastMCP; Prefect workflow/agent orchestration production experience | school unverified",
+      "followers": 2378,
+      "public_repos": 46,
+      "company": "@PrefectHQ ",
+      "location": "Washington, DC",
+      "via": "contrib:modelcontextprotocol/python-sdk",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school evidence in profile",
+        "location — Washington DC, not Bay Area/California preferred",
+        "linkedin_verify_school — manual school verification required",
+        "ceo_founder_signal — validate actual hands-on AI engineer work vs. pure leadership",
+        "mcp_shipping — strong signal but verify agent observability / eval stack depth",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Jeremiah Lowin",
+          "GitHub company: @PrefectHQ ",
+          "Twitter/X: @jlowin",
+          "Blog/site: https://jlowin.dev",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: jlowin (rep 256) https://stackoverflow.com/users/1614946/jlowin",
+          "StackOverflow: JLowin (rep 1) https://stackoverflow.com/users/1607905/jlowin",
+          "StackOverflow: Jlowing (rep 1) https://stackoverflow.com/users/15782069/jlowing",
+          "SO location: Gauteng, South Africa"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/jlowin"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://jlowin.dev"
+          },
+          {
+            "label": "SO · jlowin",
+            "url": "https://stackoverflow.com/users/1614946/jlowin"
+          },
+          {
+            "label": "SO · JLowin",
+            "url": "https://stackoverflow.com/users/1607905/jlowin"
+          },
+          {
+            "label": "SO · Jlowing",
+            "url": "https://stackoverflow.com/users/15782069/jlowing"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=9) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:26:54.657845+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "algomaniac",
+    "name": "algomaniac",
+    "profile_url": "https://news.ycombinator.com/user?id=algomaniac",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Strong production agent observability/eval signal (Open Bias proxy for runtime agent steering—exactly the 'agent observability' and guardrails the role targets). HN Show demonstrates shipped, production-focused thinking on long-tail agent failures in production. However, no verifiable school pedigree in profile text, no explicit location confirmation, and limited corroboration beyond single HN post. Recommend manual LinkedIn verification for school + location before final offer.",
+    "signals": {
+      "top_signal": "Production agent observability/guardrails proxy; rule-eval drift problem solved in shipping code | school unverified",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified—flag for manual LinkedIn verification",
+        "location_unconfirmed—no explicit Bay Area/US location stated",
+        "single_hn_post—weak corroboration; request GitHub repo link + LinkedIn profile",
+        "production_agent_signal_strong—aligns with core job (agent behavior steering, observability at runtime)",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Tapan Chandra",
+          "Public email: realalgomaniac@gmail.com",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: ooalgomaniac (rep 353) https://stackoverflow.com/users/22643255/ooalgomaniac",
+          "StackOverflow: AlgoManiac (rep 89) https://stackoverflow.com/users/17159448/algomaniac",
+          "StackOverflow: algomaniac (rep 1) https://stackoverflow.com/users/2836885/algomaniac"
+        ],
+        "links": [
+          {
+            "label": "SO · ooalgomaniac",
+            "url": "https://stackoverflow.com/users/22643255/ooalgomaniac"
+          },
+          {
+            "label": "SO · AlgoManiac",
+            "url": "https://stackoverflow.com/users/17159448/algomaniac"
+          },
+          {
+            "label": "SO · algomaniac",
+            "url": "https://stackoverflow.com/users/2836885/algomaniac"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=6) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:27:18.655988+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "deepankarm44",
+    "name": "deepankarm44",
+    "profile_url": "https://news.ycombinator.com/user?id=deepankarm44",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Strong production signal: built chaos engineering tool for AI agents after real production failures, integrates DeepEval (LLM-as-judge), demonstrates understanding of agent reliability and observability. However, no school pedigree evidence in profile, no clear location data, no evidence of other shipped agent systems/MCP servers, and single HN post lacks corroboration of sustained production experience or full stack depth.",
+    "signals": {
+      "top_signal": "Production agent chaos/observability tool with DeepEval integration | school unverified",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "location_not_stated",
+        "single_project_signal",
+        "verify_production_shipping_history",
+        "no_mcp_or_agent_flow_evidence",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=1) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:27:30.483144+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "thinkagenticai",
+    "name": "thinkagenticai",
+    "profile_url": "https://news.ycombinator.com/user?id=thinkagenticai",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Strong production agent stack signals (LangGraph, CrewAI, Arize observability, LLM-as-judge evals, AWS/Bedrock, OTEL) and open-source shipping on agentic frameworks demonstrate real engineering depth. However, no top-school pedigree evident in HN profile, location unconfirmed (appears AWS-affiliated but Bay Area residency not stated), and single HN Show HN post without corroborating GitHub contributor history or production failure/fix narrative limits confidence. School pedigree is critical for 70+ scoring; flagging for LinkedIn verification.",
+    "signals": {
+      "top_signal": "Production LLM-as-judge evals + OTEL observability + LangGraph/CrewAI/Strands shipped | school unverified",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "location_unconfirmed",
+        "single_hn_post_only",
+        "no_github_contributor_history_visible",
+        "aws_samples_org_affiliation_suggests_employee_not_founder",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=1) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:27:38.220758+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "draismaa",
+    "name": "draismaa",
+    "profile_url": "https://news.ycombinator.com/user?id=draismaa",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Strong production signal: shipped OpenTelemetry GenAI semantic conventions + agent observability at scale (Clawdbot production usage spike), demonstrating rare observability expertise in agentic systems. Multi-org collaboration (LangWatch, Orq, Red Hat) shows shipping rigor. However, school pedigree unverified in HN profile; location not explicitly stated; single HN comment limits corroboration depth. Recommend LinkedIn verification for school and Bay Area confirmation before final offer stage.",
+    "signals": {
+      "top_signal": "Production OTel GenAI semantic conventions + agent tracing at scale | school unverified",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "verify_us_location_bay_area",
+        "single_hn_comment_corroborate_github_shipping",
+        "verify_mcp_or_agent_flow_shipping_beyond_otel",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=1) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:27:48.287112+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "saqadri",
+    "name": "saqadri",
+    "profile_url": "https://news.ycombinator.com/user?id=saqadri",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Strong production signal: actively shipping MCP servers + distributed agent tracing with OpenTelemetry semantic conventions at LastMile AI—exactly the core job. However, school pedigree absent from available profile text, and location unconfirmed; capped at 72 pending LinkedIn verification of education and Bay Area/US status.",
+    "signals": {
+      "top_signal": "Production MCP + OTEL agent observability | school unverified",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified—linkedin verify pedigree",
+        "location_unconfirmed—verify Bay Area/US",
+        "single_hn_comment—corroborate via github/linkedin",
+        "extremely_scarce_signal—otel_genai_semantic_conventions_in_production",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Sarmad Qadri",
+          "GitHub company: @lastmile-ai",
+          "Twitter/X: @qadri_sarmad",
+          "Blog/site: https://lastmileai.dev/",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/qadri_sarmad"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://lastmileai.dev/"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=5) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:27:55.325790+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "skull8888888",
+    "name": "skull8888888",
+    "profile_url": "https://news.ycombinator.com/user?id=skull8888888",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Strong production signal: Laminar is a shipped, open-source LLM observability platform built in Rust with full execution trace handling—directly aligned with agent observability & analytics. Stack (RabbitMQ, Postgres, Clickhouse, Qdrant) demonstrates backend systems maturity at scale. However, no top-school pedigree evident in HN profile, location unclear, and no explicit evidence of agent flows/agentic workflows shipped (observability platform ≠ agent systems builder). Candidate appears to be a platform/infrastructure engineer rather than an AI agent systems engineer—risk of product/infra focus vs. core agent-optimization mandate.",
+    "signals": {
+      "top_signal": "Shipped LLM observability platform (Laminar) with production-grade distributed systems (Rust, Clickhouse, semantic search) | school unverified",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified—no top-school pedigree in HN profile; manual LinkedIn verification required",
+        "location_unclear—no US/Bay Area location stated in HN handle or comment",
+        "agent_systems_gap—observability platform builder, not agent flow/agentic workflow shipper; may be infra/product focus rather than AI agent optimization",
+        "single_hn_comment—weak corroboration; verify GitHub repos and full work history",
+        "linkedin_verify—confirm education, location, and production agent experience",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Robert Kim",
+          "GitHub company: @lmnr-ai",
+          "Twitter/X: @skull8888888888",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/skull8888888888"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:28:03.763874+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "patcher99",
+    "name": "patcher99",
+    "profile_url": "https://news.ycombinator.com/user?id=patcher99",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "patcher99 demonstrates strong production observability expertise with OpenLIT (OpenTelemetry-based LLM monitoring), a PRIORITY signal matching Conviva's gen_ai.* semantic convention needs. However, no top-school pedigree is evident in the HN profile, location is unconfirmed, and the single HN Show submission lacks evidence of agent flows/agentic systems shipped in production—the role's core requirement. School verification and deeper background check on agentic patterns (MCP, tool-use, multi-agent) are necessary before advancing.",
+    "signals": {
+      "top_signal": "Production OpenTelemetry LLM observability (OpenLIT OSS); gen_ai.* semantic conventions expertise | school unverified",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified—manual LinkedIn verification required",
+        "location_unconfirmed—Bay Area/US presence not stated in HN profile",
+        "agent_systems_unvalidated—no evidence of agent flows or agentic orchestration shipped; observability focus alone insufficient",
+        "single_data_point—HN Show submission only; requires GitHub/LinkedIn corroboration for production agent system claims",
+        "cap_at_62_pending_verification—strong obs signal but missing core agent+school pedigree",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Patcher99",
+          "GitHub company: @dokulabs ",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:28:13.603264+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "aman_041",
+    "name": "aman_041",
+    "profile_url": "https://news.ycombinator.com/user?id=aman_041",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Strong production observability signal (OpenLIT / OpenTelemetry gen_ai spans) places candidate in EXTREMELY SCARCE tier, BUT no school pedigree evident in profile and location unclear from HN handle alone. Single HN Show post without corroboration of agent flow shipping, MCP servers, or agentic pattern production experience. Cap at 58 pending manual LinkedIn verification of school + location + agent systems depth.",
+    "signals": {
+      "top_signal": "OpenTelemetry LLM observability / gen_ai semantic conventions (production-grade) | school unverified",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school evidence in profile text",
+        "linkedin_verify_school — MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke required to unlock 70+ band",
+        "location_unclear — HN handle only, no Bay Area / US location confirmed",
+        "agent_systems_unconfirmed — OpenLIT is observability tool; no evidence of shipped agent flows, MCP servers, or agentic workflows in production",
+        "single_signal_risk — HN Show post alone; needs corroboration (GitHub repos, shipping history, agent eval/obs stack depth)",
+        "priority_hire_requirement_gap — production AI engineer with agent flows / agent systems shipping is core job; observability expertise alone is necessary but not sufficient",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=1) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:28:18.745259+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "nirga",
+    "name": "nirga",
+    "profile_url": "https://news.ycombinator.com/user?id=nirga",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Strong production signal: nirga is a co-founder/core contributor to OpenLLMetry, an OpenTelemetry-based LLM observability platform addressing vendor lock-in—exactly the 'extremely scarce' production eval/obs stack Conviva needs. Shipped OSS with real adoption and semantic convention work. However, no verifiable school pedigree in HN profile, no explicit US/Bay Area location stated, and no evidence of agent systems/MCP servers or multi-agent orchestration—only observability tooling. Recommend LinkedIn verification for school + location + agent-systems experience before final offer.",
+    "signals": {
+      "top_signal": "Production OpenTelemetry LLM observability + OSS shipping; missing agent systems & school pedigree | school unverified",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — manual LinkedIn verification required",
+        "location_unverified — no explicit US/Bay Area location in HN profile",
+        "no_agent_systems_evidence — OpenLLMetry is observability, not agent flows/MCP/agentic workflows",
+        "requires_linkedin_validation — verify school (MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke), location, and production agent-systems experience before advancing",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Nir Gazit",
+          "GitHub company: Traceloop",
+          "Twitter/X: @nir_ga",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: nirgal (rep 23) https://stackoverflow.com/users/1851941/nirgal",
+          "StackOverflow: Nirgarl (rep 23) https://stackoverflow.com/users/22216586/nirgarl",
+          "StackOverflow: Nirgali (rep 11) https://stackoverflow.com/users/1598301/nirgali"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/nir_ga"
+          },
+          {
+            "label": "SO · nirgal",
+            "url": "https://stackoverflow.com/users/1851941/nirgal"
+          },
+          {
+            "label": "SO · Nirgarl",
+            "url": "https://stackoverflow.com/users/22216586/nirgarl"
+          },
+          {
+            "label": "SO · Nirgali",
+            "url": "https://stackoverflow.com/users/1598301/nirgali"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=7) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:28:23.301148+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "611470",
+    "name": "RWL",
+    "profile_url": "https://github.com/ricklentz",
+    "role": "Senior Data Scientist",
+    "score": 62,
+    "reasoning": "Strong production ML signals: 1093 public repos, hands-on GitHub presence, and Monterey/Bay Area location meet geographic preference. However, critical gaps prevent higher scoring: no verifiable degree/credentials in profile (school_unverified=true), no clear evidence of time series/anomaly/alerting work, no explicit Ray/Spark or MLOps portfolio demonstration, and inability to validate depth of traditional ML + deep learning foundation from GitHub metadata alone. Profile suggests active developer but requires manual LinkedIn verification of education and production system scale before advancing.",
+    "signals": {
+      "top_signal": "1093 public repos + Bay Area location + active hands-on GitHub presence | school unverified",
+      "followers": 51,
+      "public_repos": 1093,
+      "company": null,
+      "location": "Monterey, California",
+      "via": "search:data scientist",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — must verify MS/PhD in CS/Stats/related on LinkedIn",
+        "no time series/anomaly detection evidence in public profile",
+        "no Ray/Spark or MLOps tooling visible",
+        "github alone insufficient to validate production ML depth — requires phone screen",
+        "linkedin verify: degree, years applied ML experience, real-time analytics systems shipped",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: RWL",
+          "Twitter/X: @ricklentz",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/ricklentz"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:29:34.989492+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "47517645",
+    "name": "Ben Boby",
+    "profile_url": "https://github.com/benbobyabraham",
+    "role": "Senior Data Scientist",
+    "score": 58,
+    "reasoning": "Ben shows relevant SF location and ML/DS title mix, but GitHub profile alone provides insufficient evidence of production ML depth, time series/anomaly detection work, or hands-on real-time analytics experience. No verifiable education pedigree; repos require manual code-quality review to confirm shipped production systems vs. tutorials/hobby projects. Bio is generic 'full stack' positioning without specific technical artifacts (Ray, Spark, MLOps, streaming, anomaly detection) visible at surface level.",
+    "signals": {
+      "top_signal": "SF-based, 67 repos, ML engineer title | school unverified",
+      "followers": 165,
+      "public_repos": 67,
+      "company": null,
+      "location": "San Francisco, California",
+      "via": "search:data scientist",
+      "school_unverified": true,
+      "flags": [
+        "school unverified — linkedin verify education",
+        "github repos unreviewed — require code audit for production depth",
+        "no visible time series / anomaly / alerting signals in profile",
+        "no spark / ray / mlops evidence visible",
+        "generic bio — validate real-time analytics & shipping depth before advance",
+        "manual verification required before phone screen",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Ben Boby",
+          "Twitter/X: @BenBoby5",
+          "Blog/site: https://benboby.com/",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/BenBoby5"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://benboby.com/"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:29:45.021212+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "6382842",
+    "name": "Ashley Adrias",
+    "profile_url": "https://github.com/ashleyadrias",
+    "role": "Senior Data Scientist",
+    "score": 58,
+    "reasoning": "Ashley shows promising signals as a Senior Data Scientist at Visa with relevant Bay Area location and 34 public repos, but the GitHub profile lacks concrete evidence of production ML depth, time-series/anomaly detection work, Ray/Spark usage, or MLOps maturity. No verifiable details on traditional ML, deep learning, statistical modeling, or real-time analytics projects; no educational credentials visible. Requires LinkedIn verification of school, actual project portfolio review, and technical depth assessment before advancing.",
+    "signals": {
+      "top_signal": "Senior DS title at Visa + SF location + active GitHub presence | school unverified",
+      "followers": 8,
+      "public_repos": 34,
+      "company": "Visa Inc.",
+      "location": "San Francisco, California",
+      "via": "search:data scientist",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school or degree evidence in GitHub bio",
+        "linkedin_verify_school — must confirm MS/PhD requirement",
+        "github_portfolio_weak — 34 repos but no description of production ML, time-series, or anomaly detection work",
+        "no_mlops_signals — no evidence of versioning, monitoring, retraining workflows",
+        "no_streaming_signals — no indication of real-time analytics or Ray/Spark experience",
+        "require_technical_depth_interview — validate hands-on production ML depth vs. slide-deck DS risk",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Ashley Adrias",
+          "GitHub company: Visa Inc.",
+          "Blog/site: https://ashleyadrias.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://ashleyadrias.com"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:30:06.721101+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "37850881",
+    "name": "Sumegh Roychowdhury",
+    "profile_url": "https://github.com/Sumegh-git",
+    "role": "Senior Data Scientist",
+    "score": 58,
+    "reasoning": "Sumegh shows relevant applied ML experience (Amazon L2, internships across Adobe/ShareChat/robotics), but profile lacks concrete evidence of production time-series/anomaly detection, streaming analytics, or MLOps depth—core requirements for this real-time alerting role. No top-school credentials visible; GitHub repos (31) are public but lack detail on shipping scalable systems. Strong internship pedigree and current Amazon role are positive signals, but bio reads as early-career applied scientist rather than hands-on Senior DS with proven shipping track record at scale.",
+    "signals": {
+      "top_signal": "Amazon L2 Applied Scientist + multi-domain ML internships (Adobe, ShareChat, robotics) | school unverified",
+      "followers": 32,
+      "public_repos": 31,
+      "company": null,
+      "location": "Palo Alto, California",
+      "via": "search:applied scientist",
+      "school_unverified": true,
+      "flags": [
+        "school unverified — linkedin verify education",
+        "no visible time-series or anomaly detection projects",
+        "no mlops / streaming / real-time analytics evidence in public profile",
+        "early-career tenure (internships '19–'22, current role level unclear) — validate senior readiness",
+        "public repos lack depth detail — request portfolio walkthrough",
+        "level ambiguity: L2 Applied Scientist at Amazon is mid-level; 'Senior DS' role requires demonstrated ownership of production ML systems at scale",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Sumegh Roychowdhury",
+          "Blog/site: https://sumeghtech@gmail.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://sumeghtech@gmail.com"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:31:07.072351+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "87939854",
+    "name": "Reuben Chatterjee",
+    "profile_url": "https://github.com/ReubenChatterjee",
+    "role": "Senior Data Scientist",
+    "score": 58,
+    "reasoning": "Candidate has relevant MS Data Science and current DS role at Applied Materials (semiconductor/real-time analytics context is promising), but GitHub profile shows only 11 public repos with no visible evidence of production ML systems, time series work, anomaly detection, or MLOps. No corroborating evidence of hands-on shipped systems, Ray/Spark scale, or depth in traditional ML + deep learning + statistical modeling required for this senior role. School pedigree (UC San Diego) is relevant but unverified from profile alone. Requires LinkedIn/GitHub deep-dive to validate production experience claim.",
+    "signals": {
+      "top_signal": "Applied Materials DS role in relevant domain; MS Data Science from solid school | school unverified",
+      "followers": 4,
+      "public_repos": 11,
+      "company": "Applied Materials",
+      "location": "Mountain View, California",
+      "via": "search:applied scientist",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified—UC San Diego not explicitly verified in linked profile",
+        "github_sparse—only 11 public repos; no visible production ML/time-series/anomaly work",
+        "no_corroborating_evidence—unclear if hands-on shipped systems or slide-deck role",
+        "must_verify_linkedin—validate production ML depth, time-series/alerting work, Ray/Spark scale",
+        "applied_materials_context_positive—semiconductor real-time analytics aligns with role; drill deeper on actual scope",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Reuben Chatterjee",
+          "GitHub company: Applied Materials",
+          "Blog/site: https://gigantic-millennium-c3f.notion.site/Reuben-Chatterjee-a407e00a599646ad92b45a45a851e6ae",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://gigantic-millennium-c3f.notion.site/Reuben-Chatterjee-a407e00a599646ad92b45a45a851e6ae"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:31:12.391719+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "734468",
+    "name": "Wilson Choi",
+    "profile_url": "https://github.com/wilsonkichoi",
+    "role": "Senior Data Scientist",
+    "score": 58,
+    "reasoning": "Wilson shows MLOps and Python foundation (positive signals for production work), but GitHub profile lacks concrete evidence of shipped production ML systems, time-series/anomaly detection work, or deep learning expertise. No educational background visible; 50 repos and 9 followers suggest junior-to-mid level contribution visibility. Profile reads as SWE-with-MLOps-awareness rather than hands-on Senior Data Scientist with real-time analytics depth.",
+    "signals": {
+      "top_signal": "MLOps + Python + California location | school unverified",
+      "followers": 9,
+      "public_repos": 50,
+      "company": null,
+      "location": "California, USA",
+      "via": "search:MLOps",
+      "school_unverified": true,
+      "flags": [
+        "school unverified — linkedin verify education (MS/PhD requirement critical)",
+        "no time-series/anomaly detection evidence in public repos",
+        "no deep learning (CNN/RNN/Transformer) projects visible",
+        "no Ray/Spark large-scale ML projects visible",
+        "GitHub footprint small (9 followers, unclear production impact)",
+        "MLOps title suggests infrastructure focus — verify modeling depth before phone screen",
+        "must validate: 5+ years applied ML OR relevant MS/PhD before advancing",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Wilson Choi",
+          "Blog/site: https://wilsonkichoi.github.io",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://wilsonkichoi.github.io"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:32:07.062924+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "130475295",
+    "name": "Mery ",
+    "profile_url": "https://github.com/MeryVar",
+    "role": "Senior Data Scientist",
+    "score": 58,
+    "reasoning": "Mery shows relevant MLOps and ML engineering experience at SuperNomicsAI with a production-focused title, which aligns with the 'hands-on' and 'ship to production' requirements. However, the GitHub profile is extremely sparse (9 public repos, 1 follower) with no visible evidence of deep technical work in time series, anomaly detection, alerting, or large-scale systems (Spark/Ray). No educational pedigree evident. Profile lacks concrete proof of hands-on production ML depth across the required technical foundations (traditional ML, deep learning, statistical modeling, streaming analytics). Location (Glendale, CA) is acceptable but not Bay Area/Foster City preferred.",
+    "signals": {
+      "top_signal": "MLOps title + production systems experience | school unverified",
+      "followers": 1,
+      "public_repos": 9,
+      "company": "SuperNomics",
+      "location": "Glendale, California, United States",
+      "via": "search:MLOps",
+      "school_unverified": true,
+      "flags": [
+        "school unverified — linkedin verify education",
+        "github repos sparse and not publicly visible — verify portfolio depth",
+        "no evidence of time series / anomaly detection / alerting systems",
+        "no evidence of Spark / Ray / large-scale data systems",
+        "no evidence of deep learning or statistical modeling projects",
+        "weak corroboration of hands-on depth — title alone insufficient",
+        "location acceptable but not preferred (Glendale vs Bay Area)",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Mery ",
+          "GitHub company: SuperNomics",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:32:28.761044+00:00"
+  },
+  {
+    "source": "hackernews",
+    "source_id": "alxhslm",
+    "name": "alxhslm",
+    "profile_url": "https://news.ycombinator.com/user?id=alxhslm",
+    "role": "Senior Data Scientist",
+    "score": 58,
+    "reasoning": "Strong production ML + time series + sklearn depth signal from skeights project, but single HN comment provides insufficient evidence of: (1) PhD/MS + 5+ years requirement verification, (2) breadth across traditional ML, deep learning, statistical modeling, and scalability (Ray/Spark), (3) hands-on production shipping at scale, (4) real-time analytics / anomaly detection / alerting domain experience, (5) AI-native developer practices. No school, location, or corroborating GitHub/LinkedIn profile visible. Cannot validate core must-haves.",
+    "signals": {
+      "top_signal": "Production time series + sklearn + MLOps-minded (pickle→safetensors serialization thinking) | school unverified",
+      "school_unverified": true,
+      "flags": [
+        "school unverified – linkedin verify education",
+        "single data point – no github/linkedin corroboration",
+        "credentials unverified – no evidence of phd/ms + 5yr timeline",
+        "scope unclear – skeights is tooling layer, not end-to-end analytics system",
+        "deep learning / transformers depth unknown",
+        "ray/spark / large-scale data experience unconfirmed",
+        "anomaly detection / alerting domain fit unknown",
+        "location unverified – bay area preference not stated",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Alex Haslam",
+          "GitHub company: @carbon-re",
+          "Blog/site: https://alexhaslam.dev",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://alexhaslam.dev"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=4) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:33:23.114446+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "3676938",
+    "name": "邢",
+    "profile_url": "https://github.com/xingdl2007",
+    "role": "Staff Software Engineer — Tech Lead, Backend",
+    "score": 65,
+    "reasoning": "Strong distributed systems and infrastructure foundation with 86 public repos and current role at Kuaishou (high-scale Chinese platform), suggesting real-world experience with backend systems at scale. However, critical gaps: no visible evidence of OLAP/streaming systems (ClickHouse, Kafka, Druid), AI-native tooling fluency, or hands-on tech lead mentorship patterns; GitHub profile lacks project documentation, code review leadership, or design decision artifacts that would confirm 5+ years data platforms experience and architecture ownership.",
+    "signals": {
+      "top_signal": "Kuaishou backend engineer with distributed systems focus | school unverified",
+      "followers": 142,
+      "public_repos": 86,
+      "company": "kuaishou",
+      "location": "Shenzhen, China",
+      "via": "search:distributed systems",
+      "school_unverified": true,
+      "flags": [
+        "school unverified — linkedin verify education",
+        "no OLAP/streaming/Kafka visible in repos",
+        "no AI-native tooling evidence (Cursor/Claude/Copilot)",
+        "no design docs or architecture decisions in public work",
+        "insufficient mentorship/code review leadership signals",
+        "cannot verify 5+ years data platforms depth from profile alone",
+        "location match (Shenzhen near Beijing) but role location not confirmed",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: 邢",
+          "GitHub company: kuaishou",
+          "Blog/site: http://xingdl2007.top",
+          "Public email: xingdl2007@gmail.com",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: xingdl2007 (rep 3) https://stackoverflow.com/users/4039185/xingdl2007",
+          "SO location: 中国广东省Shenzhen Shi"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "http://xingdl2007.top"
+          },
+          {
+            "label": "SO · xingdl2007",
+            "url": "https://stackoverflow.com/users/4039185/xingdl2007"
+          }
+        ],
+        "strong_pedigree_signal": false
+      },
+      "validation_status": "needs_validation",
+      "agent_thought": "Enrichment done (confidence=medium, clues=7) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "agent_trace_steps": 4
+    },
+    "first_seen": "2026-09-04T03:34:20.042556+00:00"
+  },
+  {
+    "source": "github",
+    "source_id": "73642562",
+    "name": "Kritin Vongthongsri",
+    "profile_url": "https://github.com/kritinv",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Kritin is co-founder of DeepEval (YC W25), an extremely scarce production LLM evaluation framework signal that directly addresses observability/eval requirements. Bay Area location and 27 active repos are strong. However, Princeton affiliation is unclear (likely current employer, not degree), and critically, no evidence of shipped agent flows, MCP servers, or agent observability systems—the core 'build systems so AI agents can understand and act' ownership requirement. Production eval expertise alone does not close the agent architecture gap.",
+    "signals": {
+      "top_signal": "DeepEval YC W25 co-founder; production LLM-as-judge eval platform; Bay Area | school unverified",
+      "followers": 70,
+      "public_repos": 27,
+      "company": "Princeton University",
+      "location": "San Francisco, California",
+      "via": "contrib:confident-ai/deepeval",
+      "school_unverified": false,
+      "flags": [
+        "school_unverified — Princeton affiliation noted but degree pedigree not explicitly stated; manual LinkedIn verification required",
+        "agent_systems_gap — eval stack expert but no clear shipped evidence of agent flows, MCP servers, or agent observability systems (core role requirement)",
+        "high_potential_founder — YC backing + eval domain expertise suggests strong technical depth; phone screen strongly recommended to validate agent architecture experience and production agent system ownership",
+        "linkedin verify school",
+        "enrichment pedigree hit"
+      ],
+      "enrichment": {
+        "confidence": "high",
+        "school_hits": [
+          "princeton"
+        ],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Kritin Vongthongsri",
+          "GitHub company: Princeton University",
+          "Blog/site: https://kritinvongthongsri.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://kritinvongthongsri.com"
+          }
+        ],
+        "strong_pedigree_signal": true
+      },
+      "validation": "auto_enrichment_applied",
+      "validation_status": "rejected",
+      "agent_thought": "Re-score=60 below threshold after enrichment. Reject.",
+      "agent_trace_steps": 6
+    },
+    "first_seen": "2026-09-04T03:22:59.593834+00:00"
   }
 ]

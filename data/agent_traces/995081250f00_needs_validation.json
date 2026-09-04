@@ -1,0 +1,170 @@
+{
+  "run_id": "995081250f00",
+  "dedup_key": "github:611470",
+  "candidate": {
+    "source": "github",
+    "source_id": "611470",
+    "name": "RWL",
+    "profile_url": "https://github.com/ricklentz",
+    "role": "Senior Data Scientist",
+    "score": 62,
+    "reasoning": "Strong production ML signals: 1093 public repos, hands-on GitHub presence, and Monterey/Bay Area location meet geographic preference. However, critical gaps prevent higher scoring: no verifiable degree/credentials in profile (school_unverified=true), no clear evidence of time series/anomaly/alerting work, no explicit Ray/Spark or MLOps portfolio demonstration, and inability to validate depth of traditional ML + deep learning foundation from GitHub metadata alone. Profile suggests active developer but requires manual LinkedIn verification of education and production system scale before advancing.",
+    "signals": {
+      "top_signal": "1093 public repos + Bay Area location + active hands-on GitHub presence | school unverified",
+      "followers": 51,
+      "public_repos": 1093,
+      "company": null,
+      "location": "Monterey, California",
+      "via": "search:data scientist",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — must verify MS/PhD in CS/Stats/related on LinkedIn",
+        "no time series/anomaly detection evidence in public profile",
+        "no Ray/Spark or MLOps tooling visible",
+        "github alone insufficient to validate production ML depth — requires phone screen",
+        "linkedin verify: degree, years applied ML experience, real-time analytics systems shipped",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: RWL",
+          "Twitter/X: @ricklentz",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/ricklentz"
+          }
+        ],
+        "strong_pedigree_signal": false
+      }
+    },
+    "first_seen": "2026-09-04T03:29:34.989492+00:00"
+  },
+  "role": {
+    "title": "Senior Data Scientist",
+    "language": "python",
+    "location": "California",
+    "requirements": "US Foster City / Bay Area preferred (California OK). PRIORITY HIRE — hands-on Senior Data Scientist for real-time digital performance analytics. NOT slide-deck DS, NOT research-only, NOT pure SWE without ML depth.\n\nMust have: PhD in CS/Stats/related OR MS + 5+ years applied ML/data science.\n\nTechnical foundation:\n- Traditional ML: regression, classification, ensembles, clustering, dimensionality reduction\n- Deep learning: CNNs, RNNs/LSTMs, Transformers, attention — as the problem demands\n- Statistical modeling: optimization, Bayesian / probabilistic methods\n- Time series: forecasting, change-point detection, seasonality; anomaly detection & automated alerting\n- Python (primary) production code; Scala a plus\n- Ship POC → scalable integrated ML in production systems\n- Large-scale data: Ray and/or Spark\n\nAI-native developer: habitual Claude / Cursor / Copilot use for coding, debugging, design — not just awareness.\n\nBonus: streaming / real-time analytics; AI-powered alerting / intelligent monitoring; MLOps (versioning, monitoring, retraining); LLM/foundation models in analytical workflows.\n\nScore HIGH when: production ML + time series/anomaly/alerting + Ray/Spark or MLOps.\nScore LOW / DISQUALIFY: pure analyst dashboards; academic-only with no production; tutorial/student; SWE with no modeling depth; generic 'AI enthusiast' bios.",
+    "github_queries": [
+      "data scientist",
+      "applied scientist",
+      "anomaly detection",
+      "time series",
+      "MLOps",
+      "Ray Spark"
+    ],
+    "hn_queries": [
+      "anomaly detection production",
+      "time series forecasting",
+      "Ray Spark ML",
+      "MLOps monitoring",
+      "streaming analytics ML",
+      "change point detection"
+    ]
+  },
+  "profile_blob": "Name: RWL\nSource: github\nProfile: https://github.com/ricklentz\nLocation: Monterey, California\nCompany: —\nPrior score: 62\nPrior reasoning: Strong production ML signals: 1093 public repos, hands-on GitHub presence, and Monterey/Bay Area location meet geographic preference. However, critical gaps prevent higher scoring: no verifiable degree/credentials in profile (school_unverified=true), no clear evidence of time series/anomaly/alerting work, no explicit Ray/Spark or MLOps portfolio demonstration, and inability to validate depth of traditional ML + deep learning foundation from GitHub metadata alone. Profile suggests active developer but requires manual LinkedIn verification of education and production system scale before advancing.\nFlags: ['school_unverified — must verify MS/PhD in CS/Stats/related on LinkedIn', 'no time series/anomaly detection evidence in public profile', 'no Ray/Spark or MLOps tooling visible', 'github alone insufficient to validate production ML depth — requires phone screen', 'linkedin verify: degree, years applied ML experience, real-time analytics systems shipped', 'school unverified', 'linkedin verify school']\nTop signal: 1093 public repos + Bay Area location + active hands-on GitHub presence | school unverified\n",
+  "thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+  "action": "REQUEST_SCHOOL",
+  "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 3. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22ricklentz%22. Resume: python scripts/validate_agent.py resume github:611470",
+  "human_education": "",
+  "score": 62,
+  "school_unverified": true,
+  "flags": [
+    "school_unverified — must verify MS/PhD in CS/Stats/related on LinkedIn",
+    "no time series/anomaly detection evidence in public profile",
+    "no Ray/Spark or MLOps tooling visible",
+    "github alone insufficient to validate production ML depth — requires phone screen",
+    "linkedin verify: degree, years applied ML experience, real-time analytics systems shipped",
+    "school unverified",
+    "linkedin verify school"
+  ],
+  "status": "needs_validation",
+  "trace": [
+    {
+      "ts": "2026-09-04T03:37:02.547011+00:00",
+      "thought": "Score=62 interesting but school unverified (flags=['school_unverified — must verify MS/PhD in CS/Stats/related on LinkedIn', 'no time series/anomaly detection evidence in public profile', 'no Ray/Spark or MLOps tooling visible', 'github alone insufficient to validate production ML depth — requires phone screen', 'linkedin verify: degree, years applied ML experience, real-time analytics systems shipped', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:37:04.204472+00:00",
+      "thought": "Score=62 interesting but school unverified (flags=['school_unverified — must verify MS/PhD in CS/Stats/related on LinkedIn', 'no time series/anomaly detection evidence in public profile', 'no Ray/Spark or MLOps tooling visible', 'github alone insufficient to validate production ML depth — requires phone screen', 'linkedin verify: degree, years applied ML experience, real-time analytics systems shipped', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": "Enrichment complete for login=ricklentz: confidence=medium, schools=[], edu_emails=[], clues=3."
+    },
+    {
+      "ts": "2026-09-04T03:37:04.205157+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:37:04.233409+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 3. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22ricklentz%22. Resume: python scripts/validate_agent.py resume github:611470",
+      "queue_key": "github:611470"
+    }
+  ],
+  "reasoning": "Strong production ML signals: 1093 public repos, hands-on GitHub presence, and Monterey/Bay Area location meet geographic preference. However, critical gaps prevent higher scoring: no verifiable degree/credentials in profile (school_unverified=true), no clear evidence of time series/anomaly/alerting work, no explicit Ray/Spark or MLOps portfolio demonstration, and inability to validate depth of traditional ML + deep learning foundation from GitHub metadata alone. Profile suggests active developer but requires manual LinkedIn verification of education and production system scale before advancing.",
+  "top_signal": "1093 public repos + Bay Area location + active hands-on GitHub presence | school unverified",
+  "enriched": true,
+  "enrichment": {
+    "clues": [
+      "GitHub name field: RWL",
+      "Twitter/X: @ricklentz",
+      "Kaggle: no profile for this exact login"
+    ],
+    "school_hits": [],
+    "edu_emails": [],
+    "links": [
+      {
+        "label": "Twitter/X",
+        "url": "https://twitter.com/ricklentz"
+      }
+    ],
+    "strong_pedigree_signal": false,
+    "confidence": "medium",
+    "education_blob": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: RWL\n- Twitter/X: @ricklentz\n- Kaggle: no profile for this exact login",
+    "raw": {
+      "github": {
+        "source": "github",
+        "login": "ricklentz",
+        "ok": true,
+        "name": "RWL",
+        "company": "",
+        "blog": "",
+        "bio": "Machine Learning Data Scientist",
+        "location": "Monterey, California",
+        "twitter": "ricklentz",
+        "email": "",
+        "hireable": null,
+        "html_url": "https://github.com/ricklentz",
+        "emails": [],
+        "edu_emails": [],
+        "blog_school_hits": [],
+        "bio_school_hits": []
+      },
+      "kaggle": {
+        "source": "kaggle",
+        "login": "ricklentz",
+        "exists": false,
+        "url": "https://www.kaggle.com/ricklentz"
+      },
+      "stackoverflow": {
+        "source": "stackoverflow",
+        "login": "ricklentz",
+        "matches": []
+      }
+    },
+    "login": "ricklentz"
+  },
+  "auto_education": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: RWL\n- Twitter/X: @ricklentz\n- Kaggle: no profile for this exact login",
+  "backend": "langgraph"
+}

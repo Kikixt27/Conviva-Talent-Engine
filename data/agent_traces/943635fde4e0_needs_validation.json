@@ -1,0 +1,174 @@
+{
+  "run_id": "943635fde4e0",
+  "dedup_key": "github:37850881",
+  "candidate": {
+    "source": "github",
+    "source_id": "37850881",
+    "name": "Sumegh Roychowdhury",
+    "profile_url": "https://github.com/Sumegh-git",
+    "role": "Senior Data Scientist",
+    "score": 58,
+    "reasoning": "Sumegh shows relevant applied ML experience (Amazon L2, internships across Adobe/ShareChat/robotics), but profile lacks concrete evidence of production time-series/anomaly detection, streaming analytics, or MLOps depth—core requirements for this real-time alerting role. No top-school credentials visible; GitHub repos (31) are public but lack detail on shipping scalable systems. Strong internship pedigree and current Amazon role are positive signals, but bio reads as early-career applied scientist rather than hands-on Senior DS with proven shipping track record at scale.",
+    "signals": {
+      "top_signal": "Amazon L2 Applied Scientist + multi-domain ML internships (Adobe, ShareChat, robotics) | school unverified",
+      "followers": 32,
+      "public_repos": 31,
+      "company": null,
+      "location": "Palo Alto, California",
+      "via": "search:applied scientist",
+      "school_unverified": true,
+      "flags": [
+        "school unverified — linkedin verify education",
+        "no visible time-series or anomaly detection projects",
+        "no mlops / streaming / real-time analytics evidence in public profile",
+        "early-career tenure (internships '19–'22, current role level unclear) — validate senior readiness",
+        "public repos lack depth detail — request portfolio walkthrough",
+        "level ambiguity: L2 Applied Scientist at Amazon is mid-level; 'Senior DS' role requires demonstrated ownership of production ML systems at scale",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Sumegh Roychowdhury",
+          "Blog/site: https://sumeghtech@gmail.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://sumeghtech@gmail.com"
+          }
+        ],
+        "strong_pedigree_signal": false
+      }
+    },
+    "first_seen": "2026-09-04T03:31:07.072351+00:00"
+  },
+  "role": {
+    "title": "Senior Data Scientist",
+    "language": "python",
+    "location": "California",
+    "requirements": "US Foster City / Bay Area preferred (California OK). PRIORITY HIRE — hands-on Senior Data Scientist for real-time digital performance analytics. NOT slide-deck DS, NOT research-only, NOT pure SWE without ML depth.\n\nMust have: PhD in CS/Stats/related OR MS + 5+ years applied ML/data science.\n\nTechnical foundation:\n- Traditional ML: regression, classification, ensembles, clustering, dimensionality reduction\n- Deep learning: CNNs, RNNs/LSTMs, Transformers, attention — as the problem demands\n- Statistical modeling: optimization, Bayesian / probabilistic methods\n- Time series: forecasting, change-point detection, seasonality; anomaly detection & automated alerting\n- Python (primary) production code; Scala a plus\n- Ship POC → scalable integrated ML in production systems\n- Large-scale data: Ray and/or Spark\n\nAI-native developer: habitual Claude / Cursor / Copilot use for coding, debugging, design — not just awareness.\n\nBonus: streaming / real-time analytics; AI-powered alerting / intelligent monitoring; MLOps (versioning, monitoring, retraining); LLM/foundation models in analytical workflows.\n\nScore HIGH when: production ML + time series/anomaly/alerting + Ray/Spark or MLOps.\nScore LOW / DISQUALIFY: pure analyst dashboards; academic-only with no production; tutorial/student; SWE with no modeling depth; generic 'AI enthusiast' bios.",
+    "github_queries": [
+      "data scientist",
+      "applied scientist",
+      "anomaly detection",
+      "time series",
+      "MLOps",
+      "Ray Spark"
+    ],
+    "hn_queries": [
+      "anomaly detection production",
+      "time series forecasting",
+      "Ray Spark ML",
+      "MLOps monitoring",
+      "streaming analytics ML",
+      "change point detection"
+    ]
+  },
+  "profile_blob": "Name: Sumegh Roychowdhury\nSource: github\nProfile: https://github.com/Sumegh-git\nLocation: Palo Alto, California\nCompany: —\nPrior score: 58\nPrior reasoning: Sumegh shows relevant applied ML experience (Amazon L2, internships across Adobe/ShareChat/robotics), but profile lacks concrete evidence of production time-series/anomaly detection, streaming analytics, or MLOps depth—core requirements for this real-time alerting role. No top-school credentials visible; GitHub repos (31) are public but lack detail on shipping scalable systems. Strong internship pedigree and current Amazon role are positive signals, but bio reads as early-career applied scientist rather than hands-on Senior DS with proven shipping track record at scale.\nFlags: ['school unverified — linkedin verify education', 'no visible time-series or anomaly detection projects', 'no mlops / streaming / real-time analytics evidence in public profile', \"early-career tenure (internships '19–'22, current role level unclear) — validate senior readiness\", 'public repos lack depth detail — request portfolio walkthrough', \"level ambiguity: L2 Applied Scientist at Amazon is mid-level; 'Senior DS' role requires demonstrated ownership of production ML systems at scale\", 'school unverified', 'linkedin verify school']\nTop signal: Amazon L2 Applied Scientist + multi-domain ML internships (Adobe, ShareChat, robotics) | school unverified\n",
+  "thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+  "action": "REQUEST_SCHOOL",
+  "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 3. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Sumegh-git%22. Resume: python scripts/validate_agent.py resume github:37850881",
+  "human_education": "",
+  "score": 58,
+  "school_unverified": true,
+  "flags": [
+    "school unverified — linkedin verify education",
+    "no visible time-series or anomaly detection projects",
+    "no mlops / streaming / real-time analytics evidence in public profile",
+    "early-career tenure (internships '19–'22, current role level unclear) — validate senior readiness",
+    "public repos lack depth detail — request portfolio walkthrough",
+    "level ambiguity: L2 Applied Scientist at Amazon is mid-level; 'Senior DS' role requires demonstrated ownership of production ML systems at scale",
+    "school unverified",
+    "linkedin verify school"
+  ],
+  "status": "needs_validation",
+  "trace": [
+    {
+      "ts": "2026-09-04T03:37:06.090330+00:00",
+      "thought": "Score=58 interesting but school unverified (flags=['school unverified — linkedin verify education', 'no visible time-series or anomaly detection projects', 'no mlops / streaming / real-time analytics evidence in public profile', \"early-career tenure (internships '19–'22, current role level unclear) — validate senior readiness\", 'public repos lack depth detail — request portfolio walkthrough', \"level ambiguity: L2 Applied Scientist at Amazon is mid-level; 'Senior DS' role requires demonstrated ownership of production ML systems at scale\", 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:37:07.497588+00:00",
+      "thought": "Score=58 interesting but school unverified (flags=['school unverified — linkedin verify education', 'no visible time-series or anomaly detection projects', 'no mlops / streaming / real-time analytics evidence in public profile', \"early-career tenure (internships '19–'22, current role level unclear) — validate senior readiness\", 'public repos lack depth detail — request portfolio walkthrough', \"level ambiguity: L2 Applied Scientist at Amazon is mid-level; 'Senior DS' role requires demonstrated ownership of production ML systems at scale\", 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": "Enrichment complete for login=Sumegh-git: confidence=medium, schools=[], edu_emails=[], clues=3."
+    },
+    {
+      "ts": "2026-09-04T03:37:07.498240+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:37:07.526198+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 3. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Sumegh-git%22. Resume: python scripts/validate_agent.py resume github:37850881",
+      "queue_key": "github:37850881"
+    }
+  ],
+  "reasoning": "Sumegh shows relevant applied ML experience (Amazon L2, internships across Adobe/ShareChat/robotics), but profile lacks concrete evidence of production time-series/anomaly detection, streaming analytics, or MLOps depth—core requirements for this real-time alerting role. No top-school credentials visible; GitHub repos (31) are public but lack detail on shipping scalable systems. Strong internship pedigree and current Amazon role are positive signals, but bio reads as early-career applied scientist rather than hands-on Senior DS with proven shipping track record at scale.",
+  "top_signal": "Amazon L2 Applied Scientist + multi-domain ML internships (Adobe, ShareChat, robotics) | school unverified",
+  "enriched": true,
+  "enrichment": {
+    "clues": [
+      "GitHub name field: Sumegh Roychowdhury",
+      "Blog/site: https://sumeghtech@gmail.com",
+      "Kaggle: no profile for this exact login"
+    ],
+    "school_hits": [],
+    "edu_emails": [],
+    "links": [
+      {
+        "label": "Personal site / blog",
+        "url": "https://sumeghtech@gmail.com"
+      }
+    ],
+    "strong_pedigree_signal": false,
+    "confidence": "medium",
+    "education_blob": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Sumegh Roychowdhury\n- Blog/site: https://sumeghtech@gmail.com\n- Kaggle: no profile for this exact login",
+    "raw": {
+      "github": {
+        "source": "github",
+        "login": "Sumegh-git",
+        "ok": true,
+        "name": "Sumegh Roychowdhury",
+        "company": "",
+        "blog": "sumeghtech@gmail.com",
+        "bio": "Applied Scientist-2 @amzn Intern @ShareChat '22 @amzn '21 @personalrobotics  '20 @adobe '20 | JSoC '19 @ Numerics | Former AI intern @agnex",
+        "location": "Palo Alto, California",
+        "twitter": "",
+        "email": "",
+        "hireable": true,
+        "html_url": "https://github.com/Sumegh-git",
+        "emails": [],
+        "edu_emails": [],
+        "blog_url": "https://sumeghtech@gmail.com",
+        "blog_text_preview": " Gmail Sign in to continue to Gmail Email or phone Forgot email? Not your computer? Use a private browsing window to sign in. Learn more about using Guest mode Next Create account Afrikaans azərbaycan bosanski català Čeština Cymraeg Dansk Deutsch eesti English (United Kingdom) English (United States) Español (España) Español (Latinoamérica) euskara Filipino Français (Canada) Français (France) Gaeilge galego Hrvatski Indonesia isiZulu íslenska Italiano Kiswahili latviešu lietuvių magyar Melayu Nederlands norsk o‘zbek polski Português (Brasil) Português (Portugal) română shqip Slovenčina slovenščina srpski (latinica) Suomi Svenska Tiếng Việt Türkçe Ελληνικά беларуская български кыргызча қазақ тілі македонски монгол Русский српски (ћирилица) Українська ქართული հայերեն ‫עברית‬‎ ‫اردو‬‎ ‫العربي",
+        "blog_school_hits": [],
+        "bio_school_hits": []
+      },
+      "kaggle": {
+        "source": "kaggle",
+        "login": "Sumegh-git",
+        "exists": false,
+        "url": "https://www.kaggle.com/Sumegh-git"
+      },
+      "stackoverflow": {
+        "source": "stackoverflow",
+        "login": "Sumegh-git",
+        "matches": []
+      }
+    },
+    "login": "Sumegh-git"
+  },
+  "auto_education": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Sumegh Roychowdhury\n- Blog/site: https://sumeghtech@gmail.com\n- Kaggle: no profile for this exact login",
+  "backend": "langgraph"
+}

@@ -1,0 +1,259 @@
+{
+  "run_id": "c692740966ed",
+  "dedup_key": "github:17",
+  "candidate": {
+    "source": "github",
+    "source_id": "17",
+    "name": "Chris Van Pelt (CVP)",
+    "profile_url": "https://github.com/vanpelt",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Chris Van Pelt is a core contributor to Weights & Biases (Weave), the leading LLM observability and evaluation platform. He has shipped production eval/obs infrastructure at scale with 70 public repos and 531 followers, demonstrating strong systems engineering chops. Located in San Francisco (Bay Area), which meets location preference. However, school pedigree is not evident in GitHub bio, capping score slightly below 80.",
+    "signals": {
+      "top_signal": "Production LLM observability/eval stack (Weave) + Bay Area location + 70 repos shipping systems | school unverified",
+      "followers": 531,
+      "public_repos": 70,
+      "company": "wandb.com",
+      "location": "San Francisco",
+      "via": "contrib:wandb/weave",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school_pedigree",
+        "strong_obs_eval_signal_at_wandb",
+        "confirm_agent_flows_shipping_experience",
+        "verify_mcp_server_or_ai_connector_work",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Chris Van Pelt (CVP)",
+          "GitHub company: wandb.com",
+          "Blog/site: https://wandb.com",
+          "Public email: vanpelt@wandb.com",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: vanPelt2 (rep 929) https://stackoverflow.com/users/7407967/vanpelt2",
+          "StackOverflow: vvanpelt (rep 819) https://stackoverflow.com/users/13272497/vvanpelt",
+          "StackOverflow: JMVanPelt (rep 113) https://stackoverflow.com/users/4744709/jmvanpelt"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://wandb.com"
+          },
+          {
+            "label": "SO · vanPelt2",
+            "url": "https://stackoverflow.com/users/7407967/vanpelt2"
+          },
+          {
+            "label": "SO · vvanpelt",
+            "url": "https://stackoverflow.com/users/13272497/vvanpelt"
+          },
+          {
+            "label": "SO · JMVanPelt",
+            "url": "https://stackoverflow.com/users/4744709/jmvanpelt"
+          }
+        ],
+        "strong_pedigree_signal": false
+      }
+    },
+    "first_seen": "2026-09-04T03:21:12.645694+00:00"
+  },
+  "role": {
+    "title": "AI Engineer, Agent Analytics & Optimization",
+    "language": "python",
+    "location": "California",
+    "requirements": "US Foster City / Bay Area preferred (California OK). PRIORITY HIRE — production AI Engineer who has shipped agent flows / agent systems / agent observability. NOT Product Builder, NOT research, NOT prompt-engineering-only.\n\nCore job: build systems so AI agents can understand, query, and act on Conviva behavioral data — MCP servers, agentic workflows, AI connectors. Own build + runtime at scale.\n\nPEDIGREE (Yan bar — critical, GitHub rarely has this):\nSchool pedigree is required for outreach priority: MIT / Stanford / CMU / Berkeley / UCLA / Cornell / UIUC / Michigan / Duke (or equivalent evidence in bio/company/education text).\nIf NO top-school evidence in the profile → score CAP at 60, set school_unverified=true, and flag for manual LinkedIn school verification. Do NOT reject solely for missing school — GitHub often omits it.\n\nLOCATION:\nBay Area / California / US remote preferred. Profiles clearly in Nigeria / India / other non-US locations should be filtered or scored ≤30. MCP+LangGraph alone must NOT push a non-US or school-unverified candidate into the 70+ band.\n\nSOURCING THESIS (why GitHub contributor mining is extremely high-value):\nEach production LLM-obs / eval tool ≈ one public repo; contributors to those repos are the people Yan wants. Prefer bios/READMEs mentioning online evaluation, LLM-as-judge in production, gen_ai.* spans.\n\nMarket scarcity (score accordingly):\n- EXTREMELY SCARCE (top 37% — prioritize): online evals, LLM-as-judge in production, OpenTelemetry gen_ai.* spans, OTel GenAI semantic conventions\n- SCARCE (top 52%): RAGAS, DeepEval, LangSmith evals, offline eval rigor\n- COMMON: LangGraph, agent tracing, MCP, Langfuse usage\n- TOO BROAD (ignore as primary signal): LLM, AI, ChatGPT\n- SKIP: 29% with no eval practice at all\n\nMust have (3–7+ yrs SWE):\n- Python backend services shipped end-to-end; fullstack a plus\n- LLM-powered agents IN PRODUCTION with concrete failure/fix stories (agent flow / agent system)\n- MCP servers or equivalent tool-use / AI connector integrations\n- Agentic patterns: tool use, structured outputs, multi-agent orchestration, human-in-the-loop\n- Evals (prefer online + offline) + observability/tracing (Langfuse, LangSmith, Phoenix, Helicone, Weave, OpenTelemetry, or homegrown)\n- Cloud (GCP/AWS), containers, async Python\n\nBonus: LangGraph, Anthropic SDK, Pydantic-AI, CrewAI; digital experience analytics / APM; published OSS on obs/eval stack.\n\nScore HIGH (80+) only when: top-school evidence OR already flagged for LinkedIn verify AND production agent-obs/eval stack + US/Bay Area location.\nScore LOW / DISQUALIFY: pure PM; tutorial/student/bootcamp; agents only in demos; no eval/obs evidence; research-only without shipping; non-US location with no US intent.",
+    "scoring_notes": "School pedigree is critical: MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke required for 70+ scores. Without top school evidence in bio/profile text, cap score at 60 and flag school_unverified=true (manual LinkedIn verification). Bay Area / California / US location preferred — Nigeria/India/non-US self-reported locations cap at 30 (hard filter should already drop clear Nigeria/India). MCP + LangGraph alone are COMMON signals — never score 70+ on stack fingerprints without school OR strong production eval/obs evidence plus US location.",
+    "github_repos": [
+      "langfuse/langfuse",
+      "langchain-ai/langsmith-sdk",
+      "Arize-ai/phoenix",
+      "mlflow/mlflow",
+      "helicone/helicone",
+      "wandb/weave",
+      "explodinggradients/ragas",
+      "confident-ai/deepeval",
+      "open-telemetry/semantic-conventions",
+      "modelcontextprotocol/python-sdk"
+    ],
+    "github_queries": [
+      "online evaluation LLM",
+      "LLM observability",
+      "agent tracing",
+      "OpenTelemetry gen_ai",
+      "RAGAS evaluation",
+      "DeepEval",
+      "Langfuse",
+      "agent eval production"
+    ],
+    "hn_queries": [
+      "LLM observability production",
+      "online evals LLM",
+      "agent observability",
+      "Langfuse OR Phoenix OR Helicone",
+      "LLM-as-judge production",
+      "OpenTelemetry gen_ai"
+    ]
+  },
+  "profile_blob": "Name: Chris Van Pelt (CVP)\nSource: github\nProfile: https://github.com/vanpelt\nLocation: San Francisco\nCompany: wandb.com\nPrior score: 60\nPrior reasoning: Chris Van Pelt is a core contributor to Weights & Biases (Weave), the leading LLM observability and evaluation platform. He has shipped production eval/obs infrastructure at scale with 70 public repos and 531 followers, demonstrating strong systems engineering chops. Located in San Francisco (Bay Area), which meets location preference. However, school pedigree is not evident in GitHub bio, capping score slightly below 80.\nFlags: ['school_unverified', 'linkedin_verify_school_pedigree', 'strong_obs_eval_signal_at_wandb', 'confirm_agent_flows_shipping_experience', 'verify_mcp_server_or_ai_connector_work', 'school unverified', 'linkedin verify school']\nTop signal: Production LLM observability/eval stack (Weave) + Bay Area location + 70 repos shipping systems | school unverified\n",
+  "thought": "Enrichment done (confidence=medium, clues=8) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+  "action": "REQUEST_SCHOOL",
+  "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 8. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22vanpelt%22. Resume: python scripts/validate_agent.py resume github:17",
+  "human_education": "",
+  "score": 60,
+  "school_unverified": true,
+  "flags": [
+    "school_unverified",
+    "linkedin_verify_school_pedigree",
+    "strong_obs_eval_signal_at_wandb",
+    "confirm_agent_flows_shipping_experience",
+    "verify_mcp_server_or_ai_connector_work",
+    "school unverified",
+    "linkedin verify school"
+  ],
+  "status": "needs_validation",
+  "trace": [
+    {
+      "ts": "2026-09-04T03:36:10.393280+00:00",
+      "thought": "Score=60 interesting but school unverified (flags=['school_unverified', 'linkedin_verify_school_pedigree', 'strong_obs_eval_signal_at_wandb', 'confirm_agent_flows_shipping_experience', 'verify_mcp_server_or_ai_connector_work', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:36:12.085841+00:00",
+      "thought": "Score=60 interesting but school unverified (flags=['school_unverified', 'linkedin_verify_school_pedigree', 'strong_obs_eval_signal_at_wandb', 'confirm_agent_flows_shipping_experience', 'verify_mcp_server_or_ai_connector_work', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": "Enrichment complete for login=vanpelt: confidence=medium, schools=[], edu_emails=[], clues=8."
+    },
+    {
+      "ts": "2026-09-04T03:36:12.086556+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=8) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:36:12.102776+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=8) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 8. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22vanpelt%22. Resume: python scripts/validate_agent.py resume github:17",
+      "queue_key": "github:17"
+    }
+  ],
+  "reasoning": "Chris Van Pelt is a core contributor to Weights & Biases (Weave), the leading LLM observability and evaluation platform. He has shipped production eval/obs infrastructure at scale with 70 public repos and 531 followers, demonstrating strong systems engineering chops. Located in San Francisco (Bay Area), which meets location preference. However, school pedigree is not evident in GitHub bio, capping score slightly below 80.",
+  "top_signal": "Production LLM observability/eval stack (Weave) + Bay Area location + 70 repos shipping systems | school unverified",
+  "enriched": true,
+  "enrichment": {
+    "clues": [
+      "GitHub name field: Chris Van Pelt (CVP)",
+      "GitHub company: wandb.com",
+      "Blog/site: https://wandb.com",
+      "Public email: vanpelt@wandb.com",
+      "Kaggle: no profile for this exact login",
+      "StackOverflow: vanPelt2 (rep 929) https://stackoverflow.com/users/7407967/vanpelt2",
+      "StackOverflow: vvanpelt (rep 819) https://stackoverflow.com/users/13272497/vvanpelt",
+      "StackOverflow: JMVanPelt (rep 113) https://stackoverflow.com/users/4744709/jmvanpelt"
+    ],
+    "school_hits": [],
+    "edu_emails": [],
+    "links": [
+      {
+        "label": "Personal site / blog",
+        "url": "https://wandb.com"
+      },
+      {
+        "label": "SO · vanPelt2",
+        "url": "https://stackoverflow.com/users/7407967/vanpelt2"
+      },
+      {
+        "label": "SO · vvanpelt",
+        "url": "https://stackoverflow.com/users/13272497/vvanpelt"
+      },
+      {
+        "label": "SO · JMVanPelt",
+        "url": "https://stackoverflow.com/users/4744709/jmvanpelt"
+      }
+    ],
+    "strong_pedigree_signal": false,
+    "confidence": "medium",
+    "education_blob": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Chris Van Pelt (CVP)\n- GitHub company: wandb.com\n- Blog/site: https://wandb.com\n- Public email: vanpelt@wandb.com\n- Kaggle: no profile for this exact login\n- StackOverflow: vanPelt2 (rep 929) https://stackoverflow.com/users/7407967/vanpelt2\n- StackOverflow: vvanpelt (rep 819) https://stackoverflow.com/users/13272497/vvanpelt\n- StackOverflow: JMVanPelt (rep 113) https://stackoverflow.com/users/4744709/jmvanpelt",
+    "raw": {
+      "github": {
+        "source": "github",
+        "login": "vanpelt",
+        "ok": true,
+        "name": "Chris Van Pelt (CVP)",
+        "company": "wandb.com",
+        "blog": "wandb.com",
+        "bio": "",
+        "location": "San Francisco",
+        "twitter": "",
+        "email": "vanpelt@wandb.com",
+        "hireable": null,
+        "html_url": "https://github.com/vanpelt",
+        "emails": [
+          "vanpelt@wandb.com"
+        ],
+        "edu_emails": [],
+        "blog_url": "https://wandb.com",
+        "blog_text_preview": " Weights &amp; Biases: The AI developer platform Learn More Learn more For more information or if you need help retrieving your data , please contact Weights &amp; Biases Customer Support at support@wandb.com Skip to content Platform Close Platform Open Platform Models Experiments Track and visualize your experiments Sweeps Optimize your hyperparameters Tables Visualize and explore your data Reports Document and share your AI insights Serverless Training Serverless RL Fine-tune LLMs without managing GPUs Serverless SFT Teach LLMs new tasks ART Open-source RL framework Ruler Automated reward function for RL Serverless Inference OpenAI OSS GPT OSS 20B, GPT OSS 120B Alibaba Qwen3 235B A22B, 235B Thinking, Coder 480B Meta Llama Llama 4 Scout, Llama 3.3 70B, Llama 3.1 8B MoonshotAI Kimi Kimi K2",
+        "blog_school_hits": [],
+        "bio_school_hits": []
+      },
+      "kaggle": {
+        "source": "kaggle",
+        "login": "vanpelt",
+        "exists": false,
+        "url": "https://www.kaggle.com/vanpelt"
+      },
+      "stackoverflow": {
+        "source": "stackoverflow",
+        "login": "vanpelt",
+        "matches": [
+          {
+            "user_id": 7407967,
+            "display_name": "vanPelt2",
+            "link": "https://stackoverflow.com/users/7407967/vanpelt2",
+            "reputation": 929,
+            "location": null
+          },
+          {
+            "user_id": 13272497,
+            "display_name": "vvanpelt",
+            "link": "https://stackoverflow.com/users/13272497/vvanpelt",
+            "reputation": 819,
+            "location": null
+          },
+          {
+            "user_id": 4744709,
+            "display_name": "JMVanPelt",
+            "link": "https://stackoverflow.com/users/4744709/jmvanpelt",
+            "reputation": 113,
+            "location": null
+          },
+          {
+            "user_id": 3450930,
+            "display_name": "VanpeltJ",
+            "link": "https://stackoverflow.com/users/3450930/vanpeltj",
+            "reputation": 21,
+            "location": null
+          },
+          {
+            "user_id": 18258016,
+            "display_name": "tvanpelt87",
+            "link": "https://stackoverflow.com/users/18258016/tvanpelt87",
+            "reputation": 9,
+            "location": null
+          }
+        ]
+      }
+    },
+    "login": "vanpelt"
+  },
+  "auto_education": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Chris Van Pelt (CVP)\n- GitHub company: wandb.com\n- Blog/site: https://wandb.com\n- Public email: vanpelt@wandb.com\n- Kaggle: no profile for this exact login\n- StackOverflow: vanPelt2 (rep 929) https://stackoverflow.com/users/7407967/vanpelt2\n- StackOverflow: vvanpelt (rep 819) https://stackoverflow.com/users/13272497/vvanpelt\n- StackOverflow: JMVanPelt (rep 113) https://stackoverflow.com/users/4744709/jmvanpelt",
+  "backend": "langgraph"
+}

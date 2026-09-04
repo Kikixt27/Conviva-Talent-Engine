@@ -1,0 +1,175 @@
+{
+  "run_id": "73e5ea04a66e",
+  "dedup_key": "github:26576205",
+  "candidate": {
+    "source": "github",
+    "source_id": "26576205",
+    "name": "Tino Max Thayil",
+    "profile_url": "https://github.com/tinomaxthayil",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 58,
+    "reasoning": "Tino is a RAGAS contributor (extremely scarce eval signal — top 37% market scarcity), indicating hands-on LLM evaluation rigor in production observability stack. However, no school pedigree is evident in bio/GitHub profile, location is undisclosed (critical blocker for Bay Area/US preference), no corroborating evidence of shipped agent systems, MCP servers, or production agentic workflows visible in public repos or bio. Strong eval foundation but insufficient location clarity and no verifiable production agent-system shipping.",
+    "signals": {
+      "top_signal": "RAGAS contributor (online eval/LLM-as-judge production stack scarcity) | school unverified",
+      "followers": 20,
+      "public_repos": 17,
+      "company": null,
+      "location": null,
+      "via": "contrib:explodinggradients/ragas",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified — no top-school evidence in bio/profile; flag for manual LinkedIn verification",
+        "location_undisclosed — no location in GitHub profile; must verify Bay Area/US intent before advancing",
+        "no_visible_agent_shipping — repos and bio lack evidence of production agent flows, agent systems, or agentic observability; verify shipping history via LinkedIn",
+        "eval_signal_strong_but_insufficient — RAGAS contribution shows eval rigor but alone cannot push into 70+ without school pedigree + US location + agent-system shipping",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Tino Max Thayil",
+          "Public email: tinothayil@gmail.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [],
+        "strong_pedigree_signal": false
+      }
+    },
+    "first_seen": "2026-09-04T03:21:50.805641+00:00"
+  },
+  "role": {
+    "title": "AI Engineer, Agent Analytics & Optimization",
+    "language": "python",
+    "location": "California",
+    "requirements": "US Foster City / Bay Area preferred (California OK). PRIORITY HIRE — production AI Engineer who has shipped agent flows / agent systems / agent observability. NOT Product Builder, NOT research, NOT prompt-engineering-only.\n\nCore job: build systems so AI agents can understand, query, and act on Conviva behavioral data — MCP servers, agentic workflows, AI connectors. Own build + runtime at scale.\n\nPEDIGREE (Yan bar — critical, GitHub rarely has this):\nSchool pedigree is required for outreach priority: MIT / Stanford / CMU / Berkeley / UCLA / Cornell / UIUC / Michigan / Duke (or equivalent evidence in bio/company/education text).\nIf NO top-school evidence in the profile → score CAP at 60, set school_unverified=true, and flag for manual LinkedIn school verification. Do NOT reject solely for missing school — GitHub often omits it.\n\nLOCATION:\nBay Area / California / US remote preferred. Profiles clearly in Nigeria / India / other non-US locations should be filtered or scored ≤30. MCP+LangGraph alone must NOT push a non-US or school-unverified candidate into the 70+ band.\n\nSOURCING THESIS (why GitHub contributor mining is extremely high-value):\nEach production LLM-obs / eval tool ≈ one public repo; contributors to those repos are the people Yan wants. Prefer bios/READMEs mentioning online evaluation, LLM-as-judge in production, gen_ai.* spans.\n\nMarket scarcity (score accordingly):\n- EXTREMELY SCARCE (top 37% — prioritize): online evals, LLM-as-judge in production, OpenTelemetry gen_ai.* spans, OTel GenAI semantic conventions\n- SCARCE (top 52%): RAGAS, DeepEval, LangSmith evals, offline eval rigor\n- COMMON: LangGraph, agent tracing, MCP, Langfuse usage\n- TOO BROAD (ignore as primary signal): LLM, AI, ChatGPT\n- SKIP: 29% with no eval practice at all\n\nMust have (3–7+ yrs SWE):\n- Python backend services shipped end-to-end; fullstack a plus\n- LLM-powered agents IN PRODUCTION with concrete failure/fix stories (agent flow / agent system)\n- MCP servers or equivalent tool-use / AI connector integrations\n- Agentic patterns: tool use, structured outputs, multi-agent orchestration, human-in-the-loop\n- Evals (prefer online + offline) + observability/tracing (Langfuse, LangSmith, Phoenix, Helicone, Weave, OpenTelemetry, or homegrown)\n- Cloud (GCP/AWS), containers, async Python\n\nBonus: LangGraph, Anthropic SDK, Pydantic-AI, CrewAI; digital experience analytics / APM; published OSS on obs/eval stack.\n\nScore HIGH (80+) only when: top-school evidence OR already flagged for LinkedIn verify AND production agent-obs/eval stack + US/Bay Area location.\nScore LOW / DISQUALIFY: pure PM; tutorial/student/bootcamp; agents only in demos; no eval/obs evidence; research-only without shipping; non-US location with no US intent.",
+    "scoring_notes": "School pedigree is critical: MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke required for 70+ scores. Without top school evidence in bio/profile text, cap score at 60 and flag school_unverified=true (manual LinkedIn verification). Bay Area / California / US location preferred — Nigeria/India/non-US self-reported locations cap at 30 (hard filter should already drop clear Nigeria/India). MCP + LangGraph alone are COMMON signals — never score 70+ on stack fingerprints without school OR strong production eval/obs evidence plus US location.",
+    "github_repos": [
+      "langfuse/langfuse",
+      "langchain-ai/langsmith-sdk",
+      "Arize-ai/phoenix",
+      "mlflow/mlflow",
+      "helicone/helicone",
+      "wandb/weave",
+      "explodinggradients/ragas",
+      "confident-ai/deepeval",
+      "open-telemetry/semantic-conventions",
+      "modelcontextprotocol/python-sdk"
+    ],
+    "github_queries": [
+      "online evaluation LLM",
+      "LLM observability",
+      "agent tracing",
+      "OpenTelemetry gen_ai",
+      "RAGAS evaluation",
+      "DeepEval",
+      "Langfuse",
+      "agent eval production"
+    ],
+    "hn_queries": [
+      "LLM observability production",
+      "online evals LLM",
+      "agent observability",
+      "Langfuse OR Phoenix OR Helicone",
+      "LLM-as-judge production",
+      "OpenTelemetry gen_ai"
+    ]
+  },
+  "profile_blob": "Name: Tino Max Thayil\nSource: github\nProfile: https://github.com/tinomaxthayil\nLocation: —\nCompany: —\nPrior score: 58\nPrior reasoning: Tino is a RAGAS contributor (extremely scarce eval signal — top 37% market scarcity), indicating hands-on LLM evaluation rigor in production observability stack. However, no school pedigree is evident in bio/GitHub profile, location is undisclosed (critical blocker for Bay Area/US preference), no corroborating evidence of shipped agent systems, MCP servers, or production agentic workflows visible in public repos or bio. Strong eval foundation but insufficient location clarity and no verifiable production agent-system shipping.\nFlags: ['school_unverified — no top-school evidence in bio/profile; flag for manual LinkedIn verification', 'location_undisclosed — no location in GitHub profile; must verify Bay Area/US intent before advancing', 'no_visible_agent_shipping — repos and bio lack evidence of production agent flows, agent systems, or agentic observability; verify shipping history via LinkedIn', 'eval_signal_strong_but_insufficient — RAGAS contribution shows eval rigor but alone cannot push into 70+ without school pedigree + US location + agent-system shipping', 'school unverified', 'linkedin verify school']\nTop signal: RAGAS contributor (online eval/LLM-as-judge production stack scarcity) | school unverified\n",
+  "thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+  "action": "REQUEST_SCHOOL",
+  "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 3. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22tinomaxthayil%22. Resume: python scripts/validate_agent.py resume github:26576205",
+  "human_education": "",
+  "score": 58,
+  "school_unverified": true,
+  "flags": [
+    "school_unverified — no top-school evidence in bio/profile; flag for manual LinkedIn verification",
+    "location_undisclosed — no location in GitHub profile; must verify Bay Area/US intent before advancing",
+    "no_visible_agent_shipping — repos and bio lack evidence of production agent flows, agent systems, or agentic observability; verify shipping history via LinkedIn",
+    "eval_signal_strong_but_insufficient — RAGAS contribution shows eval rigor but alone cannot push into 70+ without school pedigree + US location + agent-system shipping",
+    "school unverified",
+    "linkedin verify school"
+  ],
+  "status": "needs_validation",
+  "trace": [
+    {
+      "ts": "2026-09-04T03:36:23.810443+00:00",
+      "thought": "Score=58 interesting but school unverified (flags=['school_unverified — no top-school evidence in bio/profile; flag for manual LinkedIn verification', 'location_undisclosed — no location in GitHub profile; must verify Bay Area/US intent before advancing', 'no_visible_agent_shipping — repos and bio lack evidence of production agent flows, agent systems, or agentic observability; verify shipping history via LinkedIn', 'eval_signal_strong_but_insufficient — RAGAS contribution shows eval rigor but alone cannot push into 70+ without school pedigree + US location + agent-system shipping', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:36:24.714148+00:00",
+      "thought": "Score=58 interesting but school unverified (flags=['school_unverified — no top-school evidence in bio/profile; flag for manual LinkedIn verification', 'location_undisclosed — no location in GitHub profile; must verify Bay Area/US intent before advancing', 'no_visible_agent_shipping — repos and bio lack evidence of production agent flows, agent systems, or agentic observability; verify shipping history via LinkedIn', 'eval_signal_strong_but_insufficient — RAGAS contribution shows eval rigor but alone cannot push into 70+ without school pedigree + US location + agent-system shipping', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": "Enrichment complete for login=tinomaxthayil: confidence=medium, schools=[], edu_emails=[], clues=3."
+    },
+    {
+      "ts": "2026-09-04T03:36:24.714824+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:36:24.729886+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=3) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 3. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22tinomaxthayil%22. Resume: python scripts/validate_agent.py resume github:26576205",
+      "queue_key": "github:26576205"
+    }
+  ],
+  "reasoning": "Tino is a RAGAS contributor (extremely scarce eval signal — top 37% market scarcity), indicating hands-on LLM evaluation rigor in production observability stack. However, no school pedigree is evident in bio/GitHub profile, location is undisclosed (critical blocker for Bay Area/US preference), no corroborating evidence of shipped agent systems, MCP servers, or production agentic workflows visible in public repos or bio. Strong eval foundation but insufficient location clarity and no verifiable production agent-system shipping.",
+  "top_signal": "RAGAS contributor (online eval/LLM-as-judge production stack scarcity) | school unverified",
+  "enriched": true,
+  "enrichment": {
+    "clues": [
+      "GitHub name field: Tino Max Thayil",
+      "Public email: tinothayil@gmail.com",
+      "Kaggle: no profile for this exact login"
+    ],
+    "school_hits": [],
+    "edu_emails": [],
+    "links": [],
+    "strong_pedigree_signal": false,
+    "confidence": "medium",
+    "education_blob": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Tino Max Thayil\n- Public email: tinothayil@gmail.com\n- Kaggle: no profile for this exact login",
+    "raw": {
+      "github": {
+        "source": "github",
+        "login": "tinomaxthayil",
+        "ok": true,
+        "name": "Tino Max Thayil",
+        "company": "",
+        "blog": "",
+        "bio": "Dreamer of a better future",
+        "location": "",
+        "twitter": "",
+        "email": "tinothayil@gmail.com",
+        "hireable": null,
+        "html_url": "https://github.com/tinomaxthayil",
+        "emails": [
+          "tinothayil@gmail.com"
+        ],
+        "edu_emails": [],
+        "blog_school_hits": [],
+        "bio_school_hits": []
+      },
+      "kaggle": {
+        "source": "kaggle",
+        "login": "tinomaxthayil",
+        "exists": false,
+        "url": "https://www.kaggle.com/tinomaxthayil"
+      },
+      "stackoverflow": {
+        "source": "stackoverflow",
+        "login": "tinomaxthayil",
+        "matches": []
+      }
+    },
+    "login": "tinomaxthayil"
+  },
+  "auto_education": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Tino Max Thayil\n- Public email: tinothayil@gmail.com\n- Kaggle: no profile for this exact login",
+  "backend": "langgraph"
+}

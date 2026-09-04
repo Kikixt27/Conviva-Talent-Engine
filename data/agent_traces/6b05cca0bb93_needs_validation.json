@@ -1,0 +1,203 @@
+{
+  "run_id": "6b05cca0bb93",
+  "dedup_key": "github:182092",
+  "candidate": {
+    "source": "github",
+    "source_id": "182092",
+    "name": "Ganesh Rathinavel Medayil",
+    "profile_url": "https://github.com/ganeshrvel",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 60,
+    "reasoning": "Ganesh is a contributor to Exploding Gradients (RAGAS), a SCARCE eval signal indicating production eval stack familiarity. However, no top-school pedigree is evident in the GitHub bio, location is listed as 'Remote' (not US/Bay Area confirmed), and there is no public evidence of shipped production agent systems, MCP servers, agent observability, or agentic workflows. RAGAS contribution alone is insufficient to overcome missing school verification and lack of concrete production agent/observability shipping evidence.",
+    "signals": {
+      "top_signal": "RAGAS eval framework contributor (SCARCE signal), but production agent+obs shipping unclear. | school unverified",
+      "followers": 266,
+      "public_repos": 76,
+      "company": "@explodinggradients ",
+      "location": "Remote",
+      "via": "contrib:explodinggradients/ragas",
+      "school_unverified": true,
+      "flags": [
+        "school_unverified",
+        "location_unconfirmed (Remote with no US/Bay Area claim)",
+        "no_production_agent_systems_evidence",
+        "no_agent_observability_evidence",
+        "no_mcp_server_shipping",
+        "ragas_contrib_alone_insufficient_without_school_or_agent_prod",
+        "linkedin_verify_school_and_agent_shipping",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Ganesh Rathinavel Medayil",
+          "GitHub company: @explodinggradients ",
+          "Twitter/X: @ganeshrvel",
+          "Blog/site: https://www.ganeshrvel.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/ganeshrvel"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://www.ganeshrvel.com"
+          }
+        ],
+        "strong_pedigree_signal": false
+      }
+    },
+    "first_seen": "2026-09-04T03:22:01.916940+00:00"
+  },
+  "role": {
+    "title": "AI Engineer, Agent Analytics & Optimization",
+    "language": "python",
+    "location": "California",
+    "requirements": "US Foster City / Bay Area preferred (California OK). PRIORITY HIRE — production AI Engineer who has shipped agent flows / agent systems / agent observability. NOT Product Builder, NOT research, NOT prompt-engineering-only.\n\nCore job: build systems so AI agents can understand, query, and act on Conviva behavioral data — MCP servers, agentic workflows, AI connectors. Own build + runtime at scale.\n\nPEDIGREE (Yan bar — critical, GitHub rarely has this):\nSchool pedigree is required for outreach priority: MIT / Stanford / CMU / Berkeley / UCLA / Cornell / UIUC / Michigan / Duke (or equivalent evidence in bio/company/education text).\nIf NO top-school evidence in the profile → score CAP at 60, set school_unverified=true, and flag for manual LinkedIn school verification. Do NOT reject solely for missing school — GitHub often omits it.\n\nLOCATION:\nBay Area / California / US remote preferred. Profiles clearly in Nigeria / India / other non-US locations should be filtered or scored ≤30. MCP+LangGraph alone must NOT push a non-US or school-unverified candidate into the 70+ band.\n\nSOURCING THESIS (why GitHub contributor mining is extremely high-value):\nEach production LLM-obs / eval tool ≈ one public repo; contributors to those repos are the people Yan wants. Prefer bios/READMEs mentioning online evaluation, LLM-as-judge in production, gen_ai.* spans.\n\nMarket scarcity (score accordingly):\n- EXTREMELY SCARCE (top 37% — prioritize): online evals, LLM-as-judge in production, OpenTelemetry gen_ai.* spans, OTel GenAI semantic conventions\n- SCARCE (top 52%): RAGAS, DeepEval, LangSmith evals, offline eval rigor\n- COMMON: LangGraph, agent tracing, MCP, Langfuse usage\n- TOO BROAD (ignore as primary signal): LLM, AI, ChatGPT\n- SKIP: 29% with no eval practice at all\n\nMust have (3–7+ yrs SWE):\n- Python backend services shipped end-to-end; fullstack a plus\n- LLM-powered agents IN PRODUCTION with concrete failure/fix stories (agent flow / agent system)\n- MCP servers or equivalent tool-use / AI connector integrations\n- Agentic patterns: tool use, structured outputs, multi-agent orchestration, human-in-the-loop\n- Evals (prefer online + offline) + observability/tracing (Langfuse, LangSmith, Phoenix, Helicone, Weave, OpenTelemetry, or homegrown)\n- Cloud (GCP/AWS), containers, async Python\n\nBonus: LangGraph, Anthropic SDK, Pydantic-AI, CrewAI; digital experience analytics / APM; published OSS on obs/eval stack.\n\nScore HIGH (80+) only when: top-school evidence OR already flagged for LinkedIn verify AND production agent-obs/eval stack + US/Bay Area location.\nScore LOW / DISQUALIFY: pure PM; tutorial/student/bootcamp; agents only in demos; no eval/obs evidence; research-only without shipping; non-US location with no US intent.",
+    "scoring_notes": "School pedigree is critical: MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke required for 70+ scores. Without top school evidence in bio/profile text, cap score at 60 and flag school_unverified=true (manual LinkedIn verification). Bay Area / California / US location preferred — Nigeria/India/non-US self-reported locations cap at 30 (hard filter should already drop clear Nigeria/India). MCP + LangGraph alone are COMMON signals — never score 70+ on stack fingerprints without school OR strong production eval/obs evidence plus US location.",
+    "github_repos": [
+      "langfuse/langfuse",
+      "langchain-ai/langsmith-sdk",
+      "Arize-ai/phoenix",
+      "mlflow/mlflow",
+      "helicone/helicone",
+      "wandb/weave",
+      "explodinggradients/ragas",
+      "confident-ai/deepeval",
+      "open-telemetry/semantic-conventions",
+      "modelcontextprotocol/python-sdk"
+    ],
+    "github_queries": [
+      "online evaluation LLM",
+      "LLM observability",
+      "agent tracing",
+      "OpenTelemetry gen_ai",
+      "RAGAS evaluation",
+      "DeepEval",
+      "Langfuse",
+      "agent eval production"
+    ],
+    "hn_queries": [
+      "LLM observability production",
+      "online evals LLM",
+      "agent observability",
+      "Langfuse OR Phoenix OR Helicone",
+      "LLM-as-judge production",
+      "OpenTelemetry gen_ai"
+    ]
+  },
+  "profile_blob": "Name: Ganesh Rathinavel Medayil\nSource: github\nProfile: https://github.com/ganeshrvel\nLocation: Remote\nCompany: @explodinggradients \nPrior score: 60\nPrior reasoning: Ganesh is a contributor to Exploding Gradients (RAGAS), a SCARCE eval signal indicating production eval stack familiarity. However, no top-school pedigree is evident in the GitHub bio, location is listed as 'Remote' (not US/Bay Area confirmed), and there is no public evidence of shipped production agent systems, MCP servers, agent observability, or agentic workflows. RAGAS contribution alone is insufficient to overcome missing school verification and lack of concrete production agent/observability shipping evidence.\nFlags: ['school_unverified', 'location_unconfirmed (Remote with no US/Bay Area claim)', 'no_production_agent_systems_evidence', 'no_agent_observability_evidence', 'no_mcp_server_shipping', 'ragas_contrib_alone_insufficient_without_school_or_agent_prod', 'linkedin_verify_school_and_agent_shipping', 'school unverified', 'linkedin verify school']\nTop signal: RAGAS eval framework contributor (SCARCE signal), but production agent+obs shipping unclear. | school unverified\n",
+  "thought": "Enrichment done (confidence=medium, clues=5) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+  "action": "REQUEST_SCHOOL",
+  "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 5. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22ganeshrvel%22. Resume: python scripts/validate_agent.py resume github:182092",
+  "human_education": "",
+  "score": 60,
+  "school_unverified": true,
+  "flags": [
+    "school_unverified",
+    "location_unconfirmed (Remote with no US/Bay Area claim)",
+    "no_production_agent_systems_evidence",
+    "no_agent_observability_evidence",
+    "no_mcp_server_shipping",
+    "ragas_contrib_alone_insufficient_without_school_or_agent_prod",
+    "linkedin_verify_school_and_agent_shipping",
+    "school unverified",
+    "linkedin verify school"
+  ],
+  "status": "needs_validation",
+  "trace": [
+    {
+      "ts": "2026-09-04T03:36:25.948541+00:00",
+      "thought": "Score=60 interesting but school unverified (flags=['school_unverified', 'location_unconfirmed (Remote with no US/Bay Area claim)', 'no_production_agent_systems_evidence', 'no_agent_observability_evidence', 'no_mcp_server_shipping', 'ragas_contrib_alone_insufficient_without_school_or_agent_prod', 'linkedin_verify_school_and_agent_shipping', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:36:27.530243+00:00",
+      "thought": "Score=60 interesting but school unverified (flags=['school_unverified', 'location_unconfirmed (Remote with no US/Bay Area claim)', 'no_production_agent_systems_evidence', 'no_agent_observability_evidence', 'no_mcp_server_shipping', 'ragas_contrib_alone_insufficient_without_school_or_agent_prod', 'linkedin_verify_school_and_agent_shipping', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": "Enrichment complete for login=ganeshrvel: confidence=medium, schools=[], edu_emails=[], clues=5."
+    },
+    {
+      "ts": "2026-09-04T03:36:27.530916+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=5) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:36:27.547062+00:00",
+      "thought": "Enrichment done (confidence=medium, clues=5) but no strong school signal. Nickname-only GitHub likely — pause for human LinkedIn / X-Ray.",
+      "action": "REQUEST_SCHOOL",
+      "observation": "Paused for human identity + school validation after enrichment. Enrichment clues: 5. Primary X-Ray: https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22ganeshrvel%22. Resume: python scripts/validate_agent.py resume github:182092",
+      "queue_key": "github:182092"
+    }
+  ],
+  "reasoning": "Ganesh is a contributor to Exploding Gradients (RAGAS), a SCARCE eval signal indicating production eval stack familiarity. However, no top-school pedigree is evident in the GitHub bio, location is listed as 'Remote' (not US/Bay Area confirmed), and there is no public evidence of shipped production agent systems, MCP servers, agent observability, or agentic workflows. RAGAS contribution alone is insufficient to overcome missing school verification and lack of concrete production agent/observability shipping evidence.",
+  "top_signal": "RAGAS eval framework contributor (SCARCE signal), but production agent+obs shipping unclear. | school unverified",
+  "enriched": true,
+  "enrichment": {
+    "clues": [
+      "GitHub name field: Ganesh Rathinavel Medayil",
+      "GitHub company: @explodinggradients ",
+      "Twitter/X: @ganeshrvel",
+      "Blog/site: https://www.ganeshrvel.com",
+      "Kaggle: no profile for this exact login"
+    ],
+    "school_hits": [],
+    "edu_emails": [],
+    "links": [
+      {
+        "label": "Twitter/X",
+        "url": "https://twitter.com/ganeshrvel"
+      },
+      {
+        "label": "Personal site / blog",
+        "url": "https://www.ganeshrvel.com"
+      }
+    ],
+    "strong_pedigree_signal": false,
+    "confidence": "medium",
+    "education_blob": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Ganesh Rathinavel Medayil\n- GitHub company: @explodinggradients \n- Twitter/X: @ganeshrvel\n- Blog/site: https://www.ganeshrvel.com\n- Kaggle: no profile for this exact login",
+    "raw": {
+      "github": {
+        "source": "github",
+        "login": "ganeshrvel",
+        "ok": true,
+        "name": "Ganesh Rathinavel Medayil",
+        "company": "@explodinggradients ",
+        "blog": "www.ganeshrvel.com",
+        "bio": "Involved with Rust, Flutter, JavaScript.",
+        "location": "Remote",
+        "twitter": "ganeshrvel",
+        "email": "",
+        "hireable": null,
+        "html_url": "https://github.com/ganeshrvel",
+        "emails": [],
+        "edu_emails": [],
+        "blog_url": "https://www.ganeshrvel.com",
+        "blog_text_preview": " Ganesh Rathinavel GitHub LinkedIn Email Blog I’m Ganesh, and I build stuff! I am a huge fan of the Open-Source ecosystem and have authored over 20 projects, SDKs, and tools. One of my creations, OpenMTP —a Free and OpenSource Android File Transfer app for macOS—has been a huge hit, used by people in 180+ countries . My packages in React.js/Node.js/Electron.js Node.js , Rust , Flutter/Dart , and Go are widely used by developers around the world. Filter by Language Rust JavaScript Flutter Dart Go C OpenMTP OpenMTP - Advanced Android File Transfer Application for macOS inputmag.com - &quot;There&#x27;s finally an alternative to Google&#x27;s horrible Android File Transfer app&quot; XDA Developers - &quot;OpenMTP, an Android File Transfer alternative for macOS, gains Samsung device support an",
+        "blog_school_hits": [],
+        "bio_school_hits": []
+      },
+      "kaggle": {
+        "source": "kaggle",
+        "login": "ganeshrvel",
+        "exists": false,
+        "url": "https://www.kaggle.com/ganeshrvel"
+      },
+      "stackoverflow": {
+        "source": "stackoverflow",
+        "login": "ganeshrvel",
+        "matches": []
+      }
+    },
+    "login": "ganeshrvel"
+  },
+  "auto_education": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Ganesh Rathinavel Medayil\n- GitHub company: @explodinggradients \n- Twitter/X: @ganeshrvel\n- Blog/site: https://www.ganeshrvel.com\n- Kaggle: no profile for this exact login",
+  "backend": "langgraph"
+}

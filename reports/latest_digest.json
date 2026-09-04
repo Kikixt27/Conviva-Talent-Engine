@@ -1,49 +1,1147 @@
 {
-  "date": "2026-09-03",
-  "count": 2,
+  "date": "2026-09-04",
+  "count": 1,
+  "needs_validation_count": 75,
   "threshold": 65,
-  "report_file": "2026-09-03.html",
+  "report_file": "2026-09-04.html",
   "top": [
     {
-      "name": "winshining",
+      "name": "Nirant",
+      "score": 68,
+      "role": "AI Engineer, Agent Analytics & Optimization",
+      "profile_url": "https://github.com/NirantK",
+      "source": "github",
+      "top_signal": "RAGAS core contributor (LLM-as-judge production eval, top-tier scarcity) + Qdrant production systems | location India (hard filter) | school unverified",
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "location_india_hard_filter",
+        "no_us_location_stated",
+        "no_mcp_or_agent_flow_evidence",
+        "eval_strong_but_agent_systems_unclear",
+        "production_eval_does_not_offset_location_mismatch",
+        "enrichment pedigree hit"
+      ],
+      "school_unverified": false,
+      "validation_status": "ready",
+      "dedup_key": "github:3250749",
+      "identity_search": {
+        "github_login": "NirantK",
+        "nickname_likely": true,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"NirantK\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22NirantK%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"NirantK\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22NirantK%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"Nirant\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Nirant%22"
+          }
+        ],
+        "tip": "Display name looks like a nickname/handle — do NOT search legal-name only. Start with GitHub login X-Ray, then company/location. If still unfindable, paste: 'LinkedIn not found; nickname-only GitHub; no edu email' and skip outreach priority."
+      },
+      "enrichment": {
+        "confidence": "high",
+        "school_hits": [
+          "stanford"
+        ],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Nirant",
+          "Twitter/X: @NirantK",
+          "Blog/site: https://nirantk.com",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: nirantk (rep 1) https://stackoverflow.com/users/7617332/nirantk",
+          "SO location: Bangalore, Karnataka, India"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/NirantK"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://nirantk.com"
+          },
+          {
+            "label": "SO · nirantk",
+            "url": "https://stackoverflow.com/users/7617332/nirantk"
+          },
+          {
+            "label": "SO · nirantk83",
+            "url": "https://stackoverflow.com/users/19811775/nirantk83"
+          }
+        ]
+      }
+    }
+  ],
+  "needs_validation": [
+    {
+      "name": "邢",
       "score": 65,
       "role": "Staff Software Engineer — Tech Lead, Backend",
-      "profile_url": "https://github.com/winshining",
+      "profile_url": "https://github.com/xingdl2007",
       "source": "github",
-      "top_signal": "Distributed systems + high-concurrency nginx expertise + Beijing location | school unverified",
+      "top_signal": "Kuaishou backend engineer with distributed systems focus | school unverified",
       "flags": [
         "school unverified — linkedin verify education",
-        "no evidence of OLAP/streaming/Kafka/Druid at scale",
-        "no evidence of AI-native tooling (Cursor, Claude, Copilot) fluency",
-        "no evidence of tech-lead mentorship (design reviews, code pairing)",
-        "github repos require manual inspection for backend depth",
-        "english fluency unverified — no written comms in profile",
+        "no OLAP/streaming/Kafka visible in repos",
+        "no AI-native tooling evidence (Cursor/Claude/Copilot)",
+        "no design docs or architecture decisions in public work",
+        "insufficient mentorship/code review leadership signals",
+        "cannot verify 5+ years data platforms depth from profile alone",
+        "location match (Shenzhen near Beijing) but role location not confirmed",
         "school unverified",
         "linkedin verify school"
       ],
-      "school_unverified": true
+      "school_unverified": true,
+      "validation_status": "needs_validation",
+      "dedup_key": "github:3676938",
+      "identity_search": {
+        "github_login": "xingdl2007",
+        "nickname_likely": true,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"xingdl2007\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22xingdl2007%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"xingdl2007\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22xingdl2007%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"邢\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22%E9%82%A2%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + company",
+            "query": "site:linkedin.com/in \"邢\" \"kuaishou\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22%E9%82%A2%22+%22kuaishou%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · login + company",
+            "query": "site:linkedin.com/in \"xingdl2007\" \"kuaishou\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22xingdl2007%22+%22kuaishou%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + location",
+            "query": "site:linkedin.com/in \"邢\" \"Shenzhen, China\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22%E9%82%A2%22+%22Shenzhen%2C+China%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · company + location + AI",
+            "query": "site:linkedin.com/in \"kuaishou\" \"Shenzhen, China\" (\"AI Engineer\" OR \"Machine Learning\" OR MCP)",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22kuaishou%22+%22Shenzhen%2C+China%22+%28%22AI+Engineer%22+OR+%22Machine+Learning%22+OR+MCP%29"
+          }
+        ],
+        "tip": "Display name looks like a nickname/handle — do NOT search legal-name only. Start with GitHub login X-Ray, then company/location. If still unfindable, paste: 'LinkedIn not found; nickname-only GitHub; no edu email' and skip outreach priority."
+      },
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: 邢",
+          "GitHub company: kuaishou",
+          "Blog/site: http://xingdl2007.top",
+          "Public email: xingdl2007@gmail.com",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: xingdl2007 (rep 3) https://stackoverflow.com/users/4039185/xingdl2007"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "http://xingdl2007.top"
+          },
+          {
+            "label": "SO · xingdl2007",
+            "url": "https://stackoverflow.com/users/4039185/xingdl2007"
+          }
+        ]
+      }
     },
     {
-      "name": "Ziop",
-      "score": 65,
-      "role": "Staff Software Engineer — Tech Lead, Backend",
-      "profile_url": "https://github.com/wangpi26",
+      "name": "RWL",
+      "score": 62,
+      "role": "Senior Data Scientist",
+      "profile_url": "https://github.com/ricklentz",
       "source": "github",
-      "top_signal": "Data platform engineer in Beijing with Ray, Lance, Go, Python — right domain and location | school unverified",
+      "top_signal": "1093 public repos + Bay Area location + active hands-on GitHub presence | school unverified",
       "flags": [
-        "school_unverified — no educational background provided",
-        "github_signal_weak — 0 followers, no public contribution narrative",
-        "ai_native_fluency_unverified — no Cursor/Claude/Copilot evidence in bio",
-        "architecture_ownership_unverified — must inspect repos for scale/design leadership",
-        "english_proficiency_unverified — bio is minimal, no cross-regional collab signals",
-        "streaming_olap_depth_unclear — Ray/Lance mentioned but Kafka/ClickHouse/Druid absent from bio",
-        "mentoring_signal_missing — no code review or design pairing evidence",
-        "linkedin_verify_school",
-        "github_repos_audit_required — inspect 32 repos for distributed systems depth",
+        "school_unverified — must verify MS/PhD in CS/Stats/related on LinkedIn",
+        "no time series/anomaly detection evidence in public profile",
+        "no Ray/Spark or MLOps tooling visible",
+        "github alone insufficient to validate production ML depth — requires phone screen",
+        "linkedin verify: degree, years applied ML experience, real-time analytics systems shipped",
         "school unverified",
         "linkedin verify school"
       ],
-      "school_unverified": true
+      "school_unverified": true,
+      "validation_status": "needs_validation",
+      "dedup_key": "github:611470",
+      "identity_search": {
+        "github_login": "ricklentz",
+        "nickname_likely": true,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"ricklentz\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22ricklentz%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"ricklentz\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22ricklentz%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"RWL\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22RWL%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + location",
+            "query": "site:linkedin.com/in \"RWL\" \"Monterey, California\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22RWL%22+%22Monterey%2C+California%22"
+          }
+        ],
+        "tip": "Display name looks like a nickname/handle — do NOT search legal-name only. Start with GitHub login X-Ray, then company/location. If still unfindable, paste: 'LinkedIn not found; nickname-only GitHub; no edu email' and skip outreach priority."
+      },
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: RWL",
+          "Twitter/X: @ricklentz",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/ricklentz"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Marc Klingen",
+      "score": 60,
+      "role": "AI Engineer, Agent Analytics & Optimization",
+      "profile_url": "https://github.com/marcklingen",
+      "source": "github",
+      "top_signal": "Co-founder of production LLM observability platform (Langfuse); extremely rare obs/eval stack expertise | school unverified",
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "location_not_stated_in_github",
+        "verify_us_location_and_bay_area_eligibility",
+        "verify_agent_flow_mcp_production_experience",
+        "high_production_obs_signal_but_agent_systems_not_confirmed_in_bio",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "school_unverified": true,
+      "validation_status": "needs_validation",
+      "dedup_key": "github:2834609",
+      "identity_search": {
+        "github_login": "marcklingen",
+        "nickname_likely": false,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"marcklingen\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22marcklingen%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"marcklingen\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22marcklingen%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"Marc Klingen\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Marc+Klingen%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + company",
+            "query": "site:linkedin.com/in \"Marc Klingen\" \"@langfuse (part of @ClickHouse)\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Marc+Klingen%22+%22%40langfuse+%28part+of+%40ClickHouse%29%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · login + company",
+            "query": "site:linkedin.com/in \"marcklingen\" \"@langfuse (part of @ClickHouse)\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22marcklingen%22+%22%40langfuse+%28part+of+%40ClickHouse%29%22"
+          }
+        ],
+        "tip": "Open an X-Ray link → LinkedIn Education → paste into: python scripts/validate_agent.py resume <n>"
+      },
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Marc Klingen",
+          "GitHub company: @langfuse (part of @ClickHouse)",
+          "Twitter/X: @marcklingen",
+          "Blog/site: https://marcklingen.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/marcklingen"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://marcklingen.com"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Jannik Maierhöfer",
+      "score": 60,
+      "role": "AI Engineer, Agent Analytics & Optimization",
+      "profile_url": "https://github.com/jannikmaierhoefer",
+      "source": "github",
+      "top_signal": "Langfuse core contributor — production evals + LLM observability at scale | school unverified",
+      "flags": [
+        "school_unverified — manual LinkedIn verification required",
+        "location_unverified — no explicit US/Bay Area stated on GitHub",
+        "agent_systems_unknown — Langfuse contributor but no evidence of shipped agent flows/MCP",
+        "linkedin_verify_required — confirm school pedigree and agent shipping history",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "school_unverified": true,
+      "validation_status": "needs_validation",
+      "dedup_key": "github:48529566",
+      "identity_search": {
+        "github_login": "jannikmaierhoefer",
+        "nickname_likely": false,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"jannikmaierhoefer\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22jannikmaierhoefer%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"jannikmaierhoefer\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22jannikmaierhoefer%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"Jannik Maierhöfer\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Jannik+Maierh%C3%B6fer%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + company",
+            "query": "site:linkedin.com/in \"Jannik Maierhöfer\" \"Langfuse\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Jannik+Maierh%C3%B6fer%22+%22Langfuse%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · login + company",
+            "query": "site:linkedin.com/in \"jannikmaierhoefer\" \"Langfuse\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22jannikmaierhoefer%22+%22Langfuse%22"
+          }
+        ],
+        "tip": "Open an X-Ray link → LinkedIn Education → paste into: python scripts/validate_agent.py resume <n>"
+      },
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Jannik Maierhöfer",
+          "GitHub company: Langfuse",
+          "Blog/site: https://github.com/langfuse/langfuse",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://github.com/langfuse/langfuse"
+          }
+        ]
+      }
+    },
+    {
+      "name": "William FH",
+      "score": 60,
+      "role": "AI Engineer, Agent Analytics & Optimization",
+      "profile_url": "https://github.com/hinthornw",
+      "source": "github",
+      "top_signal": "LangChain Engineering + LangSmith SDK contributor; production eval/obs infrastructure experience | school unverified",
+      "flags": [
+        "school_unverified — flag for manual LinkedIn verification",
+        "location_not_listed — confirm US/Bay Area",
+        "agent_systems_not_explicit — verify shipped agentic workflows vs. SDK/infra-only work",
+        "langsmith_evals_signal_strong — but needs agent production evidence",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "school_unverified": true,
+      "validation_status": "needs_validation",
+      "dedup_key": "github:13333726",
+      "identity_search": {
+        "github_login": "hinthornw",
+        "nickname_likely": false,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"hinthornw\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22hinthornw%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"hinthornw\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22hinthornw%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"William FH\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22William+FH%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + company",
+            "query": "site:linkedin.com/in \"William FH\" \"LangChain\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22William+FH%22+%22LangChain%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · login + company",
+            "query": "site:linkedin.com/in \"hinthornw\" \"LangChain\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22hinthornw%22+%22LangChain%22"
+          }
+        ],
+        "tip": "Open an X-Ray link → LinkedIn Education → paste into: python scripts/validate_agent.py resume <n>"
+      },
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: William FH",
+          "GitHub company: LangChain",
+          "Twitter/X: @WHinthorn",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/WHinthorn"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Jacob Lee",
+      "score": 60,
+      "role": "AI Engineer, Agent Analytics & Optimization",
+      "profile_url": "https://github.com/jacoblee93",
+      "source": "github",
+      "top_signal": "Production LLM observability & eval stack (LangSmith) + core LangChain contributor + Bay Area | school unverified",
+      "flags": [
+        "school_unverified — no MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke mentioned in GitHub bio",
+        "linkedin_verify_school — manual verification required before final offer",
+        "strong_production_signal — LangSmith SDK + LangChain core team suggests real agent-obs shipping",
+        "common_stack_not_differentiating — LangGraph/MCP without eval rigor detail visible on GitHub",
+        "verify_agent_flow_production_depth — confirm concrete shipped agent failures/fixes and multi-agent orchestration",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "school_unverified": true,
+      "validation_status": "needs_validation",
+      "dedup_key": "github:6952323",
+      "identity_search": {
+        "github_login": "jacoblee93",
+        "nickname_likely": false,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"jacoblee93\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22jacoblee93%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"jacoblee93\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22jacoblee93%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"Jacob Lee\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Jacob+Lee%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + company",
+            "query": "site:linkedin.com/in \"Jacob Lee\" \"@langchain-ai\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Jacob+Lee%22+%22%40langchain-ai%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · login + company",
+            "query": "site:linkedin.com/in \"jacoblee93\" \"@langchain-ai\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22jacoblee93%22+%22%40langchain-ai%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + location",
+            "query": "site:linkedin.com/in \"Jacob Lee\" \"San Francisco\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Jacob+Lee%22+%22San+Francisco%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · company + location + AI",
+            "query": "site:linkedin.com/in \"@langchain-ai\" \"San Francisco\" (\"AI Engineer\" OR \"Machine Learning\" OR MCP)",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22%40langchain-ai%22+%22San+Francisco%22+%28%22AI+Engineer%22+OR+%22Machine+Learning%22+OR+MCP%29"
+          }
+        ],
+        "tip": "Open an X-Ray link → LinkedIn Education → paste into: python scripts/validate_agent.py resume <n>"
+      },
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Jacob Lee",
+          "GitHub company: @langchain-ai",
+          "Twitter/X: @hacubu",
+          "Blog/site: https://jacobscript.dev",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/hacubu"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://jacobscript.dev"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Bagatur",
+      "score": 60,
+      "role": "AI Engineer, Agent Analytics & Optimization",
+      "profile_url": "https://github.com/baskaryan",
+      "source": "github",
+      "top_signal": "LangSmith SDK core contributor — production LLM observability + eval stack | school unverified",
+      "flags": [
+        "school_unverified — no top-school evidence in GitHub bio",
+        "location_unconfirmed — no US/Bay Area location stated",
+        "linkedin_verify_required — confirm school pedigree and US location before 75+ offer",
+        "high_value_sourcing_thesis — LangSmith is on-topic for agent obs/eval stack",
+        "note: strong contribution signal but must validate school + location to unlock 78–82 band",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "school_unverified": true,
+      "validation_status": "needs_validation",
+      "dedup_key": "github:22008038",
+      "identity_search": {
+        "github_login": "baskaryan",
+        "nickname_likely": true,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"baskaryan\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22baskaryan%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"baskaryan\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22baskaryan%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"Bagatur\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Bagatur%22"
+          }
+        ],
+        "tip": "Display name looks like a nickname/handle — do NOT search legal-name only. Start with GitHub login X-Ray, then company/location. If still unfindable, paste: 'LinkedIn not found; nickname-only GitHub; no edu email' and skip outreach priority."
+      },
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Bagatur",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": []
+      }
+    },
+    {
+      "name": "Ankush Gola",
+      "score": 60,
+      "role": "AI Engineer, Agent Analytics & Optimization",
+      "profile_url": "https://github.com/agola11",
+      "source": "github",
+      "top_signal": "LangSmith SDK contributor, Bay Area, 18 repos | school unverified",
+      "flags": [
+        "school_unverified — no MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke evident in GitHub bio",
+        "linkedin_verify_school — manual school verification required before advancing",
+        "validate_production_agents — confirm shipped agent systems / agent observability projects from LangSmith work",
+        "validate_mcp_or_connectors — confirm MCP servers or AI connector integrations beyond LangSmith SDK contribution",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "school_unverified": true,
+      "validation_status": "needs_validation",
+      "dedup_key": "github:9536492",
+      "identity_search": {
+        "github_login": "agola11",
+        "nickname_likely": false,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"agola11\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22agola11%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"agola11\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22agola11%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"Ankush Gola\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Ankush+Gola%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + location",
+            "query": "site:linkedin.com/in \"Ankush Gola\" \"San Francisco, CA\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Ankush+Gola%22+%22San+Francisco%2C+CA%22"
+          }
+        ],
+        "tip": "Open an X-Ray link → LinkedIn Education → paste into: python scripts/validate_agent.py resume <n>"
+      },
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Ankush Gola",
+          "Blog/site: https://ankushgola.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://ankushgola.com"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Predrag Gruevski",
+      "score": 60,
+      "role": "AI Engineer, Agent Analytics & Optimization",
+      "profile_url": "https://github.com/obi1kenobi",
+      "source": "github",
+      "top_signal": "LangSmith SDK contributor + production LLM observability systems | school unverified",
+      "flags": [
+        "school_unverified — no top-school evidence in GitHub bio",
+        "location_unverified — no Bay Area / US location stated",
+        "linkedin_verify_school — critical before 75+",
+        "linkedin_verify_location — critical for Bay Area preference",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "school_unverified": true,
+      "validation_status": "needs_validation",
+      "dedup_key": "github:2348618",
+      "identity_search": {
+        "github_login": "obi1kenobi",
+        "nickname_likely": false,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"obi1kenobi\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22obi1kenobi%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"obi1kenobi\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22obi1kenobi%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"Predrag Gruevski\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Predrag+Gruevski%22"
+          }
+        ],
+        "tip": "Open an X-Ray link → LinkedIn Education → paste into: python scripts/validate_agent.py resume <n>"
+      },
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Predrag Gruevski",
+          "Twitter/X: @PredragGruevski",
+          "Blog/site: https://predr.ag/",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: obi1kenobi2 (rep 43) https://stackoverflow.com/users/4036034/obi1kenobi2",
+          "SO location: Milwaukee, WI"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/PredragGruevski"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://predr.ag/"
+          },
+          {
+            "label": "SO · obi1kenobi2",
+            "url": "https://stackoverflow.com/users/4036034/obi1kenobi2"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Ramon Nogueira",
+      "score": 60,
+      "role": "AI Engineer, Agent Analytics & Optimization",
+      "profile_url": "https://github.com/ramon-langchain",
+      "source": "github",
+      "top_signal": "LangChain + LangSmith SDK contributor; SF-based; production observability/tracing exposure | school unverified",
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "linkedin_verify_production_agent_systems",
+        "verify_eval_practice",
+        "verify_mcp_or_connector_work",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "school_unverified": true,
+      "validation_status": "needs_validation",
+      "dedup_key": "github:270434257",
+      "identity_search": {
+        "github_login": "ramon-langchain",
+        "nickname_likely": false,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"ramon-langchain\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22ramon-langchain%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"ramon-langchain\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22ramon-langchain%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"Ramon Nogueira\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Ramon+Nogueira%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + company",
+            "query": "site:linkedin.com/in \"Ramon Nogueira\" \"LangChain\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Ramon+Nogueira%22+%22LangChain%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · login + company",
+            "query": "site:linkedin.com/in \"ramon-langchain\" \"LangChain\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22ramon-langchain%22+%22LangChain%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + location",
+            "query": "site:linkedin.com/in \"Ramon Nogueira\" \"SF\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Ramon+Nogueira%22+%22SF%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · company + location + AI",
+            "query": "site:linkedin.com/in \"LangChain\" \"SF\" (\"AI Engineer\" OR \"Machine Learning\" OR MCP)",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22LangChain%22+%22SF%22+%28%22AI+Engineer%22+OR+%22Machine+Learning%22+OR+MCP%29"
+          }
+        ],
+        "tip": "Open an X-Ray link → LinkedIn Education → paste into: python scripts/validate_agent.py resume <n>"
+      },
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Ramon Nogueira",
+          "GitHub company: LangChain",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": []
+      }
+    },
+    {
+      "name": "Mikyo King",
+      "score": 60,
+      "role": "AI Engineer, Agent Analytics & Optimization",
+      "profile_url": "https://github.com/mikeldking",
+      "source": "github",
+      "top_signal": "Head of OSS at Arize AI; Phoenix (OpenTelemetry gen_ai.*, production evals) contributor; production LLM observability at scale | school unverified",
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "arize_leadership_validates_production_depth",
+        "phoenix_contributor_top37_percentile_signal",
+        "ideal_location_sanfrancisco",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "school_unverified": true,
+      "validation_status": "needs_validation",
+      "dedup_key": "github:5640648",
+      "identity_search": {
+        "github_login": "mikeldking",
+        "nickname_likely": false,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"mikeldking\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22mikeldking%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"mikeldking\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22mikeldking%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"Mikyo King\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Mikyo+King%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + company",
+            "query": "site:linkedin.com/in \"Mikyo King\" \"Arize AI\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Mikyo+King%22+%22Arize+AI%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · login + company",
+            "query": "site:linkedin.com/in \"mikeldking\" \"Arize AI\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22mikeldking%22+%22Arize+AI%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + location",
+            "query": "site:linkedin.com/in \"Mikyo King\" \"San Francisco\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Mikyo+King%22+%22San+Francisco%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · company + location + AI",
+            "query": "site:linkedin.com/in \"Arize AI\" \"San Francisco\" (\"AI Engineer\" OR \"Machine Learning\" OR MCP)",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Arize+AI%22+%22San+Francisco%22+%28%22AI+Engineer%22+OR+%22Machine+Learning%22+OR+MCP%29"
+          }
+        ],
+        "tip": "Open an X-Ray link → LinkedIn Education → paste into: python scripts/validate_agent.py resume <n>"
+      },
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Mikyo King",
+          "GitHub company: Arize AI",
+          "Twitter/X: @mikeldking",
+          "Blog/site: https://mikeldking.github.io",
+          "Public email: mikeldking@gmail.com",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/mikeldking"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://mikeldking.github.io"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Roger Yang",
+      "score": 60,
+      "role": "AI Engineer, Agent Analytics & Optimization",
+      "profile_url": "https://github.com/RogerHYang",
+      "source": "github",
+      "top_signal": "Phoenix (Arize) observability contributor—production LLM-obs stack | school unverified",
+      "flags": [
+        "school unverified—manual LinkedIn verify required",
+        "production obs signal (Phoenix) is strong but no explicit agent-flow/MCP shipping evidence in GitHub profile",
+        "limited public repo/follower footprint—verify depth of production ownership",
+        "recommend LinkedIn outreach to confirm school pedigree and production agent system experience",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "school_unverified": true,
+      "validation_status": "needs_validation",
+      "dedup_key": "github:80478925",
+      "identity_search": {
+        "github_login": "RogerHYang",
+        "nickname_likely": false,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"RogerHYang\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22RogerHYang%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"RogerHYang\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22RogerHYang%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"Roger Yang\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Roger+Yang%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + location",
+            "query": "site:linkedin.com/in \"Roger Yang\" \"San Francisco, CA\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Roger+Yang%22+%22San+Francisco%2C+CA%22"
+          }
+        ],
+        "tip": "Open an X-Ray link → LinkedIn Education → paste into: python scripts/validate_agent.py resume <n>"
+      },
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Roger Yang",
+          "Kaggle: no profile for this exact login"
+        ],
+        "links": []
+      }
+    },
+    {
+      "name": "Xander Song",
+      "score": 60,
+      "role": "AI Engineer, Agent Analytics & Optimization",
+      "profile_url": "https://github.com/axiomofjoy",
+      "source": "github",
+      "top_signal": "Production LLM observability (Arize/Phoenix contributor) + Bay Area + proven gen_ai.* semantic convention work | school unverified",
+      "flags": [
+        "school_unverified — no MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke mention in bio",
+        "linkedin_verify_school — required before 75+ scoring",
+        "arize_ai_pedigree_strong — observability stack expert",
+        "phoenix_contributor — gen_ai semantic conventions (EXTREMELY SCARCE)",
+        "score_capped_at_72_pending_school_verification",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "school_unverified": true,
+      "validation_status": "needs_validation",
+      "dedup_key": "github:15664869",
+      "identity_search": {
+        "github_login": "axiomofjoy",
+        "nickname_likely": false,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"axiomofjoy\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22axiomofjoy%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"axiomofjoy\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22axiomofjoy%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"Xander Song\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Xander+Song%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + location",
+            "query": "site:linkedin.com/in \"Xander Song\" \"San Francisco, CA\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Xander+Song%22+%22San+Francisco%2C+CA%22"
+          }
+        ],
+        "tip": "Open an X-Ray link → LinkedIn Education → paste into: python scripts/validate_agent.py resume <n>"
+      },
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Xander Song",
+          "Blog/site: https://www.linkedin.com/in/xandersong/",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: axiomofjoy (rep 1) https://stackoverflow.com/users/12855594/axiomofjoy"
+        ],
+        "links": [
+          {
+            "label": "Personal site / blog",
+            "url": "https://www.linkedin.com/in/xandersong/"
+          },
+          {
+            "label": "SO · axiomofjoy",
+            "url": "https://stackoverflow.com/users/12855594/axiomofjoy"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Dustin Ngo",
+      "score": 60,
+      "role": "AI Engineer, Agent Analytics & Optimization",
+      "profile_url": "https://github.com/anticorrelator",
+      "source": "github",
+      "top_signal": "Phoenix/Arize contributor — production LLM observability & eval stack (top 37% scarcity) | school unverified",
+      "flags": [
+        "school_unverified — manual LinkedIn school verification required",
+        "location_undisclosed — must confirm Bay Area / US location intent",
+        "production_agent_evidence_unclear — verify shipped agent flows / agent systems (not just evals)",
+        "experience_depth_unclear — 15 public repos suggests mid-career; validate 3–7+ yrs SWE backend",
+        "mcp_langraph_not_evident — no public MCP servers or agentic orchestration repos visible",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "school_unverified": true,
+      "validation_status": "needs_validation",
+      "dedup_key": "github:1688064",
+      "identity_search": {
+        "github_login": "anticorrelator",
+        "nickname_likely": false,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"anticorrelator\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22anticorrelator%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"anticorrelator\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22anticorrelator%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"Dustin Ngo\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Dustin+Ngo%22"
+          }
+        ],
+        "tip": "Open an X-Ray link → LinkedIn Education → paste into: python scripts/validate_agent.py resume <n>"
+      },
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Dustin Ngo",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: anticorrelator (rep 1) https://stackoverflow.com/users/2544230/anticorrelator"
+        ],
+        "links": [
+          {
+            "label": "SO · anticorrelator",
+            "url": "https://stackoverflow.com/users/2544230/anticorrelator"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Tony Powell",
+      "score": 60,
+      "role": "AI Engineer, Agent Analytics & Optimization",
+      "profile_url": "https://github.com/cephalization",
+      "source": "github",
+      "top_signal": "Arize Phoenix contrib (production LLM-as-judge + evals stack, top 37% scarcity) | school unverified",
+      "flags": [
+        "school_unverified — manually verify MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke on LinkedIn",
+        "location_eligible — Michigan within US preferred; verify Bay Area relocation intent",
+        "no_explicit_agent_production_evidence — confirm agent flows / agentic workflows shipped in role at Arize",
+        "mcp_not_evident — MCP server / connector work not visible in bio; verify in conversation",
+        "production_eval_obs_strong — Arize Phoenix is production-grade; strong compensating signal",
+        "school unverified",
+        "linkedin verify school"
+      ],
+      "school_unverified": true,
+      "validation_status": "needs_validation",
+      "dedup_key": "github:8948924",
+      "identity_search": {
+        "github_login": "cephalization",
+        "nickname_likely": false,
+        "searches": [
+          {
+            "label": "LinkedIn X-Ray · GitHub login",
+            "query": "site:linkedin.com/in \"cephalization\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22cephalization%22"
+          },
+          {
+            "label": "Google · GitHub login",
+            "query": "\"cephalization\" (engineer OR \"software\" OR MCP OR LLM)",
+            "url": "https://www.google.com/search?q=%22cephalization%22+%28engineer+OR+%22software%22+OR+MCP+OR+LLM%29"
+          },
+          {
+            "label": "LinkedIn X-Ray · display name",
+            "query": "site:linkedin.com/in \"Tony Powell\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Tony+Powell%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + company",
+            "query": "site:linkedin.com/in \"Tony Powell\" \"@Arize-ai\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Tony+Powell%22+%22%40Arize-ai%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · login + company",
+            "query": "site:linkedin.com/in \"cephalization\" \"@Arize-ai\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22cephalization%22+%22%40Arize-ai%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · name + location",
+            "query": "site:linkedin.com/in \"Tony Powell\" \"Ann Arbor, Michigan\"",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22Tony+Powell%22+%22Ann+Arbor%2C+Michigan%22"
+          },
+          {
+            "label": "LinkedIn X-Ray · company + location + AI",
+            "query": "site:linkedin.com/in \"@Arize-ai\" \"Ann Arbor, Michigan\" (\"AI Engineer\" OR \"Machine Learning\" OR MCP)",
+            "url": "https://www.google.com/search?q=site%3Alinkedin.com%2Fin+%22%40Arize-ai%22+%22Ann+Arbor%2C+Michigan%22+%28%22AI+Engineer%22+OR+%22Machine+Learning%22+OR+MCP%29"
+          }
+        ],
+        "tip": "Open an X-Ray link → LinkedIn Education → paste into: python scripts/validate_agent.py resume <n>"
+      },
+      "enrichment": {
+        "confidence": "medium",
+        "school_hits": [],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Tony Powell",
+          "GitHub company: @Arize-ai",
+          "Twitter/X: @cephalization",
+          "Blog/site: https://anthonypowell.me/",
+          "Public email: powell.anthonyd@proton.me",
+          "Kaggle profile exists: https://www.kaggle.com/cephalization"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/cephalization"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://anthonypowell.me/"
+          },
+          {
+            "label": "Kaggle profile",
+            "url": "https://www.kaggle.com/cephalization"
+          },
+          {
+            "label": "SO · cephalization11",
+            "url": "https://stackoverflow.com/users/3871139/cephalization11"
+          }
+        ]
+      }
     }
   ]
 }

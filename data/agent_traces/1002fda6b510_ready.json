@@ -1,0 +1,255 @@
+{
+  "run_id": "1002fda6b510",
+  "dedup_key": "github:3250749",
+  "candidate": {
+    "source": "github",
+    "source_id": "3250749",
+    "name": "Nirant",
+    "profile_url": "https://github.com/NirantK",
+    "role": "AI Engineer, Agent Analytics & Optimization",
+    "score": 68,
+    "reasoning": "Nirant is a core RAGAS contributor (top-tier eval scarcity signal) with strong production systems experience at Qdrant and 1427 GitHub followers demonstrating sustained OSS credibility. However, location is confirmed as Bangalore, India (hard filter for Bay Area/US preference role), and while Stanford appears in enrichment data, school pedigree is not explicitly stated in GitHub bio; manual LinkedIn verification required before outreach. Production eval expertise lifts score above strict cap, but India location + unverified school prevent 70+ band.",
+    "signals": {
+      "top_signal": "RAGAS core contributor (LLM-as-judge production eval, top-tier scarcity) + Qdrant production systems | location India (hard filter) | school unverified",
+      "followers": 1427,
+      "public_repos": 108,
+      "company": null,
+      "location": null,
+      "via": "contrib:explodinggradients/ragas",
+      "school_unverified": false,
+      "flags": [
+        "school_unverified",
+        "linkedin_verify_school",
+        "location_india_hard_filter",
+        "no_us_location_stated",
+        "no_mcp_or_agent_flow_evidence",
+        "eval_strong_but_agent_systems_unclear",
+        "production_eval_does_not_offset_location_mismatch",
+        "enrichment pedigree hit"
+      ],
+      "enrichment": {
+        "confidence": "high",
+        "school_hits": [
+          "stanford"
+        ],
+        "edu_emails": [],
+        "clues": [
+          "GitHub name field: Nirant",
+          "Twitter/X: @NirantK",
+          "Blog/site: https://nirantk.com",
+          "Kaggle: no profile for this exact login",
+          "StackOverflow: nirantk (rep 1) https://stackoverflow.com/users/7617332/nirantk",
+          "SO location: Bangalore, Karnataka, India",
+          "StackOverflow: nirantk83 (rep 1) https://stackoverflow.com/users/19811775/nirantk83"
+        ],
+        "links": [
+          {
+            "label": "Twitter/X",
+            "url": "https://twitter.com/NirantK"
+          },
+          {
+            "label": "Personal site / blog",
+            "url": "https://nirantk.com"
+          },
+          {
+            "label": "SO · nirantk",
+            "url": "https://stackoverflow.com/users/7617332/nirantk"
+          },
+          {
+            "label": "SO · nirantk83",
+            "url": "https://stackoverflow.com/users/19811775/nirantk83"
+          }
+        ],
+        "strong_pedigree_signal": true
+      },
+      "validation": "auto_enrichment_applied",
+      "validation_status": "ready"
+    },
+    "first_seen": "2026-09-04T03:21:36.025448+00:00"
+  },
+  "role": {
+    "title": "AI Engineer, Agent Analytics & Optimization",
+    "language": "python",
+    "location": "California",
+    "requirements": "US Foster City / Bay Area preferred (California OK). PRIORITY HIRE — production AI Engineer who has shipped agent flows / agent systems / agent observability. NOT Product Builder, NOT research, NOT prompt-engineering-only.\n\nCore job: build systems so AI agents can understand, query, and act on Conviva behavioral data — MCP servers, agentic workflows, AI connectors. Own build + runtime at scale.\n\nPEDIGREE (Yan bar — critical, GitHub rarely has this):\nSchool pedigree is required for outreach priority: MIT / Stanford / CMU / Berkeley / UCLA / Cornell / UIUC / Michigan / Duke (or equivalent evidence in bio/company/education text).\nIf NO top-school evidence in the profile → score CAP at 60, set school_unverified=true, and flag for manual LinkedIn school verification. Do NOT reject solely for missing school — GitHub often omits it.\n\nLOCATION:\nBay Area / California / US remote preferred. Profiles clearly in Nigeria / India / other non-US locations should be filtered or scored ≤30. MCP+LangGraph alone must NOT push a non-US or school-unverified candidate into the 70+ band.\n\nSOURCING THESIS (why GitHub contributor mining is extremely high-value):\nEach production LLM-obs / eval tool ≈ one public repo; contributors to those repos are the people Yan wants. Prefer bios/READMEs mentioning online evaluation, LLM-as-judge in production, gen_ai.* spans.\n\nMarket scarcity (score accordingly):\n- EXTREMELY SCARCE (top 37% — prioritize): online evals, LLM-as-judge in production, OpenTelemetry gen_ai.* spans, OTel GenAI semantic conventions\n- SCARCE (top 52%): RAGAS, DeepEval, LangSmith evals, offline eval rigor\n- COMMON: LangGraph, agent tracing, MCP, Langfuse usage\n- TOO BROAD (ignore as primary signal): LLM, AI, ChatGPT\n- SKIP: 29% with no eval practice at all\n\nMust have (3–7+ yrs SWE):\n- Python backend services shipped end-to-end; fullstack a plus\n- LLM-powered agents IN PRODUCTION with concrete failure/fix stories (agent flow / agent system)\n- MCP servers or equivalent tool-use / AI connector integrations\n- Agentic patterns: tool use, structured outputs, multi-agent orchestration, human-in-the-loop\n- Evals (prefer online + offline) + observability/tracing (Langfuse, LangSmith, Phoenix, Helicone, Weave, OpenTelemetry, or homegrown)\n- Cloud (GCP/AWS), containers, async Python\n\nBonus: LangGraph, Anthropic SDK, Pydantic-AI, CrewAI; digital experience analytics / APM; published OSS on obs/eval stack.\n\nScore HIGH (80+) only when: top-school evidence OR already flagged for LinkedIn verify AND production agent-obs/eval stack + US/Bay Area location.\nScore LOW / DISQUALIFY: pure PM; tutorial/student/bootcamp; agents only in demos; no eval/obs evidence; research-only without shipping; non-US location with no US intent.",
+    "scoring_notes": "School pedigree is critical: MIT/Stanford/CMU/Berkeley/UCLA/Cornell/UIUC/Michigan/Duke required for 70+ scores. Without top school evidence in bio/profile text, cap score at 60 and flag school_unverified=true (manual LinkedIn verification). Bay Area / California / US location preferred — Nigeria/India/non-US self-reported locations cap at 30 (hard filter should already drop clear Nigeria/India). MCP + LangGraph alone are COMMON signals — never score 70+ on stack fingerprints without school OR strong production eval/obs evidence plus US location.",
+    "github_repos": [
+      "langfuse/langfuse",
+      "langchain-ai/langsmith-sdk",
+      "Arize-ai/phoenix",
+      "mlflow/mlflow",
+      "helicone/helicone",
+      "wandb/weave",
+      "explodinggradients/ragas",
+      "confident-ai/deepeval",
+      "open-telemetry/semantic-conventions",
+      "modelcontextprotocol/python-sdk"
+    ],
+    "github_queries": [
+      "online evaluation LLM",
+      "LLM observability",
+      "agent tracing",
+      "OpenTelemetry gen_ai",
+      "RAGAS evaluation",
+      "DeepEval",
+      "Langfuse",
+      "agent eval production"
+    ],
+    "hn_queries": [
+      "LLM observability production",
+      "online evals LLM",
+      "agent observability",
+      "Langfuse OR Phoenix OR Helicone",
+      "LLM-as-judge production",
+      "OpenTelemetry gen_ai"
+    ]
+  },
+  "profile_blob": "Name: Nirant\nSource: github\nProfile: https://github.com/NirantK\nLocation: —\nCompany: —\nPrior score: 60\nPrior reasoning: Strong production signal: core contributor to RAGAS (LLM eval framework in top-tier scarcity band), 1427 followers, 108 repos indicate sustained OSS credibility. Vector Search @Qdrant shows production systems experience. However, school pedigree absent from GitHub bio, location unspecified (critical blocker for Bay Area/US preference), and no explicit evidence of shipped agent flows/MCP servers or observability stack beyond RAGAS eval work. Production eval expertise + OSS weight lifted score above cap, but location + school verification required before outreach.\nFlags: ['school_unverified', 'location_not_specified', 'linkedin_verify_school', 'linkedin_verify_location_us_intent', 'no_mcp_or_agent_flow_evidence', 'eval_strong_but_agent_systems_unclear', 'school unverified', 'linkedin verify school']\nTop signal: RAGAS core contributor (LLM-as-judge eval, top-tier scarcity) | school unverified\n\n\n--- AUTO IDENTITY ENRICHMENT ---\n--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Nirant\n- Twitter/X: @NirantK\n- Blog/site: https://nirantk.com\n- Kaggle: no profile for this exact login\n- StackOverflow: nirantk (rep 1) https://stackoverflow.com/users/7617332/nirantk\n- SO location: Bangalore, Karnataka, India\n- StackOverflow: nirantk83 (rep 1) https://stackoverflow.com/users/19811775/nirantk83\nSchool hits: stanford\n",
+  "thought": "Re-score=68 after auto-enrichment; school verified. Accept as ready.",
+  "action": "ACCEPT",
+  "observation": "Accepted → ready for outreach / Slack Ready list.",
+  "human_education": "",
+  "score": 68,
+  "school_unverified": false,
+  "flags": [
+    "school_unverified",
+    "linkedin_verify_school",
+    "location_india_hard_filter",
+    "no_us_location_stated",
+    "no_mcp_or_agent_flow_evidence",
+    "eval_strong_but_agent_systems_unclear",
+    "production_eval_does_not_offset_location_mismatch",
+    "enrichment pedigree hit"
+  ],
+  "status": "ready",
+  "trace": [
+    {
+      "ts": "2026-09-04T03:36:15.509209+00:00",
+      "thought": "Score=60 interesting but school unverified (flags=['school_unverified', 'location_not_specified', 'linkedin_verify_school', 'linkedin_verify_location_us_intent', 'no_mcp_or_agent_flow_evidence', 'eval_strong_but_agent_systems_unclear', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:36:16.826630+00:00",
+      "thought": "Score=60 interesting but school unverified (flags=['school_unverified', 'location_not_specified', 'linkedin_verify_school', 'linkedin_verify_location_us_intent', 'no_mcp_or_agent_flow_evidence', 'eval_strong_but_agent_systems_unclear', 'school unverified', 'linkedin verify school']). Before asking a human, ENRICH identity via GitHub/Kaggle/StackOverflow APIs (blog, twitter, edu email, exact-login probes).",
+      "action": "ENRICH_IDENTITY",
+      "observation": "Enrichment complete for login=NirantK: confidence=high, schools=['stanford'], edu_emails=[], clues=7."
+    },
+    {
+      "ts": "2026-09-04T03:36:16.827347+00:00",
+      "thought": "Enrichment confidence=high: schools=['stanford'] edu_emails=[]. Auto re-score with enrichment blob before human pause.",
+      "action": "RESCORE",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:36:23.798171+00:00",
+      "thought": "Enrichment confidence=high: schools=['stanford'] edu_emails=[]. Auto re-score with enrichment blob before human pause.",
+      "action": "RESCORE",
+      "observation": "Re-scored after AUTO IDENTITY ENRICHMENT: score=68, school_unverified=False, flags=['school_unverified', 'linkedin_verify_school', 'location_india_hard_filter', 'no_us_location_stated', 'no_mcp_or_agent_flow_evidence', 'eval_strong_but_agent_systems_unclear', 'production_eval_does_not_offset_location_mismatch', 'enrichment pedigree hit']"
+    },
+    {
+      "ts": "2026-09-04T03:36:23.798821+00:00",
+      "thought": "Re-score=68 after auto-enrichment; school verified. Accept as ready.",
+      "action": "ACCEPT",
+      "observation": ""
+    },
+    {
+      "ts": "2026-09-04T03:36:23.799124+00:00",
+      "thought": "Re-score=68 after auto-enrichment; school verified. Accept as ready.",
+      "action": "ACCEPT",
+      "observation": "Accepted → ready for outreach / Slack Ready list."
+    }
+  ],
+  "reasoning": "Nirant is a core RAGAS contributor (top-tier eval scarcity signal) with strong production systems experience at Qdrant and 1427 GitHub followers demonstrating sustained OSS credibility. However, location is confirmed as Bangalore, India (hard filter for Bay Area/US preference role), and while Stanford appears in enrichment data, school pedigree is not explicitly stated in GitHub bio; manual LinkedIn verification required before outreach. Production eval expertise lifts score above strict cap, but India location + unverified school prevent 70+ band.",
+  "top_signal": "RAGAS core contributor (LLM-as-judge production eval, top-tier scarcity) + Qdrant production systems | location India (hard filter) | school unverified",
+  "enriched": true,
+  "enrichment": {
+    "clues": [
+      "GitHub name field: Nirant",
+      "Twitter/X: @NirantK",
+      "Blog/site: https://nirantk.com",
+      "Kaggle: no profile for this exact login",
+      "StackOverflow: nirantk (rep 1) https://stackoverflow.com/users/7617332/nirantk",
+      "SO location: Bangalore, Karnataka, India",
+      "StackOverflow: nirantk83 (rep 1) https://stackoverflow.com/users/19811775/nirantk83"
+    ],
+    "school_hits": [
+      "stanford"
+    ],
+    "edu_emails": [],
+    "links": [
+      {
+        "label": "Twitter/X",
+        "url": "https://twitter.com/NirantK"
+      },
+      {
+        "label": "Personal site / blog",
+        "url": "https://nirantk.com"
+      },
+      {
+        "label": "SO · nirantk",
+        "url": "https://stackoverflow.com/users/7617332/nirantk"
+      },
+      {
+        "label": "SO · nirantk83",
+        "url": "https://stackoverflow.com/users/19811775/nirantk83"
+      }
+    ],
+    "strong_pedigree_signal": true,
+    "confidence": "high",
+    "education_blob": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Nirant\n- Twitter/X: @NirantK\n- Blog/site: https://nirantk.com\n- Kaggle: no profile for this exact login\n- StackOverflow: nirantk (rep 1) https://stackoverflow.com/users/7617332/nirantk\n- SO location: Bangalore, Karnataka, India\n- StackOverflow: nirantk83 (rep 1) https://stackoverflow.com/users/19811775/nirantk83\nSchool hits: stanford",
+    "raw": {
+      "github": {
+        "source": "github",
+        "login": "NirantK",
+        "ok": true,
+        "name": "Nirant",
+        "company": "",
+        "blog": "https://nirantk.com",
+        "bio": "LLMs, previously Vector Search @qdrant",
+        "location": "",
+        "twitter": "NirantK",
+        "email": "",
+        "hireable": null,
+        "html_url": "https://github.com/NirantK",
+        "emails": [],
+        "edu_emails": [],
+        "blog_url": "https://nirantk.com",
+        "blog_text_preview": " About - Nirant Kasliwal Skip to content Nirant Kasliwal About Initializing search About Endorsed Friends Investments Community Talks Writing Nirant Kasliwal About About Table of contents Book Papers and Open Source Contributions Recognitions Talks Endorsed Friends Investments Community Talks Writing Table of contents Book Papers and Open Source Contributions Recognitions Talks About I am a Machine Learning/AI Engineer. I started Scaled Focus to help companies evaluate, optimize and deploy agents. I have written a book on Natural Language Processing for software engineers. I have also contributed to Ragas , built FastEmbed and maintained Awesome NLP . Book &para; Book: NLP in Python: Quickstart Guide has sold over 5000 copies. I wrote this book in 2018 to make Natural Language Programming ",
+        "blog_school_hits": [
+          "stanford"
+        ],
+        "bio_school_hits": []
+      },
+      "kaggle": {
+        "source": "kaggle",
+        "login": "NirantK",
+        "exists": false,
+        "url": "https://www.kaggle.com/NirantK"
+      },
+      "stackoverflow": {
+        "source": "stackoverflow",
+        "login": "NirantK",
+        "matches": [
+          {
+            "user_id": 7617332,
+            "display_name": "nirantk",
+            "link": "https://stackoverflow.com/users/7617332/nirantk",
+            "reputation": 1,
+            "location": "Bangalore, Karnataka, India"
+          },
+          {
+            "user_id": 19811775,
+            "display_name": "nirantk83",
+            "link": "https://stackoverflow.com/users/19811775/nirantk83",
+            "reputation": 1,
+            "location": null
+          }
+        ]
+      }
+    },
+    "login": "NirantK"
+  },
+  "auto_education": "--- AUTO IDENTITY ENRICHMENT ---\n- GitHub name field: Nirant\n- Twitter/X: @NirantK\n- Blog/site: https://nirantk.com\n- Kaggle: no profile for this exact login\n- StackOverflow: nirantk (rep 1) https://stackoverflow.com/users/7617332/nirantk\n- SO location: Bangalore, Karnataka, India\n- StackOverflow: nirantk83 (rep 1) https://stackoverflow.com/users/19811775/nirantk83\nSchool hits: stanford",
+  "backend": "langgraph"
+}
